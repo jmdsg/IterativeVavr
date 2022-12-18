@@ -12,28 +12,32 @@
 
     <properties>
 
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13</junit.version>
 
-        <vavr.version>0.9.0</vavr.version>
+        <vavr.version>0.10.4</vavr.version>
 
-        <commons.version>3.5</commons.version>
-        <commons-collection.version>4.1</commons-collection.version>
+        <commons.version>3.11</commons.version>
+        <commons-collection.version>4.4</commons-collection.version>
 
-        <tycho.compiler.version>1.0.0</tycho.compiler.version>
+        <tycho.compiler.version>1.7.0</tycho.compiler.version>
 
-        <plugin.maven.install>2.5.2</plugin.maven.install>
-        <plugin.maven.jar>3.0.2</plugin.maven.jar>
-        <plugin.maven.source>3.0.1</plugin.maven.source>
-        <plugin.maven.eclipse>2.9</plugin.maven.eclipse>
-        <plugin.maven.dependency>2.5.1</plugin.maven.dependency>
-        <plugin.javadoc.version>2.10.4</plugin.javadoc.version>
-        <plugin.compiler.version>3.6.1</plugin.compiler.version>
-        <plugin.compiler.source.version>1.8</plugin.compiler.source.version>
-        <plugin.compiler.target.version>1.8</plugin.compiler.target.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <plugin.install.version>2.5.2</plugin.install.version>
+        <plugin.jar.version>3.0.2</plugin.jar.version>
+        <plugin.source.version>3.0.1</plugin.source.version>
+        <plugin.eclipse.version>2.9</plugin.eclipse.version>
+        <plugin.dependency.version>2.5.1</plugin.dependency.version>
+        <plugin.javadoc.version>3.1.1</plugin.javadoc.version>
+        <plugin.compiler.version>3.7.0</plugin.compiler.version>
+
+        <javadoc.java.version>11</javadoc.java.version>
+
+        <java.version>11</java.version>
+        <java.target.version>11</java.target.version>
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     </properties>
 
@@ -57,8 +61,8 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>${plugin.compiler.version}</version><!-- $NO-MVN-MAN-VER$ -->
                         <configuration>
-                            <source>${plugin.compiler.source.version}</source>
-                            <target>${plugin.compiler.target.version}</target>
+                            <source>${java.version}</source>
+                            <target>${java.target.version}</target>
                             <fork>true</fork>
                             <meminitial>128m</meminitial>
                             <maxmem>2048m</maxmem>
@@ -91,8 +95,8 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>${plugin.compiler.version}</version><!-- $NO-MVN-MAN-VER$ -->
                         <configuration>
-                            <source>${plugin.compiler.source.version}</source>
-                            <target>${plugin.compiler.target.version}</target>
+                            <source>${java.version}</source>
+                            <target>${java.target.version}</target>
                             <compilerId>jdt</compilerId>
                             <compilerArgument>-err:nullAnnot,null</compilerArgument>
                         </configuration>
@@ -124,7 +128,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <!-- <version>${plugin.javadoc.version}</version> -->
+                        <version>${plugin.javadoc.version}</version>
                         <configuration>
                             <tags>
                                 <tag>
@@ -141,7 +145,9 @@
                                     <goal>jar</goal>
                                 </goals>
                                 <configuration>
+                                    <!--
                                     <additionalparam>-Xdoclint:none</additionalparam>
+                                    -->
                                 </configuration>
                             </execution>
                         </executions>
@@ -199,7 +205,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
-                <version>${plugin.maven.eclipse}</version>
+                <version>${plugin.eclipse.version}</version>
                 <configuration>
                     <downloadSources>true</downloadSources>
                     <downloadJavadocs>false</downloadJavadocs>
@@ -210,7 +216,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>${plugin.maven.jar}</version>
+                <version>${plugin.jar.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>**/log4j.properties</exclude>
@@ -229,7 +235,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>${plugin.maven.dependency}</version>
+                <version>${plugin.dependency.version}</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -250,7 +256,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${plugin.maven.source}</version>
+                <version>${plugin.source.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -265,7 +271,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>${plugin.maven.install}</version>
+                <version>${plugin.install.version}</version>
             </plugin>
 
         </plugins>
