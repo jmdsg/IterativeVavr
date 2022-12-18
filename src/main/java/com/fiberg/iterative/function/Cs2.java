@@ -55,7 +55,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     }
 
     public static <T1, T2> Cs2<T1, T2> detuple(Cs1<? super Tuple2<? extends T1, ? extends T2>> c) {
-        return (t1, t2) -> c.accept(Tuple.of((Object)t1, (Object)t2));
+        return (t1, t2) -> c.accept(Tuple.of((Object) t1, (Object) t2));
     }
 
     public static <T1, T2> Cs2<T1, T2> uncheck(Csc2<? super T1, ? super T2> c) {
@@ -136,14 +136,14 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     }
 
     default public <R> Fn2<T1, T2, R> toFunction(R r) {
-        return (Fn2 & Serializable)(t1, t2) -> {
+        return (Fn2 & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return r;
         };
     }
 
     default public Pr2<T1, T2> toPredicate(boolean b) {
-        return (Pr2<Object, Object> & Serializable)(t1, t2) -> {
+        return (Pr2<Object, Object> & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return b;
         };
@@ -168,7 +168,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     default public <R> Fn2<T1, T2, R> afterApplyTo(Fn0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn2 & Serializable)(t1, t2) -> {
+        return (Fn2 & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return f.apply();
         };
@@ -181,14 +181,14 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     default public Pr2<T1, T2> afterTestTo(Pr0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr2<Object, Object> & Serializable)(t1, t2) -> {
+        return (Pr2<Object, Object> & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return p.test();
         };
     }
 
     default public <R> Fn2<T1, T2, R> afterGet(Sp<? extends R> s) {
-        return (Fn2 & Serializable)(t1, t2) -> {
+        return (Fn2 & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return s.get();
         };
@@ -207,42 +207,42 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     default public <B1> Cs1<B1> beforeApply1(Fn1<? super B1, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return b1 -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1))));
+        return b1 -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1))));
     }
 
     default public <B1, B2> Cs2<B1, B2> beforeApply2(Fn2<? super B1, ? super B2, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2))));
+        return (b1, b2) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2))));
     }
 
     default public <B1, B2, B3> Cs3<B1, B2, B3> beforeApply3(Fn3<? super B1, ? super B2, ? super B3, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2, b3))));
+        return (b1, b2, b3) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2, b3))));
     }
 
     default public <B1, B2, B3, B4> Cs4<B1, B2, B3, B4> beforeApply4(Fn4<? super B1, ? super B2, ? super B3, ? super B4, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2, b3, b4))));
+        return (b1, b2, b3, b4) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2, b3, b4))));
     }
 
     default public <B1, B2, B3, B4, B5> Cs5<B1, B2, B3, B4, B5> beforeApply5(Fn5<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2, b3, b4, b5))));
+        return (b1, b2, b3, b4, b5) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2, b3, b4, b5))));
     }
 
     default public <B1, B2, B3, B4, B5, B6> Cs6<B1, B2, B3, B4, B5, B6> beforeApply6(Fn6<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5, b6) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2, b3, b4, b5, b6))));
+        return (b1, b2, b3, b4, b5, b6) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2, b3, b4, b5, b6))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7> Cs7<B1, B2, B3, B4, B5, B6, B7> beforeApply7(Fn7<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2, b3, b4, b5, b6, b7))));
+        return (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2, b3, b4, b5, b6, b7))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7, B8> Cs8<B1, B2, B3, B4, B5, B6, B7, B8> beforeApply8(Fn8<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? super B8, ? extends Tuple2<? extends T1, ? extends T2>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
+        return (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
     }
 
     default public Cs2<T1, T2> beforeTestOnSuccess(Pr0 p, Cs2<? super T1, ? super T2> onFailure) {
@@ -267,7 +267,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     default public Rn beforeGet(Sp<? extends Tuple2<? extends T1, ? extends T2>> s) {
         Objects.requireNonNull(s, "s is null");
-        return () -> this.tupled().accept(Tuple.narrow((Tuple2)((Tuple2)s.get())));
+        return () -> this.tupled().accept(Tuple.narrow((Tuple2) ((Tuple2) s.get())));
     }
 
     default public Cs2<T2, T1> inverted() {
@@ -284,7 +284,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     default public <S> Fn2<T1, T2, S> afterPassingThroughApplyTo(Fn2<? super T1, ? super T2, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn2 & Serializable)(t1, t2) -> {
+        return (Fn2 & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return f.apply(t1, t2);
         };
@@ -300,7 +300,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     default public Pr2<T1, T2> afterPassingThroughTestTo(Pr2<? super T1, ? super T2> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr2<Object, Object> & Serializable)(t1, t2) -> {
+        return (Pr2<Object, Object> & Serializable) (t1, t2) -> {
             this.accept(t1, t2);
             return p.test(t1, t2);
         };
@@ -363,7 +363,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     }
 
     default public Fn1<T1, Cs1<T2>> currying() {
-        return (Fn1 & Serializable)t1 -> t2 -> this.accept(t1, t2);
+        return (Fn1 & Serializable) t1 -> t2 -> this.accept(t1, t2);
     }
 
     default public Csc2<T1, T2> checked() {

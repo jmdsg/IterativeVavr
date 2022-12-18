@@ -38,7 +38,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     public static <T1, R> Fnc1<T1, R> value(R r) {
-        return (Fnc1 & Serializable)t1 -> r;
+        return (Fnc1 & Serializable) t1 -> r;
     }
 
     public static <T1> Fnc1<T1, T1> entity() {
@@ -54,7 +54,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     public static <T1, R> Fnc1<T1, R> detuple(Fnc1<? super Tuple1<? extends T1>, ? extends R> f) {
-        return (Fnc1 & Serializable)t1 -> f.apply((Object)Tuple.of((Object)t1));
+        return (Fnc1 & Serializable) t1 -> f.apply((Object) Tuple.of((Object) t1));
     }
 
     public static <T1, R> Fnc1<T1, R> check(Fn1<? super T1, ? extends R> f) {
@@ -137,7 +137,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Fnc0<R> toFunction(T1 t1) {
-        return (Fnc0 & Serializable)() -> this.apply(t1);
+        return (Fnc0 & Serializable) () -> this.apply(t1);
     }
 
     default public Rnc toRunnable(T1 t1) {
@@ -145,7 +145,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Csc1<T1> toConsumer() {
-        return ((Fnc1)this)::apply;
+        return ((Fnc1) this)::apply;
     }
 
     default public Spc<R> toSupplier(T1 t1) {
@@ -154,7 +154,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             Object value = this.apply(t1);
             r.run();
             return value;
@@ -163,17 +163,17 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public <V> Fnc1<T1, V> afterApply(Fnc1<? super R, ? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)t1 -> f.apply(this.apply(t1));
+        return (Fnc1 & Serializable) t1 -> f.apply(this.apply(t1));
     }
 
     default public <V> Fnc1<T1, V> afterApply(Fnc0<? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)t1 -> f.ignoring1().apply(this.apply(t1));
+        return (Fnc1 & Serializable) t1 -> f.ignoring1().apply(this.apply(t1));
     }
 
     default public <V> Fnc1<T1, V> afterGet(Spc<? extends V> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Fnc1 & Serializable)t1 -> s.ignoring1().apply(this.apply(t1));
+        return (Fnc1 & Serializable) t1 -> s.ignoring1().apply(this.apply(t1));
     }
 
     default public Fnc1<T1, Boolean> afterTest(Prc1<? super R> p) {
@@ -183,7 +183,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Prc1<T1> afterTestTo(Prc1<? super R> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc1 & Serializable)t1 -> p.test(this.apply(t1));
+        return (Prc1 & Serializable) t1 -> p.test(this.apply(t1));
     }
 
     default public Csc1<T1> afterAcceptTo(Csc1<? super R> c) {
@@ -193,7 +193,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             Object value = this.apply(t1);
             c.accept(value);
             return value;
@@ -202,12 +202,12 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public <W> Fn1<T1, W> beforeWrap(Fn1<? super Spc<R>, ? extends W> wrap) {
         Objects.requireNonNull(wrap, "wrap is null");
-        return (Fn1 & Serializable)t1 -> wrap.apply(this.toSupplier(t1));
+        return (Fn1 & Serializable) t1 -> wrap.apply(this.toSupplier(t1));
     }
 
     default public Fnc1<T1, R> beforeRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             r.run();
             return this.apply(t1);
         };
@@ -215,48 +215,48 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public <B1> Fnc1<B1, R> beforeApply(Fnc1<? super B1, ? extends T1> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)b1 -> this.apply(f.apply(b1));
+        return (Fnc1 & Serializable) b1 -> this.apply(f.apply(b1));
     }
 
     default public Fnc1<T1, R> beforeTestOnSuccess(Prc0 p, Fnc1<? super T1, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fnc1 & Serializable)t1 -> p.test() != false ? this.apply(t1) : onFailure.apply(t1);
+        return (Fnc1 & Serializable) t1 -> p.test() != false ? this.apply(t1) : onFailure.apply(t1);
     }
 
     default public Fnc1<T1, R> beforeTestOnSuccess(Prc0 p, Spc<? extends R> onFailure) {
-        return this.beforeTestOnSuccess(p, (R)onFailure.toFunction().ignoring1());
+        return this.beforeTestOnSuccess(p, (R) onFailure.toFunction().ignoring1());
     }
 
     default public Fnc1<T1, R> beforeTestOnSuccess(Prc0 p, R onFailure) {
-        return this.beforeTestOnSuccess(p, (R)Fnc1.value(onFailure));
+        return this.beforeTestOnSuccess(p, (R) Fnc1.value(onFailure));
     }
 
     default public Fnc1<T1, R> beforeTestOnSuccess(Prc0 p) {
-        return this.beforeTestOnSuccess(p, (R)Fnc1.empty());
+        return this.beforeTestOnSuccess(p, (R) Fnc1.empty());
     }
 
     default public Fnc1<T1, R> beforeTestOnFailure(Prc0 p, Fnc1<? super T1, ? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeTestOnSuccess(p.negated(), (R)onSuccess);
+        return this.beforeTestOnSuccess(p.negated(), (R) onSuccess);
     }
 
     default public Fnc1<T1, R> beforeTestOnFailure(Prc0 p, Spc<? extends R> onSuccess) {
-        return this.beforeTestOnFailure(p, (R)onSuccess.toFunction().ignoring1());
+        return this.beforeTestOnFailure(p, (R) onSuccess.toFunction().ignoring1());
     }
 
     default public Fnc1<T1, R> beforeTestOnFailure(Prc0 p, R onSuccess) {
-        return this.beforeTestOnFailure(p, (R)Fnc1.value(onSuccess));
+        return this.beforeTestOnFailure(p, (R) Fnc1.value(onSuccess));
     }
 
     default public Fnc1<T1, R> beforeTestOnFailure(Prc0 p) {
-        return this.beforeTestOnFailure(p, (R)Fnc1.empty());
+        return this.beforeTestOnFailure(p, (R) Fnc1.empty());
     }
 
     default public <B1> Fnc1<B1, R> beforeGet(Spc<? extends T1> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Fnc1 & Serializable)b1 -> this.apply(s.get());
+        return (Fnc1 & Serializable) b1 -> this.apply(s.get());
     }
 
     default public Fn1<T1, Option<R>> lift() {
@@ -269,7 +269,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public <S> Fnc1<T1, S> afterPassingThroughApply(Fnc1<? super T1, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             this.apply(t1);
             return f.apply(t1);
         };
@@ -277,7 +277,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> afterPassingThroughTest(Prc1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             Object result = this.apply(t1);
             p.test(t1);
             return result;
@@ -286,7 +286,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Prc1<T1> afterPassingThroughTestTo(Prc1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc1 & Serializable)t1 -> {
+        return (Prc1 & Serializable) t1 -> {
             this.apply(t1);
             return p.test(t1);
         };
@@ -294,7 +294,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> afterPassingThroughAccept(Csc1<? super T1> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             Object result = this.apply(t1);
             c.accept(t1);
             return result;
@@ -311,7 +311,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> beforePassingThroughApply(Fnc1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             f.apply(t1);
             return this.apply(t1);
         };
@@ -319,7 +319,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> beforePassingThroughTest(Prc1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             p.test(t1);
             return this.apply(t1);
         };
@@ -327,7 +327,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     default public Fnc1<T1, R> beforePassingThroughAccept(Csc1<? super T1> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             c.accept(t1);
             return this.apply(t1);
         };
@@ -336,45 +336,45 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     default public Fnc1<T1, R> beforeSuccessPassingThroughTest(Prc1<? super T1> p, Fnc1<? super T1, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fnc1 & Serializable)t1 -> p.test(t1) ? this.apply(t1) : onFailure.apply(t1);
+        return (Fnc1 & Serializable) t1 -> p.test(t1) ? this.apply(t1) : onFailure.apply(t1);
     }
 
     default public Fnc1<T1, R> beforeSuccessPassingThroughTest(Prc1<? super T1> p, Spc<? extends R> onFailure) {
-        return this.beforeSuccessPassingThroughTest(p, (R)onFailure.toFunction().ignoring1());
+        return this.beforeSuccessPassingThroughTest(p, (R) onFailure.toFunction().ignoring1());
     }
 
     default public Fnc1<T1, R> beforeSuccessPassingThroughTest(Prc1<? super T1> p, R onFailure) {
-        return this.beforeSuccessPassingThroughTest(p, (R)Fnc1.value(onFailure));
+        return this.beforeSuccessPassingThroughTest(p, (R) Fnc1.value(onFailure));
     }
 
     default public Fnc1<T1, R> beforeSuccessPassingThroughTest(Prc1<? super T1> p) {
-        return this.beforeSuccessPassingThroughTest(p, (R)Fnc1.empty());
+        return this.beforeSuccessPassingThroughTest(p, (R) Fnc1.empty());
     }
 
     default public Fnc1<T1, R> beforeFailurePassingThroughTest(Prc1<? super T1> p, Fnc1<? super T1, ? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeSuccessPassingThroughTest(p.negated(), (R)onSuccess);
+        return this.beforeSuccessPassingThroughTest(p.negated(), (R) onSuccess);
     }
 
     default public Fnc1<T1, R> beforeFailurePassingThroughTest(Prc1<? super T1> p, Spc<? extends R> onSuccess) {
-        return this.beforeFailurePassingThroughTest(p, (R)onSuccess.toFunction().ignoring1());
+        return this.beforeFailurePassingThroughTest(p, (R) onSuccess.toFunction().ignoring1());
     }
 
     default public Fnc1<T1, R> beforeFailurePassingThroughTest(Prc1<? super T1> p, R onSuccess) {
-        return this.beforeFailurePassingThroughTest(p, (R)Fnc1.value(onSuccess));
+        return this.beforeFailurePassingThroughTest(p, (R) Fnc1.value(onSuccess));
     }
 
     default public Fnc1<T1, R> beforeFailurePassingThroughTest(Prc1<? super T1> p) {
-        return this.beforeFailurePassingThroughTest(p, (R)Fnc1.empty());
+        return this.beforeFailurePassingThroughTest(p, (R) Fnc1.empty());
     }
 
     default public Fnc1<T1, R> passingThroughNull() {
-        return (Fnc1 & Serializable)t1 -> t1 != null ? this.apply(t1) : null;
+        return (Fnc1 & Serializable) t1 -> t1 != null ? this.apply(t1) : null;
     }
 
     default public Fnc1<T1, R> passingThroughNull(R r) {
-        return (Fnc1 & Serializable)t1 -> t1 != null ? this.apply(t1) : r;
+        return (Fnc1 & Serializable) t1 -> t1 != null ? this.apply(t1) : r;
     }
 
     default public Fnc1<T1, R> currying() {
@@ -382,91 +382,91 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Fn1<T1, R> unchecked() {
-        return ((Function1)super.unchecked())::apply;
+        return ((Function1) super.unchecked())::apply;
     }
 
     default public <I1> Fnc2<I1, T1, R> ignoring1Lt() {
-        return (Fnc2 & Serializable)(i1, t1) -> this.apply(t1);
+        return (Fnc2 & Serializable) (i1, t1) -> this.apply(t1);
     }
 
     default public <I1> Fnc2<T1, I1, R> ignoring1Rt() {
-        return (Fnc2 & Serializable)(t1, i1) -> this.apply(t1);
+        return (Fnc2 & Serializable) (t1, i1) -> this.apply(t1);
     }
 
     default public <I1, I2> Fnc3<I1, I2, T1, R> ignoring2Lt() {
-        return (Fnc3 & Serializable)(i1, i2, t1) -> this.apply(t1);
+        return (Fnc3 & Serializable) (i1, i2, t1) -> this.apply(t1);
     }
 
     default public <I1, I2> Fnc3<T1, I1, I2, R> ignoring2Rt() {
-        return (Fnc3 & Serializable)(t1, i1, i2) -> this.apply(t1);
+        return (Fnc3 & Serializable) (t1, i1, i2) -> this.apply(t1);
     }
 
     default public <I1, I2, I3> Fnc4<I1, I2, I3, T1, R> ignoring3Lt() {
-        return (Fnc4 & Serializable)(i1, i2, i3, t1) -> this.apply(t1);
+        return (Fnc4 & Serializable) (i1, i2, i3, t1) -> this.apply(t1);
     }
 
     default public <I1, I2, I3> Fnc4<T1, I1, I2, I3, R> ignoring3Rt() {
-        return (Fnc4 & Serializable)(t1, i1, i2, i3) -> this.apply(t1);
+        return (Fnc4 & Serializable) (t1, i1, i2, i3) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4> Fnc5<I1, I2, I3, I4, T1, R> ignoring4Lt() {
-        return (Fnc5 & Serializable)(i1, i2, i3, i4, t1) -> this.apply(t1);
+        return (Fnc5 & Serializable) (i1, i2, i3, i4, t1) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4> Fnc5<T1, I1, I2, I3, I4, R> ignoring4Rt() {
-        return (Fnc5 & Serializable)(t1, i1, i2, i3, i4) -> this.apply(t1);
+        return (Fnc5 & Serializable) (t1, i1, i2, i3, i4) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4, I5> Fnc6<I1, I2, I3, I4, I5, T1, R> ignoring5Lt() {
-        return (Fnc6 & Serializable)(i1, i2, i3, i4, i5, t1) -> this.apply(t1);
+        return (Fnc6 & Serializable) (i1, i2, i3, i4, i5, t1) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4, I5> Fnc6<T1, I1, I2, I3, I4, I5, R> ignoring5Rt() {
-        return (Fnc6 & Serializable)(t1, i1, i2, i3, i4, i5) -> this.apply(t1);
+        return (Fnc6 & Serializable) (t1, i1, i2, i3, i4, i5) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4, I5, I6> Fnc7<I1, I2, I3, I4, I5, I6, T1, R> ignoring6Lt() {
-        return (Fnc7 & Serializable)(i1, i2, i3, i4, i5, i6, t1) -> this.apply(t1);
+        return (Fnc7 & Serializable) (i1, i2, i3, i4, i5, i6, t1) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4, I5, I6> Fnc7<T1, I1, I2, I3, I4, I5, I6, R> ignoring6Rt() {
-        return (Fnc7 & Serializable)(t1, i1, i2, i3, i4, i5, i6) -> this.apply(t1);
+        return (Fnc7 & Serializable) (t1, i1, i2, i3, i4, i5, i6) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4, I5, I6, I7> Fnc8<I1, I2, I3, I4, I5, I6, I7, T1, R> ignoring7Lt() {
-        return (Fnc8 & Serializable)(i1, i2, i3, i4, i5, i6, i7, t1) -> this.apply(t1);
+        return (Fnc8 & Serializable) (i1, i2, i3, i4, i5, i6, i7, t1) -> this.apply(t1);
     }
 
     default public <I1, I2, I3, I4, I5, I6, I7> Fnc8<T1, I1, I2, I3, I4, I5, I6, I7, R> ignoring7Rt() {
-        return (Fnc8 & Serializable)(t1, i1, i2, i3, i4, i5, i6, i7) -> this.apply(t1);
+        return (Fnc8 & Serializable) (t1, i1, i2, i3, i4, i5, i6, i7) -> this.apply(t1);
     }
 
     default public Fnc1<T1, R> curried() {
-        return ((CheckedFunction1)super.curried())::apply;
+        return ((CheckedFunction1) super.curried())::apply;
     }
 
     default public Fnc1<Tuple1<T1>, R> tupled() {
-        return ((CheckedFunction1)super.tupled())::apply;
+        return ((CheckedFunction1) super.tupled())::apply;
     }
 
     default public Fnc1<T1, R> reversed() {
-        return ((CheckedFunction1)super.reversed())::apply;
+        return ((CheckedFunction1) super.reversed())::apply;
     }
 
     default public Fnc1<T1, R> memoized() {
-        return ((CheckedFunction1)super.memoized())::apply;
+        return ((CheckedFunction1) super.memoized())::apply;
     }
 
     default public <V> Fnc1<T1, V> andThen(CheckedFunction1<? super R, ? extends V> after) {
-        return ((CheckedFunction1)super.andThen(after))::apply;
+        return ((CheckedFunction1) super.andThen(after))::apply;
     }
 
     default public <V> Fnc1<V, R> compose(CheckedFunction1<? super V, ? extends T1> before) {
-        return ((CheckedFunction1)super.compose(before))::apply;
+        return ((CheckedFunction1) super.compose(before))::apply;
     }
 
     default public Fn1<T1, R> recover(Function<? super Throwable, ? extends Function<? super T1, ? extends R>> recover) {
-        return ((Function1)super.recover(recover))::apply;
+        return ((Function1) super.recover(recover))::apply;
     }
 
 }

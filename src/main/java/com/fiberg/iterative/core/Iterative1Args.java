@@ -118,12 +118,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple7<A1, A2, A3, A4, A5, A6, A7>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6(), tuple._7()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6(), tuple._7()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn8<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super A6, ? super A7, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn8 & Serializable)(t1, a1, a2, a3, a4, a5, a6, a7) -> f1.apply(a1, a2, a3, a4, a5, a6, a7, t1));
+                return this.mapping((Fn8 & Serializable) (t1, a1, a2, a3, a4, a5, a6, a7) -> f1.apply(a1, a2, a3, a4, a5, a6, a7, t1));
             }
 
             @Override
@@ -371,12 +371,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple6<A1, A2, A3, A4, A5, A6>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn7<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super A6, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn7 & Serializable)(t1, a1, a2, a3, a4, a5, a6) -> f1.apply(a1, a2, a3, a4, a5, a6, t1));
+                return this.mapping((Fn7 & Serializable) (t1, a1, a2, a3, a4, a5, a6) -> f1.apply(a1, a2, a3, a4, a5, a6, t1));
             }
 
             @Override
@@ -596,12 +596,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple5<A1, A2, A3, A4, A5>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn6 & Serializable)(t1, a1, a2, a3, a4, a5) -> f1.apply(a1, a2, a3, a4, a5, t1));
+                return this.mapping((Fn6 & Serializable) (t1, a1, a2, a3, a4, a5) -> f1.apply(a1, a2, a3, a4, a5, t1));
             }
 
             @Override
@@ -793,12 +793,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple4<A1, A2, A3, A4>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn5 & Serializable)(t1, a1, a2, a3, a4) -> f1.apply(a1, a2, a3, a4, t1));
+                return this.mapping((Fn5 & Serializable) (t1, a1, a2, a3, a4) -> f1.apply(a1, a2, a3, a4, t1));
             }
 
             @Override
@@ -962,12 +962,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple3<A1, A2, A3>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn4<? super A1, ? super A2, ? super A3, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn4 & Serializable)(t1, a1, a2, a3) -> f1.apply(a1, a2, a3, t1));
+                return this.mapping((Fn4 & Serializable) (t1, a1, a2, a3) -> f1.apply(a1, a2, a3, t1));
             }
 
             @Override
@@ -1103,12 +1103,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple2<A1, A2>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn3<? super A1, ? super A2, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn3 & Serializable)(t1, a1, a2) -> f1.apply(a1, a2, t1));
+                return this.mapping((Fn3 & Serializable) (t1, a1, a2) -> f1.apply(a1, a2, t1));
             }
 
             @Override
@@ -1208,12 +1208,12 @@ public interface Iterative1Args<T1> {
                 Objects.requireNonNull(f1, "f1 is null");
                 Stream<Tuple1<A1>> stream = this.right.toStream();
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
-                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1()));
+                return (this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1()));
             }
 
             @Override
             public <R1> Iterative1<R1> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> f1) {
-                return this.mapping((Fn2 & Serializable)(t1, a1) -> f1.apply(a1, t1));
+                return this.mapping((Fn2 & Serializable) (t1, a1) -> f1.apply(a1, t1));
             }
 
             @Override

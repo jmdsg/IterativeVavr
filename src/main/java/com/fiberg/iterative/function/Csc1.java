@@ -49,7 +49,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
     }
 
     public static <T1> Csc1<T1> detuple(Csc1<? super Tuple1<? extends T1>> c) {
-        return t1 -> c.accept((Object)Tuple.of((Object)t1));
+        return t1 -> c.accept((Object) Tuple.of((Object) t1));
     }
 
     public static <T1> Csc1<T1> check(Cs1<? super T1> c) {
@@ -59,7 +59,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     default public <V> Fnc1<T1, V> andThenApply(Fnc0<? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             this.accept(t1);
             return after.apply();
         };
@@ -122,14 +122,14 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
     }
 
     default public <R> Fnc1<T1, R> toFunction(R r) {
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             this.accept(t1);
             return r;
         };
     }
 
     default public Prc1<T1> toPredicate(boolean b) {
-        return (Prc1 & Serializable)t1 -> {
+        return (Prc1 & Serializable) t1 -> {
             this.accept(t1);
             return b;
         };
@@ -154,7 +154,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     default public <R> Fnc1<T1, R> afterApplyTo(Fnc0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             this.accept(t1);
             return f.apply();
         };
@@ -167,14 +167,14 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     default public Prc1<T1> afterTestTo(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc1 & Serializable)t1 -> {
+        return (Prc1 & Serializable) t1 -> {
             this.accept(t1);
             return p.test();
         };
     }
 
     default public <R> Fnc1<T1, R> afterGet(Spc<? extends R> s) {
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             this.accept(t1);
             return s.get();
         };
@@ -266,7 +266,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     default public <S> Fnc1<T1, S> afterPassingThroughApplyTo(Fnc1<? super T1, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable)t1 -> {
+        return (Fnc1 & Serializable) t1 -> {
             this.accept(t1);
             return f.apply(t1);
         };
@@ -282,7 +282,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     default public Prc1<T1> afterPassingThroughTestTo(Prc1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc1 & Serializable)t1 -> {
+        return (Prc1 & Serializable) t1 -> {
             this.accept(t1);
             return p.test(t1);
         };
@@ -432,7 +432,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
                 this.accept(t1);
             }
             catch (Throwable throwable) {
-                Cs1 cons = (Cs1)recover.apply(throwable);
+                Cs1 cons = (Cs1) recover.apply(throwable);
                 Objects.requireNonNull(cons, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 cons.accept(t1);
             }

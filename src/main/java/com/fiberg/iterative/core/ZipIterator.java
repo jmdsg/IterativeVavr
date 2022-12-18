@@ -6,9 +6,9 @@ import java.util.NoSuchElementException;
 
 class ZipIterator<T1, T2, R> implements Iterator<R> {
 
-    private Iterator<T1> it1;
-    private Iterator<T2> it2;
-    private Fn2<T1, T2, R> mapper;
+    private final Iterator<T1> it1;
+    private final Iterator<T2> it2;
+    private final Fn2<T1, T2, R> mapper;
 
     ZipIterator(Iterator<T1> it1, Iterator<T2> it2, Fn2<T1, T2, R> mapper) {
         this.it1 = it1;
@@ -35,7 +35,7 @@ class ZipIterator<T1, T2, R> implements Iterator<R> {
         if (!this.it1.hasNext() || !this.it2.hasNext()) {
             throw new IllegalStateException("Inlined iterables must have the same length");
         }
-        return (R)this.mapper.apply(this.it1.next(), this.it2.next());
+        return (R) this.mapper.apply(this.it1.next(), this.it2.next());
     }
 
 }

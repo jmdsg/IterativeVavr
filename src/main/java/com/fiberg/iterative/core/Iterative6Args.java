@@ -98,17 +98,17 @@ public interface Iterative6Args<T1, T2, T3, T4, T5, T6> {
                 Iterative1<T4> i4 = this.left.create(this.left.iterableStream4());
                 Iterative1<T5> i5 = this.left.create(this.left.iterableStream5());
                 Iterative1<T6> i6 = this.left.create(this.left.iterableStream6());
-                Iterative1 iter1 = this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2())).iterableStream1());
-                Iterative2 iter2 = this.left.splitLt2().create(iter1, (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2())).iterableStream1());
-                Iterative3 iter3 = this.left.splitLt3().create(iter2, (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2())).iterableStream1());
-                Iterative4 iter4 = this.left.splitLt4().create(iter3, (this.cross ? i4.pushBackCrossOf(stream) : i4.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t4, tuple) -> f4.apply(t4, tuple._1(), tuple._2())).iterableStream1());
-                Iterative5 iter5 = this.left.splitLt5().create(iter4, (this.cross ? i5.pushBackCrossOf(stream) : i5.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t5, tuple) -> f5.apply(t5, tuple._1(), tuple._2())).iterableStream1());
-                return this.left.create(iter5, (this.cross ? i6.pushBackCrossOf(stream) : i6.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t6, tuple) -> f6.apply(t6, tuple._1(), tuple._2())).iterableStream1());
+                Iterative1 iter1 = this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2())).iterableStream1());
+                Iterative2 iter2 = this.left.splitLt2().create(iter1, (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2())).iterableStream1());
+                Iterative3 iter3 = this.left.splitLt3().create(iter2, (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2())).iterableStream1());
+                Iterative4 iter4 = this.left.splitLt4().create(iter3, (this.cross ? i4.pushBackCrossOf(stream) : i4.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t4, tuple) -> f4.apply(t4, tuple._1(), tuple._2())).iterableStream1());
+                Iterative5 iter5 = this.left.splitLt5().create(iter4, (this.cross ? i5.pushBackCrossOf(stream) : i5.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t5, tuple) -> f5.apply(t5, tuple._1(), tuple._2())).iterableStream1());
+                return this.left.create(iter5, (this.cross ? i6.pushBackCrossOf(stream) : i6.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t6, tuple) -> f6.apply(t6, tuple._1(), tuple._2())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> inverseMapping(Fn3<? super A1, ? super A2, ? super T1, ? extends R1> f1, Fn3<? super A1, ? super A2, ? super T2, ? extends R2> f2, Fn3<? super A1, ? super A2, ? super T3, ? extends R3> f3, Fn3<? super A1, ? super A2, ? super T4, ? extends R4> f4, Fn3<? super A1, ? super A2, ? super T5, ? extends R5> f5, Fn3<? super A1, ? super A2, ? super T6, ? extends R6> f6) {
-                return this.mapping((Fn3 & Serializable)(t1, a1, a2) -> f1.apply(a1, a2, t1), (Fn3 & Serializable)(t2, a1, a2) -> f2.apply(a1, a2, t2), (Fn3 & Serializable)(t3, a1, a2) -> f3.apply(a1, a2, t3), (Fn3 & Serializable)(t4, a1, a2) -> f4.apply(a1, a2, t4), (Fn3 & Serializable)(t5, a1, a2) -> f5.apply(a1, a2, t5), (Fn3 & Serializable)(t6, a1, a2) -> f6.apply(a1, a2, t6));
+                return this.mapping((Fn3 & Serializable) (t1, a1, a2) -> f1.apply(a1, a2, t1), (Fn3 & Serializable) (t2, a1, a2) -> f2.apply(a1, a2, t2), (Fn3 & Serializable) (t3, a1, a2) -> f3.apply(a1, a2, t3), (Fn3 & Serializable) (t4, a1, a2) -> f4.apply(a1, a2, t4), (Fn3 & Serializable) (t5, a1, a2) -> f5.apply(a1, a2, t5), (Fn3 & Serializable) (t6, a1, a2) -> f6.apply(a1, a2, t6));
             }
 
             @Override
@@ -288,17 +288,17 @@ public interface Iterative6Args<T1, T2, T3, T4, T5, T6> {
                 Iterative1<T4> i4 = this.left.create(this.left.iterableStream4());
                 Iterative1<T5> i5 = this.left.create(this.left.iterableStream5());
                 Iterative1<T6> i6 = this.left.create(this.left.iterableStream6());
-                Iterative1 iter1 = this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1())).iterableStream1());
-                Iterative2 iter2 = this.left.splitLt2().create(iter1, (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1())).iterableStream1());
-                Iterative3 iter3 = this.left.splitLt3().create(iter2, (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1())).iterableStream1());
-                Iterative4 iter4 = this.left.splitLt4().create(iter3, (this.cross ? i4.pushBackCrossOf(stream) : i4.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t4, tuple) -> f4.apply(t4, tuple._1())).iterableStream1());
-                Iterative5 iter5 = this.left.splitLt5().create(iter4, (this.cross ? i5.pushBackCrossOf(stream) : i5.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t5, tuple) -> f5.apply(t5, tuple._1())).iterableStream1());
-                return this.left.create(iter5, (this.cross ? i6.pushBackCrossOf(stream) : i6.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t6, tuple) -> f6.apply(t6, tuple._1())).iterableStream1());
+                Iterative1 iter1 = this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1())).iterableStream1());
+                Iterative2 iter2 = this.left.splitLt2().create(iter1, (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1())).iterableStream1());
+                Iterative3 iter3 = this.left.splitLt3().create(iter2, (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1())).iterableStream1());
+                Iterative4 iter4 = this.left.splitLt4().create(iter3, (this.cross ? i4.pushBackCrossOf(stream) : i4.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t4, tuple) -> f4.apply(t4, tuple._1())).iterableStream1());
+                Iterative5 iter5 = this.left.splitLt5().create(iter4, (this.cross ? i5.pushBackCrossOf(stream) : i5.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t5, tuple) -> f5.apply(t5, tuple._1())).iterableStream1());
+                return this.left.create(iter5, (this.cross ? i6.pushBackCrossOf(stream) : i6.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t6, tuple) -> f6.apply(t6, tuple._1())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> f1, Fn2<? super A1, ? super T2, ? extends R2> f2, Fn2<? super A1, ? super T3, ? extends R3> f3, Fn2<? super A1, ? super T4, ? extends R4> f4, Fn2<? super A1, ? super T5, ? extends R5> f5, Fn2<? super A1, ? super T6, ? extends R6> f6) {
-                return this.mapping((Fn2 & Serializable)(t1, a1) -> f1.apply(a1, t1), (Fn2 & Serializable)(t2, a1) -> f2.apply(a1, t2), (Fn2 & Serializable)(t3, a1) -> f3.apply(a1, t3), (Fn2 & Serializable)(t4, a1) -> f4.apply(a1, t4), (Fn2 & Serializable)(t5, a1) -> f5.apply(a1, t5), (Fn2 & Serializable)(t6, a1) -> f6.apply(a1, t6));
+                return this.mapping((Fn2 & Serializable) (t1, a1) -> f1.apply(a1, t1), (Fn2 & Serializable) (t2, a1) -> f2.apply(a1, t2), (Fn2 & Serializable) (t3, a1) -> f3.apply(a1, t3), (Fn2 & Serializable) (t4, a1) -> f4.apply(a1, t4), (Fn2 & Serializable) (t5, a1) -> f5.apply(a1, t5), (Fn2 & Serializable) (t6, a1) -> f6.apply(a1, t6));
             }
 
             @Override

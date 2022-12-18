@@ -31,15 +31,15 @@ import io.vavr.control.Option;
 interface IterativeConstructor extends Iterative {
 
     public static IterativeBuilder.IterativeBuilderRegular builder(boolean cross, boolean nonNullable) {
-        return (IterativeBuilder.IterativeBuilderRegular)Option.of((Object)Iterative.builder()).map(nonNullable ? IterativeBuilder.RegularBuilder::nonNullable : IterativeBuilder.RegularBuilder::nullable).map(cross ? IterativeBuilder.IterativeBuilderIteArgReg::cross : IterativeBuilder.IterativeBuilderIteArgReg::inline).get();
+        return (IterativeBuilder.IterativeBuilderRegular) Option.of((Object) Iterative.builder()).map(nonNullable ? IterativeBuilder.RegularBuilder::nonNullable : IterativeBuilder.RegularBuilder::nullable).map(cross ? IterativeBuilder.IterativeBuilderIteArgReg::cross : IterativeBuilder.IterativeBuilderIteArgReg::inline).get();
     }
 
     public static IterativeBuilder.IterativeBuilderRegular builderIterate(boolean cross) {
-        return (IterativeBuilder.IterativeBuilderRegular)Option.of((Object)Iterative.builder()).map(cross ? IterativeBuilder.RegularBuilder::cross : IterativeBuilder.RegularBuilder::inline).get();
+        return (IterativeBuilder.IterativeBuilderRegular) Option.of((Object) Iterative.builder()).map(cross ? IterativeBuilder.RegularBuilder::cross : IterativeBuilder.RegularBuilder::inline).get();
     }
 
     public static IterativeBuilder.IterativeBuilderRegular builderAccess(boolean nonNullable) {
-        return (IterativeBuilder.IterativeBuilderRegular)Option.of((Object)Iterative.builder()).map(nonNullable ? IterativeBuilder.RegularBuilder::nonNullable : IterativeBuilder.RegularBuilder::nullable).get();
+        return (IterativeBuilder.IterativeBuilderRegular) Option.of((Object) Iterative.builder()).map(nonNullable ? IterativeBuilder.RegularBuilder::nonNullable : IterativeBuilder.RegularBuilder::nullable).get();
     }
 
     default public IterativeBuilder.IterativeBuilderRegular builder() {
@@ -47,19 +47,19 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public IterativeBuilder.IterativeBuilderArgRegCro crossBuilder() {
-        return (IterativeBuilder.IterativeBuilderArgRegCro)Option.of((Object)Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).map(IterativeBuilder.IterativeBuilderIteArgReg::cross).get();
+        return (IterativeBuilder.IterativeBuilderArgRegCro) Option.of((Object) Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).map(IterativeBuilder.IterativeBuilderIteArgReg::cross).get();
     }
 
     default public IterativeBuilder.IterativeBuilderArgRegInl inlineBuilder() {
-        return (IterativeBuilder.IterativeBuilderArgRegInl)Option.of((Object)Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).map(IterativeBuilder.IterativeBuilderIteArgReg::inline).get();
+        return (IterativeBuilder.IterativeBuilderArgRegInl) Option.of((Object) Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).map(IterativeBuilder.IterativeBuilderIteArgReg::inline).get();
     }
 
     default public IterativeBuilder.IterativeBuilderIteArgReg accessBuilder() {
-        return (IterativeBuilder.IterativeBuilderIteArgReg)Option.of((Object)Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).get();
+        return (IterativeBuilder.IterativeBuilderIteArgReg) Option.of((Object) Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).get();
     }
 
     default public IterativeBuilder.IterativeBuilderRegular accessBuilder(boolean cross) {
-        return (IterativeBuilder.IterativeBuilderRegular)Option.of((Object)Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).map(cross ? IterativeBuilder.IterativeBuilderIteArgReg::cross : IterativeBuilder.IterativeBuilderIteArgReg::inline).get();
+        return (IterativeBuilder.IterativeBuilderRegular) Option.of((Object) Iterative.builder()).map(this.isNullable() ? IterativeBuilder.RegularBuilder::nullable : IterativeBuilder.RegularBuilder::nonNullable).map(cross ? IterativeBuilder.IterativeBuilderIteArgReg::cross : IterativeBuilder.IterativeBuilderIteArgReg::inline).get();
     }
 
     default public Iterative0 create() {
@@ -79,11 +79,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2> Iterative2Cross<T1, T2> createCross(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> elem) {
-        return this.crossBuilder().by((Iterative1)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative1) iterative, (Iterable) elem);
     }
 
     default public <T1, T2> Iterative2Inline<T1, T2> createInline(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> elem) {
-        return this.inlineBuilder().by((Iterative1)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative1) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3> Iterative3<T1, T2, T3> create(Iterative2<? extends T1, ? extends T2> iterative, Iterable<? extends Stream<? extends T3>> elem) {
@@ -95,11 +95,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2, T3> Iterative3Cross<T1, T2, T3> createCross(Iterative2<? extends T1, ? extends T2> iterative, Iterable<? extends Stream<? extends T3>> elem) {
-        return this.crossBuilder().by((Iterative2)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative2) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3> Iterative3Inline<T1, T2, T3> createInline(Iterative2<? extends T1, ? extends T2> iterative, Iterable<? extends Stream<? extends T3>> elem) {
-        return this.inlineBuilder().by((Iterative2)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative2) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> create(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends Stream<? extends T4>> elem) {
@@ -111,11 +111,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> createCross(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends Stream<? extends T4>> elem) {
-        return this.crossBuilder().by((Iterative3)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative3) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> createInline(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends Stream<? extends T4>> elem) {
-        return this.inlineBuilder().by((Iterative3)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative3) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> create(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> elem) {
@@ -127,11 +127,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> createCross(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> elem) {
-        return this.crossBuilder().by((Iterative4)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative4) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> createInline(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> elem) {
-        return this.inlineBuilder().by((Iterative4)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative4) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> create(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> elem) {
@@ -143,11 +143,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> createCross(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> elem) {
-        return this.crossBuilder().by((Iterative5)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative5) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> createInline(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> elem) {
-        return this.inlineBuilder().by((Iterative5)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative5) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> create(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> elem) {
@@ -159,11 +159,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> createCross(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> elem) {
-        return this.crossBuilder().by((Iterative6)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative6) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> createInline(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> elem) {
-        return this.inlineBuilder().by((Iterative6)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative6) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> create(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> elem) {
@@ -175,11 +175,11 @@ interface IterativeConstructor extends Iterative {
     }
 
     default public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> createCross(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> elem) {
-        return this.crossBuilder().by((Iterative7)iterative, (Iterable)elem);
+        return this.crossBuilder().by((Iterative7) iterative, (Iterable) elem);
     }
 
     default public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> createInline(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> elem) {
-        return this.inlineBuilder().by((Iterative7)iterative, (Iterable)elem);
+        return this.inlineBuilder().by((Iterative7) iterative, (Iterable) elem);
     }
 
 }

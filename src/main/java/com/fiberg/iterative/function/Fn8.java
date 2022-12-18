@@ -47,7 +47,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> value(R r) {
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> r;
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> r;
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> of(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
@@ -91,7 +91,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> detuple(Fn1<? super Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>, ? extends R> f) {
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> f.apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7, (Object)t8));
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> f.apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6, (Object) t7, (Object) t8));
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> uncheck(Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
@@ -160,7 +160,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> R passAndApply(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return (R)Fn0.pass(f, t1, t2, t3, t4, t5, t6, t7, t8).apply();
+        return (R) Fn0.pass(f, t1, t2, t3, t4, t5, t6, t7, t8).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, Option<R>> lift(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
@@ -178,63 +178,63 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     }
 
     default public Fn7<T2, T3, T4, T5, T6, T7, T8, R> applyLt(T1 t1) {
-        return (Fn7 & Serializable)(t2, t3, t4, t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn7 & Serializable) (t2, t3, t4, t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn6<T3, T4, T5, T6, T7, T8, R> applyLt(T1 t1, T2 t2) {
-        return (Fn6 & Serializable)(t3, t4, t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn6 & Serializable) (t3, t4, t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn5<T4, T5, T6, T7, T8, R> applyLt(T1 t1, T2 t2, T3 t3) {
-        return (Fn5 & Serializable)(t4, t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn5 & Serializable) (t4, t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn4<T5, T6, T7, T8, R> applyLt(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return (Fn4 & Serializable)(t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn4 & Serializable) (t5, t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn3<T6, T7, T8, R> applyLt(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return (Fn3 & Serializable)(t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn3 & Serializable) (t6, t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn2<T7, T8, R> applyLt(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return (Fn2 & Serializable)(t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn2 & Serializable) (t7, t8) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn1<T8, R> applyLt(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return (Fn1 & Serializable)t8 -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn1 & Serializable) t8 -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn7<T1, T2, T3, T4, T5, T6, T7, R> applyRt(T8 t8) {
-        return (Fn7 & Serializable)(t1, t2, t3, t4, t5, t6, t7) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn7 & Serializable) (t1, t2, t3, t4, t5, t6, t7) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn6<T1, T2, T3, T4, T5, T6, R> applyRt(T7 t7, T8 t8) {
-        return (Fn6 & Serializable)(t1, t2, t3, t4, t5, t6) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn6 & Serializable) (t1, t2, t3, t4, t5, t6) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn5<T1, T2, T3, T4, T5, R> applyRt(T6 t6, T7 t7, T8 t8) {
-        return (Fn5 & Serializable)(t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn5 & Serializable) (t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn4<T1, T2, T3, T4, R> applyRt(T5 t5, T6 t6, T7 t7, T8 t8) {
-        return (Fn4 & Serializable)(t1, t2, t3, t4) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn4 & Serializable) (t1, t2, t3, t4) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn3<T1, T2, T3, R> applyRt(T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return (Fn3 & Serializable)(t1, t2, t3) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn3 & Serializable) (t1, t2, t3) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn2<T1, T2, R> applyRt(T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return (Fn2 & Serializable)(t1, t2) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn2 & Serializable) (t1, t2) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn1<T1, R> applyRt(T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return (Fn1 & Serializable)t1 -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn1 & Serializable) t1 -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn0<R> toFunction(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return (Fn0 & Serializable)() -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn0 & Serializable) () -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Rn toRunnable(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
@@ -242,7 +242,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     }
 
     default public Cs8<T1, T2, T3, T4, T5, T6, T7, T8> toConsumer() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Fn8)this).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Fn8) this).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
     }
 
     default public Sp<R> toSupplier(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
@@ -251,7 +251,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             Object value = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             r.run();
             return value;
@@ -260,17 +260,17 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public <V> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, V> afterApply(Fn1<? super R, ? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> f.apply(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> f.apply(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
     }
 
     default public <V> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, V> afterApply(Fn0<? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> f.ignoring1().apply(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> f.ignoring1().apply(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
     }
 
     default public <V> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, V> afterGet(Sp<? extends V> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> s.ignoring1().apply(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> s.ignoring1().apply(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, Boolean> afterTest(Pr1<? super R> p) {
@@ -280,7 +280,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Pr8<T1, T2, T3, T4, T5, T6, T7, T8> afterTestTo(Pr1<? super R> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr8<Object, Object, Object, Object, Object, Object, Object, Object> & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> p.test(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
+        return (Pr8<Object, Object, Object, Object, Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> p.test(this.apply(t1, t2, t3, t4, t5, t6, t7, t8));
     }
 
     default public Cs8<T1, T2, T3, T4, T5, T6, T7, T8> afterAcceptTo(Cs1<? super R> c) {
@@ -290,7 +290,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             Object value = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             c.accept(value);
             return value;
@@ -299,12 +299,12 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public <W> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, W> beforeWrap(Fn1<? super Spc<R>, ? extends W> wrap) {
         Objects.requireNonNull(wrap, "wrap is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> wrap.apply(this.toSupplier(t1, t2, t3, t4, t5, t6, t7, t8).checked());
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> wrap.apply(this.toSupplier(t1, t2, t3, t4, t5, t6, t7, t8).checked());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             r.run();
             return this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
         };
@@ -316,83 +316,83 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public <B1> Fn1<B1, R> beforeApply1(Fn1<? super B1, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn1 & Serializable)b1 -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1))));
+        return (Fn1 & Serializable) b1 -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1))));
     }
 
     default public <B1, B2> Fn2<B1, B2, R> beforeApply2(Fn2<? super B1, ? super B2, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn2 & Serializable)(b1, b2) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2))));
+        return (Fn2 & Serializable) (b1, b2) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2))));
     }
 
     default public <B1, B2, B3> Fn3<B1, B2, B3, R> beforeApply3(Fn3<? super B1, ? super B2, ? super B3, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn3 & Serializable)(b1, b2, b3) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2, b3))));
+        return (Fn3 & Serializable) (b1, b2, b3) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2, b3))));
     }
 
     default public <B1, B2, B3, B4> Fn4<B1, B2, B3, B4, R> beforeApply4(Fn4<? super B1, ? super B2, ? super B3, ? super B4, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn4 & Serializable)(b1, b2, b3, b4) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2, b3, b4))));
+        return (Fn4 & Serializable) (b1, b2, b3, b4) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2, b3, b4))));
     }
 
     default public <B1, B2, B3, B4, B5> Fn5<B1, B2, B3, B4, B5, R> beforeApply5(Fn5<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn5 & Serializable)(b1, b2, b3, b4, b5) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2, b3, b4, b5))));
+        return (Fn5 & Serializable) (b1, b2, b3, b4, b5) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2, b3, b4, b5))));
     }
 
     default public <B1, B2, B3, B4, B5, B6> Fn6<B1, B2, B3, B4, B5, B6, R> beforeApply6(Fn6<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn6 & Serializable)(b1, b2, b3, b4, b5, b6) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2, b3, b4, b5, b6))));
+        return (Fn6 & Serializable) (b1, b2, b3, b4, b5, b6) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2, b3, b4, b5, b6))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7> Fn7<B1, B2, B3, B4, B5, B6, B7, R> beforeApply7(Fn7<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn7 & Serializable)(b1, b2, b3, b4, b5, b6, b7) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2, b3, b4, b5, b6, b7))));
+        return (Fn7 & Serializable) (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2, b3, b4, b5, b6, b7))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7, B8> Fn8<B1, B2, B3, B4, B5, B6, B7, B8, R> beforeApply8(Fn8<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? super B8, ? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn8 & Serializable)(b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
+        return (Fn8 & Serializable) (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnSuccess(Pr0 p, Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> p.test() ? this.apply(t1, t2, t3, t4, t5, t6, t7, t8) : onFailure.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> p.test() ? this.apply(t1, t2, t3, t4, t5, t6, t7, t8) : onFailure.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnSuccess(Pr0 p, Sp<? extends R> onFailure) {
-        return this.beforeTestOnSuccess(p, (R)onFailure.toFunction().ignoring8());
+        return this.beforeTestOnSuccess(p, (R) onFailure.toFunction().ignoring8());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnSuccess(Pr0 p, R onFailure) {
-        return this.beforeTestOnSuccess(p, (R)Fn8.value(onFailure));
+        return this.beforeTestOnSuccess(p, (R) Fn8.value(onFailure));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnSuccess(Pr0 p) {
-        return this.beforeTestOnSuccess(p, (R)Fn8.empty());
+        return this.beforeTestOnSuccess(p, (R) Fn8.empty());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnFailure(Pr0 p, Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeTestOnSuccess(p.negated(), (R)onSuccess);
+        return this.beforeTestOnSuccess(p.negated(), (R) onSuccess);
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnFailure(Pr0 p, Sp<? extends R> onSuccess) {
-        return this.beforeTestOnFailure(p, (R)onSuccess.toFunction().ignoring8());
+        return this.beforeTestOnFailure(p, (R) onSuccess.toFunction().ignoring8());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnFailure(Pr0 p, R onSuccess) {
-        return this.beforeTestOnFailure(p, (R)Fn8.value(onSuccess));
+        return this.beforeTestOnFailure(p, (R) Fn8.value(onSuccess));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnFailure(Pr0 p) {
-        return this.beforeTestOnFailure(p, (R)Fn8.empty());
+        return this.beforeTestOnFailure(p, (R) Fn8.empty());
     }
 
     default public Sp<R> beforeGet(Sp<? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Sp<Object> & Serializable)() -> this.tupled().apply((Object)Tuple.narrow((Tuple8)((Tuple8)s.get())));
+        return (Sp<Object> & Serializable) () -> this.tupled().apply((Object) Tuple.narrow((Tuple8) ((Tuple8) s.get())));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, Option<R>> lift() {
@@ -404,12 +404,12 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     }
 
     default public Fn8<T8, T7, T6, T5, T4, T3, T2, T1, R> inverted() {
-        return (Fn8 & Serializable)(t8, t7, t6, t5, t4, t3, t2, t1) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn8 & Serializable) (t8, t7, t6, t5, t4, t3, t2, t1) -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public <S> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, S> afterPassingThroughApply(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             return f.apply(t1, t2, t3, t4, t5, t6, t7, t8);
         };
@@ -417,7 +417,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> afterPassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             Object result = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             p.test(t1, t2, t3, t4, t5, t6, t7, t8);
             return result;
@@ -426,7 +426,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Pr8<T1, T2, T3, T4, T5, T6, T7, T8> afterPassingThroughTestTo(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr8<Object, Object, Object, Object, Object, Object, Object, Object> & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Pr8<Object, Object, Object, Object, Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             return p.test(t1, t2, t3, t4, t5, t6, t7, t8);
         };
@@ -434,7 +434,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> afterPassingThroughAccept(Cs8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             Object result = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             c.accept(t1, t2, t3, t4, t5, t6, t7, t8);
             return result;
@@ -451,7 +451,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforePassingThroughApply(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             f.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             return this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
         };
@@ -459,7 +459,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforePassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             p.test(t1, t2, t3, t4, t5, t6, t7, t8);
             return this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
         };
@@ -467,7 +467,7 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforePassingThroughAccept(Cs8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> {
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> {
             c.accept(t1, t2, t3, t4, t5, t6, t7, t8);
             return this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
         };
@@ -476,94 +476,94 @@ public interface Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends Function8<T1, T2
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeSuccessPassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> p.test(t1, t2, t3, t4, t5, t6, t7, t8) ? this.apply(t1, t2, t3, t4, t5, t6, t7, t8) : onFailure.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> p.test(t1, t2, t3, t4, t5, t6, t7, t8) ? this.apply(t1, t2, t3, t4, t5, t6, t7, t8) : onFailure.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeSuccessPassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, Sp<? extends R> onFailure) {
-        return this.beforeSuccessPassingThroughTest(p, (R)onFailure.toFunction().ignoring8());
+        return this.beforeSuccessPassingThroughTest(p, (R) onFailure.toFunction().ignoring8());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeSuccessPassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, R onFailure) {
-        return this.beforeSuccessPassingThroughTest(p, (R)Fn8.value(onFailure));
+        return this.beforeSuccessPassingThroughTest(p, (R) Fn8.value(onFailure));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeSuccessPassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return this.beforeSuccessPassingThroughTest(p, (R)Fn8.empty());
+        return this.beforeSuccessPassingThroughTest(p, (R) Fn8.empty());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeFailurePassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeSuccessPassingThroughTest(p.negated(), (R)onSuccess);
+        return this.beforeSuccessPassingThroughTest(p.negated(), (R) onSuccess);
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeFailurePassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, Sp<? extends R> onSuccess) {
-        return this.beforeFailurePassingThroughTest(p, (R)onSuccess.toFunction().ignoring8());
+        return this.beforeFailurePassingThroughTest(p, (R) onSuccess.toFunction().ignoring8());
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeFailurePassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, R onSuccess) {
-        return this.beforeFailurePassingThroughTest(p, (R)Fn8.value(onSuccess));
+        return this.beforeFailurePassingThroughTest(p, (R) Fn8.value(onSuccess));
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeFailurePassingThroughTest(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return this.beforeFailurePassingThroughTest(p, (R)Fn8.empty());
+        return this.beforeFailurePassingThroughTest(p, (R) Fn8.empty());
     }
 
     default public Fn1<T1, Fn1<T2, Fn1<T3, Fn1<T4, Fn1<T5, Fn1<T6, Fn1<T7, Fn1<T8, R>>>>>>>> currying() {
-        return (Fn1 & Serializable)t1 -> (Fn1 & Serializable)t2 -> (Fn1 & Serializable)t3 -> (Fn1 & Serializable)t4 -> (Fn1 & Serializable)t5 -> (Fn1 & Serializable)t6 -> (Fn1 & Serializable)t7 -> (Fn1 & Serializable)t8 -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (Fn1 & Serializable) t1 -> (Fn1 & Serializable) t2 -> (Fn1 & Serializable) t3 -> (Fn1 & Serializable) t4 -> (Fn1 & Serializable) t5 -> (Fn1 & Serializable) t6 -> (Fn1 & Serializable) t7 -> (Fn1 & Serializable) t8 -> this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> checked() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Fn8)this).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Fn8) this).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
     }
 
     default public Fn7<T2, T3, T4, T5, T6, T7, T8, R> apply(T1 t1) {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6) -> ((Function7)super.apply(t1)).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6) -> ((Function7) super.apply(t1)).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6);
     }
 
     default public Fn6<T3, T4, T5, T6, T7, T8, R> apply(T1 t1, T2 t2) {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5) -> ((Function6)super.apply(t1, t2)).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5) -> ((Function6) super.apply(t1, t2)).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5);
     }
 
     default public Fn5<T4, T5, T6, T7, T8, R> apply(T1 t1, T2 t2, T3 t3) {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4) -> ((Function5)super.apply(t1, t2, t3)).apply(arg_0, arg_1, arg_2, arg_3, arg_4);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4) -> ((Function5) super.apply(t1, t2, t3)).apply(arg_0, arg_1, arg_2, arg_3, arg_4);
     }
 
     default public Fn4<T5, T6, T7, T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return (arg_0, arg_1, arg_2, arg_3) -> ((Function4)super.apply(t1, t2, t3, t4)).apply(arg_0, arg_1, arg_2, arg_3);
+        return (arg_0, arg_1, arg_2, arg_3) -> ((Function4) super.apply(t1, t2, t3, t4)).apply(arg_0, arg_1, arg_2, arg_3);
     }
 
     default public Fn3<T6, T7, T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return (arg_0, arg_1, arg_2) -> ((Function3)super.apply(t1, t2, t3, t4, t5)).apply(arg_0, arg_1, arg_2);
+        return (arg_0, arg_1, arg_2) -> ((Function3) super.apply(t1, t2, t3, t4, t5)).apply(arg_0, arg_1, arg_2);
     }
 
     default public Fn2<T7, T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return (arg_0, arg_1) -> ((Function2)super.apply(t1, t2, t3, t4, t5, t6)).apply(arg_0, arg_1);
+        return (arg_0, arg_1) -> ((Function2) super.apply(t1, t2, t3, t4, t5, t6)).apply(arg_0, arg_1);
     }
 
     default public Fn1<T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return ((Function1)super.apply(t1, t2, t3, t4, t5, t6, t7))::apply;
+        return ((Function1) super.apply(t1, t2, t3, t4, t5, t6, t7))::apply;
     }
 
     default public Fn1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, R> tupled() {
-        return ((Function1)super.tupled())::apply;
+        return ((Function1) super.tupled())::apply;
     }
 
     default public Fn1<T1, Function1<T2, Function1<T3, Function1<T4, Function1<T5, Function1<T6, Function1<T7, Function1<T8, R>>>>>>>> curried() {
-        return ((Function1)super.curried())::apply;
+        return ((Function1) super.curried())::apply;
     }
 
     default public Fn8<T8, T7, T6, T5, T4, T3, T2, T1, R> reversed() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8)super.reversed()).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8) super.reversed()).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> memoized() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8)super.memoized()).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8) super.memoized()).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
     }
 
     default public <V> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, V> andThen(Function<? super R, ? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8)super.andThen(after)).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8) super.andThen(after)).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
     }
 
 }

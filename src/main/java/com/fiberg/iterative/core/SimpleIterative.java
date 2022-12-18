@@ -28,7 +28,7 @@ interface SimpleIterative<T1> extends Iterable<T1> {
 
     public static class SimpleIterativeImpl<T1> implements SimpleIterative<T1> {
 
-        private Iterable<? extends T1> iter;
+        private final Iterable<? extends T1> iter;
 
         SimpleIterativeImpl(Iterable<? extends T1> iter) {
             this.iter = iter;
@@ -36,49 +36,104 @@ interface SimpleIterative<T1> extends Iterable<T1> {
 
         @Override
         public <R> SimpleIterative<R> map(Fn1<? super T1, ? extends R> f) {
+
             Objects.requireNonNull(f, "f is null");
-            Object iterable = this.iter instanceof Option ? ((Option)this.iter).map(f) : (this.iter instanceof Try ? ((Try)this.iter).map(f) : Stream.ofAll(this.iter).map(f));
+
+            if (this.iter instanceof Option) {
+                @SuppressWarnings("unchecked")
+                final Option<T1> option = (Option<T1>) this.iter;
+                final Iterable<R> iterable = option.map(f);
+                return SimpleIterative.of(iterable);
+            }
+
+            if (this.iter instanceof Try) {
+                @SuppressWarnings("unchecked")
+                final Try<T1> trier = (Try<T1>) this.iter;
+                final Iterable<R> iterable = trier.map(f);
+                return SimpleIterative.of(iterable);
+            }
+
+            final Iterable<? extends R> iterable = Stream.ofAll(this.iter).map(f);
             return SimpleIterative.of(iterable);
+
         }
 
         @Override
         public SimpleIterative<T1> filter(Pr1<? super T1> p) {
+
             Objects.requireNonNull(p, "p is null");
-            Object iterable = this.iter instanceof Option ? ((Option)this.iter).filter(p) : (this.iter instanceof Try ? ((Try)this.iter).filter(p) : Stream.ofAll(this.iter).filter(p));
+
+            if (this.iter instanceof Option) {
+                @SuppressWarnings("unchecked")
+                final Option<T1> option = (Option<T1>) this.iter;
+                final Option<T1> filtered = option.filter(p);
+                return SimpleIterative.of(filtered);
+            }
+
+            if (this.iter instanceof Try) {
+                @SuppressWarnings("unchecked")
+                final Try<T1> trier = (Try<T1>) this.iter;
+                final Try<T1> filtered = trier.filter(p);
+                return SimpleIterative.of(filtered);
+            }
+
+            final Iterable<? extends T1> iterable = Stream.ofAll(this.iter).filter(p);
             return SimpleIterative.of(iterable);
+
         }
 
         @Override
         public <R> SimpleIterative<R> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R>> f) {
+
             Objects.requireNonNull(f, "f is null");
-            Object iterable = this.iter instanceof Option ? ((Option)this.iter).flatMap(e -> {
-                Iterable res = (Iterable)f.apply(e);
-                if (res instanceof Option) {
-                    return (Option)res;
-                }
-                return Stream.ofAll((Iterable)res).toOption();
-            }) : (this.iter instanceof Try ? ((Try)this.iter).flatMap(e -> {
-                Iterable res = (Iterable)f.apply(e);
-                if (res instanceof Try) {
-                    return (Try)res;
-                }
-                return Stream.ofAll((Iterable)res).toTry();
-            }) : Stream.ofAll(this.iter).flatMap(f));
+
+            if (this.iter instanceof Option) {
+                @SuppressWarnings("unchecked")
+                final Option<T1> option = (Option<T1>) this.iter;
+                final Option<R> iterable = option.flatMap(t1 -> {
+                    @SuppressWarnings("unchecked")
+                    final Iterable<R> res = (Iterable<R>) f.apply(t1);
+                    if (res instanceof Option) {
+                        return (Option<R>) res;
+                    }
+                    return Stream.ofAll(res).toOption();
+                });
+                return SimpleIterative.of(iterable);
+            }
+
+            if (this.iter instanceof Try) {
+                @SuppressWarnings("unchecked")
+                final Try<T1> trier = (Try<T1>) this.iter;
+                final Try<R> iterable = trier.flatMap(t1 -> {
+                    @SuppressWarnings("unchecked")
+                    final Iterable<R> res = (Iterable<R>) f.apply(t1);
+                    if (res instanceof Try) {
+                        return (Try<R>) res;
+                    }
+                    return Stream.ofAll(res).toTry();
+                });
+                return SimpleIterative.of(iterable);
+            }
+
+            final Iterable<R> iterable = Stream.ofAll(this.iter).flatMap(f);
             return SimpleIterative.of(iterable);
+
         }
 
         @Override
         public Iterable<T1> toIterable() {
-            return this.iter;
+            @SuppressWarnings("unchecked")
+            final Iterable<T1> iter = (Iterable<T1>) this.iter;
+            return iter;
         }
 
         @Override
         public boolean isEmpty() {
             if (this.iter instanceof Option) {
-                return ((Option)this.iter).isEmpty();
+                return ((Option<?>) this.iter).isEmpty();
             }
             if (this.iter instanceof Try) {
-                return ((Try)this.iter).isEmpty();
+                return ((Try<?>) this.iter).isEmpty();
             }
             return Stream.ofAll(this.iter).isEmpty();
         }
@@ -86,10 +141,10 @@ interface SimpleIterative<T1> extends Iterable<T1> {
         @Override
         public int length() {
             if (this.iter instanceof Option) {
-                return ((Option)this.iter).isEmpty() ? 0 : 1;
+                return ((Option<?>) this.iter).isEmpty() ? 0 : 1;
             }
             if (this.iter instanceof Try) {
-                return ((Try)this.iter).isEmpty() ? 0 : 1;
+                return ((Try<?>) this.iter).isEmpty() ? 0 : 1;
             }
             return Stream.ofAll(this.iter).length();
         }

@@ -43,17 +43,17 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
             @Override
             public R onSuccess(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> f) {
                 Objects.requireNonNull(f, "f is null");
-                return (R)(this.isSuccessful() ? f.apply(this.iterative) : this.s.get());
+                return (R) (this.isSuccessful() ? f.apply(this.iterative) : this.s.get());
             }
 
             @Override
             public R onSuccess(Sp<? extends R> sp) {
-                return (R)this.onSuccess((R)sp.toFunction().ignoring1());
+                return (R) this.onSuccess((R) sp.toFunction().ignoring1());
             }
 
             @Override
             public R onSuccess(R r) {
-                return (R)this.onSuccess((R)Fn1.value(r));
+                return (R) this.onSuccess((R) Fn1.value(r));
             }
 
         }
@@ -81,27 +81,27 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
             @Override
             public R onFailure(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> f) {
                 Objects.requireNonNull(f, "f is null");
-                return (R)(this.isSuccessful() ? this.s.get() : f.apply(this.iterative));
+                return (R) (this.isSuccessful() ? this.s.get() : f.apply(this.iterative));
             }
 
             @Override
             public R onFailure(Sp<? extends R> sp) {
-                return (R)this.onFailure((R)sp.toFunction().ignoring1());
+                return (R) this.onFailure((R) sp.toFunction().ignoring1());
             }
 
             @Override
             public R onFailure(R r) {
-                return (R)this.onFailure((R)Fn1.value(r));
+                return (R) this.onFailure((R) Fn1.value(r));
             }
 
             @Override
             public R onFailureNull() {
-                return (R)this.onFailure((R)Fn1.empty());
+                return (R) this.onFailure((R) Fn1.empty());
             }
 
             @Override
             public R onFailureThrow() {
-                return (R)this.onFailure((R)Fn0.pass(IterativeGetter::throwableSupplier, "r").toSupplier());
+                return (R) this.onFailure((R) Fn0.pass(IterativeGetter::throwableSupplier, "r").toSupplier());
             }
 
         }
@@ -134,7 +134,7 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
 
         @Override
         public Iterative2Fail<G1, G2, Tuple2<G1, G2>> onSuccess() {
-            return new Iterative2Fail.Iterative2FailImpl(this.iterative, (Sp<Tuple2> & Serializable)() -> (Tuple2)this.iterative.yieldOption(Tuple::of).get());
+            return new Iterative2Fail.Iterative2FailImpl(this.iterative, (Sp<Tuple2> & Serializable) () -> (Tuple2) this.iterative.yieldOption(Tuple::of).get());
         }
 
         @Override
@@ -151,7 +151,7 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
 
         @Override
         public <R> Iterative2Fail<G1, G2, R> onSuccess(R r) {
-            return new Iterative2Fail.Iterative2FailImpl(this.iterative, (Sp<Object> & Serializable)() -> r);
+            return new Iterative2Fail.Iterative2FailImpl(this.iterative, (Sp<Object> & Serializable) () -> r);
         }
 
         @Override
@@ -168,7 +168,7 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
 
         @Override
         public <R> Iterative2Success<G1, G2, R> onFailure(R r) {
-            return new Iterative2Success.Iterative2SuccessImpl(this.iterative, (Sp<Object> & Serializable)() -> r);
+            return new Iterative2Success.Iterative2SuccessImpl(this.iterative, (Sp<Object> & Serializable) () -> r);
         }
 
     }

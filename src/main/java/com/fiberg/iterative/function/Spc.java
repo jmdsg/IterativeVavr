@@ -44,7 +44,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     }
 
     public static <R> Spc<R> value(R r) {
-        return (Spc<Object> & Serializable)() -> r;
+        return (Spc<Object> & Serializable) () -> r;
     }
 
     public static <R> Spc<R> of(Spc<? extends R> s) {
@@ -110,7 +110,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     @Override
     default public Spc<R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Spc<Object> & Serializable)() -> {
+        return (Spc<Object> & Serializable) () -> {
             R value = this.get();
             r.run();
             return value;
@@ -133,7 +133,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     default public <V> Fnc0<V> afterApplyTo(Fnc1<? super R, ? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc0 & Serializable)() -> f.apply(this.get());
+        return (Fnc0 & Serializable) () -> f.apply(this.get());
     }
 
     @Override
@@ -143,13 +143,13 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     default public <V> Fnc0<V> afterApplyTo(Fnc0<? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc0 & Serializable)() -> f.ignoring1().apply(this.get());
+        return (Fnc0 & Serializable) () -> f.ignoring1().apply(this.get());
     }
 
     @Override
     default public <V> Fnc0<V> afterGet(Spc<? extends V> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Fnc0 & Serializable)() -> s.ignoring1().apply(this.get());
+        return (Fnc0 & Serializable) () -> s.ignoring1().apply(this.get());
     }
 
     default public Spc<Boolean> afterTest(Prc1<? super R> p) {
@@ -159,7 +159,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     @Override
     default public Prc0 afterTestTo(Prc1<? super R> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc0 & Serializable)() -> p.test(this.get());
+        return (Prc0 & Serializable) () -> p.test(this.get());
     }
 
     @Override
@@ -171,7 +171,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     @Override
     default public Spc<R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Spc<Object> & Serializable)() -> {
+        return (Spc<Object> & Serializable) () -> {
             R value = this.get();
             c.accept(value);
             return value;
@@ -181,13 +181,13 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     @Override
     default public <W> Sp<W> beforeWrap(Fn1<? super Spc<R>, ? extends W> wrap) {
         Objects.requireNonNull(wrap, "wrap is null");
-        return (Sp<Object> & Serializable)() -> wrap.apply(this);
+        return (Sp<Object> & Serializable) () -> wrap.apply(this);
     }
 
     @Override
     default public Spc<R> beforeRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Spc<Object> & Serializable)() -> {
+        return (Spc<Object> & Serializable) () -> {
             r.run();
             return this.get();
         };
@@ -196,29 +196,29 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     default public Spc<R> beforeTestOnSuccess(Pr0 p, Spc<? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Spc<Object> & Serializable)() -> p.test() ? this.apply() : onFailure.get();
+        return (Spc<Object> & Serializable) () -> p.test() ? this.apply() : onFailure.get();
     }
 
     default public Spc<R> beforeTestOnSuccess(Pr0 p, R onFailure) {
-        return this.beforeTestOnSuccess(p, (R)Spc.value(onFailure));
+        return this.beforeTestOnSuccess(p, (R) Spc.value(onFailure));
     }
 
     default public Spc<R> beforeTestOnSuccess(Pr0 p) {
-        return this.beforeTestOnSuccess(p, (R)Spc.empty());
+        return this.beforeTestOnSuccess(p, (R) Spc.empty());
     }
 
     default public Spc<R> beforeTestOnFailure(Pr0 p, Spc<? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeTestOnSuccess(p.negated(), (R)onSuccess);
+        return this.beforeTestOnSuccess(p.negated(), (R) onSuccess);
     }
 
     default public Spc<R> beforeTestOnFailure(Pr0 p, R onSuccess) {
-        return this.beforeTestOnFailure(p, (R)Spc.value(onSuccess));
+        return this.beforeTestOnFailure(p, (R) Spc.value(onSuccess));
     }
 
     default public Spc<R> beforeTestOnFailure(Pr0 p) {
-        return this.beforeTestOnFailure(p, (R)Spc.empty());
+        return this.beforeTestOnFailure(p, (R) Spc.empty());
     }
 
     @Override
@@ -233,7 +233,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     @Override
     default public Sp<R> unchecked() {
-        return (Sp<Object> & Serializable)() -> {
+        return (Sp<Object> & Serializable) () -> {
             try {
                 return this.get();
             }
@@ -246,42 +246,42 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     @Override
     default public <T1> Fnc1<T1, R> ignoring1() {
-        return (Fnc1 & Serializable)t1 -> this.get();
+        return (Fnc1 & Serializable) t1 -> this.get();
     }
 
     @Override
     default public <T1, T2> Fnc2<T1, T2, R> ignoring2() {
-        return (Fnc2 & Serializable)(t1, t2) -> this.get();
+        return (Fnc2 & Serializable) (t1, t2) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3> Fnc3<T1, T2, T3, R> ignoring3() {
-        return (Fnc3 & Serializable)(t1, t2, t3) -> this.get();
+        return (Fnc3 & Serializable) (t1, t2, t3) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4> Fnc4<T1, T2, T3, T4, R> ignoring4() {
-        return (Fnc4 & Serializable)(t1, t2, t3, t4) -> this.get();
+        return (Fnc4 & Serializable) (t1, t2, t3, t4) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5> Fnc5<T1, T2, T3, T4, T5, R> ignoring5() {
-        return (Fnc5 & Serializable)(t1, t2, t3, t4, t5) -> this.get();
+        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5, T6> Fnc6<T1, T2, T3, T4, T5, T6, R> ignoring6() {
-        return (Fnc6 & Serializable)(t1, t2, t3, t4, t5, t6) -> this.get();
+        return (Fnc6 & Serializable) (t1, t2, t3, t4, t5, t6) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5, T6, T7> Fnc7<T1, T2, T3, T4, T5, T6, T7, R> ignoring7() {
-        return (Fnc7 & Serializable)(t1, t2, t3, t4, t5, t6, t7) -> this.get();
+        return (Fnc7 & Serializable) (t1, t2, t3, t4, t5, t6, t7) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5, T6, T7, T8> Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> ignoring8() {
-        return (Fnc8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> this.get();
+        return (Fnc8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> this.get();
     }
 
     @Override
@@ -291,27 +291,27 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     @Override
     default public Spc<R> curried() {
-        return ((Fnc0)Fnc0.super.curried())::apply;
+        return ((Fnc0) Fnc0.super.curried())::apply;
     }
 
     @Override
     default public Spc<R> reversed() {
-        return ((Fnc0)Fnc0.super.reversed())::apply;
+        return ((Fnc0) Fnc0.super.reversed())::apply;
     }
 
     @Override
     default public Spc<R> memoized() {
-        return ((Fnc0)Fnc0.super.memoized())::apply;
+        return ((Fnc0) Fnc0.super.memoized())::apply;
     }
 
     default public Spc<R> recover(Fn1<? super Throwable, ? extends Spc<? extends R>> recover) {
         Objects.requireNonNull(recover, "recover is null");
-        return (Spc<Object> & Serializable)() -> {
+        return (Spc<Object> & Serializable) () -> {
             try {
                 return this.get();
             }
             catch (Throwable throwable) {
-                Spc supp = (Spc)recover.apply(throwable);
+                Spc supp = (Spc) recover.apply(throwable);
                 Objects.requireNonNull(supp, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 return supp.get();
             }

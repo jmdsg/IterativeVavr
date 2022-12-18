@@ -130,63 +130,63 @@ public interface Iterative extends IterativeWrapper {
     }
 
     public static <T1, T2> Iterative2Cross<T1, T2> from(T1 t1, T2 t2) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2);
     }
 
     public static <T1, T2, T3> Iterative3Cross<T1, T2, T3> from(T1 t1, T2 t2, T3 t3) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2, (Object)t3);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2, t3);
     }
 
     public static <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> from(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2, (Object)t3, (Object)t4);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2, t3, t4);
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2, t3, t4, t5);
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2, t3, t4, t5, t6);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2, t3, t4, t5, t6, t7);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return new IterativeBuilder.BuilderRegularImpl().from((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7, (Object)t8);
+        return new IterativeBuilder.BuilderRegularImpl().from(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     public static <T1> Iterative1<T1> fromTuple(Tuple1<? extends T1> tuple) {
-        return (Iterative1)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn1.tuple(new IterativeBuilder.BuilderRegularImpl().inline()::from)).apply();
+        return (Iterative1) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn1.tuple(new IterativeBuilder.BuilderRegularImpl().inline()::from)).apply();
     }
 
     public static <T1, T2> Iterative2Inline<T1, T2> fromTuple(Tuple2<? extends T1, ? extends T2> tuple) {
-        return (Iterative2Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn2.tuple((arg_0, arg_1) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1))).apply();
+        return (Iterative2Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn2.tuple((arg_0, arg_1) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1))).apply();
     }
 
     public static <T1, T2, T3> Iterative3Inline<T1, T2, T3> fromTuple(Tuple3<? extends T1, ? extends T2, ? extends T3> tuple) {
-        return (Iterative3Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn3.tuple((arg_0, arg_1, arg_2) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2))).apply();
+        return (Iterative3Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn3.tuple((arg_0, arg_1, arg_2) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2))).apply();
     }
 
     public static <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> fromTuple(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> tuple) {
-        return (Iterative4Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn4.tuple((arg_0, arg_1, arg_2, arg_3) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3))).apply();
+        return (Iterative4Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn4.tuple((arg_0, arg_1, arg_2, arg_3) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3))).apply();
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> fromTuple(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> tuple) {
-        return (Iterative5Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn5.tuple((arg_0, arg_1, arg_2, arg_3, arg_4) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4))).apply();
+        return (Iterative5Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn5.tuple((arg_0, arg_1, arg_2, arg_3, arg_4) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4))).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> fromTuple(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> tuple) {
-        return (Iterative6Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn6.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5))).apply();
+        return (Iterative6Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn6.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5))).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> fromTuple(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> tuple) {
-        return (Iterative7Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn7.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6))).apply();
+        return (Iterative7Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn7.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6))).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> fromTuple(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> tuple) {
-        return (Iterative8Inline)Wither.withArgs(Tuple.narrow(tuple)).apply(Fn8.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7))).apply();
+        return (Iterative8Inline) Wither.withArgs(Tuple.narrow(tuple)).apply(Fn8.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7))).apply();
     }
 
     public static <T1> Iterative1<T1> ofTuple1(Iterable<? extends Tuple1<? extends T1>> iterable) {
@@ -230,59 +230,59 @@ public interface Iterative extends IterativeWrapper {
     }
 
     public static <T1, T2> Iterative2Cross<T1, T2> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2);
     }
 
     public static <T1, T2> Iterative2Cross<T1, T2> of(Iterative1<? extends T1> iterative, Iterable<? extends T2> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative1)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative1) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Iterable<? extends T3> t3) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2, (Iterable)t3);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2, (Iterable) t3);
     }
 
     public static <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> iterative, Iterable<? extends T3> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative2)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative2) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends T4> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative3)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative3) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Iterable<? extends T3> t3, Iterable<? extends T4> t4) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4);
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative4)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative4) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Iterable<? extends T3> t3, Iterable<? extends T4> t4, Iterable<? extends T5> t5) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5);
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative5)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative5) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Iterable<? extends T3> t3, Iterable<? extends T4> t4, Iterable<? extends T5> t5, Iterable<? extends T6> t6) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5, (Iterable)t6);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5, (Iterable) t6);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative6)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative6) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Iterable<? extends T3> t3, Iterable<? extends T4> t4, Iterable<? extends T5> t5, Iterable<? extends T6> t6, Iterable<? extends T7> t7) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5, (Iterable)t6, (Iterable)t7);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5, (Iterable) t6, (Iterable) t7);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterative7)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterative7) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Iterable<? extends T3> t3, Iterable<? extends T4> t4, Iterable<? extends T5> t5, Iterable<? extends T6> t6, Iterable<? extends T7> t7, Iterable<? extends T8> t8) {
-        return new IterativeBuilder.BuilderRegularImpl().of((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5, (Iterable)t6, (Iterable)t7, (Iterable)t8);
+        return new IterativeBuilder.BuilderRegularImpl().of((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5, (Iterable) t6, (Iterable) t7, (Iterable) t8);
     }
 
     public static <T1> Iterative1<T1> by(Iterable<? extends Stream<? extends T1>> t1) {
@@ -290,59 +290,59 @@ public interface Iterative extends IterativeWrapper {
     }
 
     public static <T1, T2> Iterative2Cross<T1, T2> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2);
     }
 
     public static <T1, T2> Iterative2Cross<T1, T2> by(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative1)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative1) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3> Iterative3Cross<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2, Iterable<? extends Stream<? extends T3>> t3) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2, (Iterable)t3);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2, (Iterable) t3);
     }
 
     public static <T1, T2, T3> Iterative3Cross<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> iterative, Iterable<? extends Stream<? extends T3>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative2)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative2) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2, Iterable<? extends Stream<? extends T3>> t3, Iterable<? extends Stream<? extends T4>> t4) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4);
     }
 
     public static <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends Stream<? extends T4>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative3)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative3) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2, Iterable<? extends Stream<? extends T3>> t3, Iterable<? extends Stream<? extends T4>> t4, Iterable<? extends Stream<? extends T5>> t5) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5);
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative4)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative4) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2, Iterable<? extends Stream<? extends T3>> t3, Iterable<? extends Stream<? extends T4>> t4, Iterable<? extends Stream<? extends T5>> t5, Iterable<? extends Stream<? extends T6>> t6) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5, (Iterable)t6);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5, (Iterable) t6);
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative5)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative5) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2, Iterable<? extends Stream<? extends T3>> t3, Iterable<? extends Stream<? extends T4>> t4, Iterable<? extends Stream<? extends T5>> t5, Iterable<? extends Stream<? extends T6>> t6, Iterable<? extends Stream<? extends T7>> t7) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5, (Iterable)t6, (Iterable)t7);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5, (Iterable) t6, (Iterable) t7);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative6)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative6) iterative, (Iterable) elem);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> t1, Iterable<? extends Stream<? extends T2>> t2, Iterable<? extends Stream<? extends T3>> t3, Iterable<? extends Stream<? extends T4>> t4, Iterable<? extends Stream<? extends T5>> t5, Iterable<? extends Stream<? extends T6>> t6, Iterable<? extends Stream<? extends T7>> t7, Iterable<? extends Stream<? extends T8>> t8) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterable)t1, (Iterable)t2, (Iterable)t3, (Iterable)t4, (Iterable)t5, (Iterable)t6, (Iterable)t7, (Iterable)t8);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterable) t1, (Iterable) t2, (Iterable) t3, (Iterable) t4, (Iterable) t5, (Iterable) t6, (Iterable) t7, (Iterable) t8);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> elem) {
-        return new IterativeBuilder.BuilderRegularImpl().by((Iterative7)iterative, (Iterable)elem);
+        return new IterativeBuilder.BuilderRegularImpl().by((Iterative7) iterative, (Iterable) elem);
     }
 
     public static <W> Option<W> wrapNullable(W t1) {
@@ -398,7 +398,7 @@ public interface Iterative extends IterativeWrapper {
     }
 
     public static <T1, T2, C extends Comparable<? super C>> Iterative2<T1, T2> joinOuterOf(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Fn1<? super T1, ? extends C> m1, Fn1<? super T2, ? extends C> m2) {
-        Fn2 & Serializable joiner = (Fn2 & Serializable)(s1, s2) -> s1.filter(Pr1.negate(((Set)s2)::contains)).addAll((Iterable)s2.filter(Pr1.negate(((Set)s1)::contains)));
+        Fn2 & Serializable joiner = (Fn2 & Serializable) (s1, s2) -> s1.filter(Pr1.negate(((Set) s2)::contains)).addAll((Iterable) s2.filter(Pr1.negate(((Set) s1)::contains)));
         return Joiner.makeJoin(t1, t2, m1, m2, joiner);
     }
 
@@ -459,7 +459,7 @@ public interface Iterative extends IterativeWrapper {
     }
 
     public static <T1, T2, C extends Comparable<? super C>> Iterative2<T1, T2> joinOf(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Fn1<? super T1, ? extends C> m1, Fn1<? super T2, ? extends C> m2) {
-        Fn2 & Serializable joiner = (Fn2 & Serializable)(s1, s2) -> s1.filter(((Set)s2)::contains);
+        Fn2 & Serializable joiner = (Fn2 & Serializable) (s1, s2) -> s1.filter(((Set) s2)::contains);
         return Joiner.makeJoin(t1, t2, m1, m2, joiner);
     }
 
@@ -474,7 +474,6 @@ public interface Iterative extends IterativeWrapper {
     }
 
     default public Iterator<Iterable<?>> iteratorsOfClass(Class<?> c) {
-
         Objects.requireNonNull(c, "c is null");
         return this.iterators().filter(iterator -> c.isAssignableFrom(iterator.getClass()));
     }
@@ -516,9 +515,9 @@ public interface Iterative extends IterativeWrapper {
         static <T1, T2, C extends Comparable<? super C>> Iterative2<T1, T2> makeJoin(Iterable<? extends T1> t1, Iterable<? extends T2> t2, Fn1<? super T1, ? extends C> m1, Fn1<? super T2, ? extends C> m2, Fn2<? super Set<C>, ? super Set<C>, ? extends Set<C>> joiner) {
             Map t1s = Stream.ofAll(t1).groupBy(m1);
             Map t2s = Stream.ofAll(t2).groupBy(m2);
-            SortedSet keys = ((Set)joiner.apply((Object)t1s.keySet(), (Object)t2s.keySet())).toSortedSet((Comparator)new NullComparator());
-            Iterable iterable1 = Iterative.nullable().of(keys).inlineBranch((Fn1 & Serializable)key -> (Stream)t1s.getOrElse(key, (Object)Stream.of(null))).iterable1();
-            Iterable iterable2 = Iterative.nullable().of(keys).inlineBranch((Fn1 & Serializable)key -> (Stream)t2s.getOrElse(key, (Object)Stream.of(null))).iterable1();
+            SortedSet keys = ((Set) joiner.apply(t1s.keySet(), t2s.keySet())).toSortedSet((Comparator) new NullComparator());
+            Iterable iterable1 = Iterative.nullable().of(keys).inlineBranch((Fn1 & Serializable) key -> (Stream) t1s.getOrElse(key, Stream.of(null))).iterable1();
+            Iterable iterable2 = Iterative.nullable().of(keys).inlineBranch((Fn1 & Serializable) key -> (Stream) t2s.getOrElse(key, Stream.of(null))).iterable1();
             return Iterative.nullable().inline().by(iterable1, iterable2);
         }
 

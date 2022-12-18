@@ -174,7 +174,7 @@ public interface Iterative0 extends IterativeConstructor {
     }
 
     default public <T1> Iterative1<T1> push(T1 t1) {
-        return this.pushOf((Iterable<? extends T1>)this.wrap(t1));
+        return this.pushOf((Iterable<? extends T1>) this.wrap(t1));
     }
 
     default public <B1, B2> Iterative2Cross<B1, B2> pushBackBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2) {

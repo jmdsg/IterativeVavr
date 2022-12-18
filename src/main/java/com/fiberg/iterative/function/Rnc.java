@@ -68,21 +68,21 @@ public interface Rnc extends CheckedRunnable {
     }
 
     default public <R> Spc<R> toSupplier(R r) {
-        return (Spc<Object> & Serializable)() -> {
+        return (Spc<Object> & Serializable) () -> {
             this.run();
             return r;
         };
     }
 
     default public <R> Fnc0<R> toFunction(R r) {
-        return (Fnc0 & Serializable)() -> {
+        return (Fnc0 & Serializable) () -> {
             this.run();
             return r;
         };
     }
 
     default public Prc0 toPrcedicate(Boolean b) {
-        return (Prc0 & Serializable)() -> {
+        return (Prc0 & Serializable) () -> {
             this.run();
             return b;
         };
@@ -102,7 +102,7 @@ public interface Rnc extends CheckedRunnable {
 
     default public <R> Fnc0<R> afterApplyTo(Fnc0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc0 & Serializable)() -> {
+        return (Fnc0 & Serializable) () -> {
             this.run();
             return f.apply();
         };
@@ -114,7 +114,7 @@ public interface Rnc extends CheckedRunnable {
 
     default public <R> Spc<R> afterGetTo(Spc<? extends R> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Spc<Object> & Serializable)() -> {
+        return (Spc<Object> & Serializable) () -> {
             this.run();
             return s.get();
         };
@@ -126,7 +126,7 @@ public interface Rnc extends CheckedRunnable {
 
     default public Prc0 afterTestTo(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc0 & Serializable)() -> {
+        return (Prc0 & Serializable) () -> {
             this.run();
             return p.test();
         };
@@ -211,7 +211,7 @@ public interface Rnc extends CheckedRunnable {
                 this.run();
             }
             catch (Throwable throwable) {
-                Rn runn = (Rn)recover.apply(throwable);
+                Rn runn = (Rn) recover.apply(throwable);
                 Objects.requireNonNull(runn, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 runn.run();
             }

@@ -39,7 +39,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     }
 
     public static <R> Sp<R> value(R r) {
-        return (Sp<Object> & Serializable)() -> r;
+        return (Sp<Object> & Serializable) () -> r;
     }
 
     public static <R> Sp<R> of(Sp<? extends R> s) {
@@ -141,7 +141,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     @Override
     default public Sp<R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
-        return (Sp<Object> & Serializable)() -> {
+        return (Sp<Object> & Serializable) () -> {
             R value = this.get();
             r.run();
             return value;
@@ -164,7 +164,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
 
     default public <V> Fn0<V> afterApplyTo(Fn1<? super R, ? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn0 & Serializable)() -> f.apply(this.get());
+        return (Fn0 & Serializable) () -> f.apply(this.get());
     }
 
     @Override
@@ -174,13 +174,13 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
 
     default public <V> Fn0<V> afterApplyTo(Fn0<? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn0 & Serializable)() -> f.ignoring1().apply(this.get());
+        return (Fn0 & Serializable) () -> f.ignoring1().apply(this.get());
     }
 
     @Override
     default public <V> Fn0<V> afterGet(Sp<? extends V> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Fn0 & Serializable)() -> s.ignoring1().apply(this.get());
+        return (Fn0 & Serializable) () -> s.ignoring1().apply(this.get());
     }
 
     default public Sp<Boolean> afterTest(Pr1<? super R> p) {
@@ -190,7 +190,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     @Override
     default public Pr0 afterTestTo(Pr1<? super R> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr0 & Serializable)() -> p.test(this.get());
+        return (Pr0 & Serializable) () -> p.test(this.get());
     }
 
     @Override
@@ -202,7 +202,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     @Override
     default public Sp<R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Sp<Object> & Serializable)() -> {
+        return (Sp<Object> & Serializable) () -> {
             R value = this.get();
             c.accept(value);
             return value;
@@ -212,13 +212,13 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     @Override
     default public <W> Sp<W> beforeWrap(Fn1<? super Spc<R>, ? extends W> wrap) {
         Objects.requireNonNull(wrap, "wrap is null");
-        return (Sp<Object> & Serializable)() -> wrap.apply(this.checked());
+        return (Sp<Object> & Serializable) () -> wrap.apply(this.checked());
     }
 
     @Override
     default public Sp<R> beforeRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
-        return (Sp<Object> & Serializable)() -> {
+        return (Sp<Object> & Serializable) () -> {
             r.run();
             return this.get();
         };
@@ -228,7 +228,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     default public Sp<R> beforeTestOnSuccess(Pr0 p, Sp<? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Sp<Object> & Serializable)() -> p.test() ? this.apply() : onFailure.get();
+        return (Sp<Object> & Serializable) () -> p.test() ? this.apply() : onFailure.get();
     }
 
     @Override
@@ -245,7 +245,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     default public Sp<R> beforeTestOnFailure(Pr0 p, Sp<? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeTestOnSuccess(p.negated(), (Sp)onSuccess);
+        return this.beforeTestOnSuccess(p.negated(), (Sp) onSuccess);
     }
 
     @Override
@@ -275,42 +275,42 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
 
     @Override
     default public <T1> Fn1<T1, R> ignoring1() {
-        return (Fn1 & Serializable)t1 -> this.get();
+        return (Fn1 & Serializable) t1 -> this.get();
     }
 
     @Override
     default public <T1, T2> Fn2<T1, T2, R> ignoring2() {
-        return (Fn2 & Serializable)(t1, t2) -> this.get();
+        return (Fn2 & Serializable) (t1, t2) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3> Fn3<T1, T2, T3, R> ignoring3() {
-        return (Fn3 & Serializable)(t1, t2, t3) -> this.get();
+        return (Fn3 & Serializable) (t1, t2, t3) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4> Fn4<T1, T2, T3, T4, R> ignoring4() {
-        return (Fn4 & Serializable)(t1, t2, t3, t4) -> this.get();
+        return (Fn4 & Serializable) (t1, t2, t3, t4) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5> Fn5<T1, T2, T3, T4, T5, R> ignoring5() {
-        return (Fn5 & Serializable)(t1, t2, t3, t4, t5) -> this.get();
+        return (Fn5 & Serializable) (t1, t2, t3, t4, t5) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5, T6> Fn6<T1, T2, T3, T4, T5, T6, R> ignoring6() {
-        return (Fn6 & Serializable)(t1, t2, t3, t4, t5, t6) -> this.get();
+        return (Fn6 & Serializable) (t1, t2, t3, t4, t5, t6) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5, T6, T7> Fn7<T1, T2, T3, T4, T5, T6, T7, R> ignoring7() {
-        return (Fn7 & Serializable)(t1, t2, t3, t4, t5, t6, t7) -> this.get();
+        return (Fn7 & Serializable) (t1, t2, t3, t4, t5, t6, t7) -> this.get();
     }
 
     @Override
     default public <T1, T2, T3, T4, T5, T6, T7, T8> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> ignoring8() {
-        return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> this.get();
+        return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> this.get();
     }
 
     @Override
@@ -320,17 +320,17 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
 
     @Override
     default public Sp<R> curried() {
-        return ((Fn0)Fn0.super.curried())::apply;
+        return ((Fn0) Fn0.super.curried())::apply;
     }
 
     @Override
     default public Sp<R> reversed() {
-        return ((Fn0)Fn0.super.reversed())::apply;
+        return ((Fn0) Fn0.super.reversed())::apply;
     }
 
     @Override
     default public Sp<R> memoized() {
-        return ((Fn0)Fn0.super.memoized())::apply;
+        return ((Fn0) Fn0.super.memoized())::apply;
     }
 
 }

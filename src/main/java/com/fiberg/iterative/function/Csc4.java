@@ -64,7 +64,7 @@ public interface Csc4<T1, T2, T3, T4> {
     }
 
     public static <T1, T2, T3, T4> Csc4<T1, T2, T3, T4> detuple(Csc1<? super Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> c) {
-        return (t1, t2, t3, t4) -> c.accept((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4));
+        return (t1, t2, t3, t4) -> c.accept((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4));
     }
 
     public static <T1, T2, T3, T4> Csc4<T1, T2, T3, T4> check(Cs4<? super T1, ? super T2, ? super T3, ? super T4> c) {
@@ -159,14 +159,14 @@ public interface Csc4<T1, T2, T3, T4> {
     }
 
     default public <R> Fnc4<T1, T2, T3, T4, R> toFunction(R r) {
-        return (Fnc4 & Serializable)(t1, t2, t3, t4) -> {
+        return (Fnc4 & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return r;
         };
     }
 
     default public Prc4<T1, T2, T3, T4> toPredicate(boolean b) {
-        return (Prc4<Object, Object, Object, Object> & Serializable)(t1, t2, t3, t4) -> {
+        return (Prc4<Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return b;
         };
@@ -191,7 +191,7 @@ public interface Csc4<T1, T2, T3, T4> {
 
     default public <R> Fnc4<T1, T2, T3, T4, R> afterApplyTo(Fnc0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc4 & Serializable)(t1, t2, t3, t4) -> {
+        return (Fnc4 & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return f.apply();
         };
@@ -204,14 +204,14 @@ public interface Csc4<T1, T2, T3, T4> {
 
     default public Prc4<T1, T2, T3, T4> afterTestTo(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc4<Object, Object, Object, Object> & Serializable)(t1, t2, t3, t4) -> {
+        return (Prc4<Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return p.test();
         };
     }
 
     default public <R> Fnc4<T1, T2, T3, T4, R> afterGet(Spc<? extends R> s) {
-        return (Fnc4 & Serializable)(t1, t2, t3, t4) -> {
+        return (Fnc4 & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return s.get();
         };
@@ -230,42 +230,42 @@ public interface Csc4<T1, T2, T3, T4> {
 
     default public <B1> Csc1<B1> beforeApply1(Fnc1<? super B1, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return b1 -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1))));
+        return b1 -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1))));
     }
 
     default public <B1, B2> Csc2<B1, B2> beforeApply2(Fnc2<? super B1, ? super B2, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2))));
+        return (b1, b2) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2))));
     }
 
     default public <B1, B2, B3> Csc3<B1, B2, B3> beforeApply3(Fnc3<? super B1, ? super B2, ? super B3, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2, b3))));
+        return (b1, b2, b3) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2, b3))));
     }
 
     default public <B1, B2, B3, B4> Csc4<B1, B2, B3, B4> beforeApply4(Fnc4<? super B1, ? super B2, ? super B3, ? super B4, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2, b3, b4))));
+        return (b1, b2, b3, b4) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2, b3, b4))));
     }
 
     default public <B1, B2, B3, B4, B5> Csc5<B1, B2, B3, B4, B5> beforeApply5(Fnc5<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2, b3, b4, b5))));
+        return (b1, b2, b3, b4, b5) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2, b3, b4, b5))));
     }
 
     default public <B1, B2, B3, B4, B5, B6> Csc6<B1, B2, B3, B4, B5, B6> beforeApply6(Fnc6<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5, b6) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2, b3, b4, b5, b6))));
+        return (b1, b2, b3, b4, b5, b6) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2, b3, b4, b5, b6))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7> Csc7<B1, B2, B3, B4, B5, B6, B7> beforeApply7(Fnc7<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2, b3, b4, b5, b6, b7))));
+        return (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2, b3, b4, b5, b6, b7))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7, B8> Csc8<B1, B2, B3, B4, B5, B6, B7, B8> beforeApply8(Fnc8<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? super B8, ? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
+        return (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
     }
 
     default public Csc4<T1, T2, T3, T4> beforeTestOnSuccess(Prc0 p, Csc4<? super T1, ? super T2, ? super T3, ? super T4> onFailure) {
@@ -290,7 +290,7 @@ public interface Csc4<T1, T2, T3, T4> {
 
     default public Rnc beforeGet(Spc<? extends Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> s) {
         Objects.requireNonNull(s, "s is null");
-        return () -> this.tupled().accept((Object)Tuple.narrow((Tuple4)((Tuple4)s.get())));
+        return () -> this.tupled().accept((Object) Tuple.narrow((Tuple4) ((Tuple4) s.get())));
     }
 
     default public Csc4<T4, T3, T2, T1> inverted() {
@@ -307,7 +307,7 @@ public interface Csc4<T1, T2, T3, T4> {
 
     default public <S> Fnc4<T1, T2, T3, T4, S> afterPassingThroughApplyTo(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc4 & Serializable)(t1, t2, t3, t4) -> {
+        return (Fnc4 & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return f.apply(t1, t2, t3, t4);
         };
@@ -323,7 +323,7 @@ public interface Csc4<T1, T2, T3, T4> {
 
     default public Prc4<T1, T2, T3, T4> afterPassingThroughTestTo(Prc4<? super T1, ? super T2, ? super T3, ? super T4> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc4<Object, Object, Object, Object> & Serializable)(t1, t2, t3, t4) -> {
+        return (Prc4<Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4) -> {
             this.accept(t1, t2, t3, t4);
             return p.test(t1, t2, t3, t4);
         };
@@ -386,7 +386,7 @@ public interface Csc4<T1, T2, T3, T4> {
     }
 
     default public Fnc1<T1, Fnc1<T2, Fnc1<T3, Csc1<T4>>>> currying() {
-        return (Fnc1 & Serializable)t1 -> (Fnc1 & Serializable)t2 -> (Fnc1 & Serializable)t3 -> t4 -> this.accept(t1, t2, t3, t4);
+        return (Fnc1 & Serializable) t1 -> (Fnc1 & Serializable) t2 -> (Fnc1 & Serializable) t3 -> t4 -> this.accept(t1, t2, t3, t4);
     }
 
     default public Cs4<T1, T2, T3, T4> unchecked() {
@@ -440,7 +440,7 @@ public interface Csc4<T1, T2, T3, T4> {
                 this.accept(t1, t2, t3, t4);
             }
             catch (Throwable throwable) {
-                Cs4 cons = (Cs4)recover.apply(throwable);
+                Cs4 cons = (Cs4) recover.apply(throwable);
                 Objects.requireNonNull(cons, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 cons.accept(t1, t2, t3, t4);
             }

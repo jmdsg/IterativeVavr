@@ -109,12 +109,12 @@ public interface Iterative3Args<T1, T2, T3> {
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
                 Iterative1<T2> i2 = this.left.create(this.left.iterableStream2());
                 Iterative1<T3> i3 = this.left.create(this.left.iterableStream3());
-                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5())).iterableStream1());
+                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T1, ? extends R1> f1, Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T2, ? extends R2> f2, Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T3, ? extends R3> f3) {
-                return this.mapping((Fn6 & Serializable)(t1, a1, a2, a3, a4, a5) -> f1.apply(a1, a2, a3, a4, a5, t1), (Fn6 & Serializable)(t2, a1, a2, a3, a4, a5) -> f2.apply(a1, a2, a3, a4, a5, t2), (Fn6 & Serializable)(t3, a1, a2, a3, a4, a5) -> f3.apply(a1, a2, a3, a4, a5, t3));
+                return this.mapping((Fn6 & Serializable) (t1, a1, a2, a3, a4, a5) -> f1.apply(a1, a2, a3, a4, a5, t1), (Fn6 & Serializable) (t2, a1, a2, a3, a4, a5) -> f2.apply(a1, a2, a3, a4, a5, t2), (Fn6 & Serializable) (t3, a1, a2, a3, a4, a5) -> f3.apply(a1, a2, a3, a4, a5, t3));
             }
 
             @Override
@@ -338,12 +338,12 @@ public interface Iterative3Args<T1, T2, T3> {
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
                 Iterative1<T2> i2 = this.left.create(this.left.iterableStream2());
                 Iterative1<T3> i3 = this.left.create(this.left.iterableStream3());
-                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2(), tuple._3(), tuple._4())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2(), tuple._3(), tuple._4())).iterableStream1());
+                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3(), tuple._4())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2(), tuple._3(), tuple._4())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2(), tuple._3(), tuple._4())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T1, ? extends R1> f1, Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T2, ? extends R2> f2, Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T3, ? extends R3> f3) {
-                return this.mapping((Fn5 & Serializable)(t1, a1, a2, a3, a4) -> f1.apply(a1, a2, a3, a4, t1), (Fn5 & Serializable)(t2, a1, a2, a3, a4) -> f2.apply(a1, a2, a3, a4, t2), (Fn5 & Serializable)(t3, a1, a2, a3, a4) -> f3.apply(a1, a2, a3, a4, t3));
+                return this.mapping((Fn5 & Serializable) (t1, a1, a2, a3, a4) -> f1.apply(a1, a2, a3, a4, t1), (Fn5 & Serializable) (t2, a1, a2, a3, a4) -> f2.apply(a1, a2, a3, a4, t2), (Fn5 & Serializable) (t3, a1, a2, a3, a4) -> f3.apply(a1, a2, a3, a4, t3));
             }
 
             @Override
@@ -539,12 +539,12 @@ public interface Iterative3Args<T1, T2, T3> {
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
                 Iterative1<T2> i2 = this.left.create(this.left.iterableStream2());
                 Iterative1<T3> i3 = this.left.create(this.left.iterableStream3());
-                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2(), tuple._3())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2(), tuple._3())).iterableStream1());
+                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2(), tuple._3())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2(), tuple._3())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2(), tuple._3())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn4<? super A1, ? super A2, ? super A3, ? super T1, ? extends R1> f1, Fn4<? super A1, ? super A2, ? super A3, ? super T2, ? extends R2> f2, Fn4<? super A1, ? super A2, ? super A3, ? super T3, ? extends R3> f3) {
-                return this.mapping((Fn4 & Serializable)(t1, a1, a2, a3) -> f1.apply(a1, a2, a3, t1), (Fn4 & Serializable)(t2, a1, a2, a3) -> f2.apply(a1, a2, a3, t2), (Fn4 & Serializable)(t3, a1, a2, a3) -> f3.apply(a1, a2, a3, t3));
+                return this.mapping((Fn4 & Serializable) (t1, a1, a2, a3) -> f1.apply(a1, a2, a3, t1), (Fn4 & Serializable) (t2, a1, a2, a3) -> f2.apply(a1, a2, a3, t2), (Fn4 & Serializable) (t3, a1, a2, a3) -> f3.apply(a1, a2, a3, t3));
             }
 
             @Override
@@ -712,12 +712,12 @@ public interface Iterative3Args<T1, T2, T3> {
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
                 Iterative1<T2> i2 = this.left.create(this.left.iterableStream2());
                 Iterative1<T3> i3 = this.left.create(this.left.iterableStream3());
-                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2())).iterableStream1());
+                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1(), tuple._2())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1(), tuple._2())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1(), tuple._2())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn3<? super A1, ? super A2, ? super T1, ? extends R1> f1, Fn3<? super A1, ? super A2, ? super T2, ? extends R2> f2, Fn3<? super A1, ? super A2, ? super T3, ? extends R3> f3) {
-                return this.mapping((Fn3 & Serializable)(t1, a1, a2) -> f1.apply(a1, a2, t1), (Fn3 & Serializable)(t2, a1, a2) -> f2.apply(a1, a2, t2), (Fn3 & Serializable)(t3, a1, a2) -> f3.apply(a1, a2, t3));
+                return this.mapping((Fn3 & Serializable) (t1, a1, a2) -> f1.apply(a1, a2, t1), (Fn3 & Serializable) (t2, a1, a2) -> f2.apply(a1, a2, t2), (Fn3 & Serializable) (t3, a1, a2) -> f3.apply(a1, a2, t3));
             }
 
             @Override
@@ -849,12 +849,12 @@ public interface Iterative3Args<T1, T2, T3> {
                 Iterative1<T1> i1 = this.left.create(this.left.iterableStream1());
                 Iterative1<T2> i2 = this.left.create(this.left.iterableStream2());
                 Iterative1<T3> i3 = this.left.create(this.left.iterableStream3());
-                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t1, tuple) -> f1.apply(t1, tuple._1())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t2, tuple) -> f2.apply(t2, tuple._1())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable)(t3, tuple) -> f3.apply(t3, tuple._1())).iterableStream1());
+                return this.left.create(this.left.splitLt2().create(this.left.splitLt1().create((this.cross ? i1.pushBackCrossOf(stream) : i1.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t1, tuple) -> f1.apply(t1, tuple._1())).iterableStream1()), (this.cross ? i2.pushBackCrossOf(stream) : i2.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t2, tuple) -> f2.apply(t2, tuple._1())).iterableStream1()), (this.cross ? i3.pushBackCrossOf(stream) : i3.pushBackInlineOf(stream)).reduce((Fn2 & Serializable) (t3, tuple) -> f3.apply(t3, tuple._1())).iterableStream1());
             }
 
             @Override
             public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> f1, Fn2<? super A1, ? super T2, ? extends R2> f2, Fn2<? super A1, ? super T3, ? extends R3> f3) {
-                return this.mapping((Fn2 & Serializable)(t1, a1) -> f1.apply(a1, t1), (Fn2 & Serializable)(t2, a1) -> f2.apply(a1, t2), (Fn2 & Serializable)(t3, a1) -> f3.apply(a1, t3));
+                return this.mapping((Fn2 & Serializable) (t1, a1) -> f1.apply(a1, t1), (Fn2 & Serializable) (t2, a1) -> f2.apply(a1, t2), (Fn2 & Serializable) (t3, a1) -> f3.apply(a1, t3));
             }
 
             @Override

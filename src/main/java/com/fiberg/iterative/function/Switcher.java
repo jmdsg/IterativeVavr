@@ -50,67 +50,67 @@ import java.util.Objects;
 public interface Switcher<TUPLE extends Tuple, R> {
 
     public static <T1, R> Fn1<T1, R> fn1(Fn1<SwitcherComparator1<T1, R>, Fn1<T1, R>> transformer) {
-        return (Fn1)transformer.apply(Switcher.fn1());
+        return (Fn1) transformer.apply(Switcher.fn1());
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> fn2(Fn1<SwitcherComparator2<T1, T2, R>, Fn2<T1, T2, R>> transformer) {
-        return (Fn2)transformer.apply(Switcher.fn2());
+        return (Fn2) transformer.apply(Switcher.fn2());
     }
 
     public static <T1, T2, T3, R> Fn3<T1, T2, T3, R> fn3(Fn1<SwitcherComparator3<T1, T2, T3, R>, Fn3<T1, T2, T3, R>> transformer) {
-        return (Fn3)transformer.apply(Switcher.fn3());
+        return (Fn3) transformer.apply(Switcher.fn3());
     }
 
     public static <T1, T2, T3, T4, R> Fn4<T1, T2, T3, T4, R> fn4(Fn1<SwitcherComparator4<T1, T2, T3, T4, R>, Fn4<T1, T2, T3, T4, R>> transformer) {
-        return (Fn4)transformer.apply(Switcher.fn4());
+        return (Fn4) transformer.apply(Switcher.fn4());
     }
 
     public static <T1, T2, T3, T4, T5, R> Fn5<T1, T2, T3, T4, T5, R> fn5(Fn1<SwitcherComparator5<T1, T2, T3, T4, T5, R>, Fn5<T1, T2, T3, T4, T5, R>> transformer) {
-        return (Fn5)transformer.apply(Switcher.fn5());
+        return (Fn5) transformer.apply(Switcher.fn5());
     }
 
     public static <T1, T2, T3, T4, T5, T6, R> Fn6<T1, T2, T3, T4, T5, T6, R> fn6(Fn1<SwitcherComparator6<T1, T2, T3, T4, T5, T6, R>, Fn6<T1, T2, T3, T4, T5, T6, R>> transformer) {
-        return (Fn6)transformer.apply(Switcher.fn6());
+        return (Fn6) transformer.apply(Switcher.fn6());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, R> Fn7<T1, T2, T3, T4, T5, T6, T7, R> fn7(Fn1<SwitcherComparator7<T1, T2, T3, T4, T5, T6, T7, R>, Fn7<T1, T2, T3, T4, T5, T6, T7, R>> transformer) {
-        return (Fn7)transformer.apply(Switcher.fn7());
+        return (Fn7) transformer.apply(Switcher.fn7());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> fn8(Fn1<SwitcherComparator8<T1, T2, T3, T4, T5, T6, T7, T8, R>, Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R>> transformer) {
-        return (Fn8)transformer.apply(Switcher.fn8());
+        return (Fn8) transformer.apply(Switcher.fn8());
     }
 
     public static <T1, R> Fnc1<T1, R> fnc1(Fn1<SwitcherCheckedComparator1<T1, R>, Fnc1<T1, R>> transformer) {
-        return (Fnc1)transformer.apply(Switcher.fnc1());
+        return (Fnc1) transformer.apply(Switcher.fnc1());
     }
 
     public static <T1, T2, R> Fnc2<T1, T2, R> fnc2(Fn1<SwitcherCheckedComparator2<T1, T2, R>, Fnc2<T1, T2, R>> transformer) {
-        return (Fnc2)transformer.apply(Switcher.fnc2());
+        return (Fnc2) transformer.apply(Switcher.fnc2());
     }
 
     public static <T1, T2, T3, R> Fnc3<T1, T2, T3, R> fnc3(Fn1<SwitcherCheckedComparator3<T1, T2, T3, R>, Fnc3<T1, T2, T3, R>> transformer) {
-        return (Fnc3)transformer.apply(Switcher.fnc3());
+        return (Fnc3) transformer.apply(Switcher.fnc3());
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> fnc4(Fn1<SwitcherCheckedComparator4<T1, T2, T3, T4, R>, Fnc4<T1, T2, T3, T4, R>> transformer) {
-        return (Fnc4)transformer.apply(Switcher.fnc4());
+        return (Fnc4) transformer.apply(Switcher.fnc4());
     }
 
     public static <T1, T2, T3, T4, T5, R> Fnc5<T1, T2, T3, T4, T5, R> fnc5(Fn1<SwitcherCheckedComparator5<T1, T2, T3, T4, T5, R>, Fnc5<T1, T2, T3, T4, T5, R>> transformer) {
-        return (Fnc5)transformer.apply(Switcher.fnc5());
+        return (Fnc5) transformer.apply(Switcher.fnc5());
     }
 
     public static <T1, T2, T3, T4, T5, T6, R> Fnc6<T1, T2, T3, T4, T5, T6, R> fnc6(Fn1<SwitcherCheckedComparator6<T1, T2, T3, T4, T5, T6, R>, Fnc6<T1, T2, T3, T4, T5, T6, R>> transformer) {
-        return (Fnc6)transformer.apply(Switcher.fnc6());
+        return (Fnc6) transformer.apply(Switcher.fnc6());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, R> Fnc7<T1, T2, T3, T4, T5, T6, T7, R> fnc7(Fn1<SwitcherCheckedComparator7<T1, T2, T3, T4, T5, T6, T7, R>, Fnc7<T1, T2, T3, T4, T5, T6, T7, R>> transformer) {
-        return (Fnc7)transformer.apply(Switcher.fnc7());
+        return (Fnc7) transformer.apply(Switcher.fnc7());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> fnc8(Fn1<SwitcherCheckedComparator8<T1, T2, T3, T4, T5, T6, T7, T8, R>, Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R>> transformer) {
-        return (Fnc8)transformer.apply(Switcher.fnc8());
+        return (Fnc8) transformer.apply(Switcher.fnc8());
     }
 
     public static <T1, R> SwitcherComparator1<T1, R> fn1() {
@@ -197,7 +197,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         public abstract SwitcherCheckedTupleTranformer<TUPLE, R> onPredicate(Prc1<? super TUPLE> var1);
 
         static <T, S> Fnc1<T, S> emptyTransformer() {
-            return (Fnc1 & Serializable)ignore -> {
+            return (Fnc1 & Serializable) ignore -> {
                 throw new UnsupportedOperationException("Unimplemented transformer method");
             };
         }
@@ -215,19 +215,19 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         static <TUPLE extends Tuple> Prc1<TUPLE> comparatorTupleValue(TUPLE tuple) {
-            return (Prc1 & Serializable)t -> Objects.equals(t, tuple);
+            return (Prc1 & Serializable) t -> Objects.equals(t, tuple);
         }
 
         static <T> Prc1<T> comparatorValue(T t) {
-            return (Prc1 & Serializable)o -> Objects.equals(o, t);
+            return (Prc1 & Serializable) o -> Objects.equals(o, t);
         }
 
         static <T> Prc1<T> comparatorSupplierChecked(Spc<? extends T> s) {
-            return (Prc1 & Serializable)t -> Objects.equals(t, s.toFunction().ignoring1());
+            return (Prc1 & Serializable) t -> Objects.equals(t, s.toFunction().ignoring1());
         }
 
         static <T> Pr1<T> comparatorSupplier(Sp<? extends T> s) {
-            return (Pr1 & Serializable)t -> Objects.equals(t, s.toFunction().ignoring1());
+            return (Pr1 & Serializable) t -> Objects.equals(t, s.toFunction().ignoring1());
         }
 
     }
@@ -237,15 +237,15 @@ public interface Switcher<TUPLE extends Tuple, R> {
         List<Tuple2<Prc1<? super TUPLE>, Fnc1<? super TUPLE, ? extends R>>> transformations;
 
         SwitcherCheckedBaseAbst() {
-            this.transformations = List.of((Object[])new Tuple2[0]);
+            this.transformations = List.of((Object[]) new Tuple2[0]);
         }
 
         private SwitcherCheckedBaseAbst(List<Tuple2<Prc1<? super TUPLE>, Fnc1<? super TUPLE, ? extends R>>> transformations, Prc1<? super TUPLE> p, Fnc1<? super TUPLE, ? extends R> f) {
-            this.transformations = transformations.append((Object)Tuple.of(p, f));
+            this.transformations = transformations.append((Object) Tuple.of(p, f));
         }
 
         private SwitcherCheckedBaseAbst(List<Tuple2<Prc1<? super TUPLE>, Fnc1<? super TUPLE, ? extends R>>> transformations, Fnc1<? super TUPLE, ? extends R> f) {
-            this.transformations = transformations.dropRight(1).append((Object)Tuple.of((Object)((Tuple2)transformations.last())._1(), f));
+            this.transformations = transformations.dropRight(1).append((Object) Tuple.of((Object) ((Tuple2) transformations.last())._1(), f));
         }
 
         static <T> T throwNotMatching() {
@@ -254,11 +254,11 @@ public interface Switcher<TUPLE extends Tuple, R> {
 
         @Override
         public Fnc1<TUPLE, R> onDefaultTupled(Fnc1<? super TUPLE, ? extends R> f) {
-            this.transformations = this.transformations.append((Object)Tuple.of(Prc1.value(true), f));
-            return (Fnc1 & Serializable)elem -> {
+            this.transformations = this.transformations.append((Object) Tuple.of(Prc1.value(true), f));
+            return (Fnc1 & Serializable) elem -> {
                 for (Tuple2 tuple : this.transformations) {
-                    if (!((Prc1)tuple._1()).test(elem)) continue;
-                    return ((Fnc1)tuple._2()).apply(elem);
+                    if (!((Prc1) tuple._1()).test(elem)) continue;
+                    return ((Fnc1) tuple._2()).apply(elem);
                 }
                 return SwitcherCheckedBaseAbst.throwNotMatching();
             };
@@ -460,7 +460,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> onDefaults(Fnc1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, ? extends R> f) {
-            return (Fnc8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7, (Object)t8));
+            return (Fnc8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6, (Object) t7, (Object) t8));
         }
 
     }
@@ -692,7 +692,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc7<T1, T2, T3, T4, T5, T6, T7, R> onDefaults(Fnc1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>, ? extends R> f) {
-            return (Fnc7 & Serializable)(t1, t2, t3, t4, t5, t6, t7) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7));
+            return (Fnc7 & Serializable) (t1, t2, t3, t4, t5, t6, t7) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6, (Object) t7));
         }
 
     }
@@ -904,7 +904,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc6<T1, T2, T3, T4, T5, T6, R> onDefaults(Fnc1<? super Tuple6<T1, T2, T3, T4, T5, T6>, ? extends R> f) {
-            return (Fnc6 & Serializable)(t1, t2, t3, t4, t5, t6) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6));
+            return (Fnc6 & Serializable) (t1, t2, t3, t4, t5, t6) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6));
         }
 
     }
@@ -1096,7 +1096,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc5<T1, T2, T3, T4, T5, R> onDefaults(Fnc1<? super Tuple5<T1, T2, T3, T4, T5>, ? extends R> f) {
-            return (Fnc5 & Serializable)(t1, t2, t3, t4, t5) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5));
+            return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5));
         }
 
     }
@@ -1268,7 +1268,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc4<T1, T2, T3, T4, R> onDefaults(Fnc1<? super Tuple4<T1, T2, T3, T4>, ? extends R> f) {
-            return (Fnc4 & Serializable)(t1, t2, t3, t4) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4));
+            return (Fnc4 & Serializable) (t1, t2, t3, t4) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4));
         }
 
     }
@@ -1420,7 +1420,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc3<T1, T2, T3, R> onDefaults(Fnc1<? super Tuple3<T1, T2, T3>, ? extends R> f) {
-            return (Fnc3 & Serializable)(t1, t2, t3) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3));
+            return (Fnc3 & Serializable) (t1, t2, t3) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3));
         }
 
     }
@@ -1552,7 +1552,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc2<T1, T2, R> onDefaults(Fnc1<? super Tuple2<T1, T2>, ? extends R> f) {
-            return (Fnc2 & Serializable)(t1, t2) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2));
+            return (Fnc2 & Serializable) (t1, t2) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2));
         }
 
     }
@@ -1640,7 +1640,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fnc1<T1, R> onDefaults(Fnc1<? super T1, ? extends R> f) {
-            return (Fnc1 & Serializable)t1 -> this.onDefaultTupled(Fnc1.tuple(f)).apply((Object)Tuple.of((Object)t1));
+            return (Fnc1 & Serializable) t1 -> this.onDefaultTupled(Fnc1.tuple(f)).apply((Object) Tuple.of((Object) t1));
         }
 
     }
@@ -1697,7 +1697,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         public abstract SwitcherTupleTranformer<TUPLE, R> onPredicate(Pr1<? super TUPLE> var1);
 
         static <T, S> Fn1<T, S> emptyTransformer() {
-            return (Fn1 & Serializable)ignore -> {
+            return (Fn1 & Serializable) ignore -> {
                 throw new UnsupportedOperationException("Unimplemented transformer method");
             };
         }
@@ -1715,15 +1715,15 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         static <TUPLE extends Tuple> Pr1<TUPLE> comparatorTupleValue(TUPLE tuple) {
-            return (Pr1 & Serializable)t -> Objects.equals(t, tuple);
+            return (Pr1 & Serializable) t -> Objects.equals(t, tuple);
         }
 
         static <T> Pr1<T> comparatorValue(T t) {
-            return (Pr1 & Serializable)o -> Objects.equals(o, t);
+            return (Pr1 & Serializable) o -> Objects.equals(o, t);
         }
 
         static <T> Pr1<T> comparatorSupplierChecked(Sp<? extends T> s) {
-            return (Pr1 & Serializable)t -> Objects.equals(t, s.toFunction().ignoring1());
+            return (Pr1 & Serializable) t -> Objects.equals(t, s.toFunction().ignoring1());
         }
 
     }
@@ -1733,15 +1733,15 @@ public interface Switcher<TUPLE extends Tuple, R> {
         List<Tuple2<Pr1<? super TUPLE>, Fn1<? super TUPLE, ? extends R>>> transformations;
 
         SwitcherBaseAbst() {
-            this.transformations = List.of((Object[])new Tuple2[0]);
+            this.transformations = List.of((Object[]) new Tuple2[0]);
         }
 
         private SwitcherBaseAbst(List<Tuple2<Pr1<? super TUPLE>, Fn1<? super TUPLE, ? extends R>>> transformations, Pr1<? super TUPLE> p, Fn1<? super TUPLE, ? extends R> f) {
-            this.transformations = transformations.append((Object)Tuple.of(p, f));
+            this.transformations = transformations.append((Object) Tuple.of(p, f));
         }
 
         private SwitcherBaseAbst(List<Tuple2<Pr1<? super TUPLE>, Fn1<? super TUPLE, ? extends R>>> transformations, Fn1<? super TUPLE, ? extends R> f) {
-            this.transformations = transformations.dropRight(1).append((Object)Tuple.of((Object)((Tuple2)transformations.last())._1(), f));
+            this.transformations = transformations.dropRight(1).append((Object) Tuple.of((Object) ((Tuple2) transformations.last())._1(), f));
         }
 
         static <T> T throwNotMatching() {
@@ -1750,11 +1750,11 @@ public interface Switcher<TUPLE extends Tuple, R> {
 
         @Override
         public Fn1<TUPLE, R> onDefaultTupled(Fn1<? super TUPLE, ? extends R> f) {
-            this.transformations = this.transformations.append((Object)Tuple.of(Pr1.value(true), f));
-            return (Fn1 & Serializable)elem -> {
+            this.transformations = this.transformations.append((Object) Tuple.of(Pr1.value(true), f));
+            return (Fn1 & Serializable) elem -> {
                 for (Tuple2 tuple : this.transformations) {
-                    if (!((Pr1)tuple._1()).test(elem)) continue;
-                    return ((Fn1)tuple._2()).apply(elem);
+                    if (!((Pr1) tuple._1()).test(elem)) continue;
+                    return ((Fn1) tuple._2()).apply(elem);
                 }
                 return SwitcherBaseAbst.throwNotMatching();
             };
@@ -1956,7 +1956,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> onDefaults(Fn1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, ? extends R> f) {
-            return (Fn8 & Serializable)(t1, t2, t3, t4, t5, t6, t7, t8) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7, (Object)t8));
+            return (Fn8 & Serializable) (t1, t2, t3, t4, t5, t6, t7, t8) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6, (Object) t7, (Object) t8));
         }
 
     }
@@ -2188,7 +2188,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn7<T1, T2, T3, T4, T5, T6, T7, R> onDefaults(Fn1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>, ? extends R> f) {
-            return (Fn7 & Serializable)(t1, t2, t3, t4, t5, t6, t7) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6, (Object)t7));
+            return (Fn7 & Serializable) (t1, t2, t3, t4, t5, t6, t7) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6, (Object) t7));
         }
 
     }
@@ -2400,7 +2400,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn6<T1, T2, T3, T4, T5, T6, R> onDefaults(Fn1<? super Tuple6<T1, T2, T3, T4, T5, T6>, ? extends R> f) {
-            return (Fn6 & Serializable)(t1, t2, t3, t4, t5, t6) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5, (Object)t6));
+            return (Fn6 & Serializable) (t1, t2, t3, t4, t5, t6) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5, (Object) t6));
         }
 
     }
@@ -2592,7 +2592,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn5<T1, T2, T3, T4, T5, R> onDefaults(Fn1<? super Tuple5<T1, T2, T3, T4, T5>, ? extends R> f) {
-            return (Fn5 & Serializable)(t1, t2, t3, t4, t5) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4, (Object)t5));
+            return (Fn5 & Serializable) (t1, t2, t3, t4, t5) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5));
         }
 
     }
@@ -2764,7 +2764,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn4<T1, T2, T3, T4, R> onDefaults(Fn1<? super Tuple4<T1, T2, T3, T4>, ? extends R> f) {
-            return (Fn4 & Serializable)(t1, t2, t3, t4) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3, (Object)t4));
+            return (Fn4 & Serializable) (t1, t2, t3, t4) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4));
         }
 
     }
@@ -2916,7 +2916,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn3<T1, T2, T3, R> onDefaults(Fn1<? super Tuple3<T1, T2, T3>, ? extends R> f) {
-            return (Fn3 & Serializable)(t1, t2, t3) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2, (Object)t3));
+            return (Fn3 & Serializable) (t1, t2, t3) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3));
         }
 
     }
@@ -3048,7 +3048,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn2<T1, T2, R> onDefaults(Fn1<? super Tuple2<T1, T2>, ? extends R> f) {
-            return (Fn2 & Serializable)(t1, t2) -> this.onDefaultTupled(f).apply((Object)Tuple.of((Object)t1, (Object)t2));
+            return (Fn2 & Serializable) (t1, t2) -> this.onDefaultTupled(f).apply((Object) Tuple.of((Object) t1, (Object) t2));
         }
 
     }
@@ -3136,7 +3136,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         default public Fn1<T1, R> onDefaults(Fn1<? super T1, ? extends R> f) {
-            return (Fn1 & Serializable)t1 -> this.onDefaultTupled(Fn1.tuple(f)).apply((Object)Tuple.of((Object)t1));
+            return (Fn1 & Serializable) t1 -> this.onDefaultTupled(Fn1.tuple(f)).apply((Object) Tuple.of((Object) t1));
         }
 
     }

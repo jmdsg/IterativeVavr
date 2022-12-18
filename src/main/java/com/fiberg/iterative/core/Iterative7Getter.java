@@ -43,17 +43,17 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
             @Override
             public R onSuccess(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> f) {
                 Objects.requireNonNull(f, "f is null");
-                return (R)(this.isSuccessful() ? f.apply(this.iterative) : this.s.get());
+                return (R) (this.isSuccessful() ? f.apply(this.iterative) : this.s.get());
             }
 
             @Override
             public R onSuccess(Sp<? extends R> sp) {
-                return (R)this.onSuccess((R)sp.toFunction().ignoring1());
+                return (R) this.onSuccess((R) sp.toFunction().ignoring1());
             }
 
             @Override
             public R onSuccess(R r) {
-                return (R)this.onSuccess((R)Fn1.value(r));
+                return (R) this.onSuccess((R) Fn1.value(r));
             }
 
         }
@@ -81,27 +81,27 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
             @Override
             public R onFailure(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> f) {
                 Objects.requireNonNull(f, "f is null");
-                return (R)(this.isSuccessful() ? this.s.get() : f.apply(this.iterative));
+                return (R) (this.isSuccessful() ? this.s.get() : f.apply(this.iterative));
             }
 
             @Override
             public R onFailure(Sp<? extends R> sp) {
-                return (R)this.onFailure((R)sp.toFunction().ignoring1());
+                return (R) this.onFailure((R) sp.toFunction().ignoring1());
             }
 
             @Override
             public R onFailure(R r) {
-                return (R)this.onFailure((R)Fn1.value(r));
+                return (R) this.onFailure((R) Fn1.value(r));
             }
 
             @Override
             public R onFailureNull() {
-                return (R)this.onFailure((R)Fn1.empty());
+                return (R) this.onFailure((R) Fn1.empty());
             }
 
             @Override
             public R onFailureThrow() {
-                return (R)this.onFailure((R)Fn0.pass(IterativeGetter::throwableSupplier, "r").toSupplier());
+                return (R) this.onFailure((R) Fn0.pass(IterativeGetter::throwableSupplier, "r").toSupplier());
             }
 
         }
@@ -134,7 +134,7 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
 
         @Override
         public Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, Tuple7<G1, G2, G3, G4, G5, G6, G7>> onSuccess() {
-            return new Iterative7Fail.Iterative7FailImpl(this.iterative, (Sp<Tuple7> & Serializable)() -> (Tuple7)this.iterative.yieldOption(Tuple::of).get());
+            return new Iterative7Fail.Iterative7FailImpl(this.iterative, (Sp<Tuple7> & Serializable) () -> (Tuple7) this.iterative.yieldOption(Tuple::of).get());
         }
 
         @Override
@@ -151,7 +151,7 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
 
         @Override
         public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(R r) {
-            return new Iterative7Fail.Iterative7FailImpl(this.iterative, (Sp<Object> & Serializable)() -> r);
+            return new Iterative7Fail.Iterative7FailImpl(this.iterative, (Sp<Object> & Serializable) () -> r);
         }
 
         @Override
@@ -168,7 +168,7 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
 
         @Override
         public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(R r) {
-            return new Iterative7Success.Iterative7SuccessImpl(this.iterative, (Sp<Object> & Serializable)() -> r);
+            return new Iterative7Success.Iterative7SuccessImpl(this.iterative, (Sp<Object> & Serializable) () -> r);
         }
 
     }
