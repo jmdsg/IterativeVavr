@@ -459,7 +459,7 @@ public interface Iterative2Cross<T1, T2> extends Iterative2<T1, T2> {
         return (Iterative8Cross) Iterative2.super.pushFrontInline(f1, f2, f3, f4, f5, f6);
     }
 
-    public static class Iterative2CrossNonNullable<T1, T2> extends Iterative2CrossAbst<T1, T2> implements Iterative2Cross<T1, T2>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative2CrossNonNullable<T1, T2> extends Iterative2CrossAbstract<T1, T2> implements Iterative2Cross<T1, T2>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative2CrossNonNullable(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
             super(iterative, right);
@@ -471,7 +471,7 @@ public interface Iterative2Cross<T1, T2> extends Iterative2<T1, T2> {
 
     }
 
-    public static class Iterative2CrossNullable<T1, T2> extends Iterative2CrossAbst<T1, T2> implements Iterative2Cross<T1, T2>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative2CrossNullable<T1, T2> extends Iterative2CrossAbstract<T1, T2> implements Iterative2Cross<T1, T2>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative2CrossNullable(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
             super(iterative, right);
@@ -483,13 +483,13 @@ public interface Iterative2Cross<T1, T2> extends Iterative2<T1, T2> {
 
     }
 
-    public static abstract class Iterative2CrossAbst<T1, T2> extends Iterative2.Iterative2Abst<T1, T2> implements Iterative2Cross<T1, T2> {
+    public static abstract class Iterative2CrossAbstract<T1, T2> extends Iterative2.Iterative2Abstract<T1, T2> implements Iterative2Cross<T1, T2> {
 
-        Iterative2CrossAbst(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
+        Iterative2CrossAbstract(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
             super(iterative, right);
         }
 
-        Iterative2CrossAbst(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> right, boolean ign) {
+        Iterative2CrossAbstract(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

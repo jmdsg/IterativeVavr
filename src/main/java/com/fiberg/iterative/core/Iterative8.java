@@ -1410,19 +1410,19 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
         return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T8, T1, T2, T3, T4, T5, T6, T7>(this.popBack().pushFrontInlineBy(this.iterableStream8()));
     }
 
-    public static abstract class Iterative8Abst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> {
+    public static abstract class Iterative8Abstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> {
 
         protected final Iterative7<T1, T2, T3, T4, T5, T6, T7> iterative;
         protected final Iterable<Stream<T8>> right;
 
-        Iterative8Abst(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
+        Iterative8Abstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
             this.iterative = iterative;
             this.right = SimpleIterative.of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
         }
 
-        Iterative8Abst(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
+        Iterative8Abstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
             this.iterative = iterative;

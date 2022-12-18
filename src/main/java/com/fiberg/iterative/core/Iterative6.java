@@ -1398,19 +1398,19 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         return iterative.isCross() ? this.inlineJoinLt(iterative.splitRt()).pushFrontCrossBy(iterative.iterableStream1()) : this.inlineJoinLt(iterative.splitRt()).pushFrontInlineBy(iterative.iterableStream1());
     }
 
-    public static abstract class Iterative6Abst<T1, T2, T3, T4, T5, T6> implements Iterative6<T1, T2, T3, T4, T5, T6> {
+    public static abstract class Iterative6Abstract<T1, T2, T3, T4, T5, T6> implements Iterative6<T1, T2, T3, T4, T5, T6> {
 
         protected final Iterative5<T1, T2, T3, T4, T5> iterative;
         protected final Iterable<Stream<T6>> right;
 
-        Iterative6Abst(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
+        Iterative6Abstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
             this.iterative = iterative;
             this.right = SimpleIterative.of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
         }
 
-        Iterative6Abst(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
+        Iterative6Abstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
             this.iterative = iterative;

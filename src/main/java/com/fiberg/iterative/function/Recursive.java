@@ -7,11 +7,12 @@ public class Recursive<I> {
     private I i;
 
     private Recursive() {
+
     }
 
     public static <I> I of(Fn1<RecursiveSupplier<I>, I> f) {
-        Recursive<I> rec = new Recursive<I>();
-        RecursiveSupplier sup = new RecursiveSupplier();
+        final Recursive<I> rec = new Recursive<I>();
+        final RecursiveSupplier<I> sup = new RecursiveSupplier<I>();
         rec.i = f.apply(sup);
         sup.i = rec.i;
         return rec.i;

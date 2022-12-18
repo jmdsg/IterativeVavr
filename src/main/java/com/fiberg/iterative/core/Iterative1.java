@@ -1455,7 +1455,7 @@ public interface Iterative1<T1> extends IterativeConstructor {
         return iterative.splitLt2().isCross() ? this.inlineJoinLt(iterative.splitRt6()).pushFrontCrossBy(iterative.iterableStream1()) : this.inlineJoinLt(iterative.splitRt6()).pushFrontInlineBy(iterative.iterableStream1());
     }
 
-    public static class Iterative1NonNullable<T1> extends Iterative1Abst<T1> implements Iterative1<T1>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative1NonNullable<T1> extends Iterative1Abstract<T1> implements Iterative1<T1>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative1NonNullable(Iterable<? extends T1> elem) {
             super(elem);
@@ -1467,7 +1467,7 @@ public interface Iterative1<T1> extends IterativeConstructor {
 
     }
 
-    public static class Iterative1Nullable<T1> extends Iterative1Abst<T1> implements Iterative1<T1>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative1Nullable<T1> extends Iterative1Abstract<T1> implements Iterative1<T1>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative1Nullable(Iterable<? extends T1> elem) {
             super(elem);
@@ -1479,16 +1479,16 @@ public interface Iterative1<T1> extends IterativeConstructor {
 
     }
 
-    public static abstract class Iterative1Abst<T1> implements Iterative1<T1> {
+    public static abstract class Iterative1Abstract<T1> implements Iterative1<T1> {
 
         final Iterable<Stream<T1>> elem;
 
-        Iterative1Abst(Iterable<? extends T1> elem) {
+        Iterative1Abstract(Iterable<? extends T1> elem) {
             Objects.requireNonNull(elem, "elem is null");
             this.elem = SimpleIterative.of(elem).inlineMap(this::wrap).map(Stream::of).toIterable();
         }
 
-        Iterative1Abst(Iterable<? extends Stream<? extends T1>> elem, boolean ign) {
+        Iterative1Abstract(Iterable<? extends Stream<? extends T1>> elem, boolean ign) {
             Objects.requireNonNull(elem, "elem is null");
             this.elem = SimpleIterative.of(elem).map((Fn1 & Serializable) iter -> iter.flatMap(this::wrap));
         }

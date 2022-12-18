@@ -244,7 +244,7 @@ public interface Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> extends Iterative7<
         return (Iterative8Cross) Iterative7.super.pushFrontInlineOf(t0);
     }
 
-    public static class Iterative7CrossNonNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7CrossAbst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Cross<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative7CrossNonNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7CrossAbstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Cross<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative7CrossNonNullable(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             super(iterative, right);
@@ -256,7 +256,7 @@ public interface Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> extends Iterative7<
 
     }
 
-    public static class Iterative7CrossNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7CrossAbst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Cross<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative7CrossNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7CrossAbstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Cross<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative7CrossNullable(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             super(iterative, right);
@@ -268,13 +268,13 @@ public interface Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> extends Iterative7<
 
     }
 
-    public static abstract class Iterative7CrossAbst<T1, T2, T3, T4, T5, T6, T7> extends Iterative7.Iterative7Abst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> {
+    public static abstract class Iterative7CrossAbstract<T1, T2, T3, T4, T5, T6, T7> extends Iterative7.Iterative7Abstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> {
 
-        Iterative7CrossAbst(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
+        Iterative7CrossAbstract(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             super(iterative, right);
         }
 
-        Iterative7CrossAbst(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> right, boolean ign) {
+        Iterative7CrossAbstract(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

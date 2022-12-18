@@ -460,7 +460,7 @@ public interface Iterative2Inline<T1, T2> extends Iterative2<T1, T2> {
         return (Iterative8Inline) Iterative2.super.pushFrontInline(f1, f2, f3, f4, f5, f6);
     }
 
-    public static class Iterative2InlineNonNullable<T1, T2> extends Iterative2InlineAbst<T1, T2> implements Iterative2Inline<T1, T2>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative2InlineNonNullable<T1, T2> extends Iterative2InlineAbstract<T1, T2> implements Iterative2Inline<T1, T2>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
 
         Iterative2InlineNonNullable(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
             super(iterative, right);
@@ -472,7 +472,7 @@ public interface Iterative2Inline<T1, T2> extends Iterative2<T1, T2> {
 
     }
 
-    public static class Iterative2InlineNullable<T1, T2> extends Iterative2InlineAbst<T1, T2> implements Iterative2Inline<T1, T2>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative2InlineNullable<T1, T2> extends Iterative2InlineAbstract<T1, T2> implements Iterative2Inline<T1, T2>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
 
         Iterative2InlineNullable(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
             super(iterative, right);
@@ -484,13 +484,13 @@ public interface Iterative2Inline<T1, T2> extends Iterative2<T1, T2> {
 
     }
 
-    public static abstract class Iterative2InlineAbst<T1, T2> extends Iterative2.Iterative2Abst<T1, T2> implements Iterative2Inline<T1, T2> {
+    public static abstract class Iterative2InlineAbstract<T1, T2> extends Iterative2.Iterative2Abstract<T1, T2> implements Iterative2Inline<T1, T2> {
 
-        Iterative2InlineAbst(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
+        Iterative2InlineAbstract(Iterative1<? extends T1> iterative, Iterable<? extends T2> right) {
             super(iterative, right);
         }
 
-        Iterative2InlineAbst(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> right, boolean ign) {
+        Iterative2InlineAbstract(Iterative1<? extends T1> iterative, Iterable<? extends Stream<? extends T2>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

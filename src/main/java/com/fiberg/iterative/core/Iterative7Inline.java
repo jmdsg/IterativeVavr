@@ -245,7 +245,7 @@ public interface Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> extends Iterative7
         return (Iterative8Inline) Iterative7.super.pushFrontInlineOf(t0);
     }
 
-    public static class Iterative7InlineNonNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7InlineAbst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Inline<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative7InlineNonNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7InlineAbstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Inline<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
 
         Iterative7InlineNonNullable(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             super(iterative, right);
@@ -257,7 +257,7 @@ public interface Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> extends Iterative7
 
     }
 
-    public static class Iterative7InlineNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7InlineAbst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Inline<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative7InlineNullable<T1, T2, T3, T4, T5, T6, T7> extends Iterative7InlineAbstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Inline<T1, T2, T3, T4, T5, T6, T7>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
 
         Iterative7InlineNullable(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             super(iterative, right);
@@ -269,13 +269,13 @@ public interface Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> extends Iterative7
 
     }
 
-    public static abstract class Iterative7InlineAbst<T1, T2, T3, T4, T5, T6, T7> extends Iterative7.Iterative7Abst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> {
+    public static abstract class Iterative7InlineAbstract<T1, T2, T3, T4, T5, T6, T7> extends Iterative7.Iterative7Abstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> {
 
-        Iterative7InlineAbst(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
+        Iterative7InlineAbstract(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             super(iterative, right);
         }
 
-        Iterative7InlineAbst(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> right, boolean ign) {
+        Iterative7InlineAbstract(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

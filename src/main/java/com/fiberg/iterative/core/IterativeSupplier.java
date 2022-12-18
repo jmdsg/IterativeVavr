@@ -37,9 +37,9 @@ interface IterativeSupplier {
 
             private final Iterative8<T1, A1, A2, A3, A4, A5, A6, A7> iterative;
 
-            Iterative1Supplier7Impl(Iterative8<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5, ? extends A6, ? extends A7> itererative) {
+            Iterative1Supplier7Impl(Iterative8<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5, ? extends A6, ? extends A7> iterative) {
                 @SuppressWarnings("unchecked")
-                final Iterative8<T1, A1, A2, A3, A4, A5, A6, A7> iter = (Iterative8<T1, A1, A2, A3, A4, A5, A6, A7>) itererative;
+                final Iterative8<T1, A1, A2, A3, A4, A5, A6, A7> iter = (Iterative8<T1, A1, A2, A3, A4, A5, A6, A7>) iterative;
                 this.iterative = iter;
             }
 
@@ -50,12 +50,39 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> checkAll() {
-                return this.iterative.splitRt7().toStream().isEmpty() ? new Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.iterative.splitLt1().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt7().toStream().isEmpty()) {
+                    final Iterative8Cross<T1, A1, A2, A3, A4, A5, A6, A7> iterative = this.iterative
+                            .splitLt1()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none())
+                            .pushBackOf(Option.<A5>none())
+                            .pushBackOf(Option.<A6>none())
+                            .pushBackOf(Option.<A7>none());
+                    return new Iterative1Supplier7Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> checkArgs() {
-                return this.iterative.splitRt7().toStream().isEmpty() ? new Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.iterative.splitLt1().pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt7().toStream().isEmpty()) {
+                    final Iterative8Cross<T1, A1, A2, A3, A4, A5, A6, A7> iterative = this.iterative
+                            .splitLt1()
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none())
+                            .pushBackOf(Option.<A5>none())
+                            .pushBackOf(Option.<A6>none())
+                            .pushBackOf(Option.<A7>none());
+                    return new Iterative1Supplier7Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingLt(Cs2<? super T1, ? super A1> c, boolean isCross) {
@@ -171,10 +198,12 @@ interface IterativeSupplier {
 
         public static class Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6> implements TransformSupplier<T1, A1, A2, A3, A4, A5, A6> {
 
-            private Iterative7<T1, A1, A2, A3, A4, A5, A6> iterative;
+            private final Iterative7<T1, A1, A2, A3, A4, A5, A6> iterative;
 
             Iterative1Supplier6Impl(Iterative7<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5, ? extends A6> iterative) {
-                this.iterative = iterative;
+                @SuppressWarnings("unchecked")
+                final Iterative7<T1, A1, A2, A3, A4, A5, A6> iter = (Iterative7<T1, A1, A2, A3, A4, A5, A6>) iterative;
+                this.iterative = iter;
             }
 
             @Override
@@ -184,12 +213,37 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> checkAll() {
-                return this.iterative.splitRt6().toStream().isEmpty() ? new Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.iterative.splitLt1().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt6().toStream().isEmpty()) {
+                    final Iterative7Cross<T1, A1, A2, A3, A4, A5, A6> iterative = this.iterative
+                            .splitLt1()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none())
+                            .pushBackOf(Option.<A5>none())
+                            .pushBackOf(Option.<A6>none());
+                    return new Iterative1Supplier6.Iterative1Supplier6Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> checkArgs() {
-                return this.iterative.splitRt6().toStream().isEmpty() ? new Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.iterative.splitLt1().pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt6().toStream().isEmpty()) {
+                    final Iterative7Cross<T1, A1, A2, A3, A4, A5, A6> iterative = this.iterative
+                            .splitLt1()
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none())
+                            .pushBackOf(Option.<A5>none())
+                            .pushBackOf(Option.<A6>none());
+                    return new Iterative1Supplier6.Iterative1Supplier6Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingLt(Cs2<? super T1, ? super A1> c, boolean isCross) {
@@ -337,10 +391,12 @@ interface IterativeSupplier {
 
         public static class Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5> implements TransformSupplier<T1, A1, A2, A3, A4, A5> {
 
-            private Iterative6<T1, A1, A2, A3, A4, A5> iterative;
+            private final Iterative6<T1, A1, A2, A3, A4, A5> iterative;
 
             Iterative1Supplier5Impl(Iterative6<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5> iterative) {
-                this.iterative = iterative;
+                @SuppressWarnings("unchecked")
+                final Iterative6<T1, A1, A2, A3, A4, A5> iter = (Iterative6<T1, A1, A2, A3, A4, A5>) iterative;
+                this.iterative = iter;
             }
 
             @Override
@@ -350,12 +406,35 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> checkAll() {
-                return this.iterative.splitRt5().toStream().isEmpty() ? new Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.iterative.splitLt1().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt5().toStream().isEmpty()) {
+                    final Iterative6Cross<T1, A1, A2, A3, A4, A5> iterative = this.iterative
+                            .splitLt1()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none())
+                            .pushBackOf(Option.<A5>none());
+                    return new Iterative1Supplier5.Iterative1Supplier5Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> checkArgs() {
-                return this.iterative.splitRt5().toStream().isEmpty() ? new Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.iterative.splitLt1().pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt5().toStream().isEmpty()) {
+                    final Iterative6Cross<T1, A1, A2, A3, A4, A5> iterative = this.iterative
+                            .splitLt1()
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none())
+                            .pushBackOf(Option.<A5>none());
+                    return new Iterative1Supplier5.Iterative1Supplier5Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1Supplier4<T1, A2, A3, A4, A5> usingLt(Cs2<? super T1, ? super A1> c, boolean isCross) {
@@ -535,10 +614,12 @@ interface IterativeSupplier {
 
         public static class Iterative1Supplier4Impl<T1, A1, A2, A3, A4> implements TransformSupplier<T1, A1, A2, A3, A4> {
 
-            private Iterative5<T1, A1, A2, A3, A4> iterative;
+            private final Iterative5<T1, A1, A2, A3, A4> iterative;
 
             Iterative1Supplier4Impl(Iterative5<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4> iterative) {
-                this.iterative = iterative;
+                @SuppressWarnings("unchecked")
+                final Iterative5<T1, A1, A2, A3, A4> iter = (Iterative5<T1, A1, A2, A3, A4>) iterative;
+                this.iterative = iter;
             }
 
             @Override
@@ -548,12 +629,33 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier4<T1, A1, A2, A3, A4> checkAll() {
-                return this.iterative.splitRt4().toStream().isEmpty() ? new Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.iterative.splitLt1().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt4().toStream().isEmpty()) {
+                    final Iterative5Cross<T1, A1, A2, A3, A4> iterative = this.iterative
+                            .splitLt1()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none());
+                    return new Iterative1Supplier4.Iterative1Supplier4Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier4<T1, A1, A2, A3, A4> checkArgs() {
-                return this.iterative.splitRt4().toStream().isEmpty() ? new Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.iterative.splitLt1().pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt4().toStream().isEmpty()) {
+                    final Iterative5Cross<T1, A1, A2, A3, A4> iterative = this.iterative
+                            .splitLt1()
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none())
+                            .pushBackOf(Option.<A4>none());
+                    return new Iterative1Supplier4.Iterative1Supplier4Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1Supplier3<T1, A2, A3, A4> usingLt(Cs2<? super T1, ? super A1> c, boolean isCross) {
@@ -765,10 +867,12 @@ interface IterativeSupplier {
 
         public static class Iterative1Supplier3Impl<T1, A1, A2, A3> implements TransformSupplier<T1, A1, A2, A3> {
 
-            private Iterative4<T1, A1, A2, A3> iterative;
+            private final Iterative4<T1, A1, A2, A3> iterative;
 
             Iterative1Supplier3Impl(Iterative4<? extends T1, ? extends A1, ? extends A2, ? extends A3> iterative) {
-                this.iterative = iterative;
+                @SuppressWarnings("unchecked")
+                final Iterative4<T1, A1, A2, A3> iter = (Iterative4<T1, A1, A2, A3>) iterative;
+                this.iterative = iter;
             }
 
             @Override
@@ -778,12 +882,31 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier3<T1, A1, A2, A3> checkAll() {
-                return this.iterative.splitRt3().toStream().isEmpty() ? new Iterative1Supplier3Impl<T1, A1, A2, A3>(this.iterative.splitLt1().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt3().toStream().isEmpty()) {
+                    final Iterative4Cross<T1, A1, A2, A3> iterative = this.iterative
+                            .splitLt1()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none());
+                    return new Iterative1Supplier3.Iterative1Supplier3Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier3<T1, A1, A2, A3> checkArgs() {
-                return this.iterative.splitRt3().toStream().isEmpty() ? new Iterative1Supplier3Impl<T1, A1, A2, A3>(this.iterative.splitLt1().pushBackOf(Option.none()).pushBackOf((Iterable) Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt3().toStream().isEmpty()) {
+                    final Iterative4Cross<T1, A1, A2, A3> iterative = this.iterative
+                            .splitLt1()
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none())
+                            .pushBackOf(Option.<A3>none());
+                    return new Iterative1Supplier3.Iterative1Supplier3Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1Supplier2<T1, A2, A3> usingLt(Cs2<? super T1, ? super A1> c, boolean isCross) {
@@ -1027,10 +1150,12 @@ interface IterativeSupplier {
 
         public static class Iterative1Supplier2Impl<T1, A1, A2> implements TransformSupplier<T1, A1, A2> {
 
-            private Iterative3<T1, A1, A2> iterative;
+            private final Iterative3<T1, A1, A2> iterative;
 
             Iterative1Supplier2Impl(Iterative3<? extends T1, ? extends A1, ? extends A2> iterative) {
-                this.iterative = iterative;
+                @SuppressWarnings("unchecked")
+                final Iterative3<T1, A1, A2> iter = (Iterative3<T1, A1, A2>) iterative;
+                this.iterative = iter;
             }
 
             @Override
@@ -1040,12 +1165,29 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier2<T1, A1, A2> checkAll() {
-                return this.iterative.splitRt2().toStream().isEmpty() ? new Iterative1Supplier2Impl<T1, A1, A2>(this.iterative.splitLt1().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt2().toStream().isEmpty()) {
+                    final Iterative3Cross<T1, A1, A2> iterative = this.iterative
+                            .splitLt1()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none());
+                    return new Iterative1Supplier2.Iterative1Supplier2Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier2<T1, A1, A2> checkArgs() {
-                return this.iterative.splitRt2().toStream().isEmpty() ? new Iterative1Supplier2Impl<T1, A1, A2>(this.iterative.splitLt1().pushBackOf(Option.none()).pushBackOf((Iterable) Option.none())) : this;
+                if (this.iterative.splitRt2().toStream().isEmpty()) {
+                    final Iterative3Cross<T1, A1, A2> iterative = this.iterative
+                            .splitLt1()
+                            .pushBackOf(Option.<A1>none())
+                            .pushBackOf(Option.<A2>none());
+                    return new Iterative1Supplier2.Iterative1Supplier2Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1Supplier1<T1, A2> usingLt(Cs2<? super T1, ? super A1> c, boolean isCross) {
@@ -1315,10 +1457,12 @@ interface IterativeSupplier {
 
         public static class Iterative1Supplier1Impl<T1, A1> implements TransformSupplier<T1, A1> {
 
-            private Iterative2<T1, A1> iterative;
+            private final Iterative2<T1, A1> iterative;
 
             Iterative1Supplier1Impl(Iterative2<? extends T1, ? extends A1> iterative) {
-                this.iterative = iterative;
+                @SuppressWarnings("unchecked")
+                final Iterative2<T1, A1> iter = (Iterative2<T1, A1>) iterative;
+                this.iterative = iter;
             }
 
             @Override
@@ -1328,12 +1472,27 @@ interface IterativeSupplier {
 
             @Override
             public Iterative1Supplier1<T1, A1> checkAll() {
-                return this.iterative.splitRt().toStream().isEmpty() ? new Iterative1Supplier1Impl(this.iterative.splitLt().create(IterativeHandler.streamWrap(Option.none())).pushBackOf(Option.none())) : this;
+                if (this.iterative.splitRt().toStream().isEmpty()) {
+                    final Iterative2Cross<T1, A1> iterative = this.iterative
+                            .splitLt()
+                            .create(IterativeHandler.streamWrap(Option.<T1>none()))
+                            .pushBackOf(Option.<A1>none());
+                    return new Iterative1Supplier1.Iterative1Supplier1Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             @Override
             public Iterative1Supplier1<T1, A1> checkArgs() {
-                return this.iterative.splitRt().toStream().isEmpty() ? new Iterative1Supplier1Impl(this.iterative.splitLt().pushBackOf(Option.none())) : this;
+                if (this.iterative.splitRt().toStream().isEmpty()) {
+                    final Iterative2Cross<T1, A1> iterative = this.iterative
+                            .splitLt()
+                            .pushBackOf(Option.<A1>none());
+                    return new Iterative1Supplier1.Iterative1Supplier1Impl<>(iterative);
+                } else {
+                    return this;
+                }
             }
 
             private Iterative1<T1> using(Cs2<? super T1, ? super A1> c, boolean isCross) {

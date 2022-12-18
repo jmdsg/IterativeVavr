@@ -689,15 +689,15 @@ public interface Iterative0 extends IterativeConstructor {
         return this.isNullable() ? this : Iterative.nullable().of();
     }
 
-    public static class Iterative0NonNullable extends Iterative0Abst implements Iterative0, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative0NonNullable extends Iterative0Abstract implements Iterative0, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
     }
 
-    public static class Iterative0Nullable extends Iterative0Abst implements Iterative0, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative0Nullable extends Iterative0Abstract implements Iterative0, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
     }
 
-    public static abstract class Iterative0Abst implements Iterative0 {
+    public static abstract class Iterative0Abstract implements Iterative0 {
 
         @Override
         public String toStringContent() {

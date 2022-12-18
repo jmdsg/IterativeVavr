@@ -209,7 +209,7 @@ public interface Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterati
         return (Iterative8Cross) Iterative8.super.filter8(p);
     }
 
-    public static class Iterative8CrossNonNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8CrossAbst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative8CrossNonNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8CrossAbstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative8CrossNonNullable(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             super(iterative, right);
@@ -221,7 +221,7 @@ public interface Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterati
 
     }
 
-    public static class Iterative8CrossNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8CrossAbst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative8CrossNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8CrossAbstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative8CrossNullable(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             super(iterative, right);
@@ -233,13 +233,13 @@ public interface Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterati
 
     }
 
-    public static abstract class Iterative8CrossAbst<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8.Iterative8Abst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> {
+    public static abstract class Iterative8CrossAbstract<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8.Iterative8Abstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> {
 
-        Iterative8CrossAbst(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
+        Iterative8CrossAbstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             super(iterative, right);
         }
 
-        Iterative8CrossAbst(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
+        Iterative8CrossAbstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

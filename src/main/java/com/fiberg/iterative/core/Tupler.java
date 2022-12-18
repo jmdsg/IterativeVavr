@@ -1191,127 +1191,67 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = pred.ignoring7Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2, T3, T4, T5, T6, T7, T8>ignoring7Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5, T6, T7, T8>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test3(Pr1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T3> pred = (Pr1<T3>) p;
-            final Pr3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5, T6, T7, T8>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test4(Pr1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T4> pred = (Pr1<T4>) p;
-            final Pr4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5, T6, T7, T8>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test5(Pr1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T5> pred = (Pr1<T5>) p;
-            final Pr5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().<T6, T7, T8>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test6(Pr1<? super T6> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T6> pred = (Pr1<T6>) p;
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringLt = pred.ignoring5Lt();
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T6>narrow(p).<T1, T2, T3, T4, T5>ignoring5Lt().<T7, T8>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test7(Pr1<? super T7> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T7> pred = (Pr1<T7>) p;
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = pred.ignoring6Lt();
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T7>narrow(p).<T1, T2, T3, T4, T5, T6>ignoring6Lt().<T8>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> test8(Pr1<? super T8> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T8> pred = (Pr1<T8>) p;
-            final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringLt = pred.ignoring7Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T8>narrow(p).<T1, T2, T3, T4, T5, T6, T7>ignoring7Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = cons.ignoring7Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2, T3, T4, T5, T6, T7, T8>ignoring7Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5, T6, T7, T8>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept3(Cs1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T3> cons = (Cs1<T3>) c;
-            final Cs3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5, T6, T7, T8>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept4(Cs1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T4> cons = (Cs1<T4>) c;
-            final Cs4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5, T6, T7, T8>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept5(Cs1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T5> cons = (Cs1<T5>) c;
-            final Cs5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().<T6, T7, T8>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept6(Cs1<? super T6> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T6> cons = (Cs1<T6>) c;
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringLt = cons.ignoring5Lt();
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T6>narrow(c).<T1, T2, T3, T4, T5>ignoring5Lt().<T7, T8>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept7(Cs1<? super T7> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T7> cons = (Cs1<T7>) c;
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = cons.ignoring6Lt();
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T7>narrow(c).<T1, T2, T3, T4, T5, T6>ignoring6Lt().<T8>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Cs1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> accept8(Cs1<? super T8> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T8> cons = (Cs1<T8>) c;
-            final Cs8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringLt = cons.ignoring7Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T8>narrow(c).<T1, T2, T3, T4, T5, T6, T7>ignoring7Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fnc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, Tuple8<R, T2, T3, T4, T5, T6, T7, T8>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -1347,127 +1287,67 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = pred.ignoring7Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2, T3, T4, T5, T6, T7, T8>ignoring7Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5, T6, T7, T8>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked3(Prc1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T3> pred = (Prc1<T3>) p;
-            final Prc3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5, T6, T7, T8>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked4(Prc1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T4> pred = (Prc1<T4>) p;
-            final Prc4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5, T6, T7, T8>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked5(Prc1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T5> pred = (Prc1<T5>) p;
-            final Prc5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().<T6, T7, T8>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked6(Prc1<? super T6> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T6> pred = (Prc1<T6>) p;
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringLt = pred.ignoring5Lt();
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T6>narrow(p).<T1, T2, T3, T4, T5>ignoring5Lt().<T7, T8>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked7(Prc1<? super T7> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T7> pred = (Prc1<T7>) p;
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = pred.ignoring6Lt();
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T7>narrow(p).<T1, T2, T3, T4, T5, T6>ignoring6Lt().<T8>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Prc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> testChecked8(Prc1<? super T8> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T8> pred = (Prc1<T8>) p;
-            final Prc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringLt = pred.ignoring7Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T8>narrow(p).<T1, T2, T3, T4, T5, T6, T7>ignoring7Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = cons.ignoring7Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2, T3, T4, T5, T6, T7, T8>ignoring7Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5, T6, T7, T8>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked3(Csc1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T3> cons = (Csc1<T3>) c;
-            final Csc3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5, T6, T7, T8>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked4(Csc1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T4> cons = (Csc1<T4>) c;
-            final Csc4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5, T6, T7, T8>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked5(Csc1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T5> cons = (Csc1<T5>) c;
-            final Csc5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().<T6, T7, T8>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked6(Csc1<? super T6> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T6> cons = (Csc1<T6>) c;
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringLt = cons.ignoring5Lt();
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T6>narrow(c).<T1, T2, T3, T4, T5>ignoring5Lt().<T7, T8>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked7(Csc1<? super T7> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T7> cons = (Csc1<T7>) c;
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = cons.ignoring6Lt();
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T7>narrow(c).<T1, T2, T3, T4, T5, T6>ignoring6Lt().<T8>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> acceptChecked8(Csc1<? super T8> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T8> cons = (Csc1<T8>) c;
-            final Csc8<T1, T2, T3, T4, T5, T6, T7, T8> ignoringLt = cons.ignoring7Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T8>narrow(c).<T1, T2, T3, T4, T5, T6, T7>ignoring7Lt().tupled();
         }
 
     }
@@ -1503,111 +1383,59 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = pred.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2, T3, T4, T5, T6, T7>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5, T6, T7>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test3(Pr1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T3> pred = (Pr1<T3>) p;
-            final Pr3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5, T6, T7>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test4(Pr1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T4> pred = (Pr1<T4>) p;
-            final Pr4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5, T6, T7>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test5(Pr1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T5> pred = (Pr1<T5>) p;
-            final Pr5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().<T6, T7>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test6(Pr1<? super T6> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T6> pred = (Pr1<T6>) p;
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringLt = pred.ignoring5Lt();
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T6>narrow(p).<T1, T2, T3, T4, T5>ignoring5Lt().<T7>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Pr1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> test7(Pr1<? super T7> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T7> pred = (Pr1<T7>) p;
-            final Pr7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = pred.ignoring6Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T7>narrow(p).<T1, T2, T3, T4, T5, T6>ignoring6Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = cons.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2, T3, T4, T5, T6, T7>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5, T6, T7>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept3(Cs1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T3> cons = (Cs1<T3>) c;
-            final Cs3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5, T6, T7>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept4(Cs1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T4> cons = (Cs1<T4>) c;
-            final Cs4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5, T6, T7>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept5(Cs1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T5> cons = (Cs1<T5>) c;
-            final Cs5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().<T6, T7>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept6(Cs1<? super T6> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T6> cons = (Cs1<T6>) c;
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringLt = cons.ignoring5Lt();
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T6>narrow(c).<T1, T2, T3, T4, T5>ignoring5Lt().<T7>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Cs1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> accept7(Cs1<? super T7> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T7> cons = (Cs1<T7>) c;
-            final Cs7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = cons.ignoring6Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T7>narrow(c).<T1, T2, T3, T4, T5, T6>ignoring6Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7, R> Fnc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>, Tuple7<R, T2, T3, T4, T5, T6, T7>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -1639,111 +1467,59 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = pred.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2, T3, T4, T5, T6, T7>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5, T6, T7>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked3(Prc1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T3> pred = (Prc1<T3>) p;
-            final Prc3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5, T6, T7>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked4(Prc1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T4> pred = (Prc1<T4>) p;
-            final Prc4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5, T6, T7>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked5(Prc1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T5> pred = (Prc1<T5>) p;
-            final Prc5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().<T6, T7>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked6(Prc1<? super T6> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T6> pred = (Prc1<T6>) p;
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringLt = pred.ignoring5Lt();
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T6>narrow(p).<T1, T2, T3, T4, T5>ignoring5Lt().<T7>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Prc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> testChecked7(Prc1<? super T7> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T7> pred = (Prc1<T7>) p;
-            final Prc7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = pred.ignoring6Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T7>narrow(p).<T1, T2, T3, T4, T5, T6>ignoring6Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = cons.ignoring6Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2, T3, T4, T5, T6, T7>ignoring6Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5, T6, T7>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked3(Csc1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T3> cons = (Csc1<T3>) c;
-            final Csc3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5, T6, T7>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked4(Csc1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T4> cons = (Csc1<T4>) c;
-            final Csc4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5, T6, T7>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked5(Csc1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T5> cons = (Csc1<T5>) c;
-            final Csc5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().<T6, T7>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked6(Csc1<? super T6> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T6> cons = (Csc1<T6>) c;
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringLt = cons.ignoring5Lt();
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T6>narrow(c).<T1, T2, T3, T4, T5>ignoring5Lt().<T7>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> acceptChecked7(Csc1<? super T7> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T7> cons = (Csc1<T7>) c;
-            final Csc7<T1, T2, T3, T4, T5, T6, T7> ignoringLt = cons.ignoring6Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T7>narrow(c).<T1, T2, T3, T4, T5, T6>ignoring6Lt().tupled();
         }
 
     }
@@ -1775,95 +1551,51 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5, T6> Pr1<Tuple6<T1, T2, T3, T4, T5, T6>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringRt = pred.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2, T3, T4, T5, T6>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Pr1<Tuple6<T1, T2, T3, T4, T5, T6>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5, T6>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Pr1<Tuple6<T1, T2, T3, T4, T5, T6>> test3(Pr1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T3> pred = (Pr1<T3>) p;
-            final Pr3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5, T6>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Pr1<Tuple6<T1, T2, T3, T4, T5, T6>> test4(Pr1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T4> pred = (Pr1<T4>) p;
-            final Pr4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5, T6>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Pr1<Tuple6<T1, T2, T3, T4, T5, T6>> test5(Pr1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T5> pred = (Pr1<T5>) p;
-            final Pr5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().<T6>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Pr1<Tuple6<T1, T2, T3, T4, T5, T6>> test6(Pr1<? super T6> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T6> pred = (Pr1<T6>) p;
-            final Pr6<T1, T2, T3, T4, T5, T6> ignoringLt = pred.ignoring5Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T6>narrow(p).<T1, T2, T3, T4, T5>ignoring5Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringRt = cons.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2, T3, T4, T5, T6>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5, T6>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> accept3(Cs1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T3> cons = (Cs1<T3>) c;
-            final Cs3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5, T6>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> accept4(Cs1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T4> cons = (Cs1<T4>) c;
-            final Cs4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5, T6>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> accept5(Cs1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T5> cons = (Cs1<T5>) c;
-            final Cs5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().<T6>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> accept6(Cs1<? super T6> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T6> cons = (Cs1<T6>) c;
-            final Cs6<T1, T2, T3, T4, T5, T6> ignoringLt = cons.ignoring5Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T6>narrow(c).<T1, T2, T3, T4, T5>ignoring5Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6, R> Fnc1<Tuple6<T1, T2, T3, T4, T5, T6>, Tuple6<R, T2, T3, T4, T5, T6>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -1891,95 +1623,51 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5, T6> Prc1<Tuple6<T1, T2, T3, T4, T5, T6>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringRt = pred.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2, T3, T4, T5, T6>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Prc1<Tuple6<T1, T2, T3, T4, T5, T6>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5, T6>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Prc1<Tuple6<T1, T2, T3, T4, T5, T6>> testChecked3(Prc1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T3> pred = (Prc1<T3>) p;
-            final Prc3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5, T6>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Prc1<Tuple6<T1, T2, T3, T4, T5, T6>> testChecked4(Prc1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T4> pred = (Prc1<T4>) p;
-            final Prc4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5, T6>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Prc1<Tuple6<T1, T2, T3, T4, T5, T6>> testChecked5(Prc1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T5> pred = (Prc1<T5>) p;
-            final Prc5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().<T6>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Prc1<Tuple6<T1, T2, T3, T4, T5, T6>> testChecked6(Prc1<? super T6> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T6> pred = (Prc1<T6>) p;
-            final Prc6<T1, T2, T3, T4, T5, T6> ignoringLt = pred.ignoring5Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T6>narrow(p).<T1, T2, T3, T4, T5>ignoring5Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Csc1<Tuple6<T1, T2, T3, T4, T5, T6>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringRt = cons.ignoring5Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2, T3, T4, T5, T6>ignoring5Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Csc1<Tuple6<T1, T2, T3, T4, T5, T6>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5, T6>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Csc1<Tuple6<T1, T2, T3, T4, T5, T6>> acceptChecked3(Csc1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T3> cons = (Csc1<T3>) c;
-            final Csc3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5, T6>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Csc1<Tuple6<T1, T2, T3, T4, T5, T6>> acceptChecked4(Csc1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T4> cons = (Csc1<T4>) c;
-            final Csc4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5, T6>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Csc1<Tuple6<T1, T2, T3, T4, T5, T6>> acceptChecked5(Csc1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T5> cons = (Csc1<T5>) c;
-            final Csc5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().<T6>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, T6> Csc1<Tuple6<T1, T2, T3, T4, T5, T6>> acceptChecked6(Csc1<? super T6> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T6> cons = (Csc1<T6>) c;
-            final Csc6<T1, T2, T3, T4, T5, T6> ignoringLt = cons.ignoring5Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T6>narrow(c).<T1, T2, T3, T4, T5>ignoring5Lt().tupled();
         }
 
     }
@@ -2007,79 +1695,43 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5> Pr1<Tuple5<T1, T2, T3, T4, T5>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr5<T1, T2, T3, T4, T5> ignoringRt = pred.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2, T3, T4, T5>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Pr1<Tuple5<T1, T2, T3, T4, T5>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Pr5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Pr1<Tuple5<T1, T2, T3, T4, T5>> test3(Pr1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T3> pred = (Pr1<T3>) p;
-            final Pr3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Pr5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Pr1<Tuple5<T1, T2, T3, T4, T5>> test4(Pr1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T4> pred = (Pr1<T4>) p;
-            final Pr4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Pr5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Pr1<Tuple5<T1, T2, T3, T4, T5>> test5(Pr1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T5> pred = (Pr1<T5>) p;
-            final Pr5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Cs1<Tuple5<T1, T2, T3, T4, T5>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs5<T1, T2, T3, T4, T5> ignoringRt = cons.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2, T3, T4, T5>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Cs1<Tuple5<T1, T2, T3, T4, T5>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Cs5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Cs1<Tuple5<T1, T2, T3, T4, T5>> accept3(Cs1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T3> cons = (Cs1<T3>) c;
-            final Cs3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Cs5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Cs1<Tuple5<T1, T2, T3, T4, T5>> accept4(Cs1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T4> cons = (Cs1<T4>) c;
-            final Cs4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Cs5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Cs1<Tuple5<T1, T2, T3, T4, T5>> accept5(Cs1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T5> cons = (Cs1<T5>) c;
-            final Cs5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5, R> Fnc1<Tuple5<T1, T2, T3, T4, T5>, Tuple5<R, T2, T3, T4, T5>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -2103,79 +1755,43 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4, T5> Prc1<Tuple5<T1, T2, T3, T4, T5>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc5<T1, T2, T3, T4, T5> ignoringRt = pred.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2, T3, T4, T5>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Prc1<Tuple5<T1, T2, T3, T4, T5>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Prc5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4, T5>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Prc1<Tuple5<T1, T2, T3, T4, T5>> testChecked3(Prc1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T3> pred = (Prc1<T3>) p;
-            final Prc3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Prc5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4, T5>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Prc1<Tuple5<T1, T2, T3, T4, T5>> testChecked4(Prc1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T4> pred = (Prc1<T4>) p;
-            final Prc4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            final Prc5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().<T5>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Prc1<Tuple5<T1, T2, T3, T4, T5>> testChecked5(Prc1<? super T5> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T5> pred = (Prc1<T5>) p;
-            final Prc5<T1, T2, T3, T4, T5> ignoringLt = pred.ignoring4Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T5>narrow(p).<T1, T2, T3, T4>ignoring4Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Csc1<Tuple5<T1, T2, T3, T4, T5>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc5<T1, T2, T3, T4, T5> ignoringRt = cons.ignoring4Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2, T3, T4, T5>ignoring4Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Csc1<Tuple5<T1, T2, T3, T4, T5>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Csc5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4, T5>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Csc1<Tuple5<T1, T2, T3, T4, T5>> acceptChecked3(Csc1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T3> cons = (Csc1<T3>) c;
-            final Csc3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Csc5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4, T5>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Csc1<Tuple5<T1, T2, T3, T4, T5>> acceptChecked4(Csc1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T4> cons = (Csc1<T4>) c;
-            final Csc4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            final Csc5<T1, T2, T3, T4, T5> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().<T5>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4, T5> Csc1<Tuple5<T1, T2, T3, T4, T5>> acceptChecked5(Csc1<? super T5> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T5> cons = (Csc1<T5>) c;
-            final Csc5<T1, T2, T3, T4, T5> ignoringLt = cons.ignoring4Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T5>narrow(c).<T1, T2, T3, T4>ignoring4Lt().tupled();
         }
 
     }
@@ -2199,63 +1815,35 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4> Pr1<Tuple4<T1, T2, T3, T4>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr4<T1, T2, T3, T4> ignoringRt = pred.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2, T3, T4>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Pr1<Tuple4<T1, T2, T3, T4>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Pr4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Pr1<Tuple4<T1, T2, T3, T4>> test3(Pr1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T3> pred = (Pr1<T3>) p;
-            final Pr3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Pr4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Pr1<Tuple4<T1, T2, T3, T4>> test4(Pr1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T4> pred = (Pr1<T4>) p;
-            final Pr4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().tupled();
         }
 
         public static <T1, T2, T3, T4> Cs1<Tuple4<T1, T2, T3, T4>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs4<T1, T2, T3, T4> ignoringRt = cons.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2, T3, T4>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Cs1<Tuple4<T1, T2, T3, T4>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Cs4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Cs1<Tuple4<T1, T2, T3, T4>> accept3(Cs1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T3> cons = (Cs1<T3>) c;
-            final Cs3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Cs4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Cs1<Tuple4<T1, T2, T3, T4>> accept4(Cs1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T4> cons = (Cs1<T4>) c;
-            final Cs4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().tupled();
         }
 
         public static <T1, T2, T3, T4, R> Fnc1<Tuple4<T1, T2, T3, T4>, Tuple4<R, T2, T3, T4>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -2275,63 +1863,35 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3, T4> Prc1<Tuple4<T1, T2, T3, T4>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc4<T1, T2, T3, T4> ignoringRt = pred.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2, T3, T4>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Prc1<Tuple4<T1, T2, T3, T4>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Prc4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().<T3, T4>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Prc1<Tuple4<T1, T2, T3, T4>> testChecked3(Prc1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T3> pred = (Prc1<T3>) p;
-            final Prc3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            final Prc4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T3>narrow(p).<T1, T2>ignoring2Lt().<T4>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Prc1<Tuple4<T1, T2, T3, T4>> testChecked4(Prc1<? super T4> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T4> pred = (Prc1<T4>) p;
-            final Prc4<T1, T2, T3, T4> ignoringLt = pred.ignoring3Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T4>narrow(p).<T1, T2, T3>ignoring3Lt().tupled();
         }
 
         public static <T1, T2, T3, T4> Csc1<Tuple4<T1, T2, T3, T4>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc4<T1, T2, T3, T4> ignoringRt = cons.ignoring3Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2, T3, T4>ignoring3Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Csc1<Tuple4<T1, T2, T3, T4>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Csc4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().<T3, T4>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Csc1<Tuple4<T1, T2, T3, T4>> acceptChecked3(Csc1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T3> cons = (Csc1<T3>) c;
-            final Csc3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            final Csc4<T1, T2, T3, T4> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T3>narrow(c).<T1, T2>ignoring2Lt().<T4>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3, T4> Csc1<Tuple4<T1, T2, T3, T4>> acceptChecked4(Csc1<? super T4> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T4> cons = (Csc1<T4>) c;
-            final Csc4<T1, T2, T3, T4> ignoringLt = cons.ignoring3Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T4>narrow(c).<T1, T2, T3>ignoring3Lt().tupled();
         }
 
     }
@@ -2351,47 +1911,27 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3> Pr1<Tuple3<T1, T2, T3>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr3<T1, T2, T3> ignoringRt = pred.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2, T3>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3> Pr1<Tuple3<T1, T2, T3>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Pr3<T1, T2, T3> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().<T3>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3> Pr1<Tuple3<T1, T2, T3>> test3(Pr1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T3> pred = (Pr1<T3>) p;
-            final Pr3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T3>narrow(p).<T1, T2>ignoring2Lt().tupled();
         }
 
         public static <T1, T2, T3> Cs1<Tuple3<T1, T2, T3>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs3<T1, T2, T3> ignoringRt = cons.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2, T3>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3> Cs1<Tuple3<T1, T2, T3>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Cs3<T1, T2, T3> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().<T3>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3> Cs1<Tuple3<T1, T2, T3>> accept3(Cs1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T3> cons = (Cs1<T3>) c;
-            final Cs3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T3>narrow(c).<T1, T2>ignoring2Lt().tupled();
         }
 
         public static <T1, T2, T3, R> Fnc1<Tuple3<T1, T2, T3>, Tuple3<R, T2, T3>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -2407,47 +1947,27 @@ public interface Tupler {
         }
 
         public static <T1, T2, T3> Prc1<Tuple3<T1, T2, T3>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc3<T1, T2, T3> ignoringRt = pred.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2, T3>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3> Prc1<Tuple3<T1, T2, T3>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            final Prc3<T1, T2, T3> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().<T3>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3> Prc1<Tuple3<T1, T2, T3>> testChecked3(Prc1<? super T3> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T3> pred = (Prc1<T3>) p;
-            final Prc3<T1, T2, T3> ignoringLt = pred.ignoring2Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T3>narrow(p).<T1, T2>ignoring2Lt().tupled();
         }
 
         public static <T1, T2, T3> Csc1<Tuple3<T1, T2, T3>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc3<T1, T2, T3> ignoringRt = cons.ignoring2Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2, T3>ignoring2Rt().tupled();
         }
 
         public static <T1, T2, T3> Csc1<Tuple3<T1, T2, T3>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            final Csc3<T1, T2, T3> ignoringRt = ignoringLt.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().<T3>ignoring1Rt().tupled();
         }
 
         public static <T1, T2, T3> Csc1<Tuple3<T1, T2, T3>> acceptChecked3(Csc1<? super T3> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T3> cons = (Csc1<T3>) c;
-            final Csc3<T1, T2, T3> ignoringLt = cons.ignoring2Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T3>narrow(c).<T1, T2>ignoring2Lt().tupled();
         }
 
     }
@@ -2463,31 +1983,19 @@ public interface Tupler {
         }
 
         public static <T1, T2> Pr1<Tuple2<T1, T2>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            final Pr2<T1, T2> ignoringRt = pred.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Pr1.<T1>narrow(p).<T2>ignoring1Rt().tupled();
         }
 
         public static <T1, T2> Pr1<Tuple2<T1, T2>> test2(Pr1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T2> pred = (Pr1<T2>) p;
-            final Pr2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            return ignoringLt.tupled();
+            return Pr1.<T2>narrow(p).<T1>ignoring1Lt().tupled();
         }
 
         public static <T1, T2> Cs1<Tuple2<T1, T2>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            final Cs2<T1, T2> ignoringRt = cons.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Cs1.<T1>narrow(c).<T2>ignoring1Rt().tupled();
         }
 
         public static <T1, T2> Cs1<Tuple2<T1, T2>> accept2(Cs1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T2> cons = (Cs1<T2>) c;
-            final Cs2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            return ignoringLt.tupled();
+            return Cs1.<T2>narrow(c).<T1>ignoring1Lt().tupled();
         }
 
         public static <T1, T2, R> Fnc1<Tuple2<T1, T2>, Tuple2<R, T2>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -2499,31 +2007,19 @@ public interface Tupler {
         }
 
         public static <T1, T2> Prc1<Tuple2<T1, T2>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            final Prc2<T1, T2> ignoringRt = pred.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Prc1.<T1>narrow(p).<T2>ignoring1Rt().tupled();
         }
 
         public static <T1, T2> Prc1<Tuple2<T1, T2>> testChecked2(Prc1<? super T2> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T2> pred = (Prc1<T2>) p;
-            final Prc2<T1, T2> ignoringLt = pred.ignoring1Lt();
-            return ignoringLt.tupled();
+            return Prc1.<T2>narrow(p).<T1>ignoring1Lt().tupled();
         }
 
         public static <T1, T2> Csc1<Tuple2<T1, T2>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            final Csc2<T1, T2> ignoringRt = cons.ignoring1Rt();
-            return ignoringRt.tupled();
+            return Csc1.<T1>narrow(c).<T2>ignoring1Rt().tupled();
         }
 
         public static <T1, T2> Csc1<Tuple2<T1, T2>> acceptChecked2(Csc1<? super T2> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T2> cons = (Csc1<T2>) c;
-            final Csc2<T1, T2> ignoringLt = cons.ignoring1Lt();
-            return ignoringLt.tupled();
+            return Csc1.<T2>narrow(c).<T1>ignoring1Lt().tupled();
         }
 
     }
@@ -2535,15 +2031,11 @@ public interface Tupler {
         }
 
         public static <T1> Pr1<Tuple1<T1>> test1(Pr1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Pr1<T1> pred = (Pr1<T1>) p;
-            return pred.tupled();
+            return Pr1.<T1>narrow(p).tupled();
         }
 
         public static <T1> Cs1<Tuple1<T1>> accept1(Cs1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Cs1<T1> cons = (Cs1<T1>) c;
-            return cons.tupled();
+            return Cs1.<T1>narrow(c).tupled();
         }
 
         public static <T1, R> Fnc1<Tuple1<T1>, Tuple1<R>> applyChecked1(Fnc1<? super T1, ? extends R> f) {
@@ -2551,15 +2043,11 @@ public interface Tupler {
         }
 
         public static <T1> Prc1<Tuple1<T1>> testChecked1(Prc1<? super T1> p) {
-            @SuppressWarnings("unchecked")
-            final Prc1<T1> pred = (Prc1<T1>) p;
-            return pred.tupled();
+            return Prc1.<T1>narrow(p).tupled();
         }
 
         public static <T1> Csc1<Tuple1<T1>> acceptChecked1(Csc1<? super T1> c) {
-            @SuppressWarnings("unchecked")
-            final Csc1<T1> cons = (Csc1<T1>) c;
-            return cons.tupled();
+            return Csc1.<T1>narrow(c).tupled();
         }
 
     }

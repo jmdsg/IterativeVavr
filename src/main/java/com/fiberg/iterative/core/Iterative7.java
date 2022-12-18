@@ -1458,19 +1458,19 @@ public interface Iterative7<T1, T2, T3, T4, T5, T6, T7> extends IterativeConstru
         return this.pushFrontInlineBy(iterative.iterableStream1());
     }
 
-    public static abstract class Iterative7Abst<T1, T2, T3, T4, T5, T6, T7> implements Iterative7<T1, T2, T3, T4, T5, T6, T7> {
+    public static abstract class Iterative7Abstract<T1, T2, T3, T4, T5, T6, T7> implements Iterative7<T1, T2, T3, T4, T5, T6, T7> {
 
         protected final Iterative6<T1, T2, T3, T4, T5, T6> iterative;
         protected final Iterable<Stream<T7>> right;
 
-        Iterative7Abst(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
+        Iterative7Abstract(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends T7> right) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
             this.iterative = iterative;
             this.right = SimpleIterative.of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
         }
 
-        Iterative7Abst(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> right, boolean ign) {
+        Iterative7Abstract(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative, Iterable<? extends Stream<? extends T7>> right, boolean ign) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
             this.iterative = iterative;

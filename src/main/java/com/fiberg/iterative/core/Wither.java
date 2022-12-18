@@ -21,83 +21,67 @@ import io.vavr.Tuple8;
 public interface Wither {
 
     public static <T1> Args1<T1> withTuple(Tuple1<? extends T1> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args1<T1> args = (Args1<T1>) new Args1<Object>(tuple._1());
-        return args;
+        return new Args1<>(tuple._1());
     }
 
     public static <T1, T2> Args2<T1, T2> withTuple(Tuple2<? extends T1, ? extends T2> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args2<T1, T2> args = (Args2<T1, T2>) new Args2<Object, Object>(tuple._1(), tuple._2());
-        return args;
+        return new Args2<>(tuple._1(), tuple._2());
     }
 
     public static <T1, T2, T3> Args3<T1, T2, T3> withTuple(Tuple3<? extends T1, ? extends T2, ? extends T3> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args3<T1, T2, T3> args = (Args3<T1, T2, T3>) new Args3<Object, Object, Object>(tuple._1(), tuple._2(), tuple._3());
-        return args;
+        return new Args3<>(tuple._1(), tuple._2(), tuple._3());
     }
 
     public static <T1, T2, T3, T4> Args4<T1, T2, T3, T4> withTuple(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args4<T1, T2, T3, T4> args = (Args4<T1, T2, T3, T4>) new Args4<Object, Object, Object, Object>(tuple._1(), tuple._2(), tuple._3(), tuple._4());
-        return args;
+        return new Args4<>(tuple._1(), tuple._2(), tuple._3(), tuple._4());
     }
 
     public static <T1, T2, T3, T4, T5> Args5<T1, T2, T3, T4, T5> withTuple(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args5<T1, T2, T3, T4, T5> args = (Args5<T1, T2, T3, T4, T5>) new Args5<Object, Object, Object, Object, Object>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5());
-        return args;
+        return new Args5<>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Args6<T1, T2, T3, T4, T5, T6> withTuple(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args6<T1, T2, T3, T4, T5, T6> args = (Args6<T1, T2, T3, T4, T5, T6>) new Args6<Object, Object, Object, Object, Object, Object>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6());
-        return args;
+        return new Args6<>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Args7<T1, T2, T3, T4, T5, T6, T7> withTuple(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args7<T1, T2, T3, T4, T5, T6, T7> args = (Args7<T1, T2, T3, T4, T5, T6, T7>) new Args7<Object, Object, Object, Object, Object, Object, Object>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6(), tuple._7());
-        return args;
+        return new Args7<>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6(), tuple._7());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Args8<T1, T2, T3, T4, T5, T6, T7, T8> withTuple(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> tuple) {
-        @SuppressWarnings("unchecked")
-        final Args8<T1, T2, T3, T4, T5, T6, T7, T8> args = (Args8<T1, T2, T3, T4, T5, T6, T7, T8>) new Args8<Object, Object, Object, Object, Object, Object, Object, Object>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6(), tuple._7(), tuple._8());
-        return args;
+        return new Args8<>(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), tuple._6(), tuple._7(), tuple._8());
     }
 
     public static <T1> Args1<T1> withArgs(T1 t1) {
-        return new Args1<T1>(t1);
+        return new Args1<>(t1);
     }
 
     public static <T1, T2> Args2<T1, T2> withArgs(T1 t1, T2 t2) {
-        return new Args2<T1, T2>(t1, t2);
+        return new Args2<>(t1, t2);
     }
 
     public static <T1, T2, T3> Args3<T1, T2, T3> withArgs(T1 t1, T2 t2, T3 t3) {
-        return new Args3<T1, T2, T3>(t1, t2, t3);
+        return new Args3<>(t1, t2, t3);
     }
 
     public static <T1, T2, T3, T4> Args4<T1, T2, T3, T4> withArgs(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return new Args4<T1, T2, T3, T4>(t1, t2, t3, t4);
+        return new Args4<>(t1, t2, t3, t4);
     }
 
     public static <T1, T2, T3, T4, T5> Args5<T1, T2, T3, T4, T5> withArgs(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return new Args5<T1, T2, T3, T4, T5>(t1, t2, t3, t4, t5);
+        return new Args5<>(t1, t2, t3, t4, t5);
     }
 
     public static <T1, T2, T3, T4, T5, T6> Args6<T1, T2, T3, T4, T5, T6> withArgs(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return new Args6<T1, T2, T3, T4, T5, T6>(t1, t2, t3, t4, t5, t6);
+        return new Args6<>(t1, t2, t3, t4, t5, t6);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Args7<T1, T2, T3, T4, T5, T6, T7> withArgs(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return new Args7<T1, T2, T3, T4, T5, T6, T7>(t1, t2, t3, t4, t5, t6, t7);
+        return new Args7<>(t1, t2, t3, t4, t5, t6, t7);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Args8<T1, T2, T3, T4, T5, T6, T7, T8> withArgs(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return new Args8<T1, T2, T3, T4, T5, T6, T7, T8>(t1, t2, t3, t4, t5, t6, t7, t8);
+        return new Args8<>(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     public static <T1> Args1<T1> fromArgs(Sp<? extends T1> s1) {

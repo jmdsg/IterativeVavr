@@ -284,7 +284,7 @@ public interface Iterative6Cross<T1, T2, T3, T4, T5, T6> extends Iterative6<T1, 
         return (Iterative8Cross) Iterative6.super.pushFrontInline(f1, f2);
     }
 
-    public static class Iterative6CrossNonNullable<T1, T2, T3, T4, T5, T6> extends Iterative6CrossAbst<T1, T2, T3, T4, T5, T6> implements Iterative6Cross<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative6CrossNonNullable<T1, T2, T3, T4, T5, T6> extends Iterative6CrossAbstract<T1, T2, T3, T4, T5, T6> implements Iterative6Cross<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative6CrossNonNullable(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             super(iterative, right);
@@ -296,7 +296,7 @@ public interface Iterative6Cross<T1, T2, T3, T4, T5, T6> extends Iterative6<T1, 
 
     }
 
-    public static class Iterative6CrossNullable<T1, T2, T3, T4, T5, T6> extends Iterative6CrossAbst<T1, T2, T3, T4, T5, T6> implements Iterative6Cross<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative6CrossNullable<T1, T2, T3, T4, T5, T6> extends Iterative6CrossAbstract<T1, T2, T3, T4, T5, T6> implements Iterative6Cross<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative6CrossNullable(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             super(iterative, right);
@@ -308,13 +308,13 @@ public interface Iterative6Cross<T1, T2, T3, T4, T5, T6> extends Iterative6<T1, 
 
     }
 
-    public static abstract class Iterative6CrossAbst<T1, T2, T3, T4, T5, T6> extends Iterative6.Iterative6Abst<T1, T2, T3, T4, T5, T6> implements Iterative6Cross<T1, T2, T3, T4, T5, T6> {
+    public static abstract class Iterative6CrossAbstract<T1, T2, T3, T4, T5, T6> extends Iterative6.Iterative6Abstract<T1, T2, T3, T4, T5, T6> implements Iterative6Cross<T1, T2, T3, T4, T5, T6> {
 
-        Iterative6CrossAbst(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
+        Iterative6CrossAbstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             super(iterative, right);
         }
 
-        Iterative6CrossAbst(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
+        Iterative6CrossAbstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

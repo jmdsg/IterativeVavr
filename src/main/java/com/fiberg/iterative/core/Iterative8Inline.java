@@ -210,7 +210,7 @@ public interface Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterat
         return (Iterative8Inline) Iterative8.super.filter8(p);
     }
 
-    public static class Iterative8InlineNonNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8InlineAbst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative8InlineNonNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8InlineAbstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
 
         Iterative8InlineNonNullable(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             super(iterative, right);
@@ -222,7 +222,7 @@ public interface Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterat
 
     }
 
-    public static class Iterative8InlineNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8InlineAbst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative8InlineNullable<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8InlineAbstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
 
         Iterative8InlineNullable(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             super(iterative, right);
@@ -234,13 +234,13 @@ public interface Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterat
 
     }
 
-    public static abstract class Iterative8InlineAbst<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8.Iterative8Abst<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> {
+    public static abstract class Iterative8InlineAbstract<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterative8.Iterative8Abstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> {
 
-        Iterative8InlineAbst(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
+        Iterative8InlineAbstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             super(iterative, right);
         }
 
-        Iterative8InlineAbst(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
+        Iterative8InlineAbstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

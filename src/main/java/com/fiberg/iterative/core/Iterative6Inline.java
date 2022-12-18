@@ -285,7 +285,7 @@ public interface Iterative6Inline<T1, T2, T3, T4, T5, T6> extends Iterative6<T1,
         return (Iterative8Inline) Iterative6.super.pushFrontInline(f1, f2);
     }
 
-    public static class Iterative6InlineNonNullable<T1, T2, T3, T4, T5, T6> extends Iterative6InlineAbst<T1, T2, T3, T4, T5, T6> implements Iterative6Inline<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative6InlineNonNullable<T1, T2, T3, T4, T5, T6> extends Iterative6InlineAbstract<T1, T2, T3, T4, T5, T6> implements Iterative6Inline<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
 
         Iterative6InlineNonNullable(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             super(iterative, right);
@@ -297,7 +297,7 @@ public interface Iterative6Inline<T1, T2, T3, T4, T5, T6> extends Iterative6<T1,
 
     }
 
-    public static class Iterative6InlineNullable<T1, T2, T3, T4, T5, T6> extends Iterative6InlineAbst<T1, T2, T3, T4, T5, T6> implements Iterative6Inline<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative6InlineNullable<T1, T2, T3, T4, T5, T6> extends Iterative6InlineAbstract<T1, T2, T3, T4, T5, T6> implements Iterative6Inline<T1, T2, T3, T4, T5, T6>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
 
         Iterative6InlineNullable(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             super(iterative, right);
@@ -309,13 +309,13 @@ public interface Iterative6Inline<T1, T2, T3, T4, T5, T6> extends Iterative6<T1,
 
     }
 
-    public static abstract class Iterative6InlineAbst<T1, T2, T3, T4, T5, T6> extends Iterative6.Iterative6Abst<T1, T2, T3, T4, T5, T6> implements Iterative6Inline<T1, T2, T3, T4, T5, T6> {
+    public static abstract class Iterative6InlineAbstract<T1, T2, T3, T4, T5, T6> extends Iterative6.Iterative6Abstract<T1, T2, T3, T4, T5, T6> implements Iterative6Inline<T1, T2, T3, T4, T5, T6> {
 
-        Iterative6InlineAbst(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
+        Iterative6InlineAbstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             super(iterative, right);
         }
 
-        Iterative6InlineAbst(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
+        Iterative6InlineAbstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

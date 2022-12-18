@@ -330,7 +330,7 @@ public interface Iterative5Cross<T1, T2, T3, T4, T5> extends Iterative5<T1, T2, 
         return (Iterative8Cross) Iterative5.super.pushFrontInline(f1, f2, f3);
     }
 
-    public static class Iterative5CrossNonNullable<T1, T2, T3, T4, T5> extends Iterative5CrossAbst<T1, T2, T3, T4, T5> implements Iterative5Cross<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative5CrossNonNullable<T1, T2, T3, T4, T5> extends Iterative5CrossAbstract<T1, T2, T3, T4, T5> implements Iterative5Cross<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative5CrossNonNullable(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
             super(iterative, right);
@@ -342,7 +342,7 @@ public interface Iterative5Cross<T1, T2, T3, T4, T5> extends Iterative5<T1, T2, 
 
     }
 
-    public static class Iterative5CrossNullable<T1, T2, T3, T4, T5> extends Iterative5CrossAbst<T1, T2, T3, T4, T5> implements Iterative5Cross<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative5CrossNullable<T1, T2, T3, T4, T5> extends Iterative5CrossAbstract<T1, T2, T3, T4, T5> implements Iterative5Cross<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative5CrossNullable(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
             super(iterative, right);
@@ -354,13 +354,13 @@ public interface Iterative5Cross<T1, T2, T3, T4, T5> extends Iterative5<T1, T2, 
 
     }
 
-    public static abstract class Iterative5CrossAbst<T1, T2, T3, T4, T5> extends Iterative5.Iterative5Abst<T1, T2, T3, T4, T5> implements Iterative5Cross<T1, T2, T3, T4, T5> {
+    public static abstract class Iterative5CrossAbstract<T1, T2, T3, T4, T5> extends Iterative5.Iterative5Abstract<T1, T2, T3, T4, T5> implements Iterative5Cross<T1, T2, T3, T4, T5> {
 
-        Iterative5CrossAbst(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
+        Iterative5CrossAbstract(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
             super(iterative, right);
         }
 
-        Iterative5CrossAbst(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> right, boolean ign) {
+        Iterative5CrossAbstract(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

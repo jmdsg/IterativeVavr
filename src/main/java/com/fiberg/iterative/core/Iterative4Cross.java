@@ -373,7 +373,7 @@ public interface Iterative4Cross<T1, T2, T3, T4> extends Iterative4<T1, T2, T3, 
         return (Iterative8Cross) Iterative4.super.pushFrontInline(f1, f2, f3, f4);
     }
 
-    public static class Iterative4CrossNonNullable<T1, T2, T3, T4> extends Iterative4CrossAbst<T1, T2, T3, T4> implements Iterative4Cross<T1, T2, T3, T4>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative4CrossNonNullable<T1, T2, T3, T4> extends Iterative4CrossAbstract<T1, T2, T3, T4> implements Iterative4Cross<T1, T2, T3, T4>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeCross {
 
         Iterative4CrossNonNullable(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends T4> right) {
             super(iterative, right);
@@ -385,7 +385,7 @@ public interface Iterative4Cross<T1, T2, T3, T4> extends Iterative4<T1, T2, T3, 
 
     }
 
-    public static class Iterative4CrossNullable<T1, T2, T3, T4> extends Iterative4CrossAbst<T1, T2, T3, T4> implements Iterative4Cross<T1, T2, T3, T4>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
+    public static class Iterative4CrossNullable<T1, T2, T3, T4> extends Iterative4CrossAbstract<T1, T2, T3, T4> implements Iterative4Cross<T1, T2, T3, T4>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeCross {
 
         Iterative4CrossNullable(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends T4> right) {
             super(iterative, right);
@@ -397,13 +397,13 @@ public interface Iterative4Cross<T1, T2, T3, T4> extends Iterative4<T1, T2, T3, 
 
     }
 
-    public static abstract class Iterative4CrossAbst<T1, T2, T3, T4> extends Iterative4.Iterative4Abst<T1, T2, T3, T4> implements Iterative4Cross<T1, T2, T3, T4> {
+    public static abstract class Iterative4CrossAbstract<T1, T2, T3, T4> extends Iterative4.Iterative4Abstract<T1, T2, T3, T4> implements Iterative4Cross<T1, T2, T3, T4> {
 
-        Iterative4CrossAbst(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends T4> right) {
+        Iterative4CrossAbstract(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends T4> right) {
             super(iterative, right);
         }
 
-        Iterative4CrossAbst(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends Stream<? extends T4>> right, boolean ign) {
+        Iterative4CrossAbstract(Iterative3<? extends T1, ? extends T2, ? extends T3> iterative, Iterable<? extends Stream<? extends T4>> right, boolean ign) {
             super(iterative, right, ign);
         }
 

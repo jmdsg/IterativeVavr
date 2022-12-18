@@ -331,7 +331,7 @@ public interface Iterative5Inline<T1, T2, T3, T4, T5> extends Iterative5<T1, T2,
         return (Iterative8Inline) Iterative5.super.pushFrontInline(f1, f2, f3);
     }
 
-    public static class Iterative5InlineNonNullable<T1, T2, T3, T4, T5> extends Iterative5InlineAbst<T1, T2, T3, T4, T5> implements Iterative5Inline<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative5InlineNonNullable<T1, T2, T3, T4, T5> extends Iterative5InlineAbstract<T1, T2, T3, T4, T5> implements Iterative5Inline<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNonNullable, IterativeWrapper.IterativeInline {
 
         Iterative5InlineNonNullable(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
             super(iterative, right);
@@ -343,7 +343,7 @@ public interface Iterative5Inline<T1, T2, T3, T4, T5> extends Iterative5<T1, T2,
 
     }
 
-    public static class Iterative5InlineNullable<T1, T2, T3, T4, T5> extends Iterative5InlineAbst<T1, T2, T3, T4, T5> implements Iterative5Inline<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
+    public static class Iterative5InlineNullable<T1, T2, T3, T4, T5> extends Iterative5InlineAbstract<T1, T2, T3, T4, T5> implements Iterative5Inline<T1, T2, T3, T4, T5>, IterativeWrapper.IterativeWrapperNullable, IterativeWrapper.IterativeInline {
 
         Iterative5InlineNullable(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
             super(iterative, right);
@@ -355,13 +355,13 @@ public interface Iterative5Inline<T1, T2, T3, T4, T5> extends Iterative5<T1, T2,
 
     }
 
-    public static abstract class Iterative5InlineAbst<T1, T2, T3, T4, T5> extends Iterative5.Iterative5Abst<T1, T2, T3, T4, T5> implements Iterative5Inline<T1, T2, T3, T4, T5> {
+    public static abstract class Iterative5InlineAbstract<T1, T2, T3, T4, T5> extends Iterative5.Iterative5Abstract<T1, T2, T3, T4, T5> implements Iterative5Inline<T1, T2, T3, T4, T5> {
 
-        Iterative5InlineAbst(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
+        Iterative5InlineAbstract(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends T5> right) {
             super(iterative, right);
         }
 
-        Iterative5InlineAbst(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> right, boolean ign) {
+        Iterative5InlineAbstract(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> iterative, Iterable<? extends Stream<? extends T5>> right, boolean ign) {
             super(iterative, right, ign);
         }
 
