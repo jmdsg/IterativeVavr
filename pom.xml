@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fiberg</groupId>
+    <artifactId>iterative-vavr</artifactId>
+    <version>0.9.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Iterative</name>
+    <description>Iterative for Vavr</description>
+
+    <properties>
+
+        <junit.version>4.12</junit.version>
+
+        <vavr.version>0.9.0</vavr.version>
+
+        <commons.version>3.5</commons.version>
+        <commons-collection.version>4.1</commons-collection.version>
+
+        <tycho.compiler.version>1.0.0</tycho.compiler.version>
+
+        <plugin.maven.install>2.5.2</plugin.maven.install>
+        <plugin.maven.jar>3.0.2</plugin.maven.jar>
+        <plugin.maven.source>3.0.1</plugin.maven.source>
+        <plugin.maven.eclipse>2.9</plugin.maven.eclipse>
+        <plugin.maven.dependency>2.5.1</plugin.maven.dependency>
+        <plugin.javadoc.version>2.10.4</plugin.javadoc.version>
+        <plugin.compiler.version>3.6.1</plugin.compiler.version>
+        <plugin.compiler.source.version>1.8</plugin.compiler.source.version>
+        <plugin.compiler.target.version>1.8</plugin.compiler.target.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+    </properties>
+
+    <profiles>
+
+        <profile>
+
+            <id>javac</id>
+            <activation>
+                <property>
+                    <name>compile</name>
+                    <value>!jdt</value>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <!-- Compiler plugin Javac -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>${plugin.compiler.version}</version><!-- $NO-MVN-MAN-VER$ -->
+                        <configuration>
+                            <source>${plugin.compiler.source.version}</source>
+                            <target>${plugin.compiler.target.version}</target>
+                            <fork>true</fork>
+                            <meminitial>128m</meminitial>
+                            <maxmem>2048m</maxmem>
+                            <compilerArgs>
+                                <arg>-Averbose=true</arg>
+                                <arg>-verbose</arg>
+                            </compilerArgs>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+
+        <profile>
+
+            <id>jdt</id>
+            <activation>
+                <property>
+                    <name>compile</name>
+                    <value>jdt</value>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <!-- Compiler plugin JDT -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>${plugin.compiler.version}</version><!-- $NO-MVN-MAN-VER$ -->
+                        <configuration>
+                            <source>${plugin.compiler.source.version}</source>
+                            <target>${plugin.compiler.target.version}</target>
+                            <compilerId>jdt</compilerId>
+                            <compilerArgument>-err:nullAnnot,null</compilerArgument>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.eclipse.tycho</groupId>
+                                <artifactId>tycho-compiler-jdt</artifactId>
+                                <version>${tycho.compiler.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+
+        <profile>
+
+            <id>javadoc</id>
+            <activation>
+                <property>
+                    <name>javadoc</name>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <!-- Javadoc plugin -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <!-- <version>${plugin.javadoc.version}</version> -->
+                        <configuration>
+                            <tags>
+                                <tag>
+                                    <name>arg</name>
+                                    <placement>a</placement>
+                                    <head>Argument:</head>
+                                </tag>
+                            </tags>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <additionalparam>-Xdoclint:none</additionalparam>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+
+            </build>
+        </profile>
+
+    </profiles>
+
+    <dependencies>
+
+        <!-- Junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Vavr -->
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr-match</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
+
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collection.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <finalName>iterative.${project.version}</finalName>
+
+        <plugins>
+
+            <!-- download source code in Eclipse -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${plugin.maven.eclipse}</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <!-- Make this jar executable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${plugin.maven.jar}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/log4j.properties</exclude>
+                    </excludes>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.fiberg.vavr.iterative.MainIterative</mainClass>
+                            <classpathPrefix>dependency-jars/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Copy project dependency -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${plugin.maven.dependency}</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <!-- exclude junit, we need runtime dependency only -->
+                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Generate sources -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${plugin.maven.source}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Plugin install -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${plugin.maven.install}</version>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
