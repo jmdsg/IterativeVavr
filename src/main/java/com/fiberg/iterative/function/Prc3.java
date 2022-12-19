@@ -203,11 +203,11 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     }
 
     default public Fnc3<T1, T2, T3, Boolean> toFunction() {
-        return (t1, t2, t3) -> this.test(t1, t2, t3);
+        return this::test;
     }
 
     default public Csc3<T1, T2, T3> toConsumer() {
-        return (t1, t2, t3) -> this.test(t1, t2, t3);
+        return this::test;
     }
 
     default public Prc0 toPredicate(T1 t1, T2 t2, T3 t3) {
@@ -753,7 +753,7 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     }
 
     default public Prc3<T1, T2, T3> memoized() {
-        return (t1, t2, t3) -> ((CheckedFunction3) super.memoized()).apply(t1, t2, t3);
+        return CheckedFunction3.super.memoized()::apply;
     }
 
     default public Pr3<T1, T2, T3> recover(Fn1<? super Throwable, ? extends Pr3<? super T1, ? super T2, ? super T3>> recover) {

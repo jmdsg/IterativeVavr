@@ -61,7 +61,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     public static <T1, R> Fnc1<T1, R> check(Fn1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn1.narrow(f).checked();
+        return Fn1.<T1, R>narrow(f).checked();
     }
 
     public static <T1, R> Fnc1<T1, R> ignore(Fnc0<? extends R> f) {
@@ -130,12 +130,12 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     public static <T1, R> Fn1<T1, Option<R>> lift(Fnc1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc1.liftTry(f).afterApply(Value::toOption);
+        return Fnc1.<T1, R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <T1, R> Fn1<T1, Try<R>> liftTry(Fnc1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc1.narrow(f).beforeWrap(Try::of);
+        return Fnc1.<T1, R>narrow(f).beforeWrap(Try::of);
     }
 
     default public Fnc0<R> toFunction(T1 t1) {
@@ -147,7 +147,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Csc1<T1> toConsumer() {
-        return ((Fnc1) this)::apply;
+        return this::apply;
     }
 
     default public Spc<R> toSupplier(T1 t1) {
@@ -384,7 +384,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Fn1<T1, R> unchecked() {
-        return Function1.super.unchecked()::apply;
+        return CheckedFunction1.super.unchecked()::apply;
     }
 
     default public <I1> Fnc2<I1, T1, R> ignoring1Lt() {
@@ -444,31 +444,31 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Fnc1<T1, R> curried() {
-        return ((CheckedFunction1) super.curried())::apply;
+        return CheckedFunction1.super.curried()::apply;
     }
 
     default public Fnc1<Tuple1<T1>, R> tupled() {
-        return ((CheckedFunction1) super.tupled())::apply;
+        return CheckedFunction1.super.tupled()::apply;
     }
 
     default public Fnc1<T1, R> reversed() {
-        return ((CheckedFunction1) super.reversed())::apply;
+        return CheckedFunction1.super.reversed()::apply;
     }
 
     default public Fnc1<T1, R> memoized() {
-        return ((CheckedFunction1) super.memoized())::apply;
+        return CheckedFunction1.super.memoized()::apply;
     }
 
     default public <V> Fnc1<T1, V> andThen(CheckedFunction1<? super R, ? extends V> after) {
-        return ((CheckedFunction1) super.andThen(after))::apply;
+        return CheckedFunction1.super.andThen(after)::apply;
     }
 
     default public <V> Fnc1<V, R> compose(CheckedFunction1<? super V, ? extends T1> before) {
-        return ((CheckedFunction1) super.compose(before))::apply;
+        return CheckedFunction1.super.compose(before)::apply;
     }
 
     default public Fn1<T1, R> recover(Function<? super Throwable, ? extends Function<? super T1, ? extends R>> recover) {
-        return Function1.super.recover(recover)::apply;
+        return CheckedFunction1.super.recover(recover)::apply;
     }
 
 }

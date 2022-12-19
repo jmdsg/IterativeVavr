@@ -100,7 +100,7 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> check(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn8.narrow(f).checked();
+        return Fn8.<T1, T2, T3, T4, T5, T6, T7, T8, R>narrow(f).checked();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> ignore(Fnc0<? extends R> f) {
@@ -165,12 +165,12 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, Option<R>> lift(Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc8.liftTry(f).afterApply(Value::toOption);
+        return Fnc8.<T1, T2, T3, T4, T5, T6, T7, T8, R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn8<T1, T2, T3, T4, T5, T6, T7, T8, Try<R>> liftTry(Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc8.narrow(f).beforeWrap(Try::of);
+        return Fnc8.<T1, T2, T3, T4, T5, T6, T7, T8, R>narrow(f).beforeWrap(Try::of);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fnc8<T8, T7, T6, T5, T4, T3, T2, T1, R> invert(Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
@@ -242,7 +242,7 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
     }
 
     default public Csc8<T1, T2, T3, T4, T5, T6, T7, T8> toConsumer() {
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> ((Fnc8) this).apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return this::apply;
     }
 
     default public Spc<R> toSupplier(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
@@ -514,60 +514,60 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, R> unchecked() {
-        return Function8.super.unchecked()::apply;
+        return CheckedFunction8.super.unchecked()::apply;
     }
 
     default public Fnc7<T2, T3, T4, T5, T6, T7, T8, R> apply(T1 t1) {
-        return (t1, t2, t3, t4, t5, t6, t7) -> ((CheckedFunction7) super.apply(t1)).apply(t1, t2, t3, t4, t5, t6, t7);
+        return CheckedFunction8.super.apply(t1)::apply;
     }
 
     default public Fnc6<T3, T4, T5, T6, T7, T8, R> apply(T1 t1, T2 t2) {
-        return (t1, t2, t3, t4, t5, t6) -> ((CheckedFunction6) super.apply(t1, t2)).apply(t1, t2, t3, t4, t5, t6);
+        return CheckedFunction8.super.apply(t1, t2)::apply;
     }
 
     default public Fnc5<T4, T5, T6, T7, T8, R> apply(T1 t1, T2 t2, T3 t3) {
-        return (t1, t2, t3, t4, t5) -> ((CheckedFunction5) super.apply(t1, t2, t3)).apply(t1, t2, t3, t4, t5);
+        return CheckedFunction8.super.apply(t1, t2, t3)::apply;
     }
 
     default public Fnc4<T5, T6, T7, T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.apply(t1, t2, t3, t4)).apply(t1, t2, t3, t4);
+        return CheckedFunction8.super.apply(t1, t2, t3, t4)::apply;
     }
 
     default public Fnc3<T6, T7, T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return (t1, t2, t3) -> ((CheckedFunction3) super.apply(t1, t2, t3, t4, t5)).apply(t1, t2, t3);
+        return CheckedFunction8.super.apply(t1, t2, t3, t4, t5)::apply;
     }
 
     default public Fnc2<T7, T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return (t1, t2) -> ((CheckedFunction2) super.apply(t1, t2, t3, t4, t5, t6)).apply(t1, t2);
+        return CheckedFunction8.super.apply(t1, t2, t3, t4, t5, t6)::apply;
     }
 
     default public Fnc1<T8, R> apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return ((CheckedFunction1) super.apply(t1, t2, t3, t4, t5, t6, t7))::apply;
+        return CheckedFunction8.super.apply(t1, t2, t3, t4, t5, t6, t7)::apply;
     }
 
     default public Fnc1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, R> tupled() {
-        return ((CheckedFunction1) super.tupled())::apply;
+        return CheckedFunction8.super.tupled()::apply;
     }
 
     default public Fn1<T1, Function1<T2, Function1<T3, Function1<T4, Function1<T5, Function1<T6, Function1<T7, CheckedFunction1<T8, R>>>>>>>> curried() {
-        return Function1.super.curried()::apply;
+        return CheckedFunction8.super.curried()::apply;
     }
 
     default public Fnc8<T8, T7, T6, T5, T4, T3, T2, T1, R> reversed() {
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> ((CheckedFunction8) super.reversed()).apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return CheckedFunction8.super.reversed()::apply;
     }
 
     default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> memoized() {
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> ((CheckedFunction8) super.memoized()).apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return CheckedFunction8.super.memoized()::apply;
     }
 
     default public <V> Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, V> andThen(CheckedFunction1<? super R, ? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> ((CheckedFunction8) super.andThen(after)).apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return CheckedFunction8.super.andThen(after)::apply;
     }
 
     default public Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> recover(Function<? super Throwable, ? extends Function8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R>> recover) {
-        return super.recover(recover);
+        return CheckedFunction8.super.recover(recover);
     }
 
 }

@@ -215,11 +215,11 @@ public interface Prc4<T1, T2, T3, T4> extends CheckedFunction4<T1, T2, T3, T4, B
     }
 
     default public Fnc4<T1, T2, T3, T4, Boolean> toFunction() {
-        return (t1, t2, t3, t4) -> this.test(t1, t2, t3, t4);
+        return this::test;
     }
 
     default public Csc4<T1, T2, T3, T4> toConsumer() {
-        return (t1, t2, t3, t4) -> this.test(t1, t2, t3, t4);
+        return this::test;
     }
 
     default public Prc0 toPredicate(T1 t1, T2 t2, T3 t3, T4 t4) {
@@ -757,7 +757,7 @@ public interface Prc4<T1, T2, T3, T4> extends CheckedFunction4<T1, T2, T3, T4, B
     }
 
     default public Prc4<T1, T2, T3, T4> memoized() {
-        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.memoized()).apply(t1, t2, t3, t4);
+        return CheckedFunction4.super.memoized()::apply;
     }
 
     default public Pr4<T1, T2, T3, T4> recover(Fn1<? super Throwable, ? extends Pr4<? super T1, ? super T2, ? super T3, ? super T4>> recover) {

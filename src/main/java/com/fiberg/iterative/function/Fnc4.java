@@ -80,7 +80,7 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> check(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn4.narrow(f).checked();
+        return Fn4.<T1, T2, T3, T4, R>narrow(f).checked();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore(Fnc0<? extends R> f) {
@@ -145,12 +145,12 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
 
     public static <T1, T2, T3, T4, R> Fn4<T1, T2, T3, T4, Option<R>> lift(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc4.liftTry(f).afterApply(Value::toOption);
+        return Fnc4.<T1, T2, T3, T4, R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <T1, T2, T3, T4, R> Fn4<T1, T2, T3, T4, Try<R>> liftTry(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc4.narrow(f).beforeWrap(Try::of);
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f).beforeWrap(Try::of);
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T4, T3, T2, T1, R> invert(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
@@ -190,7 +190,7 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     default public Csc4<T1, T2, T3, T4> toConsumer() {
-        return (t1, t2, t3, t4) -> ((Fnc4) this).apply(t1, t2, t3, t4);
+        return this::apply;
     }
 
     default public Spc<R> toSupplier(T1 t1, T2 t2, T3 t3, T4 t4) {
@@ -462,7 +462,7 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     default public Fn4<T1, T2, T3, T4, R> unchecked() {
-        return (t1, t2, t3, t4) -> (super.unchecked()).apply(t1, t2, t3, t4);
+        return CheckedFunction4.super.unchecked()::apply;
     }
 
     default public <I1> Fnc5<I1, T1, T2, T3, T4, R> ignoring1Lt() {
@@ -498,41 +498,41 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     default public Fnc3<T2, T3, T4, R> apply(T1 t1) {
-        return (t1, t2, t3) -> ((CheckedFunction3) super.apply(t1)).apply(t1, t2, t3);
+        return CheckedFunction4.super.apply(t1)::apply;
     }
 
     default public Fnc2<T3, T4, R> apply(T1 t1, T2 t2) {
-        return (t1, t2) -> ((CheckedFunction2) super.apply(t1, t2)).apply(t1, t2);
+        return CheckedFunction4.super.apply(t1, t2)::apply;
     }
 
     default public Fnc1<T4, R> apply(T1 t1, T2 t2, T3 t3) {
-        return ((CheckedFunction1) super.apply(t1, t2, t3))::apply;
+        return CheckedFunction4.super.apply(t1, t2, t3)::apply;
     }
 
     default public Fnc1<Tuple4<T1, T2, T3, T4>, R> tupled() {
-        return ((CheckedFunction1) super.tupled())::apply;
+        return CheckedFunction4.super.tupled()::apply;
     }
 
     default public Fn1<T1, Function1<T2, Function1<T3, CheckedFunction1<T4, R>>>> curried() {
-        return Function1.super.curried()::apply;
+        return CheckedFunction4.super.curried()::apply;
     }
 
     default public Fnc4<T4, T3, T2, T1, R> reversed() {
-        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.reversed()).apply(t1, t2, t3, t4);
+        return CheckedFunction4.super.reversed()::apply;
     }
 
     default public Fnc4<T1, T2, T3, T4, R> memoized() {
-        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.memoized()).apply(t1, t2, t3, t4);
+        return CheckedFunction4.super.memoized()::apply;
     }
 
     default public <V> Fnc4<T1, T2, T3, T4, V> andThen(CheckedFunction1<? super R, ? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.andThen(after)).apply(t1, t2, t3, t4);
+        return CheckedFunction4.super.andThen(after)::apply;
     }
 
     default public Fn4<T1, T2, T3, T4, R> recover(Function<? super Throwable, ? extends Function4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R>> recover) {
         Objects.requireNonNull(recover, "recover is null");
-        return Function4.super.recover(recover)::apply;
+        return CheckedFunction4.super.recover(recover)::apply;
     }
 
 }

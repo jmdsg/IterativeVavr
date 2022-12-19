@@ -504,7 +504,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     default public Prc0 memoized() {
-        return ((CheckedFunction0) super.memoized())::apply;
+        return CheckedFunction0.super.memoized()::apply;
     }
 
     default public Pr0 recover(Fn1<? super Throwable, ? extends Pr0> recover) {

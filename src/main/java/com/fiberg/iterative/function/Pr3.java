@@ -204,11 +204,11 @@ public interface Pr3<T1, T2, T3> extends Function3<T1, T2, T3, Boolean> {
     }
 
     default public Fn3<T1, T2, T3, Boolean> toFunction() {
-        return (t1, t2, t3) -> this.test(t1, t2, t3);
+        return this::test;
     }
 
     default public Cs3<T1, T2, T3> toConsumer() {
-        return (t1, t2, t3) -> this.test(t1, t2, t3);
+        return this::test;
     }
 
     default public Pr0 toPredicate(T1 t1, T2 t2, T3 t3) {

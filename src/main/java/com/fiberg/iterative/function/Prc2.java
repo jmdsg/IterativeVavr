@@ -191,11 +191,11 @@ public interface Prc2<T1, T2> extends CheckedFunction2<T1, T2, Boolean> {
     }
 
     default public Fnc2<T1, T2, Boolean> toFunction() {
-        return (t1, t2) -> this.test(t1, t2);
+        return this::test;
     }
 
     default public Csc2<T1, T2> toConsumer() {
-        return (t1, t2) -> this.test(t1, t2);
+        return this::test;
     }
 
     default public Prc0 toPredicate(T1 t1, T2 t2) {
@@ -749,7 +749,7 @@ public interface Prc2<T1, T2> extends CheckedFunction2<T1, T2, Boolean> {
     }
 
     default public Prc2<T1, T2> memoized() {
-        return (t1, t2) -> ((CheckedFunction2) super.memoized()).apply(t1, t2);
+        return CheckedFunction2.super.memoized()::apply;
     }
 
     default public Pr2<T1, T2> recover(Fn1<? super Throwable, ? extends Pr2<? super T1, ? super T2>> recover) {

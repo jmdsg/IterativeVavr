@@ -192,11 +192,11 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     default public Fn2<T1, T2, Boolean> toFunction() {
-        return (t1, t2) -> this.test(t1, t2);
+        return this::test;
     }
 
     default public Cs2<T1, T2> toConsumer() {
-        return (t1, t2) -> this.test(t1, t2);
+        return this::test;
     }
 
     default public Pr0 toPredicate(T1 t1, T2 t2) {

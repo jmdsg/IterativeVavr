@@ -228,11 +228,11 @@ public interface Pr5<T1, T2, T3, T4, T5> extends Function5<T1, T2, T3, T4, T5, B
     }
 
     default public Fn5<T1, T2, T3, T4, T5, Boolean> toFunction() {
-        return (t1, t2, t3, t4, t5) -> this.test(t1, t2, t3, t4, t5);
+        return this::test;
     }
 
     default public Cs5<T1, T2, T3, T4, T5> toConsumer() {
-        return (t1, t2, t3, t4, t5) -> this.test(t1, t2, t3, t4, t5);
+        return this::test;
     }
 
     default public Pr0 toPredicate(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {

@@ -171,11 +171,11 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     default public Fnc1<T1, Boolean> toFunction() {
-        return ((Prc1) this)::test;
+        return this::test;
     }
 
     default public Csc1<T1> toConsumer() {
-        return ((Prc1) this)::test;
+        return this::test;
     }
 
     default public Prc0 toPredicate(T1 t1) {
@@ -733,7 +733,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     default public Prc1<T1> memoized() {
-        return ((CheckedFunction1) super.memoized())::apply;
+        return CheckedFunction1.super.memoized()::apply;
     }
 
     default public Pr1<T1> recover(Fn1<? super Throwable, ? extends Pr1<? super T1>> recover) {
