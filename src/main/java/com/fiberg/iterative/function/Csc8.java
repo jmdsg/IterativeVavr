@@ -321,7 +321,7 @@ public interface Csc8<T1, T2, T3, T4, T5, T6, T7, T8> {
     default public Csc8<T1, T2, T3, T4, T5, T6, T7, T8> beforeTestOnSuccess(Prc0 p, Csc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> (p.test() != false ? this : Csc8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (t1, t2, t3, t4, t5, t6, t7, t8) -> (p.test() ? this : Csc8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Csc8<T1, T2, T3, T4, T5, T6, T7, T8> beforeTestOnSuccess(Prc0 p) {

@@ -130,16 +130,16 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return () -> {
-            Boolean value = this.test();
-            (value != false ? onSuccess : onFailure).run();
-            return value;
+            boolean result = this.test();
+            (result ? onSuccess : onFailure).run();
+            return result;
         };
     }
 
     default public Rnc afterRunOnTo(Rnc onSuccess, Rnc onFailure) {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return () -> (this.test() != false ? onSuccess : onFailure).run();
+        return () -> (this.test() ? onSuccess : onFailure).run();
     }
 
     default public Prc0 afterTestOn(Prc1<Boolean> onSuccess, Prc1<Boolean> onFailure) {
@@ -164,8 +164,8 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return () -> {
-            Boolean value = this.test();
-            return (value != false ? onSuccess : onFailure).apply(value);
+            boolean result = this.test();
+            return (result ? onSuccess : onFailure).apply(result);
         };
     }
 
@@ -368,7 +368,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     default public Prc0 beforeTestOnSuccess(Prc0 p, Prc0 onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return () -> p.test() != false ? this.test() : onFailure.test();
+        return () -> p.test() ? this.test() : onFailure.test();
     }
 
     default public Prc0 beforeTestOnSuccess(Prc0 p, Spc<? extends Boolean> onFailure) {
@@ -404,7 +404,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     default public Prc0 beforeSuccessPassingThroughTest(Prc0 p, Prc0 onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return () -> p.test() != false ? this.apply() : onFailure.apply();
+        return () -> p.test() ? this.apply() : onFailure.apply();
     }
 
     default public Prc0 beforeSuccessPassingThroughTest(Prc0 p, Spc<? extends Boolean> onFailure) {
@@ -453,7 +453,6 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
             catch (Throwable t) {
                 return (Boolean) SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
@@ -463,12 +462,12 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
 
     default public Prc0 and(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return () -> this.test() != false && p.test() != false;
+        return () -> this.test() && p.test();
     }
 
     default public Prc0 or(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return () -> this.test() != false || p.test() != false;
+        return () -> this.test() || p.test();
     }
 
     default public <I1> Prc1<I1> ignoring1() {

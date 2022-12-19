@@ -261,7 +261,7 @@ public interface Csc3<T1, T2, T3> {
     default public Csc3<T1, T2, T3> beforeTestOnSuccess(Prc0 p, Csc3<? super T1, ? super T2, ? super T3> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3) -> (p.test() != false ? this : Csc3.<T1, T2, T3>narrow(onFailure)).accept(t1, t2, t3);
+        return (t1, t2, t3) -> (p.test() ? this : Csc3.<T1, T2, T3>narrow(onFailure)).accept(t1, t2, t3);
     }
 
     default public Csc3<T1, T2, T3> beforeTestOnSuccess(Prc0 p) {

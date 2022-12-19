@@ -297,7 +297,7 @@ public interface Csc6<T1, T2, T3, T4, T5, T6> {
     default public Csc6<T1, T2, T3, T4, T5, T6> beforeTestOnSuccess(Prc0 p, Csc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6) -> (p.test() != false ? this : Csc6.<T1, T2, T3, T4, T5, T6>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6);
+        return (t1, t2, t3, t4, t5, t6) -> (p.test() ? this : Csc6.<T1, T2, T3, T4, T5, T6>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6);
     }
 
     default public Csc6<T1, T2, T3, T4, T5, T6> beforeTestOnSuccess(Prc0 p) {

@@ -89,11 +89,11 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> fromFunction(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, Boolean> f) {
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> f.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return f::apply;
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> fromSupplier(Sp<? extends Boolean> s) {
-        return Pr8.fromFunction(Sp.narrow(s).toFunction().ignoring8());
+        return Pr8.fromFunction(Sp.<Boolean>narrow(s).toFunction().ignoring8());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> negate(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
@@ -109,7 +109,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> and(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, Pr0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Pr8.narrow(p) : Pr8.narrow(p).and(Predicates.and(ps));
+        return ps.length == 0 ? Pr8.narrow(p) : Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(p).and(Predicates.and(ps));
     }
 
     @SafeVarargs
@@ -121,7 +121,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> or(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p, Pr0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Pr8.narrow(p) : Pr8.narrow(p).or(Predicates.or(ps));
+        return ps.length == 0 ? Pr8.narrow(p) : Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(p).or(Predicates.or(ps));
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> tuple(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
@@ -283,45 +283,45 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
         return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).toRunnable();
     }
 
-    default public <R> R passEvalued(Sp<? extends R> onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(Sp<? extends R> onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvalued(Sp<? extends R> onSuccess, R onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(Sp<? extends R> onSuccess, R onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvalued(R onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(R onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvalued(R onSuccess, R onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(R onSuccess, R onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvaluedOnSuccess(Sp<? extends R> onSuccess, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluedOnSuccess(onSuccess);
+    default public <R> R passEvaluatedOnSuccess(Sp<? extends R> onSuccess, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluatedOnSuccess(onSuccess);
     }
 
-    default public <R> R passEvaluedOnFailure(Sp<? extends R> onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluedOnFailure(onFailure);
+    default public <R> R passEvaluatedOnFailure(Sp<? extends R> onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluatedOnFailure(onFailure);
     }
 
-    default public <R> R passEvaluedOnSuccess(R onSuccess, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluedOnSuccess(onSuccess);
+    default public <R> R passEvaluatedOnSuccess(R onSuccess, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluatedOnSuccess(onSuccess);
     }
 
-    default public <R> R passEvaluedOnFailure(R onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluedOnFailure(onFailure);
+    default public <R> R passEvaluatedOnFailure(R onFailure, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
+        return this.toPredicate(t1, t2, t3, t4, t5, t6, t7, t8).evaluatedOnFailure(onFailure);
     }
 
     default public Pr8<T1, T2, T3, T4, T5, T6, T7, T8> afterRunOn(Rn onSuccess, Rn onFailure) {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3, t4, t5, t6, t7, t8) -> {
-            Boolean value = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
-            (value != false ? onSuccess : onFailure).run();
-            return value;
+            boolean result = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
+            (result ? onSuccess : onFailure).run();
+            return result;
         };
     }
 
@@ -347,8 +347,8 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3, t4, t5, t6, t7, t8) -> {
-            Boolean value = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
-            return (value != false ? onSuccess : onFailure).apply(value);
+            boolean result = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
+            return (result ? onSuccess : onFailure).apply(result);
         };
     }
 
@@ -611,8 +611,8 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3, t4, t5, t6, t7, t8) -> {
-            Boolean result = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
-            Fn8.narrow(result != false ? onSuccess : onFailure).apply(t1, t2, t3, t4, t5, t6, t7, t8);
+            boolean result = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
+            Fn8.narrow(result ? onSuccess : onFailure).apply(t1, t2, t3, t4, t5, t6, t7, t8);
             return result;
         };
     }
@@ -627,8 +627,8 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3, t4, t5, t6, t7, t8) -> {
-            Boolean result = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
-            Cs8.narrow(result != false ? onSuccess : onFailure).accept(t1, t2, t3, t4, t5, t6, t7, t8);
+            boolean result = this.test(t1, t2, t3, t4, t5, t6, t7, t8);
+            Cs8.narrow(result ? onSuccess : onFailure).accept(t1, t2, t3, t4, t5, t6, t7, t8);
             return result;
         };
     }

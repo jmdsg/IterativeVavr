@@ -161,9 +161,9 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     default public Fn1<T1, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return t1 -> {
-            R value = this.apply(t1);
+            R result = this.apply(t1);
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -200,9 +200,9 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     default public Fn1<T1, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return t1 -> {
-            R value = this.apply(t1);
-            c.accept(value);
-            return value;
+            R result = this.apply(t1);
+            c.accept(result);
+            return result;
         };
     }
 

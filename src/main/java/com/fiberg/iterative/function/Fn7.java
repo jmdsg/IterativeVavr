@@ -241,9 +241,9 @@ public interface Fn7<T1, T2, T3, T4, T5, T6, T7, R> extends Function7<T1, T2, T3
     default public Fn7<T1, T2, T3, T4, T5, T6, T7, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2, t3, t4, t5, t6, t7) -> {
-            R value = this.apply(t1, t2, t3, t4, t5, t6, t7);
+            R result = this.apply(t1, t2, t3, t4, t5, t6, t7);
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -280,9 +280,9 @@ public interface Fn7<T1, T2, T3, T4, T5, T6, T7, R> extends Function7<T1, T2, T3
     default public Fn7<T1, T2, T3, T4, T5, T6, T7, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5, t6, t7) -> {
-            R value = this.apply(t1, t2, t3, t4, t5, t6, t7);
-            c.accept(value);
-            return value;
+            R result = this.apply(t1, t2, t3, t4, t5, t6, t7);
+            c.accept(result);
+            return result;
         };
     }
 

@@ -113,9 +113,9 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     default public Spc<R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
         return () -> {
-            R value = this.get();
+            R result = this.get();
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -174,9 +174,9 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     default public Spc<R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return () -> {
-            R value = this.get();
-            c.accept(value);
-            return value;
+            R result = this.get();
+            c.accept(result);
+            return result;
         };
     }
 
@@ -242,7 +242,6 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
             catch (Throwable t) {
                 return SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
@@ -317,7 +316,6 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
                 Objects.requireNonNull(supp, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 return supp.get();
             }
-
         };
     }
 

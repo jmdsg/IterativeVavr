@@ -168,7 +168,6 @@ public interface Rnc extends CheckedRunnable {
             catch (Throwable t) {
                 SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 

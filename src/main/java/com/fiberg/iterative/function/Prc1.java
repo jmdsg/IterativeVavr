@@ -66,7 +66,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     public static <T1> Prc1<T1> fromSupplier(Spc<? extends Boolean> s) {
-        return Prc1.fromFunction(Spc.narrow(s).toFunction().ignoring1());
+        return Prc1.fromFunction(Spc.<Boolean>narrow(s).toFunction().ignoring1());
     }
 
     public static <T1> Prc1<T1> negate(Prc1<? super T1> p) {
@@ -82,7 +82,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     public static <T1> Prc1<T1> and(Prc1<? super T1> p, Prc0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Prc1.narrow(p) : Prc1.narrow(p).and(Predicates.and(ps));
+        return ps.length == 0 ? Prc1.narrow(p) : Prc1.<T1>narrow(p).and(Predicates.and(ps));
     }
 
     @SafeVarargs
@@ -94,7 +94,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     public static <T1> Prc1<T1> or(Prc1<? super T1> p, Prc0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Prc1.narrow(p) : Prc1.narrow(p).or(Predicates.or(ps));
+        return ps.length == 0 ? Prc1.narrow(p) : Prc1.<T1>narrow(p).or(Predicates.or(ps));
     }
 
     public static <T1> Prc1<Tuple1<T1>> tuple(Prc1<? super T1> p) {
@@ -107,7 +107,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
 
     public static <T1> Prc1<T1> check(Pr1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return Pr1.narrow(p).checked();
+        return Pr1.<T1>narrow(p).checked();
     }
 
     public static <T1> Prc1<T1> ignore(Prc0 p) {
@@ -194,9 +194,9 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return t1 -> {
-            Boolean value = this.test(t1);
-            (value != false ? onSuccess : onFailure).run();
-            return value;
+            boolean result = this.test(t1);
+            (result ? onSuccess : onFailure).run();
+            return result;
         };
     }
 
@@ -222,8 +222,8 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return t1 -> {
-            Boolean value = this.test(t1);
-            return (value != false ? onSuccess : onFailure).apply(value);
+            boolean result = this.test(t1);
+            return (result ? onSuccess : onFailure).apply(result);
         };
     }
 
@@ -440,7 +440,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     default public Prc1<T1> beforeTestOnSuccess(Prc0 p, Prc1<? super T1> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return t1 -> p.test() != false ? this.test(t1) : onFailure.test(t1);
+        return t1 -> p.test() ? this.test(t1) : onFailure.test(t1);
     }
 
     default public Prc1<T1> beforeTestOnSuccess(Prc0 p, Spc<? extends Boolean> onFailure) {
@@ -482,8 +482,8 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return t1 -> {
-            Boolean result = this.test(t1);
-            Fnc1.narrow(result != false ? onSuccess : onFailure).apply(t1);
+            boolean result = this.test(t1);
+            Fnc1.narrow(result ? onSuccess : onFailure).apply(t1);
             return result;
         };
     }
@@ -498,8 +498,8 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return t1 -> {
-            Boolean result = this.test(t1);
-            Csc1.narrow(result != false ? onSuccess : onFailure).accept(t1);
+            boolean result = this.test(t1);
+            Csc1.narrow(result ? onSuccess : onFailure).accept(t1);
             return result;
         };
     }
@@ -652,12 +652,11 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
             catch (Throwable t) {
                 return (Boolean) SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
     default public Prc1<T1> negated() {
-        return ((CheckedPredicate) super.negate())::test;
+        return CheckedPredicate.super.negate()::test;
     }
 
     default public Prc1<T1> and(CheckedPredicate<? super T1> p) {
@@ -669,11 +668,11 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     default public Prc1<T1> and(Prc0 p) {
-        return t1 -> this.test(t1) && p.test() != false;
+        return t1 -> this.test(t1) && p.test();
     }
 
     default public Prc1<T1> or(Prc0 p) {
-        return t1 -> this.test(t1) || p.test() != false;
+        return t1 -> this.test(t1) || p.test();
     }
 
     default public <I1> Prc2<I1, T1> ignoring1Lt() {
@@ -743,11 +742,10 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
                 return this.test(t1);
             }
             catch (Throwable throwable) {
-                Pr1 pred = (Pr1) recover.apply(throwable);
+                Pr1<? super T1> pred = recover.apply(throwable);
                 Objects.requireNonNull(pred, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 return pred.test(t1);
             }
-
         };
     }
 

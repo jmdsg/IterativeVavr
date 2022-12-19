@@ -285,7 +285,7 @@ public interface Csc5<T1, T2, T3, T4, T5> {
     default public Csc5<T1, T2, T3, T4, T5> beforeTestOnSuccess(Prc0 p, Csc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5) -> (p.test() != false ? this : Csc5.<T1, T2, T3, T4, T5>narrow(onFailure)).accept(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4, t5) -> (p.test() ? this : Csc5.<T1, T2, T3, T4, T5>narrow(onFailure)).accept(t1, t2, t3, t4, t5);
     }
 
     default public Csc5<T1, T2, T3, T4, T5> beforeTestOnSuccess(Prc0 p) {

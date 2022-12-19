@@ -176,9 +176,9 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     default public Fnc2<T1, T2, R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2) -> {
-            R value = this.apply(t1, t2);
+            R result = this.apply(t1, t2);
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -215,9 +215,9 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     default public Fnc2<T1, T2, R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2) -> {
-            R value = this.apply(t1, t2);
-            c.accept(value);
-            return value;
+            R result = this.apply(t1, t2);
+            c.accept(result);
+            return result;
         };
     }
 
@@ -281,7 +281,7 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     default public Fnc2<T1, T2, R> beforeTestOnSuccess(Prc0 p, Fnc2<? super T1, ? super T2, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2) -> p.test() != false ? this.apply(t1, t2) : onFailure.apply(t1, t2);
+        return (t1, t2) -> p.test() ? this.apply(t1, t2) : onFailure.apply(t1, t2);
     }
 
     default public Fnc2<T1, T2, R> beforeTestOnSuccess(Prc0 p, Spc<? extends R> onFailure) {

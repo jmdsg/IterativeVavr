@@ -252,9 +252,9 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
     default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2, t3, t4, t5, t6, t7, t8) -> {
-            R value = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+            R result = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -291,9 +291,9 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
     default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5, t6, t7, t8) -> {
-            R value = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
-            c.accept(value);
-            return value;
+            R result = this.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+            c.accept(result);
+            return result;
         };
     }
 
@@ -357,7 +357,7 @@ public interface Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> extends CheckedFunction
     default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnSuccess(Prc0 p, Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6, t7, t8) -> p.test() != false ? this.apply(t1, t2, t3, t4, t5, t6, t7, t8) : onFailure.apply(t1, t2, t3, t4, t5, t6, t7, t8);
+        return (t1, t2, t3, t4, t5, t6, t7, t8) -> p.test() ? this.apply(t1, t2, t3, t4, t5, t6, t7, t8) : onFailure.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Fnc8<T1, T2, T3, T4, T5, T6, T7, T8, R> beforeTestOnSuccess(Prc0 p, Spc<? extends R> onFailure) {

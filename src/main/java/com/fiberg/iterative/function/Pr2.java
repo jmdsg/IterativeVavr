@@ -65,11 +65,11 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr2<T1, T2> fromFunction(Fn2<? super T1, ? super T2, Boolean> f) {
-        return (t1, t2) -> f.apply(t1, t2);
+        return f::apply;
     }
 
     public static <T1, T2> Pr2<T1, T2> fromSupplier(Sp<? extends Boolean> s) {
-        return Pr2.fromFunction(Sp.narrow(s).toFunction().ignoring2());
+        return Pr2.fromFunction(Sp.<Boolean>narrow(s).toFunction().ignoring2());
     }
 
     public static <T1, T2> Pr2<T1, T2> negate(Pr2<? super T1, ? super T2> p) {
@@ -85,7 +85,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     public static <T1, T2> Pr2<T1, T2> and(Pr2<? super T1, ? super T2> p, Pr0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Pr2.narrow(p) : Pr2.narrow(p).and(Predicates.and(ps));
+        return ps.length == 0 ? Pr2.narrow(p) : Pr2.<T1, T2>narrow(p).and(Predicates.and(ps));
     }
 
     @SafeVarargs
@@ -97,7 +97,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     public static <T1, T2> Pr2<T1, T2> or(Pr2<? super T1, ? super T2> p, Pr0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Pr2.narrow(p) : Pr2.narrow(p).or(Predicates.or(ps));
+        return ps.length == 0 ? Pr2.narrow(p) : Pr2.<T1, T2>narrow(p).or(Predicates.or(ps));
     }
 
     public static <T1, T2> Pr1<Tuple2<T1, T2>> tuple(Pr2<? super T1, ? super T2> p) {
@@ -211,45 +211,45 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
         return this.toPredicate(t1, t2).toRunnable();
     }
 
-    default public <R> R passEvalued(Sp<? extends R> onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(Sp<? extends R> onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvalued(Sp<? extends R> onSuccess, R onFailure, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(Sp<? extends R> onSuccess, R onFailure, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvalued(R onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(R onSuccess, Sp<? extends R> onFailure, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvalued(R onSuccess, R onFailure, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evalued(onSuccess, onFailure);
+    default public <R> R passEvaluated(R onSuccess, R onFailure, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluated(onSuccess, onFailure);
     }
 
-    default public <R> R passEvaluedOnSuccess(Sp<? extends R> onSuccess, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evaluedOnSuccess(onSuccess);
+    default public <R> R passEvaluatedOnSuccess(Sp<? extends R> onSuccess, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluatedOnSuccess(onSuccess);
     }
 
-    default public <R> R passEvaluedOnFailure(Sp<? extends R> onFailure, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evaluedOnFailure(onFailure);
+    default public <R> R passEvaluatedOnFailure(Sp<? extends R> onFailure, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluatedOnFailure(onFailure);
     }
 
-    default public <R> R passEvaluedOnSuccess(R onSuccess, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evaluedOnSuccess(onSuccess);
+    default public <R> R passEvaluatedOnSuccess(R onSuccess, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluatedOnSuccess(onSuccess);
     }
 
-    default public <R> R passEvaluedOnFailure(R onFailure, T1 t1, T2 t2) {
-        return this.toPredicate(t1, t2).evaluedOnFailure(onFailure);
+    default public <R> R passEvaluatedOnFailure(R onFailure, T1 t1, T2 t2) {
+        return this.toPredicate(t1, t2).evaluatedOnFailure(onFailure);
     }
 
     default public Pr2<T1, T2> afterRunOn(Rn onSuccess, Rn onFailure) {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2) -> {
-            Boolean value = this.test(t1, t2);
-            (value != false ? onSuccess : onFailure).run();
-            return value;
+            boolean result = this.test(t1, t2);
+            (result ? onSuccess : onFailure).run();
+            return result;
         };
     }
 
@@ -275,8 +275,8 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2) -> {
-            Boolean value = this.test(t1, t2);
-            return (value != false ? onSuccess : onFailure).apply(value);
+            boolean result = this.test(t1, t2);
+            return (result ? onSuccess : onFailure).apply(result);
         };
     }
 
@@ -539,8 +539,8 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2) -> {
-            Boolean result = this.test(t1, t2);
-            Fn2.narrow(result != false ? onSuccess : onFailure).apply(t1, t2);
+            boolean result = this.test(t1, t2);
+            Fn2.narrow(result ? onSuccess : onFailure).apply(t1, t2);
             return result;
         };
     }
@@ -555,8 +555,8 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2) -> {
-            Boolean result = this.test(t1, t2);
-            Cs2.narrow(result != false ? onSuccess : onFailure).accept(t1, t2);
+            boolean result = this.test(t1, t2);
+            Cs2.narrow(result ? onSuccess : onFailure).accept(t1, t2);
             return result;
         };
     }

@@ -228,9 +228,9 @@ public interface Fn6<T1, T2, T3, T4, T5, T6, R> extends Function6<T1, T2, T3, T4
     default public Fn6<T1, T2, T3, T4, T5, T6, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2, t3, t4, t5, t6) -> {
-            R value = this.apply(t1, t2, t3, t4, t5, t6);
+            R result = this.apply(t1, t2, t3, t4, t5, t6);
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -267,9 +267,9 @@ public interface Fn6<T1, T2, T3, T4, T5, T6, R> extends Function6<T1, T2, T3, T4
     default public Fn6<T1, T2, T3, T4, T5, T6, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5, t6) -> {
-            R value = this.apply(t1, t2, t3, t4, t5, t6);
-            c.accept(value);
-            return value;
+            R result = this.apply(t1, t2, t3, t4, t5, t6);
+            c.accept(result);
+            return result;
         };
     }
 

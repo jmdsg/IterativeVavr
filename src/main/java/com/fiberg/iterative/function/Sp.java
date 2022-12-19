@@ -144,9 +144,9 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     default public Sp<R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return () -> {
-            R value = this.get();
+            R result = this.get();
             r.run();
-            return value;
+            return result;
         };
     }
 
@@ -205,9 +205,9 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     default public Sp<R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return () -> {
-            R value = this.get();
-            c.accept(value);
-            return value;
+            R result = this.get();
+            c.accept(result);
+            return result;
         };
     }
 

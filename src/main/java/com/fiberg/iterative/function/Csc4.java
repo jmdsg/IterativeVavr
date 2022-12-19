@@ -273,7 +273,7 @@ public interface Csc4<T1, T2, T3, T4> {
     default public Csc4<T1, T2, T3, T4> beforeTestOnSuccess(Prc0 p, Csc4<? super T1, ? super T2, ? super T3, ? super T4> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4) -> (p.test() != false ? this : Csc4.<T1, T2, T3, T4>narrow(onFailure)).accept(t1, t2, t3, t4);
+        return (t1, t2, t3, t4) -> (p.test() ? this : Csc4.<T1, T2, T3, T4>narrow(onFailure)).accept(t1, t2, t3, t4);
     }
 
     default public Csc4<T1, T2, T3, T4> beforeTestOnSuccess(Prc0 p) {

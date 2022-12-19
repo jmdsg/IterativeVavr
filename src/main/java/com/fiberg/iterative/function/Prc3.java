@@ -72,11 +72,11 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     }
 
     public static <T1, T2, T3> Prc3<T1, T2, T3> fromFunction(Fnc3<? super T1, ? super T2, ? super T3, Boolean> f) {
-        return (t1, t2, t3) -> f.apply(t1, t2, t3);
+        return f::apply;
     }
 
     public static <T1, T2, T3> Prc3<T1, T2, T3> fromSupplier(Spc<? extends Boolean> s) {
-        return Prc3.fromFunction(Spc.narrow(s).toFunction().ignoring3());
+        return Prc3.fromFunction(Spc.<Boolean>narrow(s).toFunction().ignoring3());
     }
 
     public static <T1, T2, T3> Prc3<T1, T2, T3> negate(Prc3<? super T1, ? super T2, ? super T3> p) {
@@ -92,7 +92,7 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     public static <T1, T2, T3> Prc3<T1, T2, T3> and(Prc3<? super T1, ? super T2, ? super T3> p, Prc0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Prc3.narrow(p) : Prc3.narrow(p).and(Predicates.and(ps));
+        return ps.length == 0 ? Prc3.narrow(p) : Prc3.<T1, T2, T3>narrow(p).and(Predicates.and(ps));
     }
 
     @SafeVarargs
@@ -104,7 +104,7 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     public static <T1, T2, T3> Prc3<T1, T2, T3> or(Prc3<? super T1, ? super T2, ? super T3> p, Prc0 ... ps) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(ps, "ps is null");
-        return ps.length == 0 ? Prc3.narrow(p) : Prc3.narrow(p).or(Predicates.or(ps));
+        return ps.length == 0 ? Prc3.narrow(p) : Prc3.<T1, T2, T3>narrow(p).or(Predicates.or(ps));
     }
 
     public static <T1, T2, T3> Prc1<Tuple3<T1, T2, T3>> tuple(Prc3<? super T1, ? super T2, ? super T3> p) {
@@ -117,7 +117,7 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
 
     public static <T1, T2, T3> Prc3<T1, T2, T3> check(Pr3<? super T1, ? super T2, ? super T3> p) {
         Objects.requireNonNull(p, "p is null");
-        return Pr3.narrow(p).checked();
+        return Pr3.<T1, T2, T3>narrow(p).checked();
     }
 
     public static <T1, T2, T3> Prc3<T1, T2, T3> ignore(Prc0 p) {
@@ -226,9 +226,9 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3) -> {
-            Boolean value = this.test(t1, t2, t3);
-            (value != false ? onSuccess : onFailure).run();
-            return value;
+            boolean result = this.test(t1, t2, t3);
+            (result ? onSuccess : onFailure).run();
+            return result;
         };
     }
 
@@ -254,8 +254,8 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3) -> {
-            Boolean value = this.test(t1, t2, t3);
-            return (value != false ? onSuccess : onFailure).apply(value);
+            boolean result = this.test(t1, t2, t3);
+            return (result ? onSuccess : onFailure).apply(result);
         };
     }
 
@@ -472,7 +472,7 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     default public Prc3<T1, T2, T3> beforeTestOnSuccess(Prc0 p, Prc3<? super T1, ? super T2, ? super T3> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3) -> p.test() != false ? this.test(t1, t2, t3) : onFailure.test(t1, t2, t3);
+        return (t1, t2, t3) -> p.test() ? this.test(t1, t2, t3) : onFailure.test(t1, t2, t3);
     }
 
     default public Prc3<T1, T2, T3> beforeTestOnSuccess(Prc0 p, Spc<? extends Boolean> onFailure) {
@@ -518,8 +518,8 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3) -> {
-            Boolean result = this.test(t1, t2, t3);
-            Fnc3.narrow(result != false ? onSuccess : onFailure).apply(t1, t2, t3);
+            boolean result = this.test(t1, t2, t3);
+            Fnc3.narrow(result ? onSuccess : onFailure).apply(t1, t2, t3);
             return result;
         };
     }
@@ -534,8 +534,8 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return (t1, t2, t3) -> {
-            Boolean result = this.test(t1, t2, t3);
-            Csc3.narrow(result != false ? onSuccess : onFailure).accept(t1, t2, t3);
+            boolean result = this.test(t1, t2, t3);
+            Csc3.narrow(result ? onSuccess : onFailure).accept(t1, t2, t3);
             return result;
         };
     }
@@ -688,7 +688,6 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
             catch (Throwable t) {
                 return (Boolean) SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
@@ -705,11 +704,11 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
     }
 
     default public Prc3<T1, T2, T3> and(Prc0 p) {
-        return (t1, t2, t3) -> this.test(t1, t2, t3) && p.test() != false;
+        return (t1, t2, t3) -> this.test(t1, t2, t3) && p.test();
     }
 
     default public Prc3<T1, T2, T3> or(Prc0 p) {
-        return (t1, t2, t3) -> this.test(t1, t2, t3) || p.test() != false;
+        return (t1, t2, t3) -> this.test(t1, t2, t3) || p.test();
     }
 
     default public <I1> Prc4<I1, T1, T2, T3> ignoring1Lt() {
@@ -763,11 +762,10 @@ public interface Prc3<T1, T2, T3> extends CheckedFunction3<T1, T2, T3, Boolean> 
                 return this.test(t1, t2, t3);
             }
             catch (Throwable throwable) {
-                Pr3 pred = (Pr3) recover.apply(throwable);
+                Pr3<? super T1, ? super T2, ? super T3> pred = recover.apply(throwable);
                 Objects.requireNonNull(pred, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 return pred.test(t1, t2, t3);
             }
-
         };
     }
 

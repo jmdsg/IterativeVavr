@@ -143,36 +143,36 @@ public interface Pr0 extends Function0<Boolean> {
 
     public boolean test();
 
-    default public <R> R evalued(Sp<? extends R> onSuccess, Sp<? extends R> onFailure) {
+    default public <R> R evaluated(Sp<? extends R> onSuccess, Sp<? extends R> onFailure) {
         return this.test() ? onSuccess.get() : onFailure.get();
     }
 
-    default public <R> R evalued(Sp<? extends R> onSuccess, R onFailure) {
-        return this.evalued(onSuccess, Sp.value(onFailure));
+    default public <R> R evaluated(Sp<? extends R> onSuccess, R onFailure) {
+        return this.evaluated(onSuccess, Sp.value(onFailure));
     }
 
-    default public <R> R evalued(R onSuccess, Sp<? extends R> onFailure) {
-        return this.evalued(Sp.value(onSuccess), onFailure);
+    default public <R> R evaluated(R onSuccess, Sp<? extends R> onFailure) {
+        return this.evaluated(Sp.value(onSuccess), onFailure);
     }
 
-    default public <R> R evalued(R onSuccess, R onFailure) {
-        return this.evalued(Sp.value(onSuccess), Sp.value(onFailure));
+    default public <R> R evaluated(R onSuccess, R onFailure) {
+        return this.evaluated(Sp.value(onSuccess), Sp.value(onFailure));
     }
 
-    default public <R> R evaluedOnSuccess(Sp<? extends R> onSuccess) {
-        return this.evalued(onSuccess, Sp.empty());
+    default public <R> R evaluatedOnSuccess(Sp<? extends R> onSuccess) {
+        return this.evaluated(onSuccess, Sp.empty());
     }
 
-    default public <R> R evaluedOnFailure(Sp<? extends R> onFailure) {
-        return this.evalued(Sp.empty(), onFailure);
+    default public <R> R evaluatedOnFailure(Sp<? extends R> onFailure) {
+        return this.evaluated(Sp.empty(), onFailure);
     }
 
-    default public <R> R evaluedOnSuccess(R onSuccess) {
-        return this.evalued(Sp.value(onSuccess), Sp.empty());
+    default public <R> R evaluatedOnSuccess(R onSuccess) {
+        return this.evaluated(Sp.value(onSuccess), Sp.empty());
     }
 
-    default public <R> R evaluedOnFailure(R onFailure) {
-        return this.evalued(Sp.empty(), Sp.value(onFailure));
+    default public <R> R evaluatedOnFailure(R onFailure) {
+        return this.evaluated(Sp.empty(), Sp.value(onFailure));
     }
 
     default public Sp<Boolean> toSupplier() {
@@ -191,9 +191,9 @@ public interface Pr0 extends Function0<Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return () -> {
-            Boolean value = this.test();
-            (value != false ? onSuccess : onFailure).run();
-            return value;
+            boolean result = this.test();
+            (result ? onSuccess : onFailure).run();
+            return result;
         };
     }
 
@@ -225,8 +225,8 @@ public interface Pr0 extends Function0<Boolean> {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
         return () -> {
-            Boolean value = this.test();
-            return (value != false ? onSuccess : onFailure).apply(value);
+            boolean result = this.test();
+            return (result ? onSuccess : onFailure).apply(result);
         };
     }
 

@@ -236,7 +236,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
     default public Csc1<T1> beforeTestOnSuccess(Prc0 p, Csc1<? super T1> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return t1 -> (p.test() != false ? this : Csc1.<T1>narrow(onFailure)).accept(t1);
+        return t1 -> (p.test() ? this : Csc1.<T1>narrow(onFailure)).accept(t1);
     }
 
     default public Csc1<T1> beforeTestOnSuccess(Prc0 p) {
