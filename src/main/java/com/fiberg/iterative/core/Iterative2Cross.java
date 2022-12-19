@@ -221,7 +221,7 @@ public interface Iterative2Cross<T1, T2> extends Iterative2<T1, T2> {
 
     @Override
     default public <B1, B2, B3> Iterative5Cross<T1, T2, B1, B2, B3> pushBackBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2, Iterable<? extends Stream<? extends B3>> b3) {
-        return (Iterative5Cross<T1, T2, B1, B2, B3>) Iterative2.super.<B1, B2, B3>pushBackBy(b1, b2, b4);
+        return (Iterative5Cross<T1, T2, B1, B2, B3>) Iterative2.super.<B1, B2, B3>pushBackBy(b1, b2, b3);
     }
 
     @Override

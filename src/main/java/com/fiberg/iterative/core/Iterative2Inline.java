@@ -222,7 +222,7 @@ public interface Iterative2Inline<T1, T2> extends Iterative2<T1, T2> {
 
     @Override
     default public <B1, B2, B3> Iterative5Inline<T1, T2, B1, B2, B3> pushBackBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2, Iterable<? extends Stream<? extends B3>> b3) {
-        return (Iterative5Inline<T1, T2, B1, B2, B3>) Iterative2.super.<B1, B2, B3>pushBackBy(b1, b2, b4);
+        return (Iterative5Inline<T1, T2, B1, B2, B3>) Iterative2.super.<B1, B2, B3>pushBackBy(b1, b2, b3);
     }
 
     @Override
@@ -496,8 +496,7 @@ public interface Iterative2Inline<T1, T2> extends Iterative2<T1, T2> {
 
         @Override
         public Stream<Tuple2<Iterable<T1>, Iterable<T2>>> toTupleStream() {
-            ZipIterator iterator = new ZipIterator(this.iterative.toTupleStream().iterator(), IterativeHandler.transform(this.right).iterator(), (tuple, right) -> Tuple.of(tuple._1(), right));
-            return iterator.toStream();
+            return new ZipIterator<>(this.iterative.toTupleStream().iterator(), IterativeHandler.transform(this.right).iterator(), (tuple, right) -> Tuple.of(tuple._1(), right)).toStream();
         }
 
         @Override

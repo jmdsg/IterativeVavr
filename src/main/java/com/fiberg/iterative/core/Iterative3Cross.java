@@ -238,7 +238,7 @@ public interface Iterative3Cross<T1, T2, T3> extends Iterative3<T1, T2, T3> {
 
     @Override
     default public <B1, B2, B3> Iterative6Cross<T1, T2, T3, B1, B2, B3> pushBackBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2, Iterable<? extends Stream<? extends B3>> b3) {
-        return (Iterative6Cross<T1, T2, T3, B1, B2, B3>) Iterative3.super.<B1, B2, B3>pushBackBy(b1, b2, b4);
+        return (Iterative6Cross<T1, T2, T3, B1, B2, B3>) Iterative3.super.<B1, B2, B3>pushBackBy(b1, b2, b3);
     }
 
     @Override
@@ -452,7 +452,7 @@ public interface Iterative3Cross<T1, T2, T3> extends Iterative3<T1, T2, T3> {
 
         @Override
         public Stream<Tuple3<Iterable<T1>, Iterable<T2>, Iterable<T3>>> toTupleStream() {
-            return this.iterative.toTupleStream().crossProduct(IterativeHandler.transform(this.right)).toStream().map((tuple, right) -> Tuple.of(tuple._1(), tuple._2(), right)));
+            return this.iterative.toTupleStream().crossProduct(IterativeHandler.transform(this.right)).toStream().map(Fn2.tuple((tuple, right) -> Tuple.of(tuple._1(), tuple._2(), right)));
         }
 
         @Override

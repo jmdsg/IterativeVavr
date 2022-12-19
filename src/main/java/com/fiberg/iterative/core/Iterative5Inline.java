@@ -273,7 +273,7 @@ public interface Iterative5Inline<T1, T2, T3, T4, T5> extends Iterative5<T1, T2,
 
     @Override
     default public <B1, B2, B3> Iterative8Inline<T1, T2, T3, T4, T5, B1, B2, B3> pushBackBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2, Iterable<? extends Stream<? extends B3>> b3) {
-        return (Iterative8Inline<T1, T2, T3, T4, T5, B1, B2, B3>) Iterative5.super.<B1, B2, B3>pushBackBy(b1, b2, b4);
+        return (Iterative8Inline<T1, T2, T3, T4, T5, B1, B2, B3>) Iterative5.super.<B1, B2, B3>pushBackBy(b1, b2, b3);
     }
 
     @Override
@@ -367,8 +367,7 @@ public interface Iterative5Inline<T1, T2, T3, T4, T5> extends Iterative5<T1, T2,
 
         @Override
         public Stream<Tuple5<Iterable<T1>, Iterable<T2>, Iterable<T3>, Iterable<T4>, Iterable<T5>>> toTupleStream() {
-            ZipIterator iterator = new ZipIterator(this.iterative.toTupleStream().iterator(), IterativeHandler.transform(this.right).iterator(), (tuple, right) -> Tuple.of(tuple._1(), tuple._2(), tuple._3(), tuple._4(), right));
-            return iterator.toStream();
+            return new ZipIterator<>(this.iterative.toTupleStream().iterator(), IterativeHandler.transform(this.right).iterator(), (tuple, right) -> Tuple.of(tuple._1(), tuple._2(), tuple._3(), tuple._4(), right)).toStream();
         }
 
         @Override

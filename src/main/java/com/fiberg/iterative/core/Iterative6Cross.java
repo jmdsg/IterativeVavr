@@ -320,7 +320,7 @@ public interface Iterative6Cross<T1, T2, T3, T4, T5, T6> extends Iterative6<T1, 
 
         @Override
         public Stream<Tuple6<Iterable<T1>, Iterable<T2>, Iterable<T3>, Iterable<T4>, Iterable<T5>, Iterable<T6>>> toTupleStream() {
-            return this.iterative.toTupleStream().crossProduct(IterativeHandler.transform(this.right)).toStream().map((tuple, right) -> Tuple.of(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), right)));
+            return this.iterative.toTupleStream().crossProduct(IterativeHandler.transform(this.right)).toStream().map(Fn2.tuple((tuple, right) -> Tuple.of(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), right)));
         }
 
         @Override

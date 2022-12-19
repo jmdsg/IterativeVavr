@@ -321,8 +321,7 @@ public interface Iterative6Inline<T1, T2, T3, T4, T5, T6> extends Iterative6<T1,
 
         @Override
         public Stream<Tuple6<Iterable<T1>, Iterable<T2>, Iterable<T3>, Iterable<T4>, Iterable<T5>, Iterable<T6>>> toTupleStream() {
-            ZipIterator iterator = new ZipIterator(this.iterative.toTupleStream().iterator(), IterativeHandler.transform(this.right).iterator(), (tuple, right) -> Tuple.of(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), right));
-            return iterator.toStream();
+            return new ZipIterator<>(this.iterative.toTupleStream().iterator(), IterativeHandler.transform(this.right).iterator(), (tuple, right) -> Tuple.of(tuple._1(), tuple._2(), tuple._3(), tuple._4(), tuple._5(), right)).toStream();
         }
 
         @Override
