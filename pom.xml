@@ -204,7 +204,7 @@
 
         <plugins>
 
-            <!-- download source code in Eclipse -->
+            <!-- Download source code in Eclipse -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
