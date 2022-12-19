@@ -35,7 +35,7 @@ class ZipIterator<T1, T2, R> implements Iterator<R> {
         if (!this.it1.hasNext() || !this.it2.hasNext()) {
             throw new IllegalStateException("Inlined iterables must have the same length");
         }
-        return (R) this.mapper.apply(this.it1.next(), this.it2.next());
+        return this.mapper.apply(this.it1.next(), this.it2.next());
     }
 
 }

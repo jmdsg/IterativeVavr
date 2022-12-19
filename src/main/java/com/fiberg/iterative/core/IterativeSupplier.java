@@ -92,12 +92,12 @@ interface IterativeSupplier {
                     this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream2(), isCross).forEach(c);
                 }
                 boolean argLtCross = this.iterative.splitLt3().isCross();
-                return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A2, A3, A4, A5, A6, A7>(argLtCross ? this.iterative.splitRt6().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt6().pushFrontInlineBy(this.iterative.iterableStream1()));
+                return new Iterative1Supplier6.Iterative1Supplier6Impl<>(argLtCross ? this.iterative.splitRt6().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt6().pushFrontInlineBy(this.iterative.iterableStream1()));
             }
 
             private Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingRt(Cs2<? super T1, ? super A7> c, boolean isCross) {
                 this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream8(), isCross).forEach(c);
-                return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.iterative.splitLt7());
+                return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.iterative.splitLt7());
             }
 
             @Override
@@ -165,35 +165,35 @@ interface IterativeSupplier {
         public Iterative7<T1, A1, A2, A3, A4, A5, A6> innerIterative();
 
         default public <A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCrossOf(Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCrossOf(a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCrossOf(a7));
         }
 
         default public <A7> Iterative1Supplier7<T1, A7, A1, A2, A3, A4, A5, A6> pushFrontCrossOf(Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A7, A1, A2, A3, A4, A5, A6>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontCrossOf(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontCrossOf(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCross(A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCross(a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCross(a7));
         }
 
         default public <A7> Iterative1Supplier7<T1, A7, A1, A2, A3, A4, A5, A6> pushFrontCross(A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A7, A1, A2, A3, A4, A5, A6>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontCross(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontCross(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInlineOf(Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInlineOf(a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInlineOf(a7));
         }
 
         default public <A7> Iterative1Supplier7<T1, A7, A1, A2, A3, A4, A5, A6> pushFrontInlineOf(Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A7, A1, A2, A3, A4, A5, A6>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontInlineOf(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontInlineOf(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInline(A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInline(a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInline(a7));
         }
 
         default public <A7> Iterative1Supplier7<T1, A7, A1, A2, A3, A4, A5, A6> pushFrontInline(A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A7, A1, A2, A3, A4, A5, A6>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontInline(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt6().pushFrontInline(a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         public static class Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6> implements TransformSupplier<T1, A1, A2, A3, A4, A5, A6> {
@@ -253,12 +253,12 @@ interface IterativeSupplier {
                     this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream2(), isCross).forEach(c);
                 }
                 boolean argLtCross = this.iterative.splitLt3().isCross();
-                return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A2, A3, A4, A5, A6>(argLtCross ? this.iterative.splitRt5().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt5().pushFrontInlineBy(this.iterative.iterableStream1()));
+                return new Iterative1Supplier5.Iterative1Supplier5Impl<>(argLtCross ? this.iterative.splitRt5().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt5().pushFrontInlineBy(this.iterative.iterableStream1()));
             }
 
             private Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingRt(Cs2<? super T1, ? super A6> c, boolean isCross) {
                 this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream7(), isCross).forEach(c);
-                return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.iterative.splitLt6());
+                return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.iterative.splitLt6());
             }
 
             @Override
@@ -326,67 +326,67 @@ interface IterativeSupplier {
         public Iterative6<T1, A1, A2, A3, A4, A5> innerIterative();
 
         default public <A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCrossOf(Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCrossOf(a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCrossOf(a6));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCrossOf(Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCrossOf(a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCrossOf(a6, a7));
         }
 
         default public <A6> Iterative1Supplier6<T1, A6, A1, A2, A3, A4, A5> pushFrontCrossOf(Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A6, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCrossOf(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCrossOf(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A6, A7, A1, A2, A3, A4, A5> pushFrontCrossOf(Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A6, A7, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCrossOf(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCrossOf(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCross(A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCross(a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCross(a6));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCross(A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCross(a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCross(a6, a7));
         }
 
         default public <A6> Iterative1Supplier6<T1, A6, A1, A2, A3, A4, A5> pushFrontCross(A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A6, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCross(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCross(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A6, A7, A1, A2, A3, A4, A5> pushFrontCross(A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A6, A7, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCross(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontCross(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInlineOf(Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInlineOf(a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInlineOf(a6));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInlineOf(Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInlineOf(a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInlineOf(a6, a7));
         }
 
         default public <A6> Iterative1Supplier6<T1, A6, A1, A2, A3, A4, A5> pushFrontInlineOf(Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A6, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInlineOf(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInlineOf(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A6, A7, A1, A2, A3, A4, A5> pushFrontInlineOf(Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A6, A7, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInlineOf(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInlineOf(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInline(A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInline(a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInline(a6));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInline(A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInline(a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInline(a6, a7));
         }
 
         default public <A6> Iterative1Supplier6<T1, A6, A1, A2, A3, A4, A5> pushFrontInline(A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A6, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInline(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInline(a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A6, A7> Iterative1Supplier7<T1, A6, A7, A1, A2, A3, A4, A5> pushFrontInline(A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A6, A7, A1, A2, A3, A4, A5>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInline(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt5().pushFrontInline(a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         public static class Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5> implements TransformSupplier<T1, A1, A2, A3, A4, A5> {
@@ -444,12 +444,12 @@ interface IterativeSupplier {
                     this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream2(), isCross).forEach(c);
                 }
                 boolean argLtCross = this.iterative.splitLt3().isCross();
-                return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A2, A3, A4, A5>(argLtCross ? this.iterative.splitRt4().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt4().pushFrontInlineBy(this.iterative.iterableStream1()));
+                return new Iterative1Supplier4.Iterative1Supplier4Impl<>(argLtCross ? this.iterative.splitRt4().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt4().pushFrontInlineBy(this.iterative.iterableStream1()));
             }
 
             private Iterative1Supplier4<T1, A1, A2, A3, A4> usingRt(Cs2<? super T1, ? super A5> c, boolean isCross) {
                 this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream6(), isCross).forEach(c);
-                return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.iterative.splitLt5());
+                return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.iterative.splitLt5());
             }
 
             @Override
@@ -517,99 +517,99 @@ interface IterativeSupplier {
         public Iterative5<T1, A1, A2, A3, A4> innerIterative();
 
         default public <A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCrossOf(Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCrossOf(a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCrossOf(a5));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCrossOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCrossOf(a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCrossOf(a5, a6));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCrossOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCrossOf(a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCrossOf(a5, a6, a7));
         }
 
         default public <A5> Iterative1Supplier5<T1, A5, A1, A2, A3, A4> pushFrontCrossOf(Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A5, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCrossOf(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCrossOf(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A5, A6, A1, A2, A3, A4> pushFrontCrossOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A5, A6, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCrossOf(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCrossOf(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A5, A6, A7, A1, A2, A3, A4> pushFrontCrossOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A5, A6, A7, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCrossOf(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCrossOf(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCross(A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCross(a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCross(a5));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCross(A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCross(a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCross(a5, a6));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCross(A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCross(a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCross(a5, a6, a7));
         }
 
         default public <A5> Iterative1Supplier5<T1, A5, A1, A2, A3, A4> pushFrontCross(A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A5, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCross(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCross(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A5, A6, A1, A2, A3, A4> pushFrontCross(A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A5, A6, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCross(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCross(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A5, A6, A7, A1, A2, A3, A4> pushFrontCross(A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A5, A6, A7, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCross(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontCross(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInlineOf(Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInlineOf(a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInlineOf(a5));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInlineOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInlineOf(a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInlineOf(a5, a6));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInlineOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInlineOf(a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInlineOf(a5, a6, a7));
         }
 
         default public <A5> Iterative1Supplier5<T1, A5, A1, A2, A3, A4> pushFrontInlineOf(Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A5, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInlineOf(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInlineOf(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A5, A6, A1, A2, A3, A4> pushFrontInlineOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A5, A6, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInlineOf(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInlineOf(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A5, A6, A7, A1, A2, A3, A4> pushFrontInlineOf(Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A5, A6, A7, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInlineOf(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInlineOf(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInline(A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInline(a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInline(a5));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInline(A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInline(a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInline(a5, a6));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInline(A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInline(a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInline(a5, a6, a7));
         }
 
         default public <A5> Iterative1Supplier5<T1, A5, A1, A2, A3, A4> pushFrontInline(A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A5, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInline(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInline(a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A5, A6> Iterative1Supplier6<T1, A5, A6, A1, A2, A3, A4> pushFrontInline(A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A5, A6, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInline(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInline(a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A5, A6, A7> Iterative1Supplier7<T1, A5, A6, A7, A1, A2, A3, A4> pushFrontInline(A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A5, A6, A7, A1, A2, A3, A4>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInline(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt4().pushFrontInline(a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         public static class Iterative1Supplier4Impl<T1, A1, A2, A3, A4> implements TransformSupplier<T1, A1, A2, A3, A4> {
@@ -665,12 +665,12 @@ interface IterativeSupplier {
                     this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream2(), isCross).forEach(c);
                 }
                 boolean argLtCross = this.iterative.splitLt3().isCross();
-                return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A2, A3, A4>(argLtCross ? this.iterative.splitRt3().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt3().pushFrontInlineBy(this.iterative.iterableStream1()));
+                return new Iterative1Supplier3.Iterative1Supplier3Impl<>(argLtCross ? this.iterative.splitRt3().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt3().pushFrontInlineBy(this.iterative.iterableStream1()));
             }
 
             private Iterative1Supplier3<T1, A1, A2, A3> usingRt(Cs2<? super T1, ? super A4> c, boolean isCross) {
                 this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream5(), isCross).forEach(c);
-                return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.iterative.splitLt4());
+                return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.iterative.splitLt4());
             }
 
             @Override
@@ -738,131 +738,131 @@ interface IterativeSupplier {
         public Iterative4<T1, A1, A2, A3> innerIterative();
 
         default public <A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackCrossOf(Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackCrossOf(a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackCrossOf(a4));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCrossOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCrossOf(a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCrossOf(a4, a5));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCrossOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCrossOf(a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCrossOf(a4, a5, a6));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCrossOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCrossOf(a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCrossOf(a4, a5, a6, a7));
         }
 
         default public <A4> Iterative1Supplier4<T1, A4, A1, A2, A3> pushFrontCrossOf(Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A4, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A4, A5, A1, A2, A3> pushFrontCrossOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A4, A5, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A4, A5, A6, A1, A2, A3> pushFrontCrossOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A4, A5, A6, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A4, A5, A6, A7, A1, A2, A3> pushFrontCrossOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A4, A5, A6, A7, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCrossOf(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackCross(A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackCross(a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackCross(a4));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCross(A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCross(a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCross(a4, a5));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCross(A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCross(a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCross(a4, a5, a6));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCross(A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCross(a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCross(a4, a5, a6, a7));
         }
 
         default public <A4> Iterative1Supplier4<T1, A4, A1, A2, A3> pushFrontCross(A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A4, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A4, A5, A1, A2, A3> pushFrontCross(A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A4, A5, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A4, A5, A6, A1, A2, A3> pushFrontCross(A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A4, A5, A6, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A4, A5, A6, A7, A1, A2, A3> pushFrontCross(A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A4, A5, A6, A7, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontCross(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackInlineOf(Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackInlineOf(a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackInlineOf(a4));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInlineOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInlineOf(a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInlineOf(a4, a5));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInlineOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInlineOf(a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInlineOf(a4, a5, a6));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInlineOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInlineOf(a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInlineOf(a4, a5, a6, a7));
         }
 
         default public <A4> Iterative1Supplier4<T1, A4, A1, A2, A3> pushFrontInlineOf(Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A4, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A4, A5, A1, A2, A3> pushFrontInlineOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A4, A5, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A4, A5, A6, A1, A2, A3> pushFrontInlineOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A4, A5, A6, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A4, A5, A6, A7, A1, A2, A3> pushFrontInlineOf(Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A4, A5, A6, A7, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInlineOf(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackInline(A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackInline(a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackInline(a4));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInline(A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInline(a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInline(a4, a5));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInline(A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInline(a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInline(a4, a5, a6));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInline(A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInline(a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInline(a4, a5, a6, a7));
         }
 
         default public <A4> Iterative1Supplier4<T1, A4, A1, A2, A3> pushFrontInline(A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A4, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4, A5> Iterative1Supplier5<T1, A4, A5, A1, A2, A3> pushFrontInline(A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A4, A5, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4, A5, A6> Iterative1Supplier6<T1, A4, A5, A6, A1, A2, A3> pushFrontInline(A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A4, A5, A6, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A4, A5, A6, A7> Iterative1Supplier7<T1, A4, A5, A6, A7, A1, A2, A3> pushFrontInline(A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A4, A5, A6, A7, A1, A2, A3>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt3().pushFrontInline(a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         public static class Iterative1Supplier3Impl<T1, A1, A2, A3> implements TransformSupplier<T1, A1, A2, A3> {
@@ -916,12 +916,12 @@ interface IterativeSupplier {
                     this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream2(), isCross).forEach(c);
                 }
                 boolean argLtCross = this.iterative.splitLt2().isCross();
-                return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A2, A3>(argLtCross ? this.iterative.splitRt2().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt2().pushFrontInlineBy(this.iterative.iterableStream1()));
+                return new Iterative1Supplier2.Iterative1Supplier2Impl<>(argLtCross ? this.iterative.splitRt2().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt2().pushFrontInlineBy(this.iterative.iterableStream1()));
             }
 
             private Iterative1Supplier2<T1, A1, A2> usingRt(Cs2<? super T1, ? super A3> c, boolean isCross) {
                 this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream4(), isCross).forEach(c);
-                return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A1, A2>(this.iterative.splitLt3());
+                return new Iterative1Supplier2.Iterative1Supplier2Impl<>(this.iterative.splitLt3());
             }
 
             @Override
@@ -989,163 +989,163 @@ interface IterativeSupplier {
         public Iterative3<T1, A1, A2> innerIterative();
 
         default public <A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackCrossOf(Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackCrossOf(a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackCrossOf(a3));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackCrossOf(a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackCrossOf(a3, a4));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCrossOf(a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCrossOf(a3, a4, a5));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCrossOf(a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCrossOf(a3, a4, a5, a6));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCrossOf(a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCrossOf(a3, a4, a5, a6, a7));
         }
 
         default public <A3> Iterative1Supplier3<T1, A3, A1, A2> pushFrontCrossOf(Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A3, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A3, A4, A1, A2> pushFrontCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A3, A4, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A3, A4, A5, A1, A2> pushFrontCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A3, A4, A5, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A3, A4, A5, A6, A1, A2> pushFrontCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A3, A4, A5, A6, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A3, A4, A5, A6, A7, A1, A2> pushFrontCrossOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A3, A4, A5, A6, A7, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCrossOf(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackCross(A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackCross(a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackCross(a3));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackCross(A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackCross(a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackCross(a3, a4));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCross(A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCross(a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCross(a3, a4, a5));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCross(A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCross(a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCross(a3, a4, a5, a6));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCross(A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCross(a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCross(a3, a4, a5, a6, a7));
         }
 
         default public <A3> Iterative1Supplier3<T1, A3, A1, A2> pushFrontCross(A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A3, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A3, A4, A1, A2> pushFrontCross(A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A3, A4, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A3, A4, A5, A1, A2> pushFrontCross(A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A3, A4, A5, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A3, A4, A5, A6, A1, A2> pushFrontCross(A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A3, A4, A5, A6, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A3, A4, A5, A6, A7, A1, A2> pushFrontCross(A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A3, A4, A5, A6, A7, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontCross(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isCross()));
         }
 
         default public <A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackInlineOf(Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackInlineOf(a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackInlineOf(a3));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackInlineOf(a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackInlineOf(a3, a4));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInlineOf(a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInlineOf(a3, a4, a5));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInlineOf(a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInlineOf(a3, a4, a5, a6));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInlineOf(a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInlineOf(a3, a4, a5, a6, a7));
         }
 
         default public <A3> Iterative1Supplier3<T1, A3, A1, A2> pushFrontInlineOf(Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A3, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A3, A4, A1, A2> pushFrontInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A3, A4, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A3, A4, A5, A1, A2> pushFrontInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A3, A4, A5, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A3, A4, A5, A6, A1, A2> pushFrontInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A3, A4, A5, A6, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A3, A4, A5, A6, A7, A1, A2> pushFrontInlineOf(Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A3, A4, A5, A6, A7, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInlineOf(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackInline(A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackInline(a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackInline(a3));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackInline(A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackInline(a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackInline(a3, a4));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInline(A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInline(a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInline(a3, a4, a5));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInline(A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInline(a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInline(a3, a4, a5, a6));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInline(A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInline(a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInline(a3, a4, a5, a6, a7));
         }
 
         default public <A3> Iterative1Supplier3<T1, A3, A1, A2> pushFrontInline(A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A3, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4> Iterative1Supplier4<T1, A3, A4, A1, A2> pushFrontInline(A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A3, A4, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4, A5> Iterative1Supplier5<T1, A3, A4, A5, A1, A2> pushFrontInline(A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A3, A4, A5, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4, A5, A6> Iterative1Supplier6<T1, A3, A4, A5, A6, A1, A2> pushFrontInline(A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A3, A4, A5, A6, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         default public <A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A3, A4, A5, A6, A7, A1, A2> pushFrontInline(A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A3, A4, A5, A6, A7, A1, A2>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt2().pushFrontInline(a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().splitLt2().isInline()));
         }
 
         public static class Iterative1Supplier2Impl<T1, A1, A2> implements TransformSupplier<T1, A1, A2> {
@@ -1197,12 +1197,12 @@ interface IterativeSupplier {
                     this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream2(), isCross).forEach(c);
                 }
                 boolean argLtCross = this.iterative.isCross();
-                return new Iterative1Supplier1.Iterative1Supplier1Impl<T1, A2>(argLtCross ? this.iterative.splitRt1().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt1().pushFrontInlineBy(this.iterative.iterableStream1()));
+                return new Iterative1Supplier1.Iterative1Supplier1Impl<>(argLtCross ? this.iterative.splitRt1().pushFrontCrossBy(this.iterative.iterableStream1()) : this.iterative.splitRt1().pushFrontInlineBy(this.iterative.iterableStream1()));
             }
 
             private Iterative1Supplier1<T1, A1> usingRt(Cs2<? super T1, ? super A2> c, boolean isCross) {
                 this.iterative.create(this.iterative.splitLt1(), this.iterative.iterableStream3(), isCross).forEach(c);
-                return new Iterative1Supplier1.Iterative1Supplier1Impl<T1, A1>(this.iterative.splitLt2());
+                return new Iterative1Supplier1.Iterative1Supplier1Impl<>(this.iterative.splitLt2());
             }
 
             @Override
@@ -1264,195 +1264,195 @@ interface IterativeSupplier {
         public Iterative2<T1, A1> innerIterative();
 
         default public <A2> Iterative1Supplier2<T1, A1, A2> pushBackCrossOf(Iterable<? extends A2> a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A1, A2>(this.innerIterative().pushBackCrossOf(a2));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(this.innerIterative().pushBackCrossOf(a2));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackCrossOf(a2, a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackCrossOf(a2, a3));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackCrossOf(a2, a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackCrossOf(a2, a3, a4));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCrossOf(a2, a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCrossOf(a2, a3, a4, a5));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCrossOf(a2, a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCrossOf(a2, a3, a4, a5, a6));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCrossOf(a2, a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCrossOf(a2, a3, a4, a5, a6, a7));
         }
 
         default public <A2> Iterative1Supplier2<T1, A2, A1> pushFrontCrossOf(Iterable<? extends A2> a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A2, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A2, A3, A1> pushFrontCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A2, A3, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A2, A3, A4, A1> pushFrontCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A2, A3, A4, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A2, A3, A4, A5, A1> pushFrontCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A2, A3, A4, A5, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A1> pushFrontCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A2, A3, A4, A5, A6, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A2, A3, A4, A5, A6, A7, A1> pushFrontCrossOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A2, A3, A4, A5, A6, A7, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCrossOf(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2> Iterative1Supplier2<T1, A1, A2> pushBackCross(A2 a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A1, A2>(this.innerIterative().pushBackCross(a2));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(this.innerIterative().pushBackCross(a2));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackCross(A2 a2, A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackCross(a2, a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackCross(a2, a3));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackCross(A2 a2, A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackCross(a2, a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackCross(a2, a3, a4));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackCross(A2 a2, A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackCross(a2, a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackCross(a2, a3, a4, a5));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackCross(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackCross(a2, a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackCross(a2, a3, a4, a5, a6));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackCross(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackCross(a2, a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackCross(a2, a3, a4, a5, a6, a7));
         }
 
         default public <A2> Iterative1Supplier2<T1, A2, A1> pushFrontCross(A2 a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A2, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A2, A3, A1> pushFrontCross(A2 a2, A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A2, A3, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A2, A3, A4, A1> pushFrontCross(A2 a2, A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A2, A3, A4, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A2, A3, A4, A5, A1> pushFrontCross(A2 a2, A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A2, A3, A4, A5, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A1> pushFrontCross(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A2, A3, A4, A5, A6, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A2, A3, A4, A5, A6, A7, A1> pushFrontCross(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A2, A3, A4, A5, A6, A7, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontCross(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isCross()));
         }
 
         default public <A2> Iterative1Supplier2<T1, A1, A2> pushBackInlineOf(Iterable<? extends A2> a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A1, A2>(this.innerIterative().pushBackInlineOf(a2));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(this.innerIterative().pushBackInlineOf(a2));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackInlineOf(a2, a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackInlineOf(a2, a3));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackInlineOf(a2, a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackInlineOf(a2, a3, a4));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInlineOf(a2, a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInlineOf(a2, a3, a4, a5));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInlineOf(a2, a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInlineOf(a2, a3, a4, a5, a6));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInlineOf(a2, a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInlineOf(a2, a3, a4, a5, a6, a7));
         }
 
         default public <A2> Iterative1Supplier2<T1, A2, A1> pushFrontInlineOf(Iterable<? extends A2> a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A2, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A2, A3, A1> pushFrontInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A2, A3, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A2, A3, A4, A1> pushFrontInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A2, A3, A4, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A2, A3, A4, A5, A1> pushFrontInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A2, A3, A4, A5, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A1> pushFrontInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A2, A3, A4, A5, A6, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A2, A3, A4, A5, A6, A7, A1> pushFrontInlineOf(Iterable<? extends A2> a2, Iterable<? extends A3> a3, Iterable<? extends A4> a4, Iterable<? extends A5> a5, Iterable<? extends A6> a6, Iterable<? extends A7> a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A2, A3, A4, A5, A6, A7, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInlineOf(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2> Iterative1Supplier2<T1, A1, A2> pushBackInline(A2 a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A1, A2>(this.innerIterative().pushBackInline(a2));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(this.innerIterative().pushBackInline(a2));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A1, A2, A3> pushBackInline(A2 a2, A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A1, A2, A3>(this.innerIterative().pushBackInline(a2, a3));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(this.innerIterative().pushBackInline(a2, a3));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A1, A2, A3, A4> pushBackInline(A2 a2, A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A1, A2, A3, A4>(this.innerIterative().pushBackInline(a2, a3, a4));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(this.innerIterative().pushBackInline(a2, a3, a4));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A1, A2, A3, A4, A5> pushBackInline(A2 a2, A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A1, A2, A3, A4, A5>(this.innerIterative().pushBackInline(a2, a3, a4, a5));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(this.innerIterative().pushBackInline(a2, a3, a4, a5));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> pushBackInline(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A1, A2, A3, A4, A5, A6>(this.innerIterative().pushBackInline(a2, a3, a4, a5, a6));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(this.innerIterative().pushBackInline(a2, a3, a4, a5, a6));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> pushBackInline(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A1, A2, A3, A4, A5, A6, A7>(this.innerIterative().pushBackInline(a2, a3, a4, a5, a6, a7));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(this.innerIterative().pushBackInline(a2, a3, a4, a5, a6, a7));
         }
 
         default public <A2> Iterative1Supplier2<T1, A2, A1> pushFrontInline(A2 a2) {
-            return new Iterative1Supplier2.Iterative1Supplier2Impl<T1, A2, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier2.Iterative1Supplier2Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3> Iterative1Supplier3<T1, A2, A3, A1> pushFrontInline(A2 a2, A3 a3) {
-            return new Iterative1Supplier3.Iterative1Supplier3Impl<T1, A2, A3, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier3.Iterative1Supplier3Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4> Iterative1Supplier4<T1, A2, A3, A4, A1> pushFrontInline(A2 a2, A3 a3, A4 a4) {
-            return new Iterative1Supplier4.Iterative1Supplier4Impl<T1, A2, A3, A4, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier4.Iterative1Supplier4Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4, A5> Iterative1Supplier5<T1, A2, A3, A4, A5, A1> pushFrontInline(A2 a2, A3 a3, A4 a4, A5 a5) {
-            return new Iterative1Supplier5.Iterative1Supplier5Impl<T1, A2, A3, A4, A5, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier5.Iterative1Supplier5Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4, a5), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4, A5, A6> Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A1> pushFrontInline(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-            return new Iterative1Supplier6.Iterative1Supplier6Impl<T1, A2, A3, A4, A5, A6, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier6.Iterative1Supplier6Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4, a5, a6), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         default public <A2, A3, A4, A5, A6, A7> Iterative1Supplier7<T1, A2, A3, A4, A5, A6, A7, A1> pushFrontInline(A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-            return new Iterative1Supplier7.Iterative1Supplier7Impl<T1, A2, A3, A4, A5, A6, A7, A1>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
+            return new Iterative1Supplier7.Iterative1Supplier7Impl<>(IterativePush.pushFrontArg(this.innerIterative().splitRt().pushFrontInline(a2, a3, a4, a5, a6, a7), this.innerIterative().iterableStream1(), this.innerIterative().isInline()));
         }
 
         public static class Iterative1Supplier1Impl<T1, A1> implements TransformSupplier<T1, A1> {

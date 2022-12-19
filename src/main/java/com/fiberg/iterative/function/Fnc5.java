@@ -46,7 +46,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
     }
 
     public static <T1, T2, T3, T4, T5, R> Fnc5<T1, T2, T3, T4, T5, R> value(R r) {
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> r;
+        return (t1, t2, t3, t4, t5) -> r;
     }
 
     public static <T1, T2, T3, T4, T5, R> Fnc5<T1, T2, T3, T4, T5, R> of(Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
@@ -78,7 +78,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
     }
 
     public static <T1, T2, T3, T4, T5, R> Fnc5<T1, T2, T3, T4, T5, R> detuple(Fnc1<? super Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>, ? extends R> f) {
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> f.apply((Object) Tuple.of((Object) t1, (Object) t2, (Object) t3, (Object) t4, (Object) t5));
+        return (t1, t2, t3, t4, t5) -> f.apply(Tuple.of(t1, t2, t3, t4, t5));
     }
 
     public static <T1, T2, T3, T4, T5, R> Fnc5<T1, T2, T3, T4, T5, R> check(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
@@ -161,39 +161,39 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
     }
 
     default public Fnc4<T2, T3, T4, T5, R> applyLt(T1 t1) {
-        return (Fnc4 & Serializable) (t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
+        return (t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc3<T3, T4, T5, R> applyLt(T1 t1, T2 t2) {
-        return (Fnc3 & Serializable) (t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
+        return (t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc2<T4, T5, R> applyLt(T1 t1, T2 t2, T3 t3) {
-        return (Fnc2 & Serializable) (t4, t5) -> this.apply(t1, t2, t3, t4, t5);
+        return (t4, t5) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc1<T5, R> applyLt(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return (Fnc1 & Serializable) t5 -> this.apply(t1, t2, t3, t4, t5);
+        return t5 -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc4<T1, T2, T3, T4, R> applyRt(T5 t5) {
-        return (Fnc4 & Serializable) (t1, t2, t3, t4) -> this.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc3<T1, T2, T3, R> applyRt(T4 t4, T5 t5) {
-        return (Fnc3 & Serializable) (t1, t2, t3) -> this.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc2<T1, T2, R> applyRt(T3 t3, T4 t4, T5 t5) {
-        return (Fnc2 & Serializable) (t1, t2) -> this.apply(t1, t2, t3, t4, t5);
+        return (t1, t2) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc1<T1, R> applyRt(T2 t2, T3 t3, T4 t4, T5 t5) {
-        return (Fnc1 & Serializable) t1 -> this.apply(t1, t2, t3, t4, t5);
+        return t1 -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc0<R> toFunction(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return (Fnc0 & Serializable) () -> this.apply(t1, t2, t3, t4, t5);
+        return () -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Rnc toRunnable(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
@@ -210,7 +210,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             Object value = this.apply(t1, t2, t3, t4, t5);
             r.run();
             return value;
@@ -219,17 +219,17 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public <V> Fnc5<T1, T2, T3, T4, T5, V> afterApply(Fnc1<? super R, ? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> f.apply(this.apply(t1, t2, t3, t4, t5));
+        return (t1, t2, t3, t4, t5) -> f.apply(this.apply(t1, t2, t3, t4, t5));
     }
 
     default public <V> Fnc5<T1, T2, T3, T4, T5, V> afterApply(Fnc0<? extends V> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> f.ignoring1().apply(this.apply(t1, t2, t3, t4, t5));
+        return (t1, t2, t3, t4, t5) -> f.ignoring1().apply(this.apply(t1, t2, t3, t4, t5));
     }
 
     default public <V> Fnc5<T1, T2, T3, T4, T5, V> afterGet(Spc<? extends V> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> s.ignoring1().apply(this.apply(t1, t2, t3, t4, t5));
+        return (t1, t2, t3, t4, t5) -> s.ignoring1().apply(this.apply(t1, t2, t3, t4, t5));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, Boolean> afterTest(Prc1<? super R> p) {
@@ -239,7 +239,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Prc5<T1, T2, T3, T4, T5> afterTestTo(Prc1<? super R> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc5<Object, Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4, t5) -> p.test(this.apply(t1, t2, t3, t4, t5));
+        return (t1, t2, t3, t4, t5) -> p.test(this.apply(t1, t2, t3, t4, t5));
     }
 
     default public Csc5<T1, T2, T3, T4, T5> afterAcceptTo(Csc1<? super R> c) {
@@ -249,7 +249,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             Object value = this.apply(t1, t2, t3, t4, t5);
             c.accept(value);
             return value;
@@ -258,12 +258,12 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public <W> Fn5<T1, T2, T3, T4, T5, W> beforeWrap(Fn1<? super Spc<R>, ? extends W> wrap) {
         Objects.requireNonNull(wrap, "wrap is null");
-        return (Fn5 & Serializable) (t1, t2, t3, t4, t5) -> wrap.apply(this.toSupplier(t1, t2, t3, t4, t5));
+        return (t1, t2, t3, t4, t5) -> wrap.apply(this.toSupplier(t1, t2, t3, t4, t5));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             r.run();
             return this.apply(t1, t2, t3, t4, t5);
         };
@@ -275,83 +275,83 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public <B1> Fnc1<B1, R> beforeApply1(Fnc1<? super B1, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc1 & Serializable) b1 -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1))));
+        return b1 -> this.tupled().apply(Tuple.narrow((f.apply(b1))));
     }
 
     default public <B1, B2> Fnc2<B1, B2, R> beforeApply2(Fnc2<? super B1, ? super B2, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc2 & Serializable) (b1, b2) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2))));
+        return (b1, b2) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2))));
     }
 
     default public <B1, B2, B3> Fnc3<B1, B2, B3, R> beforeApply3(Fnc3<? super B1, ? super B2, ? super B3, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc3 & Serializable) (b1, b2, b3) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2, b3))));
+        return (b1, b2, b3) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2, b3))));
     }
 
     default public <B1, B2, B3, B4> Fnc4<B1, B2, B3, B4, R> beforeApply4(Fnc4<? super B1, ? super B2, ? super B3, ? super B4, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc4 & Serializable) (b1, b2, b3, b4) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2, b3, b4))));
+        return (b1, b2, b3, b4) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2, b3, b4))));
     }
 
     default public <B1, B2, B3, B4, B5> Fnc5<B1, B2, B3, B4, B5, R> beforeApply5(Fnc5<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc5 & Serializable) (b1, b2, b3, b4, b5) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2, b3, b4, b5))));
+        return (b1, b2, b3, b4, b5) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2, b3, b4, b5))));
     }
 
     default public <B1, B2, B3, B4, B5, B6> Fnc6<B1, B2, B3, B4, B5, B6, R> beforeApply6(Fnc6<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc6 & Serializable) (b1, b2, b3, b4, b5, b6) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2, b3, b4, b5, b6))));
+        return (b1, b2, b3, b4, b5, b6) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2, b3, b4, b5, b6))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7> Fnc7<B1, B2, B3, B4, B5, B6, B7, R> beforeApply7(Fnc7<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc7 & Serializable) (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2, b3, b4, b5, b6, b7))));
+        return (b1, b2, b3, b4, b5, b6, b7) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2, b3, b4, b5, b6, b7))));
     }
 
     default public <B1, B2, B3, B4, B5, B6, B7, B8> Fnc8<B1, B2, B3, B4, B5, B6, B7, B8, R> beforeApply8(Fnc8<? super B1, ? super B2, ? super B3, ? super B4, ? super B5, ? super B6, ? super B7, ? super B8, ? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc8 & Serializable) (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
+        return (b1, b2, b3, b4, b5, b6, b7, b8) -> this.tupled().apply(Tuple.narrow((f.apply(b1, b2, b3, b4, b5, b6, b7, b8))));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnSuccess(Prc0 p, Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> p.test() != false ? this.apply(t1, t2, t3, t4, t5) : onFailure.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4, t5) -> p.test() != false ? this.apply(t1, t2, t3, t4, t5) : onFailure.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnSuccess(Prc0 p, Spc<? extends R> onFailure) {
-        return this.beforeTestOnSuccess(p, (R) onFailure.toFunction().ignoring5());
+        return this.beforeTestOnSuccess(p, onFailure.toFunction().ignoring5());
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnSuccess(Prc0 p, R onFailure) {
-        return this.beforeTestOnSuccess(p, (R) Fnc5.value(onFailure));
+        return this.beforeTestOnSuccess(p, Fnc5.value(onFailure));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnSuccess(Prc0 p) {
-        return this.beforeTestOnSuccess(p, (R) Fnc5.empty());
+        return this.beforeTestOnSuccess(p, Fnc5.empty());
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnFailure(Prc0 p, Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeTestOnSuccess(p.negated(), (R) onSuccess);
+        return this.beforeTestOnSuccess(p.negated(), onSuccess);
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnFailure(Prc0 p, Spc<? extends R> onSuccess) {
-        return this.beforeTestOnFailure(p, (R) onSuccess.toFunction().ignoring5());
+        return this.beforeTestOnFailure(p, onSuccess.toFunction().ignoring5());
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnFailure(Prc0 p, R onSuccess) {
-        return this.beforeTestOnFailure(p, (R) Fnc5.value(onSuccess));
+        return this.beforeTestOnFailure(p, Fnc5.value(onSuccess));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeTestOnFailure(Prc0 p) {
-        return this.beforeTestOnFailure(p, (R) Fnc5.empty());
+        return this.beforeTestOnFailure(p, Fnc5.empty());
     }
 
     default public Spc<R> beforeGet(Spc<? extends Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Spc<Object> & Serializable) () -> this.tupled().apply((Object) Tuple.narrow((Tuple5) ((Tuple5) s.get())));
+        return () -> this.tupled().apply(Tuple.narrow((s.get())));
     }
 
     default public Fn5<T1, T2, T3, T4, T5, Option<R>> lift() {
@@ -363,12 +363,12 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
     }
 
     default public Fnc5<T5, T4, T3, T2, T1, R> inverted() {
-        return (Fnc5 & Serializable) (t5, t4, t3, t2, t1) -> this.apply(t1, t2, t3, t4, t5);
+        return (t5, t4, t3, t2, t1) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public <S> Fnc5<T1, T2, T3, T4, T5, S> afterPassingThroughApply(Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             this.apply(t1, t2, t3, t4, t5);
             return f.apply(t1, t2, t3, t4, t5);
         };
@@ -376,7 +376,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> afterPassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             Object result = this.apply(t1, t2, t3, t4, t5);
             p.test(t1, t2, t3, t4, t5);
             return result;
@@ -385,7 +385,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Prc5<T1, T2, T3, T4, T5> afterPassingThroughTestTo(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc5<Object, Object, Object, Object, Object> & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             this.apply(t1, t2, t3, t4, t5);
             return p.test(t1, t2, t3, t4, t5);
         };
@@ -393,7 +393,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> afterPassingThroughAccept(Csc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             Object result = this.apply(t1, t2, t3, t4, t5);
             c.accept(t1, t2, t3, t4, t5);
             return result;
@@ -410,7 +410,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforePassingThroughApply(Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             f.apply(t1, t2, t3, t4, t5);
             return this.apply(t1, t2, t3, t4, t5);
         };
@@ -418,7 +418,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforePassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             p.test(t1, t2, t3, t4, t5);
             return this.apply(t1, t2, t3, t4, t5);
         };
@@ -426,7 +426,7 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforePassingThroughAccept(Csc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> c) {
         Objects.requireNonNull(c, "c is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> {
+        return (t1, t2, t3, t4, t5) -> {
             c.accept(t1, t2, t3, t4, t5);
             return this.apply(t1, t2, t3, t4, t5);
         };
@@ -435,41 +435,41 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeSuccessPassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fnc5 & Serializable) (t1, t2, t3, t4, t5) -> p.test(t1, t2, t3, t4, t5) ? this.apply(t1, t2, t3, t4, t5) : onFailure.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4, t5) -> p.test(t1, t2, t3, t4, t5) ? this.apply(t1, t2, t3, t4, t5) : onFailure.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeSuccessPassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, Spc<? extends R> onFailure) {
-        return this.beforeSuccessPassingThroughTest(p, (R) onFailure.toFunction().ignoring5());
+        return this.beforeSuccessPassingThroughTest(p, onFailure.toFunction().ignoring5());
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeSuccessPassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, R onFailure) {
-        return this.beforeSuccessPassingThroughTest(p, (R) Fnc5.value(onFailure));
+        return this.beforeSuccessPassingThroughTest(p, Fnc5.value(onFailure));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeSuccessPassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return this.beforeSuccessPassingThroughTest(p, (R) Fnc5.empty());
+        return this.beforeSuccessPassingThroughTest(p, Fnc5.empty());
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeFailurePassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeSuccessPassingThroughTest(p.negated(), (R) onSuccess);
+        return this.beforeSuccessPassingThroughTest(p.negated(), onSuccess);
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeFailurePassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, Spc<? extends R> onSuccess) {
-        return this.beforeFailurePassingThroughTest(p, (R) onSuccess.toFunction().ignoring5());
+        return this.beforeFailurePassingThroughTest(p, onSuccess.toFunction().ignoring5());
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeFailurePassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, R onSuccess) {
-        return this.beforeFailurePassingThroughTest(p, (R) Fnc5.value(onSuccess));
+        return this.beforeFailurePassingThroughTest(p, Fnc5.value(onSuccess));
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, R> beforeFailurePassingThroughTest(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return this.beforeFailurePassingThroughTest(p, (R) Fnc5.empty());
+        return this.beforeFailurePassingThroughTest(p, Fnc5.empty());
     }
 
     default public Fnc1<T1, Fnc1<T2, Fnc1<T3, Fnc1<T4, Fnc1<T5, R>>>>> currying() {
-        return (Fnc1 & Serializable) t1 -> (Fnc1 & Serializable) t2 -> (Fnc1 & Serializable) t3 -> (Fnc1 & Serializable) t4 -> (Fnc1 & Serializable) t5 -> this.apply(t1, t2, t3, t4, t5);
+        return t1 -> t2 -> t3 -> t4 -> t5 -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fn5<T1, T2, T3, T4, T5, R> unchecked() {
@@ -477,27 +477,27 @@ public interface Fnc5<T1, T2, T3, T4, T5, R> extends CheckedFunction5<T1, T2, T3
     }
 
     default public <I1> Fnc6<I1, T1, T2, T3, T4, T5, R> ignoring1Lt() {
-        return (Fnc6 & Serializable) (i1, t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
+        return (i1, t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public <I1> Fnc6<T1, T2, T3, T4, T5, I1, R> ignoring1Rt() {
-        return (Fnc6 & Serializable) (t1, t2, t3, t4, t5, i1) -> this.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4, t5, i1) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public <I1, I2> Fnc7<I1, I2, T1, T2, T3, T4, T5, R> ignoring2Lt() {
-        return (Fnc7 & Serializable) (i1, i2, t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
+        return (i1, i2, t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public <I1, I2> Fnc7<T1, T2, T3, T4, T5, I1, I2, R> ignoring2Rt() {
-        return (Fnc7 & Serializable) (t1, t2, t3, t4, t5, i1, i2) -> this.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4, t5, i1, i2) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public <I1, I2, I3> Fnc8<I1, I2, I3, T1, T2, T3, T4, T5, R> ignoring3Lt() {
-        return (Fnc8 & Serializable) (i1, i2, i3, t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
+        return (i1, i2, i3, t1, t2, t3, t4, t5) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public <I1, I2, I3> Fnc8<T1, T2, T3, T4, T5, I1, I2, I3, R> ignoring3Rt() {
-        return (Fnc8 & Serializable) (t1, t2, t3, t4, t5, i1, i2, i3) -> this.apply(t1, t2, t3, t4, t5);
+        return (t1, t2, t3, t4, t5, i1, i2, i3) -> this.apply(t1, t2, t3, t4, t5);
     }
 
     default public Fnc1<Tuple5<T1, T2, T3, T4, T5>, R> tupled() {

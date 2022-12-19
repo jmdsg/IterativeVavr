@@ -47,7 +47,7 @@ public interface Cs1<T1> extends Consumer<T1> {
     }
 
     public static <T1> Cs1<T1> detuple(Cs1<? super Tuple1<? extends T1>> c) {
-        return t1 -> c.accept(Tuple.of((Object) t1));
+        return t1 -> c.accept(Tuple.of(t1));
     }
 
     public static <T1> Cs1<T1> uncheck(Csc1<? super T1> c) {
@@ -57,7 +57,7 @@ public interface Cs1<T1> extends Consumer<T1> {
 
     default public <V> Fn1<T1, V> andThenApply(Fn0<? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (Fn1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return after.apply();
         };
@@ -124,14 +124,14 @@ public interface Cs1<T1> extends Consumer<T1> {
     }
 
     default public <R> Fn1<T1, R> toFunction(R r) {
-        return (Fn1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return r;
         };
     }
 
     default public Pr1<T1> toPredicate(boolean b) {
-        return (Pr1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return b;
         };
@@ -156,7 +156,7 @@ public interface Cs1<T1> extends Consumer<T1> {
 
     default public <R> Fn1<T1, R> afterApplyTo(Fn0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return f.apply();
         };
@@ -169,14 +169,14 @@ public interface Cs1<T1> extends Consumer<T1> {
 
     default public Pr1<T1> afterTestTo(Pr0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return p.test();
         };
     }
 
     default public <R> Fn1<T1, R> afterGet(Sp<? extends R> s) {
-        return (Fn1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return s.get();
         };
@@ -268,7 +268,7 @@ public interface Cs1<T1> extends Consumer<T1> {
 
     default public <S> Fn1<T1, S> afterPassingThroughApplyTo(Fn1<? super T1, ? extends S> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return f.apply(t1);
         };
@@ -284,7 +284,7 @@ public interface Cs1<T1> extends Consumer<T1> {
 
     default public Pr1<T1> afterPassingThroughTestTo(Pr1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr1 & Serializable) t1 -> {
+        return t1 -> {
             this.accept(t1);
             return p.test(t1);
         };

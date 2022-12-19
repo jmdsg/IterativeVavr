@@ -46,6 +46,7 @@ import com.fiberg.iterative.function.Pr6;
 import com.fiberg.iterative.function.Rn;
 import com.fiberg.iterative.function.Sp;
 import io.vavr.Tuple;
+import io.vavr.Tuple5;
 import io.vavr.Tuple6;
 import io.vavr.collection.Iterator;
 import io.vavr.collection.Seq;
@@ -68,6 +69,12 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> emptyNullable() {
         return Iterative.nullable().empty6();
+    }
+
+    public static <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> narrow(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> iterative) {
+        @SuppressWarnings("unchecked")
+        final Iterative6<T1, T2, T3, T4, T5, T6> iter = (Iterative6<T1, T2, T3, T4, T5, T6>) iterative;
+        return iter;
     }
 
     public String toStringContent();
@@ -381,15 +388,15 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> recover6(T6 t6) {
-        return this.splitRt1().isFailure() ? this.splitLt5().pushBack(t6) : this;
+        return this.splitRt1().isFailure() ? this.splitLt5().<T6>pushBack(t6) : this;
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> recover6Of(Iterable<? extends T6> t6) {
-        return this.splitRt1().isFailure() ? this.splitLt5().pushBackOf(t6) : this;
+        return this.splitRt1().isFailure() ? this.splitLt5().<T6>pushBackOf(t6) : this;
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> recover6By(Iterable<? extends Stream<? extends T6>> t6) {
-        return this.splitRt1().isFailure() ? this.splitLt5().pushBackBy(t6) : this;
+        return this.splitRt1().isFailure() ? this.splitLt5().<T6>pushBackBy(t6) : this;
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> forEach(Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
@@ -494,75 +501,75 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace1When(Fn1<? super T1, ? extends T1> f, Pr1<? super T1> p) {
-        return this.map1((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map1(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace1When(Sp<? extends T1> s, Pr1<? super T1> p) {
-        return this.replace1When((T1) s.toFunction().ignoring1(), p);
+        return this.replace1When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace1When(T1 t, Pr1<? super T1> p) {
-        return this.replace1When((T1) Fn1.value(t), p);
+        return this.replace1When(Fn1.value(t), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace2When(Fn1<? super T2, ? extends T2> f, Pr1<? super T2> p) {
-        return this.map2((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map2(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace2When(Sp<? extends T2> s, Pr1<? super T2> p) {
-        return this.replace2When((T2) s.toFunction().ignoring1(), p);
+        return this.replace2When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace2When(T2 t, Pr1<? super T2> p) {
-        return this.replace2When((T2) Fn1.value(t), p);
+        return this.replace2When(Fn1.value(t), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace3When(Fn1<? super T3, ? extends T3> f, Pr1<? super T3> p) {
-        return this.map3((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map3(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace3When(Sp<? extends T3> s, Pr1<? super T3> p) {
-        return this.replace3When((T3) s.toFunction().ignoring1(), p);
+        return this.replace3When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace3When(T3 t, Pr1<? super T3> p) {
-        return this.replace3When((T3) Fn1.value(t), p);
+        return this.replace3When(Fn1.value(t), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace4When(Fn1<? super T4, ? extends T4> f, Pr1<? super T4> p) {
-        return this.map4((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map4(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace4When(Sp<? extends T4> s, Pr1<? super T4> p) {
-        return this.replace4When((T4) s.toFunction().ignoring1(), p);
+        return this.replace4When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace4When(T4 t, Pr1<? super T4> p) {
-        return this.replace4When((T4) Fn1.value(t), p);
+        return this.replace4When(Fn1.value(t), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace5When(Fn1<? super T5, ? extends T5> f, Pr1<? super T5> p) {
-        return this.map5((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map5(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace5When(Sp<? extends T5> s, Pr1<? super T5> p) {
-        return this.replace5When((T5) s.toFunction().ignoring1(), p);
+        return this.replace5When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace5When(T5 t, Pr1<? super T5> p) {
-        return this.replace5When((T5) Fn1.value(t), p);
+        return this.replace5When(Fn1.value(t), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace6When(Fn1<? super T6, ? extends T6> f, Pr1<? super T6> p) {
-        return this.map6((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map6(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace6When(Sp<? extends T6> s, Pr1<? super T6> p) {
-        return this.replace6When((T6) s.toFunction().ignoring1(), p);
+        return this.replace6When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> replace6When(T6 t, Pr1<? super T6> p) {
-        return this.replace6When((T6) Fn1.value(t), p);
+        return this.replace6When(Fn1.value(t), p);
     }
 
     default public Iterable<Tuple6<T1, T2, T3, T4, T5, T6>> yield() {
@@ -585,7 +592,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Stream<R> yieldFlatStream(Fn6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends Iterable<? extends R>> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.yieldStream(f).flatMap(IterativeInternals::entity).flatMap(this::wrap);
+        return this.yieldStream(f).flatMap(IterativeInternals::identity).flatMap(this::wrap);
     }
 
     default public Option<Tuple6<T1, T2, T3, T4, T5, T6>> yieldOption() {
@@ -599,7 +606,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Option<R> yieldFlatOption(Fn6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends Option<? extends R>> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.yieldOption(f).flatMap(IterativeInternals::entity).flatMap(this::wrap);
+        return this.yieldOption(f).flatMap(IterativeInternals::identity).flatMap(this::wrap);
     }
 
     default public Try<Tuple6<T1, T2, T3, T4, T5, T6>> yieldTry() {
@@ -613,7 +620,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Try<R> yieldFlatTry(Fnc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends Try<? extends R>> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.yieldTry(f).flatMap(IterativeInternals::entity).flatMap(this::wrapTry);
+        return this.yieldTry(f).flatMap(IterativeInternals::identity).flatMap(this::wrapTry);
     }
 
     default public Validation<Seq<Throwable>, Stream<Tuple6<T1, T2, T3, T4, T5, T6>>> validateStream() {
@@ -684,64 +691,64 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Iterative6<R, T2, T3, T4, T5, T6> map1(Fn1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative6<T1, R, T3, T4, T5, T6> map2(Fn1<? super T2, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative6<T1, T2, R, T4, T5, T6> map3(Fn1<? super T3, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative6<T1, T2, T3, R, T5, T6> map4(Fn1<? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative6<T1, T2, T3, T4, R, T6> map5(Fn1<? super T5, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity);
     }
 
     default public <R> Iterative6<T1, T2, T3, T4, T5, R> map6(Fn1<? super T6, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f);
     }
 
     default public <R5, R6> Iterative6<T1, T2, T3, T4, R5, R6> mapRt2(Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f5, f6);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f5, f6);
     }
 
     default public <R1, R2> Iterative6<R1, R2, T3, T4, T5, T6> mapLt2(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2) {
-        return this.map(f1, f2, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R4, R5, R6> Iterative6<T1, T2, T3, R4, R5, R6> mapRt3(Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f4, f5, f6);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f4, f5, f6);
     }
 
     default public <R1, R2, R3> Iterative6<R1, R2, R3, T4, T5, T6> mapLt3(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3) {
-        return this.map(f1, f2, f3, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, f3, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R3, R4, R5, R6> Iterative6<T1, T2, R3, R4, R5, R6> mapRt4(Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, f3, f4, f5, f6);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, f3, f4, f5, f6);
     }
 
     default public <R1, R2, R3, R4> Iterative6<R1, R2, R3, R4, T5, T6> mapLt4(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4) {
-        return this.map(f1, f2, f3, f4, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, f3, f4, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R2, R3, R4, R5, R6> Iterative6<T1, R2, R3, R4, R5, R6> mapRt5(Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6) {
-        return this.map(IterativeInternals::entity, f2, f3, f4, f5, f6);
+        return this.map(IterativeInternals::identity, f2, f3, f4, f5, f6);
     }
 
     default public <R1, R2, R3, R4, R5> Iterative6<R1, R2, R3, R4, R5, T6> mapLt5(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5) {
-        return this.map(f1, f2, f3, f4, f5, IterativeInternals::entity);
+        return this.map(f1, f2, f3, f4, f5, IterativeInternals::identity);
     }
 
     default public <R> Iterative6<R, T2, T3, T4, T5, T6> inlineMap1(Fn1<? super T1, ? extends Iterable<? extends R>> f) {
@@ -949,99 +956,99 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public <T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> pushBack(T7 t7) {
-        return this.pushBackOf((Iterable<? extends T7>) this.wrap(t7));
+        return this.pushBackOf(this.wrap(t7));
     }
 
     default public <T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> pushBackCross(T7 t7) {
-        return this.pushBackCrossOf((Iterable<? extends T7>) this.wrap(t7));
+        return this.pushBackCrossOf(this.wrap(t7));
     }
 
     default public <T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> pushBackInline(T7 t7) {
-        return this.pushBackInlineOf((Iterable<? extends T7>) this.wrap(t7));
+        return this.pushBackInlineOf(this.wrap(t7));
     }
 
     default public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFront(T0 t0) {
-        return this.pushFrontOf((Iterable<? extends T0>) this.wrap(t0));
+        return this.pushFrontOf(this.wrap(t0));
     }
 
     default public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontCross(T0 t0) {
-        return this.pushFrontCrossOf((Iterable<? extends T0>) this.wrap(t0));
+        return this.pushFrontCrossOf(this.wrap(t0));
     }
 
     default public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontInline(T0 t0) {
-        return this.pushFrontInlineOf((Iterable<? extends T0>) this.wrap(t0));
+        return this.pushFrontInlineOf(this.wrap(t0));
     }
 
     default public <B1, B2> Iterative8<T1, T2, T3, T4, T5, T6, B1, B2> pushBackBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2) {
-        return this.pushBackBy(b1).pushBackBy(b2);
+        return this.<B1>pushBackBy(b1).<B2>pushBackBy(b2);
     }
 
     default public <B1, B2> Iterative8Cross<T1, T2, T3, T4, T5, T6, B1, B2> pushBackCrossBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2) {
-        return this.pushBackCrossBy(b1).pushBackCrossBy(b2);
+        return this.<B1>pushBackCrossBy(b1).<B2>pushBackCrossBy(b2);
     }
 
     default public <B1, B2> Iterative8Inline<T1, T2, T3, T4, T5, T6, B1, B2> pushBackInlineBy(Iterable<? extends Stream<? extends B1>> b1, Iterable<? extends Stream<? extends B2>> b2) {
-        return this.pushBackInlineBy(b1).pushBackInlineBy(b2);
+        return this.<B1>pushBackInlineBy(b1).<B2>pushBackInlineBy(b2);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontBy(Iterable<? extends Stream<? extends F1>> f1, Iterable<? extends Stream<? extends F2>> f2) {
-        return this.pushFrontBy(f2).pushFrontBy(f1);
+        return this.<F2>pushFrontBy(f2).<F1>pushFrontBy(f1);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontCrossBy(Iterable<? extends Stream<? extends F1>> f1, Iterable<? extends Stream<? extends F2>> f2) {
-        return this.pushFrontCrossBy(f2).pushFrontCrossBy(f1);
+        return this.<F2>pushFrontCrossBy(f2).<F1>pushFrontCrossBy(f1);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontInlineBy(Iterable<? extends Stream<? extends F1>> f1, Iterable<? extends Stream<? extends F2>> f2) {
-        return this.pushFrontInlineBy(f2).pushFrontInlineBy(f1);
+        return this.<F2>pushFrontInlineBy(f2).<F1>pushFrontInlineBy(f1);
     }
 
     default public <B1, B2> Iterative8<T1, T2, T3, T4, T5, T6, B1, B2> pushBackOf(Iterable<? extends B1> b1, Iterable<? extends B2> b2) {
-        return this.pushBackOf(b1).pushBackOf(b2);
+        return this.<B1>pushBackOf(b1).<B2>pushBackOf(b2);
     }
 
     default public <B1, B2> Iterative8Cross<T1, T2, T3, T4, T5, T6, B1, B2> pushBackCrossOf(Iterable<? extends B1> b1, Iterable<? extends B2> b2) {
-        return this.pushBackCrossOf(b1).pushBackCrossOf(b2);
+        return this.<B1>pushBackCrossOf(b1).<B2>pushBackCrossOf(b2);
     }
 
     default public <B1, B2> Iterative8Inline<T1, T2, T3, T4, T5, T6, B1, B2> pushBackInlineOf(Iterable<? extends B1> b1, Iterable<? extends B2> b2) {
-        return this.pushBackInlineOf(b1).pushBackInlineOf(b2);
+        return this.<B1>pushBackInlineOf(b1).<B2>pushBackInlineOf(b2);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontOf(Iterable<? extends F1> f1, Iterable<? extends F2> f2) {
-        return this.pushFrontOf(f2).pushFrontOf(f1);
+        return this.<F2>pushFrontOf(f2).<F1>pushFrontOf(f1);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontCrossOf(Iterable<? extends F1> f1, Iterable<? extends F2> f2) {
-        return this.pushFrontCrossOf(f2).pushFrontCrossOf(f1);
+        return this.<F2>pushFrontCrossOf(f2).<F1>pushFrontCrossOf(f1);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontInlineOf(Iterable<? extends F1> f1, Iterable<? extends F2> f2) {
-        return this.pushFrontInlineOf(f2).pushFrontInlineOf(f1);
+        return this.<F2>pushFrontInlineOf(f2).<F1>pushFrontInlineOf(f1);
     }
 
     default public <B1, B2> Iterative8<T1, T2, T3, T4, T5, T6, B1, B2> pushBack(B1 b1, B2 b2) {
-        return this.pushBack(b1).pushBack(b2);
+        return this.<B1>pushBack(b1).<B2>pushBack(b2);
     }
 
     default public <B1, B2> Iterative8Cross<T1, T2, T3, T4, T5, T6, B1, B2> pushBackCross(B1 b1, B2 b2) {
-        return this.pushBackCross(b1).pushBackCross(b2);
+        return this.<B1>pushBackCross(b1).<B2>pushBackCross(b2);
     }
 
     default public <B1, B2> Iterative8Inline<T1, T2, T3, T4, T5, T6, B1, B2> pushBackInline(B1 b1, B2 b2) {
-        return this.pushBackInline(b1).pushBackInline(b2);
+        return this.<B1>pushBackInline(b1).<B2>pushBackInline(b2);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFront(F1 f1, F2 f2) {
-        return this.pushFront(f2).pushFront(f1);
+        return this.<F2>pushFront(f2).<F1>pushFront(f1);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontCross(F1 f1, F2 f2) {
-        return this.pushFrontCross(f2).pushFrontCross(f1);
+        return this.<F2>pushFrontCross(f2).<F1>pushFrontCross(f1);
     }
 
     default public <F1, F2> Iterative8<F1, F2, T1, T2, T3, T4, T5, T6> pushFrontInline(F1 f1, F2 f2) {
-        return this.pushFrontInline(f2).pushFrontInline(f1);
+        return this.<F2>pushFrontInline(f2).<F1>pushFrontInline(f1);
     }
 
     default public Iterative6<T1, T2, T3, T4, T5, T6> forceInlineFlat() {
@@ -1077,31 +1084,31 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public <R> R getOnSuccessOrNull(Fn1<? super Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6>, ? extends R> f) {
-        return (R) this.getterOnSuccess(f).onFailure(Sp.empty());
+        return this.getterOnSuccess(f).onFailure(Sp.empty());
     }
 
     default public <R> R getOnSuccessOrThrow(Fn1<? super Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6>, ? extends R> f) {
-        return (R) this.getterOnSuccess(Fn1.narrow(f)).onFailure(Fn0.pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
+        return this.<R>getterOnSuccess(Fn1.narrow(f)).onFailure(Fn0.<String, R>pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
     }
 
     default public Tuple6<T1, T2, T3, T4, T5, T6> getOrElse(Sp<? extends Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6>> s) {
-        return (Tuple6) this.getterOnSuccess().onFailure((Tuple6<T1, T2, T3, T4, T5, T6>) s.afterApply(Tuple::narrow));
+        return this.getterOnSuccess().onFailure(s.afterApply(Tuple::narrow));
     }
 
     default public Tuple6<T1, T2, T3, T4, T5, T6> getOrElse(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> t) {
-        return (Tuple6) this.getterOnSuccess().onFailure((Tuple6<T1, T2, T3, T4, T5, T6>) Sp.value(Tuple.narrow(t)));
+        return this.getterOnSuccess().onFailure(Sp.value(Tuple.narrow(t)));
     }
 
     default public Tuple6<T1, T2, T3, T4, T5, T6> getOrNull() {
-        return (Tuple6) this.getterOnSuccess().onFailure((Tuple6<T1, T2, T3, T4, T5, T6>) Sp.empty());
+        return this.getterOnSuccess().onFailure(Sp.empty());
     }
 
     default public Tuple6<T1, T2, T3, T4, T5, T6> getOrThrow() {
-        return (Tuple6) this.getterOnSuccess().onFailure((Tuple6<T1, T2, T3, T4, T5, T6>) Fn0.pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
+        return this.getterOnSuccess().onFailure(Fn0.<String, Tuple6<T1, T2, T3, T4, T5, T6>>pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
     }
 
     default public Iterative6Getter<T1, T2, T3, T4, T5, T6> getter() {
-        return new Iterative6Getter.Iterative6GetterImpl(this);
+        return new Iterative6Getter.Iterative6GetterImpl<>(this);
     }
 
     default public Iterative6Getter.Iterative6Fail<T1, T2, T3, T4, T5, T6, Tuple6<T1, T2, T3, T4, T5, T6>> getterOnSuccess() {
@@ -1148,7 +1155,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Iterative5<T1, T2, T3, T4, R> reduceChainRt2(Fn2<? super T5, ? super T6, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt5().create(this.splitLt4(), this.reduce((Fn6 & Serializable) (a1, a2, a3, a4, a5, a6) -> f.apply(a5, a6)).iterableStream1());
+        return this.splitLt5().create(this.splitLt4(), this.reduce((a1, a2, a3, a4, a5, a6) -> f.apply(a5, a6)).iterableStream1());
     }
 
     default public <R> Iterative5<R, T3, T4, T5, T6> reduceSimpleLt2(Fn2<? super T1, ? super T2, ? extends R> f) {
@@ -1168,7 +1175,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Iterative4<T1, T2, T3, R> reduceChainRt3(Fn3<? super T4, ? super T5, ? super T6, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt5().create(this.splitLt3(), this.reduce((Fn6 & Serializable) (a1, a2, a3, a4, a5, a6) -> f.apply(a4, a5, a6)).iterableStream1());
+        return this.splitLt5().create(this.splitLt3(), this.reduce((a1, a2, a3, a4, a5, a6) -> f.apply(a4, a5, a6)).iterableStream1());
     }
 
     default public <R> Iterative4<R, T4, T5, T6> reduceSimpleLt3(Fn3<? super T1, ? super T2, ? super T3, ? extends R> f) {
@@ -1187,7 +1194,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Iterative3<T1, T2, R> reduceChainRt4(Fn4<? super T3, ? super T4, ? super T5, ? super T6, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt5().create(this.splitLt2(), this.reduce((Fn6 & Serializable) (a1, a2, a3, a4, a5, a6) -> f.apply(a3, a4, a5, a6)).iterableStream1());
+        return this.splitLt5().create(this.splitLt2(), this.reduce((a1, a2, a3, a4, a5, a6) -> f.apply(a3, a4, a5, a6)).iterableStream1());
     }
 
     default public <R> Iterative3<R, T5, T6> reduceSimpleLt4(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
@@ -1206,7 +1213,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     default public <R> Iterative2<T1, R> reduceChainRt5(Fn5<? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt5().create(this.splitLt1(), this.reduce((Fn6 & Serializable) (a1, a2, a3, a4, a5, a6) -> f.apply(a2, a3, a4, a5, a6)).iterableStream1());
+        return this.splitLt5().create(this.splitLt1(), this.reduce((a1, a2, a3, a4, a5, a6) -> f.apply(a2, a3, a4, a5, a6)).iterableStream1());
     }
 
     default public <R> Iterative2<R, T6> reduceSimpleLt5(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
@@ -1219,151 +1226,151 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public <A1> Iterative6Args.Iterative6Args1<T1, T2, T3, T4, T5, T6, A1> crossArgs(A1 a1) {
-        return this.crossArgsOf((Iterable<? extends A1>) this.wrap(a1));
+        return this.crossArgsOf(this.wrap(a1));
     }
 
     default public <A1> Iterative6Args.Iterative6Args1<T1, T2, T3, T4, T5, T6, A1> crossArgsOf(Iterable<? extends A1> a1) {
-        return new Iterative6Args.Iterative6Args1.Iterative6Args1Impl(this, this.accessBuilder().cross().of(a1), true);
+        return new Iterative6Args.Iterative6Args1.Iterative6Args1Impl<>(this, this.accessBuilder().cross().of(a1), true);
     }
 
     default public <A1, A2> Iterative6Args.Iterative6Args2<T1, T2, T3, T4, T5, T6, A1, A2> crossArgs(A1 a1, A2 a2) {
-        return this.crossArgsOf((Iterable<? extends A1>) this.wrap(a1), (Iterable<? extends A2>) this.wrap(a2));
+        return this.crossArgsOf(this.wrap(a1), this.wrap(a2));
     }
 
     default public <A1, A2> Iterative6Args.Iterative6Args2<T1, T2, T3, T4, T5, T6, A1, A2> crossArgsOf(Iterable<? extends A1> a1, Iterable<? extends A2> a2) {
-        return new Iterative6Args.Iterative6Args2.Iterative6Args2Impl(this, this.accessBuilder().cross().of(a1, (Iterable) a2), true);
+        return new Iterative6Args.Iterative6Args2.Iterative6Args2Impl<>(this, this.accessBuilder().cross().of(a1, a2), true);
     }
 
     default public <A1> Iterative6Args.Iterative6Args1<T1, T2, T3, T4, T5, T6, A1> inlineArgs(A1 a1) {
-        return this.inlineArgsOf((Iterable<? extends A1>) this.wrap(a1));
+        return this.inlineArgsOf(this.wrap(a1));
     }
 
     default public <A1> Iterative6Args.Iterative6Args1<T1, T2, T3, T4, T5, T6, A1> inlineArgsOf(Iterable<? extends A1> a1) {
-        return new Iterative6Args.Iterative6Args1.Iterative6Args1Impl(this, this.accessBuilder().inline().of(a1), false);
+        return new Iterative6Args.Iterative6Args1.Iterative6Args1Impl<>(this, this.accessBuilder().inline().of(a1), false);
     }
 
     default public <A1, A2> Iterative6Args.Iterative6Args2<T1, T2, T3, T4, T5, T6, A1, A2> inlineArgs(A1 a1, A2 a2) {
-        return this.inlineArgsOf((Iterable<? extends A1>) this.wrap(a1), (Iterable<? extends A2>) this.wrap(a2));
+        return this.inlineArgsOf(this.wrap(a1), this.wrap(a2));
     }
 
     default public <A1, A2> Iterative6Args.Iterative6Args2<T1, T2, T3, T4, T5, T6, A1, A2> inlineArgsOf(Iterable<? extends A1> a1, Iterable<? extends A2> a2) {
-        return new Iterative6Args.Iterative6Args2.Iterative6Args2Impl(this, this.accessBuilder().inline().of(a1, (Iterable) a2), false);
+        return new Iterative6Args.Iterative6Args2.Iterative6Args2Impl<>(this, this.accessBuilder().inline().of(a1, a2), false);
     }
 
     default public Iterative5Args.Iterative5Args1<T1, T2, T3, T4, T5, T6> inlineArgsRt1() {
-        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<T1, T2, T3, T4, T5, T6>(this.splitLt5(), this.splitRt1(), false);
+        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<>(this.splitLt5(), this.splitRt1(), false);
     }
 
     default public Iterative5Args.Iterative5Args1<T2, T3, T4, T5, T6, T1> inlineArgsLt1() {
-        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<T2, T3, T4, T5, T6, T1>(this.splitRt5(), this.splitLt1(), false);
+        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<>(this.splitRt5(), this.splitLt1(), false);
     }
 
     default public Iterative5Args.Iterative5Args1<T1, T2, T3, T4, T5, T6> crossArgsRt1() {
-        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<T1, T2, T3, T4, T5, T6>(this.splitLt5(), this.splitRt1(), true);
+        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<>(this.splitLt5(), this.splitRt1(), true);
     }
 
     default public Iterative5Args.Iterative5Args1<T2, T3, T4, T5, T6, T1> crossArgsLt1() {
-        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<T2, T3, T4, T5, T6, T1>(this.splitRt5(), this.splitLt1(), true);
+        return new Iterative5Args.Iterative5Args1.Iterative5Args1Impl<>(this.splitRt5(), this.splitLt1(), true);
     }
 
     default public Iterative4Args.Iterative4Args2<T1, T2, T3, T4, T5, T6> inlineArgsRt2() {
-        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<T1, T2, T3, T4, T5, T6>(this.splitLt4(), this.splitRt2(), false);
+        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<>(this.splitLt4(), this.splitRt2(), false);
     }
 
     default public Iterative4Args.Iterative4Args2<T3, T4, T5, T6, T1, T2> inlineArgsLt2() {
-        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<T3, T4, T5, T6, T1, T2>(this.splitRt4(), this.splitLt2(), false);
+        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<>(this.splitRt4(), this.splitLt2(), false);
     }
 
     default public Iterative4Args.Iterative4Args2<T1, T2, T3, T4, T5, T6> crossArgsRt2() {
-        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<T1, T2, T3, T4, T5, T6>(this.splitLt4(), this.splitRt2(), true);
+        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<>(this.splitLt4(), this.splitRt2(), true);
     }
 
     default public Iterative4Args.Iterative4Args2<T3, T4, T5, T6, T1, T2> crossArgsLt2() {
-        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<T3, T4, T5, T6, T1, T2>(this.splitRt4(), this.splitLt2(), true);
+        return new Iterative4Args.Iterative4Args2.Iterative4Args2Impl<>(this.splitRt4(), this.splitLt2(), true);
     }
 
     default public Iterative3Args.Iterative3Args3<T1, T2, T3, T4, T5, T6> inlineArgsRt3() {
-        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<T1, T2, T3, T4, T5, T6>(this.splitLt3(), this.splitRt3(), false);
+        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<>(this.splitLt3(), this.splitRt3(), false);
     }
 
     default public Iterative3Args.Iterative3Args3<T4, T5, T6, T1, T2, T3> inlineArgsLt3() {
-        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<T4, T5, T6, T1, T2, T3>(this.splitRt3(), this.splitLt3(), false);
+        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<>(this.splitRt3(), this.splitLt3(), false);
     }
 
     default public Iterative3Args.Iterative3Args3<T1, T2, T3, T4, T5, T6> crossArgsRt3() {
-        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<T1, T2, T3, T4, T5, T6>(this.splitLt3(), this.splitRt3(), true);
+        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<>(this.splitLt3(), this.splitRt3(), true);
     }
 
     default public Iterative3Args.Iterative3Args3<T4, T5, T6, T1, T2, T3> crossArgsLt3() {
-        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<T4, T5, T6, T1, T2, T3>(this.splitRt3(), this.splitLt3(), true);
+        return new Iterative3Args.Iterative3Args3.Iterative3Args3Impl<>(this.splitRt3(), this.splitLt3(), true);
     }
 
     default public Iterative2Args.Iterative2Args4<T1, T2, T3, T4, T5, T6> inlineArgsRt4() {
-        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<T1, T2, T3, T4, T5, T6>(this.splitLt2(), this.splitRt4(), false);
+        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<>(this.splitLt2(), this.splitRt4(), false);
     }
 
     default public Iterative2Args.Iterative2Args4<T5, T6, T1, T2, T3, T4> inlineArgsLt4() {
-        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<T5, T6, T1, T2, T3, T4>(this.splitRt2(), this.splitLt4(), false);
+        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<>(this.splitRt2(), this.splitLt4(), false);
     }
 
     default public Iterative2Args.Iterative2Args4<T1, T2, T3, T4, T5, T6> crossArgsRt4() {
-        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<T1, T2, T3, T4, T5, T6>(this.splitLt2(), this.splitRt4(), true);
+        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<>(this.splitLt2(), this.splitRt4(), true);
     }
 
     default public Iterative2Args.Iterative2Args4<T5, T6, T1, T2, T3, T4> crossArgsLt4() {
-        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<T5, T6, T1, T2, T3, T4>(this.splitRt2(), this.splitLt4(), true);
+        return new Iterative2Args.Iterative2Args4.Iterative2Args4Impl<>(this.splitRt2(), this.splitLt4(), true);
     }
 
     default public Iterative1Args.Iterative1Args5<T1, T2, T3, T4, T5, T6> inlineArgsRt5() {
-        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<T1, T2, T3, T4, T5, T6>(this.splitLt1(), this.splitRt5(), false);
+        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<>(this.splitLt1(), this.splitRt5(), false);
     }
 
     default public Iterative1Args.Iterative1Args5<T6, T1, T2, T3, T4, T5> inlineArgsLt5() {
-        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<T6, T1, T2, T3, T4, T5>(this.splitRt1(), this.splitLt5(), false);
+        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<>(this.splitRt1(), this.splitLt5(), false);
     }
 
     default public Iterative1Args.Iterative1Args5<T1, T2, T3, T4, T5, T6> crossArgsRt5() {
-        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<T1, T2, T3, T4, T5, T6>(this.splitLt1(), this.splitRt5(), true);
+        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<>(this.splitLt1(), this.splitRt5(), true);
     }
 
     default public Iterative1Args.Iterative1Args5<T6, T1, T2, T3, T4, T5> crossArgsLt5() {
-        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<T6, T1, T2, T3, T4, T5>(this.splitRt1(), this.splitLt5(), true);
+        return new Iterative1Args.Iterative1Args5.Iterative1Args5Impl<>(this.splitRt1(), this.splitLt5(), true);
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T1, T2, T3, T4, T5, T6> iterativeSupplier() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl(this);
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this);
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T1, T2, T3, T4, T5, T6> crossSupplierAllLt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T1, T2, T3, T4, T5, T6>(this.forceCrossAll());
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.forceCrossAll());
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T1, T2, T3, T4, T5, T6> inlineSupplierAllLt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T1, T2, T3, T4, T5, T6>(this.forceInlineAll());
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.forceInlineAll());
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T6, T1, T2, T3, T4, T5> crossSupplierAllRt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T6, T1, T2, T3, T4, T5>(this.forceCrossAll().popBack().pushFrontCrossBy(this.iterableStream6()));
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.forceCrossAll().popBack().pushFrontCrossBy(this.iterableStream6()));
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T6, T1, T2, T3, T4, T5> inlineSupplierAllRt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T6, T1, T2, T3, T4, T5>(this.forceInlineAll().popBack().pushFrontInlineBy(this.iterableStream6()));
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.forceInlineAll().popBack().pushFrontInlineBy(this.iterableStream6()));
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T1, T2, T3, T4, T5, T6> crossSupplierLt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T1, T2, T3, T4, T5, T6>(this.forceCross2());
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.forceCross2());
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T1, T2, T3, T4, T5, T6> inlineSupplierLt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T1, T2, T3, T4, T5, T6>(this.forceInline2());
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.forceInline2());
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T6, T1, T2, T3, T4, T5> crossSupplierRt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T6, T1, T2, T3, T4, T5>(this.popBack().pushFrontCrossBy(this.iterableStream6()));
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.popBack().pushFrontCrossBy(this.iterableStream6()));
     }
 
     default public IterativeSupplier.Iterative1Supplier5.TransformSupplier<T6, T1, T2, T3, T4, T5> inlineSupplierRt() {
-        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<T6, T1, T2, T3, T4, T5>(this.popBack().pushFrontInlineBy(this.iterableStream6()));
+        return new IterativeSupplier.Iterative1Supplier5.Iterative1Supplier5Impl<>(this.popBack().pushFrontInlineBy(this.iterableStream6()));
     }
 
     default public <A1> Iterative7<T1, T2, T3, T4, T5, T6, A1> crossJoinRt(Iterative1<? extends A1> iterative) {
@@ -1379,7 +1386,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public <A1, A2> Iterative8<A1, A2, T1, T2, T3, T4, T5, T6> crossJoinLt(Iterative2<? extends A1, ? extends A2> iterative) {
-        return iterative.isCross() ? this.crossJoinLt(iterative.splitRt()).pushFrontCrossBy(iterative.iterableStream1()) : this.crossJoinLt(iterative.splitRt()).pushFrontInlineBy(iterative.iterableStream1());
+        return iterative.isCross() ? this.<A2>crossJoinLt(iterative.splitRt()).pushFrontCrossBy(iterative.iterableStream1()) : this.<A2>crossJoinLt(iterative.splitRt()).pushFrontInlineBy(iterative.iterableStream1());
     }
 
     default public <A1> Iterative7<T1, T2, T3, T4, T5, T6, A1> inlineJoinRt(Iterative1<? extends A1> iterative) {
@@ -1395,7 +1402,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
     }
 
     default public <A1, A2> Iterative8<A1, A2, T1, T2, T3, T4, T5, T6> inlineJoinLt(Iterative2<? extends A1, ? extends A2> iterative) {
-        return iterative.isCross() ? this.inlineJoinLt(iterative.splitRt()).pushFrontCrossBy(iterative.iterableStream1()) : this.inlineJoinLt(iterative.splitRt()).pushFrontInlineBy(iterative.iterableStream1());
+        return iterative.isCross() ? this.<A2>inlineJoinLt(iterative.splitRt()).pushFrontCrossBy(iterative.iterableStream1()) : this.<A2>inlineJoinLt(iterative.splitRt()).pushFrontInlineBy(iterative.iterableStream1());
     }
 
     public static abstract class Iterative6Abstract<T1, T2, T3, T4, T5, T6> implements Iterative6<T1, T2, T3, T4, T5, T6> {
@@ -1406,25 +1413,25 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         Iterative6Abstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends T6> right) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
-            this.iterative = iterative;
-            this.right = SimpleIterative.of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
+            this.iterative = Iterative.narrow(iterative);
+            this.right = SimpleIterative.<T6>of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
         }
 
         Iterative6Abstract(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> iterative, Iterable<? extends Stream<? extends T6>> right, boolean ign) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
-            this.iterative = iterative;
-            this.right = SimpleIterative.of(right).map((Fn1 & Serializable) iter -> iter.flatMap(this::wrap));
+            this.iterative = Iterative.narrow(iterative);
+            this.right = SimpleIterative.of(right).map(iter -> iter.flatMap(this::wrap));
         }
 
         @Override
         public Stream<Tuple6<T1, T2, T3, T4, T5, T6>> toStream() {
-            return this.toTupleStream().map(Fn6.tuple(IterativeHandler::cross)).flatMap(IterativeInternals::entityIterable);
+            return this.toTupleStream().map(Fn6.tuple(IterativeHandler::cross)).flatMap(IterativeInternals::identityIterable);
         }
 
         @Override
         public Iterator<Iterable<?>> iterators() {
-            return Iterator.concat((Iterable) Stream.of(this.iterative.iterators()).append((Object) Iterator.of(SimpleIterative.of(this.right).inlineMap(IterativeInternals::entityIterable).toIterable())));
+            return Iterator.concat(Stream.of(this.iterative.iterators()).append(Iterator.of(SimpleIterative.of(this.right).inlineMap(IterativeInternals::identityIterable).toIterable())));
         }
 
         @Override
@@ -1454,7 +1461,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
         @Override
         public Iterable<T6> iterable6() {
-            return SimpleIterative.of(this.right).inlineMap(IterativeInternals::entityIterable);
+            return SimpleIterative.of(this.right).inlineMap(IterativeInternals::identityIterable);
         }
 
         @Override
@@ -1619,17 +1626,17 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
         @Override
         public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontBy(Iterable<? extends Stream<? extends T0>> t0) {
-            return this.create(this.iterative.pushFrontBy(t0), this.right);
+            return this.create(this.iterative.<T0>pushFrontBy(t0), this.right);
         }
 
         @Override
         public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> t0) {
-            return this.create(this.iterative.pushFrontCrossBy(t0), this.right);
+            return this.create(this.iterative.<T0>pushFrontCrossBy(t0), this.right);
         }
 
         @Override
         public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> t0) {
-            return this.create(this.iterative.pushFrontInlineBy(t0), this.right);
+            return this.create(this.iterative.<T0>pushFrontInlineBy(t0), this.right);
         }
 
         @Override
@@ -1788,7 +1795,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
             Objects.requireNonNull(f3, "f3 is null");
             Objects.requireNonNull(f4, "f4 is null");
             Objects.requireNonNull(f5, "f5 is null");
-            return this.create(this.iterative.map(f1, f2, f3, f4, f5), SimpleIterative.of(this.iterableStream6()).map((Fn1 & Serializable) iter -> iter.map((Function) ((Object) f6)).flatMap(this::wrap)).toIterable());
+            return this.create(this.iterative.map(f1, f2, f3, f4, f5), SimpleIterative.of(this.iterableStream6()).map(iter -> iter.<R6>map(f6).flatMap(this::wrap)).toIterable());
         }
 
         @Override
@@ -1798,7 +1805,7 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
             Objects.requireNonNull(f3, "f3 is null");
             Objects.requireNonNull(f4, "f4 is null");
             Objects.requireNonNull(f5, "f5 is null");
-            return this.create(this.iterative.inlineMap(f1, f2, f3, f4, f5), SimpleIterative.of(this.iterableStream6()).map((Fn1 & Serializable) iter -> iter.flatMap((Function) ((Object) f6)).flatMap(this::wrap)).toIterable());
+            return this.create(this.iterative.inlineMap(f1, f2, f3, f4, f5), SimpleIterative.of(this.iterableStream6()).map(iter -> iter.<R6>flatMap(f6).flatMap(this::wrap)).toIterable());
         }
 
         @Override
@@ -1808,12 +1815,12 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
             Objects.requireNonNull(p3, "p3 is null");
             Objects.requireNonNull(p4, "p4 is null");
             Objects.requireNonNull(p5, "p5 is null");
-            return this.create(this.iterative.filter(p1, p2, p3, p4, p5), SimpleIterative.of(this.iterableStream6()).map((Fn1 & Serializable) iter -> iter.filter((Predicate) p6).flatMap(this::wrap)).toIterable());
+            return this.create(this.iterative.filter(p1, p2, p3, p4, p5), SimpleIterative.of(this.iterableStream6()).map(iter -> iter.<T6>filter(p6).flatMap(this::wrap)).toIterable());
         }
 
         @Override
         public String toStringContent() {
-            return Stream.of((Object[]) new String[]{this.innerIterative().toStringContent(), IterativeHandler.typeIndicator(this.isCross()), IterativeHandler.iterableStreamToString(this.iterableStream6(), 6)}).mkString();
+            return Stream.of(this.innerIterative().toStringContent(), IterativeHandler.typeIndicator(this.isCross()), IterativeHandler.iterableStreamToString(this.iterableStream6(), 6)).mkString();
         }
 
         public String toString() {

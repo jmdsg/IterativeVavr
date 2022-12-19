@@ -164,7 +164,7 @@ interface IterativeHandler {
             final Option<Stream<T1>> option = (Option<Stream<T1>>) iter;
             return Stream.of(
                     SimpleIterative.of(option)
-                            .inlineMap(IterativeInternals::entity).toIterable()
+                            .inlineMap(IterativeInternals::identity).toIterable()
             );
         }
 
@@ -173,12 +173,12 @@ interface IterativeHandler {
             final Try<Stream<T1>> trier = (Try<Stream<T1>>) iter;
             return Stream.of(
                     SimpleIterative.of(trier)
-                            .inlineMap(IterativeInternals::entity).toIterable()
+                            .inlineMap(IterativeInternals::identity).toIterable()
             );
         }
 
         return Stream.ofAll(iter)
-                .map(stream -> stream.map(IterativeInternals::entity));
+                .map(stream -> stream.map(IterativeInternals::identity));
 
     }
 
@@ -187,7 +187,7 @@ interface IterativeHandler {
         final Iterable<Stream<T1>> iterable = (Iterable<Stream<T1>>) elem;
         return SimpleIterative.of(iterable)
                 .filter(Pr1.negate(Traversable::isEmpty))
-                .map(stream -> stream.map(IterativeInternals::entity))
+                .map(stream -> stream.map(IterativeInternals::identity))
                 .toIterable();
     }
 

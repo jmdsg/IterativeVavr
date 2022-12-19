@@ -38,7 +38,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     public static Prc0 value(Boolean b) {
-        return (Prc0 & Serializable) () -> b;
+        return () -> b;
     }
 
     public static Prc0 of(Prc0 p) {
@@ -72,7 +72,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     public static Prc0 detuple(Prc1<? super Tuple0> p) {
-        return (Prc0 & Serializable) () -> p.test((Object) Tuple.empty());
+        return () -> p.test(Tuple.empty());
     }
 
     public static Prc0 check(Pr0 p) {
@@ -129,7 +129,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     default public Prc0 afterRunOn(Rnc onSuccess, Rnc onFailure) {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Prc0 & Serializable) () -> {
+        return () -> {
             Boolean value = this.test();
             (value != false ? onSuccess : onFailure).run();
             return value;
@@ -163,7 +163,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     default public <R> Fnc0<R> afterApplyOnTo(Fnc1<Boolean, ? extends R> onSuccess, Fnc1<Boolean, ? extends R> onFailure) {
         Objects.requireNonNull(onSuccess, "onSuccess is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Fnc0 & Serializable) () -> {
+        return () -> {
             Boolean value = this.test();
             return (value != false ? onSuccess : onFailure).apply(value);
         };
@@ -258,7 +258,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     default public <W> Fn0<W> beforeWrapTo(Fn1<? super Spc<Boolean>, ? extends W> wrap) {
-        return (Fn0 & Serializable) () -> wrap.apply(this.toSupplier());
+        return () -> wrap.apply(this.toSupplier());
     }
 
     default public Prc0 afterRunOnSuccess(Rnc r) {
@@ -359,7 +359,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
 
     default public Prc0 beforeRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
-        return (Prc0 & Serializable) () -> {
+        return () -> {
             r.run();
             return this.test();
         };
@@ -368,7 +368,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     default public Prc0 beforeTestOnSuccess(Prc0 p, Prc0 onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Prc0 & Serializable) () -> p.test() != false ? this.test() : onFailure.test();
+        return () -> p.test() != false ? this.test() : onFailure.test();
     }
 
     default public Prc0 beforeTestOnSuccess(Prc0 p, Spc<? extends Boolean> onFailure) {
@@ -404,7 +404,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     default public Prc0 beforeSuccessPassingThroughTest(Prc0 p, Prc0 onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (Prc0 & Serializable) () -> p.test() != false ? this.apply() : onFailure.apply();
+        return () -> p.test() != false ? this.apply() : onFailure.apply();
     }
 
     default public Prc0 beforeSuccessPassingThroughTest(Prc0 p, Spc<? extends Boolean> onFailure) {
@@ -438,7 +438,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     default public Prc1<Tuple0> tupled() {
-        return (Prc1 & Serializable) tuple -> this.test();
+        return tuple -> this.test();
     }
 
     default public Prc0 currying() {
@@ -446,7 +446,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     default public Pr0 unchecked() {
-        return (Pr0 & Serializable) () -> {
+        return () -> {
             try {
                 return this.test();
             }
@@ -458,49 +458,49 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
     }
 
     default public Prc0 negated() {
-        return (Prc0 & Serializable) () -> this.test() == false;
+        return () -> this.test() == false;
     }
 
     default public Prc0 and(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc0 & Serializable) () -> this.test() != false && p.test() != false;
+        return () -> this.test() != false && p.test() != false;
     }
 
     default public Prc0 or(Prc0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Prc0 & Serializable) () -> this.test() != false || p.test() != false;
+        return () -> this.test() != false || p.test() != false;
     }
 
     default public <I1> Prc1<I1> ignoring1() {
-        return (Prc1 & Serializable) i1 -> this.test();
+        return i1 -> this.test();
     }
 
     default public <I1, I2> Prc2<I1, I2> ignoring2() {
-        return (Prc2<Object, Object> & Serializable) (i1, i2) -> this.test();
+        return (i1, i2) -> this.test();
     }
 
     default public <I1, I2, I3> Prc3<I1, I2, I3> ignoring3() {
-        return (Prc3<Object, Object, Object> & Serializable) (i1, i2, i3) -> this.test();
+        return (i1, i2, i3) -> this.test();
     }
 
     default public <I1, I2, I3, I4> Prc4<I1, I2, I3, I4> ignoring4() {
-        return (Prc4<Object, Object, Object, Object> & Serializable) (i1, i2, i3, i4) -> this.test();
+        return (i1, i2, i3, i4) -> this.test();
     }
 
     default public <I1, I2, I3, I4, I5> Prc5<I1, I2, I3, I4, I5> ignoring5() {
-        return (Prc5<Object, Object, Object, Object, Object> & Serializable) (i1, i2, i3, i4, i5) -> this.test();
+        return (i1, i2, i3, i4, i5) -> this.test();
     }
 
     default public <I1, I2, I3, I4, I5, I6> Prc6<I1, I2, I3, I4, I5, I6> ignoring6() {
-        return (Prc6<Object, Object, Object, Object, Object, Object> & Serializable) (i1, i2, i3, i4, i5, i6) -> this.test();
+        return (i1, i2, i3, i4, i5, i6) -> this.test();
     }
 
     default public <I1, I2, I3, I4, I5, I6, I7> Prc7<I1, I2, I3, I4, I5, I6, I7> ignoring7() {
-        return (Prc7<Object, Object, Object, Object, Object, Object, Object> & Serializable) (i1, i2, i3, i4, i5, i6, i7) -> this.test();
+        return (i1, i2, i3, i4, i5, i6, i7) -> this.test();
     }
 
     default public <I1, I2, I3, I4, I5, I6, I7, I8> Prc8<I1, I2, I3, I4, I5, I6, I7, I8> ignoring8() {
-        return (Prc8<Object, Object, Object, Object, Object, Object, Object, Object> & Serializable) (i1, i2, i3, i4, i5, i6, i7, i8) -> this.test();
+        return (i1, i2, i3, i4, i5, i6, i7, i8) -> this.test();
     }
 
     default public Prc0 memoized() {
@@ -509,7 +509,7 @@ public interface Prc0 extends CheckedFunction0<Boolean> {
 
     default public Pr0 recover(Fn1<? super Throwable, ? extends Pr0> recover) {
         Objects.requireNonNull(recover, "recover is null");
-        return (Pr0 & Serializable) () -> {
+        return () -> {
             try {
                 return this.test();
             }

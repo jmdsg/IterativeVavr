@@ -43,17 +43,17 @@ public interface Iterative8Getter<G1, G2, G3, G4, G5, G6, G7, G8> extends Iterat
             @Override
             public R onSuccess(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f) {
                 Objects.requireNonNull(f, "f is null");
-                return (R) (this.isSuccessful() ? f.apply(this.iterative) : this.s.get());
+                return (this.isSuccessful() ? f.apply(this.iterative) : this.s.get());
             }
 
             @Override
             public R onSuccess(Sp<? extends R> sp) {
-                return (R) this.onSuccess((R) sp.toFunction().ignoring1());
+                return this.onSuccess(sp.toFunction().ignoring1());
             }
 
             @Override
             public R onSuccess(R r) {
-                return (R) this.onSuccess((R) Fn1.value(r));
+                return this.onSuccess(Fn1.value(r));
             }
 
         }
@@ -81,27 +81,27 @@ public interface Iterative8Getter<G1, G2, G3, G4, G5, G6, G7, G8> extends Iterat
             @Override
             public R onFailure(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f) {
                 Objects.requireNonNull(f, "f is null");
-                return (R) (this.isSuccessful() ? this.s.get() : f.apply(this.iterative));
+                return (this.isSuccessful() ? this.s.get() : f.apply(this.iterative));
             }
 
             @Override
             public R onFailure(Sp<? extends R> sp) {
-                return (R) this.onFailure((R) sp.toFunction().ignoring1());
+                return this.onFailure(sp.toFunction().ignoring1());
             }
 
             @Override
             public R onFailure(R r) {
-                return (R) this.onFailure((R) Fn1.value(r));
+                return this.onFailure(Fn1.value(r));
             }
 
             @Override
             public R onFailureNull() {
-                return (R) this.onFailure((R) Fn1.empty());
+                return this.onFailure(Fn1.empty());
             }
 
             @Override
             public R onFailureThrow() {
-                return (R) this.onFailure((R) Fn0.pass(IterativeGetter::throwableSupplier, "r").toSupplier());
+                return this.onFailure(Fn0.<String, R>pass(IterativeGetter::throwableSupplier, "r").toSupplier());
             }
 
         }
@@ -134,41 +134,41 @@ public interface Iterative8Getter<G1, G2, G3, G4, G5, G6, G7, G8> extends Iterat
 
         @Override
         public Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, Tuple8<G1, G2, G3, G4, G5, G6, G7, G8>> onSuccess() {
-            return new Iterative8Fail.Iterative8FailImpl(this.iterative, (Sp<Tuple8> & Serializable) () -> (Tuple8) this.iterative.yieldOption(Tuple::of).get());
+            return new Iterative8Fail.Iterative8FailImpl<>(this.iterative, () -> this.iterative.<Tuple8<G1, G2, G3, G4, G5, G6, G7, G8>>yieldOption(Tuple::of).get());
         }
 
         @Override
         public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f) {
             Objects.requireNonNull(f, "f is null");
-            return new Iterative8Fail.Iterative8FailImpl<G1, G2, G3, G4, G5, G6, G7, G8, R>(this.iterative, f.toSupplier(this.iterative));
+            return new Iterative8Fail.Iterative8FailImpl<>(this.iterative, f.toSupplier(this.iterative));
         }
 
         @Override
         public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(Sp<? extends R> s) {
             Objects.requireNonNull(s, "s is null");
-            return new Iterative8Fail.Iterative8FailImpl<G1, G2, G3, G4, G5, G6, G7, G8, R>(this.iterative, s);
+            return new Iterative8Fail.Iterative8FailImpl<>(this.iterative, s);
         }
 
         @Override
         public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(R r) {
-            return new Iterative8Fail.Iterative8FailImpl(this.iterative, (Sp<Object> & Serializable) () -> r);
+            return new Iterative8Fail.Iterative8FailImpl<>(this.iterative, () -> r);
         }
 
         @Override
         public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f) {
             Objects.requireNonNull(f, "f is null");
-            return new Iterative8Success.Iterative8SuccessImpl<G1, G2, G3, G4, G5, G6, G7, G8, R>(this.iterative, f.toSupplier(this.iterative));
+            return new Iterative8Success.Iterative8SuccessImpl<>(this.iterative, f.toSupplier(this.iterative));
         }
 
         @Override
         public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(Sp<? extends R> s) {
             Objects.requireNonNull(s, "s is null");
-            return new Iterative8Success.Iterative8SuccessImpl<G1, G2, G3, G4, G5, G6, G7, G8, R>(this.iterative, s);
+            return new Iterative8Success.Iterative8SuccessImpl<>(this.iterative, s);
         }
 
         @Override
         public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(R r) {
-            return new Iterative8Success.Iterative8SuccessImpl(this.iterative, (Sp<Object> & Serializable) () -> r);
+            return new Iterative8Success.Iterative8SuccessImpl<>(this.iterative, () -> r);
         }
 
     }

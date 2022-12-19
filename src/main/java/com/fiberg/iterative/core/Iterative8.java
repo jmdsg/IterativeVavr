@@ -40,6 +40,7 @@ import com.fiberg.iterative.function.Pr8;
 import com.fiberg.iterative.function.Rn;
 import com.fiberg.iterative.function.Sp;
 import io.vavr.Tuple;
+import io.vavr.Tuple6;
 import io.vavr.Tuple8;
 import io.vavr.collection.Iterator;
 import io.vavr.collection.Seq;
@@ -62,6 +63,12 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> emptyNullable() {
         return Iterative.nullable().empty8();
+    }
+
+    public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> narrow(Iterative8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> iterative) {
+        @SuppressWarnings("unchecked")
+        final Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> iter = (Iterative8<T1, T2, T3, T4, T5, T6, T7, T8>) iterative;
+        return iter;
     }
 
     public String toStringContent();
@@ -459,15 +466,15 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> recover8(T8 t8) {
-        return this.splitRt1().isFailure() ? this.splitLt7().pushBack(t8) : this;
+        return this.splitRt1().isFailure() ? this.splitLt7().<T8>pushBack(t8) : this;
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> recover8Of(Iterable<? extends T8> t8) {
-        return this.splitRt1().isFailure() ? this.splitLt7().pushBackOf(t8) : this;
+        return this.splitRt1().isFailure() ? this.splitLt7().<T8>pushBackOf(t8) : this;
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> recover8By(Iterable<? extends Stream<? extends T8>> t8) {
-        return this.splitRt1().isFailure() ? this.splitLt7().pushBackBy(t8) : this;
+        return this.splitRt1().isFailure() ? this.splitLt7().<T8>pushBackBy(t8) : this;
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> forEach(Cs8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> c) {
@@ -598,99 +605,99 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace1When(Fn1<? super T1, ? extends T1> f, Pr1<? super T1> p) {
-        return this.map1((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map1(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace1When(Sp<? extends T1> s, Pr1<? super T1> p) {
-        return this.replace1When((T1) s.toFunction().ignoring1(), p);
+        return this.replace1When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace1When(T1 t, Pr1<? super T1> p) {
-        return this.replace1When((T1) Fn1.value(t), p);
+        return this.replace1When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace2When(Fn1<? super T2, ? extends T2> f, Pr1<? super T2> p) {
-        return this.map2((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map2(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace2When(Sp<? extends T2> s, Pr1<? super T2> p) {
-        return this.replace2When((T2) s.toFunction().ignoring1(), p);
+        return this.replace2When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace2When(T2 t, Pr1<? super T2> p) {
-        return this.replace2When((T2) Fn1.value(t), p);
+        return this.replace2When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace3When(Fn1<? super T3, ? extends T3> f, Pr1<? super T3> p) {
-        return this.map3((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map3(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace3When(Sp<? extends T3> s, Pr1<? super T3> p) {
-        return this.replace3When((T3) s.toFunction().ignoring1(), p);
+        return this.replace3When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace3When(T3 t, Pr1<? super T3> p) {
-        return this.replace3When((T3) Fn1.value(t), p);
+        return this.replace3When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace4When(Fn1<? super T4, ? extends T4> f, Pr1<? super T4> p) {
-        return this.map4((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map4(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace4When(Sp<? extends T4> s, Pr1<? super T4> p) {
-        return this.replace4When((T4) s.toFunction().ignoring1(), p);
+        return this.replace4When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace4When(T4 t, Pr1<? super T4> p) {
-        return this.replace4When((T4) Fn1.value(t), p);
+        return this.replace4When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace5When(Fn1<? super T5, ? extends T5> f, Pr1<? super T5> p) {
-        return this.map5((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map5(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace5When(Sp<? extends T5> s, Pr1<? super T5> p) {
-        return this.replace5When((T5) s.toFunction().ignoring1(), p);
+        return this.replace5When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace5When(T5 t, Pr1<? super T5> p) {
-        return this.replace5When((T5) Fn1.value(t), p);
+        return this.replace5When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace6When(Fn1<? super T6, ? extends T6> f, Pr1<? super T6> p) {
-        return this.map6((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map6(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace6When(Sp<? extends T6> s, Pr1<? super T6> p) {
-        return this.replace6When((T6) s.toFunction().ignoring1(), p);
+        return this.replace6When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace6When(T6 t, Pr1<? super T6> p) {
-        return this.replace6When((T6) Fn1.value(t), p);
+        return this.replace6When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace7When(Fn1<? super T7, ? extends T7> f, Pr1<? super T7> p) {
-        return this.map7((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map7(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace7When(Sp<? extends T7> s, Pr1<? super T7> p) {
-        return this.replace7When((T7) s.toFunction().ignoring1(), p);
+        return this.replace7When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace7When(T7 t, Pr1<? super T7> p) {
-        return this.replace7When((T7) Fn1.value(t), p);
+        return this.replace7When(Fn1.value(t), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace8When(Fn1<? super T8, ? extends T8> f, Pr1<? super T8> p) {
-        return this.map8((Fn1 & Serializable) t -> p.test(t) ? f.apply(t) : t);
+        return this.map8(t -> p.test(t) ? f.apply(t) : t);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace8When(Sp<? extends T8> s, Pr1<? super T8> p) {
-        return this.replace8When((T8) s.toFunction().ignoring1(), p);
+        return this.replace8When(s.toFunction().ignoring1(), p);
     }
 
     default public Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> replace8When(T8 t, Pr1<? super T8> p) {
-        return this.replace8When((T8) Fn1.value(t), p);
+        return this.replace8When(Fn1.value(t), p);
     }
 
     default public Iterable<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> yield() {
@@ -713,7 +720,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Stream<R> yieldFlatStream(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends Iterable<? extends R>> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.yieldStream(f).flatMap(IterativeInternals::entity).flatMap(this::wrap);
+        return this.yieldStream(f).flatMap(IterativeInternals::identity).flatMap(this::wrap);
     }
 
     default public Option<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> yieldOption() {
@@ -727,7 +734,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Option<R> yieldFlatOption(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends Option<? extends R>> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.yieldOption(f).flatMap(IterativeInternals::entity).flatMap(this::wrap);
+        return this.yieldOption(f).flatMap(IterativeInternals::identity).flatMap(this::wrap);
     }
 
     default public Try<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> yieldTry() {
@@ -741,7 +748,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Try<R> yieldFlatTry(Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends Try<? extends R>> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.yieldTry(f).flatMap(IterativeInternals::entity).flatMap(this::wrapTry);
+        return this.yieldTry(f).flatMap(IterativeInternals::identity).flatMap(this::wrapTry);
     }
 
     default public Validation<Seq<Throwable>, Stream<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>>> validateStream() {
@@ -812,90 +819,90 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative8<R, T2, T3, T4, T5, T6, T7, T8> map1(Fn1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, R, T3, T4, T5, T6, T7, T8> map2(Fn1<? super T2, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, T2, R, T4, T5, T6, T7, T8> map3(Fn1<? super T3, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, T2, T3, R, T5, T6, T7, T8> map4(Fn1<? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, T2, T3, T4, R, T6, T7, T8> map5(Fn1<? super T5, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, T2, T3, T4, T5, R, T7, T8> map6(Fn1<? super T6, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, T2, T3, T4, T5, T6, R, T8> map7(Fn1<? super T7, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f, IterativeInternals::entity);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<T1, T2, T3, T4, T5, T6, T7, R> map8(Fn1<? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f);
     }
 
     default public <R7, R8> Iterative8<T1, T2, T3, T4, T5, T6, R7, R8> mapRt2(Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f7, f8);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f7, f8);
     }
 
     default public <R1, R2> Iterative8<R1, R2, T3, T4, T5, T6, T7, T8> mapLt2(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2) {
-        return this.map(f1, f2, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R6, R7, R8> Iterative8<T1, T2, T3, T4, T5, R6, R7, R8> mapRt3(Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f6, f7, f8);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f6, f7, f8);
     }
 
     default public <R1, R2, R3> Iterative8<R1, R2, R3, T4, T5, T6, T7, T8> mapLt3(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3) {
-        return this.map(f1, f2, f3, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, f3, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R5, R6, R7, R8> Iterative8<T1, T2, T3, T4, R5, R6, R7, R8> mapRt4(Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f5, f6, f7, f8);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f5, f6, f7, f8);
     }
 
     default public <R1, R2, R3, R4> Iterative8<R1, R2, R3, R4, T5, T6, T7, T8> mapLt4(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4) {
-        return this.map(f1, f2, f3, f4, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, f3, f4, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R4, R5, R6, R7, R8> Iterative8<T1, T2, T3, R4, R5, R6, R7, R8> mapRt5(Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity, f4, f5, f6, f7, f8);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity, f4, f5, f6, f7, f8);
     }
 
     default public <R1, R2, R3, R4, R5> Iterative8<R1, R2, R3, R4, R5, T6, T7, T8> mapLt5(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5) {
-        return this.map(f1, f2, f3, f4, f5, IterativeInternals::entity, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, f3, f4, f5, IterativeInternals::identity, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R3, R4, R5, R6, R7, R8> Iterative8<T1, T2, R3, R4, R5, R6, R7, R8> mapRt6(Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8) {
-        return this.map(IterativeInternals::entity, IterativeInternals::entity, f3, f4, f5, f6, f7, f8);
+        return this.map(IterativeInternals::identity, IterativeInternals::identity, f3, f4, f5, f6, f7, f8);
     }
 
     default public <R1, R2, R3, R4, R5, R6> Iterative8<R1, R2, R3, R4, R5, R6, T7, T8> mapLt6(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6) {
-        return this.map(f1, f2, f3, f4, f5, f6, IterativeInternals::entity, IterativeInternals::entity);
+        return this.map(f1, f2, f3, f4, f5, f6, IterativeInternals::identity, IterativeInternals::identity);
     }
 
     default public <R2, R3, R4, R5, R6, R7, R8> Iterative8<T1, R2, R3, R4, R5, R6, R7, R8> mapRt7(Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8) {
-        return this.map(IterativeInternals::entity, f2, f3, f4, f5, f6, f7, f8);
+        return this.map(IterativeInternals::identity, f2, f3, f4, f5, f6, f7, f8);
     }
 
     default public <R1, R2, R3, R4, R5, R6, R7> Iterative8<R1, R2, R3, R4, R5, R6, R7, T8> mapLt7(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7) {
-        return this.map(f1, f2, f3, f4, f5, f6, f7, IterativeInternals::entity);
+        return this.map(f1, f2, f3, f4, f5, f6, f7, IterativeInternals::identity);
     }
 
     default public <R> Iterative8<R, T2, T3, T4, T5, T6, T7, T8> inlineMap1(Fn1<? super T1, ? extends Iterable<? extends R>> f) {
@@ -1195,31 +1202,31 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
     }
 
     default public <R> R getOnSuccessOrNull(Fn1<? super Iterative8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>, ? extends R> f) {
-        return (R) this.getterOnSuccess(f).onFailure(Sp.empty());
+        return this.getterOnSuccess(f).onFailure(Sp.empty());
     }
 
     default public <R> R getOnSuccessOrThrow(Fn1<? super Iterative8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>, ? extends R> f) {
-        return (R) this.getterOnSuccess(Fn1.narrow(f)).onFailure(Fn0.pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
+        return this.<R>getterOnSuccess(Fn1.narrow(f)).onFailure(Fn0.<String, R>pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
     }
 
     default public Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> getOrElse(Sp<? extends Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> s) {
-        return (Tuple8) this.getterOnSuccess().onFailure((Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>) s.afterApply(Tuple::narrow));
+        return this.getterOnSuccess().onFailure(s.afterApply(Tuple::narrow));
     }
 
     default public Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> getOrElse(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> t) {
-        return (Tuple8) this.getterOnSuccess().onFailure((Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>) Sp.value(Tuple.narrow(t)));
+        return this.getterOnSuccess().onFailure(Sp.value(Tuple.narrow(t)));
     }
 
     default public Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> getOrNull() {
-        return (Tuple8) this.getterOnSuccess().onFailure((Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>) Sp.empty());
+        return this.getterOnSuccess().onFailure(Sp.empty());
     }
 
     default public Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> getOrThrow() {
-        return (Tuple8) this.getterOnSuccess().onFailure((Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>) Fn0.pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
+        return this.getterOnSuccess().onFailure(Fn0.<String, Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>>pass(IterativeGetter::throwableSupplier, "tuple").toSupplier());
     }
 
     default public Iterative8Getter<T1, T2, T3, T4, T5, T6, T7, T8> getter() {
-        return new Iterative8Getter.Iterative8GetterImpl(this);
+        return new Iterative8Getter.Iterative8GetterImpl<>(this);
     }
 
     default public Iterative8Getter.Iterative8Fail<T1, T2, T3, T4, T5, T6, T7, T8, Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> getterOnSuccess() {
@@ -1266,7 +1273,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative7<T1, T2, T3, T4, T5, T6, R> reduceChainRt2(Fn2<? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt7().create(this.splitLt6(), this.reduce((Fn8 & Serializable) (a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a7, a8)).iterableStream1());
+        return this.splitLt7().create(this.splitLt6(), this.reduce((a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a7, a8)).iterableStream1());
     }
 
     default public <R> Iterative7<R, T3, T4, T5, T6, T7, T8> reduceSimpleLt2(Fn2<? super T1, ? super T2, ? extends R> f) {
@@ -1286,7 +1293,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative6<T1, T2, T3, T4, T5, R> reduceChainRt3(Fn3<? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt7().create(this.splitLt5(), this.reduce((Fn8 & Serializable) (a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a6, a7, a8)).iterableStream1());
+        return this.splitLt7().create(this.splitLt5(), this.reduce((a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a6, a7, a8)).iterableStream1());
     }
 
     default public <R> Iterative6<R, T4, T5, T6, T7, T8> reduceSimpleLt3(Fn3<? super T1, ? super T2, ? super T3, ? extends R> f) {
@@ -1305,7 +1312,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative5<T1, T2, T3, T4, R> reduceChainRt4(Fn4<? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt7().create(this.splitLt4(), this.reduce((Fn8 & Serializable) (a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a5, a6, a7, a8)).iterableStream1());
+        return this.splitLt7().create(this.splitLt4(), this.reduce((a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a5, a6, a7, a8)).iterableStream1());
     }
 
     default public <R> Iterative5<R, T5, T6, T7, T8> reduceSimpleLt4(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
@@ -1324,7 +1331,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative4<T1, T2, T3, R> reduceChainRt5(Fn5<? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt7().create(this.splitLt3(), this.reduce((Fn8 & Serializable) (a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a4, a5, a6, a7, a8)).iterableStream1());
+        return this.splitLt7().create(this.splitLt3(), this.reduce((a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a4, a5, a6, a7, a8)).iterableStream1());
     }
 
     default public <R> Iterative4<R, T6, T7, T8> reduceSimpleLt5(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
@@ -1343,7 +1350,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative3<T1, T2, R> reduceChainRt6(Fn6<? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt7().create(this.splitLt2(), this.reduce((Fn8 & Serializable) (a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a3, a4, a5, a6, a7, a8)).iterableStream1());
+        return this.splitLt7().create(this.splitLt2(), this.reduce((a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a3, a4, a5, a6, a7, a8)).iterableStream1());
     }
 
     default public <R> Iterative3<R, T7, T8> reduceSimpleLt6(Fn6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends R> f) {
@@ -1362,7 +1369,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
     default public <R> Iterative2<T1, R> reduceChainRt7(Fn7<? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return this.splitLt7().create(this.splitLt1(), this.reduce((Fn8 & Serializable) (a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a2, a3, a4, a5, a6, a7, a8)).iterableStream1());
+        return this.splitLt7().create(this.splitLt1(), this.reduce((a1, a2, a3, a4, a5, a6, a7, a8) -> f.apply(a2, a3, a4, a5, a6, a7, a8)).iterableStream1());
     }
 
     default public <R> Iterative2<R, T8> reduceSimpleLt7(Fn7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? extends R> f) {
@@ -1375,39 +1382,39 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T1, T2, T3, T4, T5, T6, T7, T8> iterativeSupplier() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl(this);
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this);
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T1, T2, T3, T4, T5, T6, T7, T8> crossSupplierAllLt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T1, T2, T3, T4, T5, T6, T7, T8>(this.forceCrossAll());
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.forceCrossAll());
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T1, T2, T3, T4, T5, T6, T7, T8> inlineSupplierAllLt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T1, T2, T3, T4, T5, T6, T7, T8>(this.forceInlineAll());
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.forceInlineAll());
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T8, T1, T2, T3, T4, T5, T6, T7> crossSupplierAllRt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T8, T1, T2, T3, T4, T5, T6, T7>(this.forceCrossAll().popBack().pushFrontCrossBy(this.iterableStream8()));
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.forceCrossAll().popBack().pushFrontCrossBy(this.iterableStream8()));
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T8, T1, T2, T3, T4, T5, T6, T7> inlineSupplierAllRt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T8, T1, T2, T3, T4, T5, T6, T7>(this.forceInlineAll().popBack().pushFrontInlineBy(this.iterableStream8()));
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.forceInlineAll().popBack().pushFrontInlineBy(this.iterableStream8()));
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T1, T2, T3, T4, T5, T6, T7, T8> crossSupplierLt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T1, T2, T3, T4, T5, T6, T7, T8>(this.forceCross2());
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.forceCross2());
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T1, T2, T3, T4, T5, T6, T7, T8> inlineSupplierLt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T1, T2, T3, T4, T5, T6, T7, T8>(this.forceInline2());
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.forceInline2());
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T8, T1, T2, T3, T4, T5, T6, T7> crossSupplierRt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T8, T1, T2, T3, T4, T5, T6, T7>(this.popBack().pushFrontCrossBy(this.iterableStream8()));
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.popBack().pushFrontCrossBy(this.iterableStream8()));
     }
 
     default public IterativeSupplier.Iterative1Supplier7.TransformSupplier<T8, T1, T2, T3, T4, T5, T6, T7> inlineSupplierRt() {
-        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<T8, T1, T2, T3, T4, T5, T6, T7>(this.popBack().pushFrontInlineBy(this.iterableStream8()));
+        return new IterativeSupplier.Iterative1Supplier7.Iterative1Supplier7Impl<>(this.popBack().pushFrontInlineBy(this.iterableStream8()));
     }
 
     public static abstract class Iterative8Abstract<T1, T2, T3, T4, T5, T6, T7, T8> implements Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> {
@@ -1418,25 +1425,25 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
         Iterative8Abstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends T8> right) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
-            this.iterative = iterative;
-            this.right = SimpleIterative.of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
+            this.iterative = Iterative.narrow(iterative);
+            this.right = SimpleIterative.<T8>of(right).inlineMap(this::wrap).map(Stream::of).toIterable();
         }
 
         Iterative8Abstract(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> iterative, Iterable<? extends Stream<? extends T8>> right, boolean ign) {
             Objects.requireNonNull(iterative, "iterative is null");
             Objects.requireNonNull(right, "right is null");
-            this.iterative = iterative;
-            this.right = SimpleIterative.of(right).map((Fn1 & Serializable) iter -> iter.flatMap(this::wrap));
+            this.iterative = Iterative.narrow(iterative);
+            this.right = SimpleIterative.of(right).map(iter -> iter.flatMap(this::wrap));
         }
 
         @Override
         public Stream<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> toStream() {
-            return this.toTupleStream().map(Fn8.tuple(IterativeHandler::cross)).flatMap(IterativeInternals::entityIterable);
+            return this.toTupleStream().map(Fn8.tuple(IterativeHandler::cross)).flatMap(IterativeInternals::identityIterable);
         }
 
         @Override
         public Iterator<Iterable<?>> iterators() {
-            return Iterator.concat((Iterable) Stream.of(this.iterative.iterators()).append((Object) Iterator.of(SimpleIterative.of(this.right).inlineMap(IterativeInternals::entityIterable).toIterable())));
+            return Iterator.concat(Stream.of(this.iterative.iterators()).append(Iterator.of(SimpleIterative.of(this.right).inlineMap(IterativeInternals::identityIterable).toIterable())));
         }
 
         @Override
@@ -1476,7 +1483,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
 
         @Override
         public Iterable<T8> iterable8() {
-            return SimpleIterative.of(this.right).inlineMap(IterativeInternals::entityIterable);
+            return SimpleIterative.of(this.right).inlineMap(IterativeInternals::identityIterable);
         }
 
         @Override
@@ -1885,7 +1892,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
             Objects.requireNonNull(f6, "f6 is null");
             Objects.requireNonNull(f7, "f7 is null");
             Objects.requireNonNull(f8, "f8 is null");
-            return this.create(this.iterative.map(f1, f2, f3, f4, f5, f6, f7), SimpleIterative.of(this.iterableStream8()).map((Fn1 & Serializable) iter -> iter.map((Function) ((Object) f8)).flatMap(this::wrap)).toIterable());
+            return this.create(this.iterative.map(f1, f2, f3, f4, f5, f6, f7), SimpleIterative.of(this.iterableStream8()).map(iter -> iter.<R8>map(f8).flatMap(this::wrap)).toIterable());
         }
 
         @Override
@@ -1898,7 +1905,7 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
             Objects.requireNonNull(f6, "f6 is null");
             Objects.requireNonNull(f7, "f7 is null");
             Objects.requireNonNull(f8, "f8 is null");
-            return this.create(this.iterative.inlineMap(f1, f2, f3, f4, f5, f6, f7), SimpleIterative.of(this.iterableStream8()).map((Fn1 & Serializable) iter -> iter.flatMap((Function) ((Object) f8)).flatMap(this::wrap)).toIterable());
+            return this.create(this.iterative.inlineMap(f1, f2, f3, f4, f5, f6, f7), SimpleIterative.of(this.iterableStream8()).map(iter -> iter.<R8>flatMap(f8).flatMap(this::wrap)).toIterable());
         }
 
         @Override
@@ -1911,12 +1918,12 @@ public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeCon
             Objects.requireNonNull(p6, "p6 is null");
             Objects.requireNonNull(p7, "p7 is null");
             Objects.requireNonNull(p8, "p8 is null");
-            return this.create(this.iterative.filter(p1, p2, p3, p4, p5, p6, p7), SimpleIterative.of(this.iterableStream8()).map((Fn1 & Serializable) iter -> iter.filter((Predicate) p8).flatMap(this::wrap)).toIterable());
+            return this.create(this.iterative.filter(p1, p2, p3, p4, p5, p6, p7), SimpleIterative.of(this.iterableStream8()).map(iter -> iter.<T8>filter(p8).flatMap(this::wrap)).toIterable());
         }
 
         @Override
         public String toStringContent() {
-            return Stream.of((Object[]) new String[]{this.innerIterative().toStringContent(), IterativeHandler.typeIndicator(this.isCross()), IterativeHandler.iterableStreamToString(this.iterableStream8(), 8)}).mkString();
+            return Stream.of(this.innerIterative().toStringContent(), IterativeHandler.typeIndicator(this.isCross()), IterativeHandler.iterableStreamToString(this.iterableStream8(), 8)).mkString();
         }
 
         public String toString() {

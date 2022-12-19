@@ -96,21 +96,21 @@ public interface Rn extends Runnable {
     }
 
     default public <R> Sp<R> toSupplier(R r) {
-        return (Sp<Object> & Serializable) () -> {
+        return () -> {
             this.run();
             return r;
         };
     }
 
     default public <R> Fn0<R> toFunction(R r) {
-        return (Fn0 & Serializable) () -> {
+        return () -> {
             this.run();
             return r;
         };
     }
 
     default public Pr0 toPredicate(Boolean b) {
-        return (Pr0 & Serializable) () -> {
+        return () -> {
             this.run();
             return b;
         };
@@ -130,7 +130,7 @@ public interface Rn extends Runnable {
 
     default public <R> Fn0<R> afterApplyTo(Fn0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return (Fn0 & Serializable) () -> {
+        return () -> {
             this.run();
             return f.apply();
         };
@@ -142,7 +142,7 @@ public interface Rn extends Runnable {
 
     default public <R> Sp<R> afterGetTo(Sp<? extends R> s) {
         Objects.requireNonNull(s, "s is null");
-        return (Sp<Object> & Serializable) () -> {
+        return () -> {
             this.run();
             return s.get();
         };
@@ -154,7 +154,7 @@ public interface Rn extends Runnable {
 
     default public Pr0 afterTestTo(Pr0 p) {
         Objects.requireNonNull(p, "p is null");
-        return (Pr0 & Serializable) () -> {
+        return () -> {
             this.run();
             return p.test();
         };

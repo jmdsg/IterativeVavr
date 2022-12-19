@@ -11,27 +11,27 @@ public interface IterativeInternals {
 
     public static <R> R force(Object t) {
         @SuppressWarnings("unchecked")
-        final R r = (R) t;
+        final R r = t;
         return r;
     }
 
-    public static <R> R entity(R r) {
+    public static <R> R identity(R r) {
         return r;
     }
 
-    public static <R> Try<R> entityTry(Try<? extends R> r) {
+    public static <R> Try<R> identityTry(Try<? extends R> r) {
         @SuppressWarnings("unchecked")
         final Try<R> t = (Try<R>) r;
         return t;
     }
 
-    public static <R> Option<R> entityOption(Option<? extends R> r) {
+    public static <R> Option<R> identityOption(Option<? extends R> r) {
         @SuppressWarnings("unchecked")
         final Option<R> o = (Option<R>) r;
         return o;
     }
 
-    public static <R> Iterable<R> entityIterable(Iterable<? extends R> r) {
+    public static <R> Iterable<R> identityIterable(Iterable<? extends R> r) {
         @SuppressWarnings("unchecked")
         final Iterable<R> i = (Iterable<R>) r;
         return i;
