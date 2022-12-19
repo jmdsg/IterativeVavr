@@ -880,52 +880,36 @@ public interface Tupler {
         return Tupler8.acceptChecked8(c);
     }
 
-    public static <T1> Tuple1<T1> invert(Tuple1<? super T1> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple1<T1> inverted = Tuple.of((T1) tuple._1());
-        return inverted;
+    public static <T1> Tuple1<T1> invert(Tuple1<? extends T1> tuple) {
+        return Tuple.of(tuple._1());
     }
 
-    public static <T1, T2> Tuple2<T2, T1> invert(Tuple2<? super T1, ? super T2> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple2<T2, T1> inverted = Tuple.of((T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2> Tuple2<T2, T1> invert(Tuple2<? extends T1, ? extends T2> tuple) {
+        return Tuple.of(tuple._2(), tuple._1());
     }
 
-    public static <T1, T2, T3> Tuple3<T3, T2, T1> invert(Tuple3<? super T1, ? super T2, ? super T3> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple3<T3, T2, T1> inverted = Tuple.of((T3) tuple._3(), (T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2, T3> Tuple3<T3, T2, T1> invert(Tuple3<? extends T1, ? extends T2, ? extends T3> tuple) {
+        return Tuple.of(tuple._3(), tuple._2(), tuple._1());
     }
 
-    public static <T1, T2, T3, T4> Tuple4<T4, T3, T2, T1> invert(Tuple4<? super T1, ? super T2, ? super T3, ? super T4> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple4<T4, T3, T2, T1> inverted = Tuple.of((T4) tuple._4(), (T3) tuple._3(), (T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2, T3, T4> Tuple4<T4, T3, T2, T1> invert(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> tuple) {
+        return Tuple.of(tuple._4(), tuple._3(), tuple._2(), tuple._1());
     }
 
-    public static <T1, T2, T3, T4, T5> Tuple5<T5, T4, T3, T2, T1> invert(Tuple5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple5<T5, T4, T3, T2, T1> inverted = Tuple.of((T5) tuple._5(), (T4) tuple._4(), (T3) tuple._3(), (T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2, T3, T4, T5> Tuple5<T5, T4, T3, T2, T1> invert(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> tuple) {
+        return Tuple.of(tuple._5(), tuple._4(), tuple._3(), tuple._2(), tuple._1());
     }
 
-    public static <T1, T2, T3, T4, T5, T6> Tuple6<T6, T5, T4, T3, T2, T1> invert(Tuple6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple6<T6, T5, T4, T3, T2, T1> inverted = Tuple.of((T6) tuple._6(), (T5) tuple._5(), (T4) tuple._4(), (T3) tuple._3(), (T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2, T3, T4, T5, T6> Tuple6<T6, T5, T4, T3, T2, T1> invert(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> tuple) {
+        return Tuple.of(tuple._6(), tuple._5(), tuple._4(), tuple._3(), tuple._2(), tuple._1());
     }
 
-    public static <T1, T2, T3, T4, T5, T6, T7> Tuple7<T7, T6, T5, T4, T3, T2, T1> invert(Tuple7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple7<T7, T6, T5, T4, T3, T2, T1> inverted = Tuple.of((T7) tuple._7(), (T6) tuple._6(), (T5) tuple._5(), (T4) tuple._4(), (T3) tuple._3(), (T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2, T3, T4, T5, T6, T7> Tuple7<T7, T6, T5, T4, T3, T2, T1> invert(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> tuple) {
+        return Tuple.of(tuple._7(), tuple._6(), tuple._5(), tuple._4(), tuple._3(), tuple._2(), tuple._1());
     }
 
-    public static <T1, T2, T3, T4, T5, T6, T7, T8> Tuple8<T8, T7, T6, T5, T4, T3, T2, T1> invert(Tuple8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> tuple) {
-        @SuppressWarnings("unchecked")
-        final Tuple8<T8, T7, T6, T5, T4, T3, T2, T1> inverted = Tuple.of((T8) tuple._8(), (T7) tuple._7(), (T6) tuple._6(), (T5) tuple._5(), (T4) tuple._4(), (T3) tuple._3(), (T2) tuple._2(), (T1) tuple._1());
-        return inverted;
+    public static <T1, T2, T3, T4, T5, T6, T7, T8> Tuple8<T8, T7, T6, T5, T4, T3, T2, T1> invert(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> tuple) {
+        return Tuple.of(tuple._8(), tuple._7(), tuple._6(), tuple._5(), tuple._4(), tuple._3(), tuple._2(), tuple._1());
     }
 
     public static <T1> Tuple0 drop(Tuple1<? extends T1> tuple) {

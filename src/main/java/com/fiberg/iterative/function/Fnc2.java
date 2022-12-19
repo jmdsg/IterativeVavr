@@ -37,7 +37,9 @@ import java.util.function.Function;
 public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
 
     public static <T1, T2, R> Fnc2<T1, T2, R> narrow(Fnc2<? super T1, ? super T2, ? extends R> f) {
-        return f;
+        @SuppressWarnings("unchecked")
+        final Fnc2<T1, T2, R> fnc = (Fnc2<T1, T2, R>) f;
+        return fnc;
     }
 
     public static <T1, T2, R> Fnc2<T1, T2, R> empty() {
@@ -53,15 +55,15 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     }
 
     public static <T1, T2, R> Fnc2<T1, T2, R> of1(Fnc1<? super T1, ? extends R> f) {
-        return Fnc2.narrow(f.ignoring1Rt());
+        return Fnc2.<T1, T2, R>narrow(f.ignoring1Rt());
     }
 
     public static <T1, T2, R> Fnc2<T1, T2, R> of2(Fnc1<? super T2, ? extends R> f) {
-        return Fnc2.narrow(f.ignoring1Lt());
+        return Fnc2.<T1, T2, R>narrow(f.ignoring1Lt());
     }
 
     public static <T1, T2, R> Fnc1<Tuple2<T1, T2>, R> tuple(Fnc2<? super T1, ? super T2, ? extends R> f) {
-        return Fnc2.of(f).tupled();
+        return Fnc2.<T1, T2, R>of(f).tupled();
     }
 
     public static <T1, T2, R> Fnc2<T1, T2, R> detuple(Fnc1<? super Tuple2<? extends T1, ? extends T2>, ? extends R> f) {
@@ -74,15 +76,15 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> ignore(Fn0<? extends R> f) {
-        return Fn0.narrow(f).ignoring2();
+        return Fn0.<R>narrow(f).ignoring2();
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> ignoreRt(Fn1<? super T1, ? extends R> f) {
-        return Fn1.narrow(f).ignoring1Rt();
+        return Fn1.<T1, R>narrow(f).ignoring1Rt();
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> ignoreLt(Fn1<? super T2, ? extends R> f) {
-        return Fn1.narrow(f).ignoring1Lt();
+        return Fn1.<T2, R>narrow(f).ignoring1Lt();
     }
 
     public static <T1, T2, T3, R> Fnc2<T1, T2, R> passRt(Fnc3<? super T1, ? super T2, ? super T3, ? extends R> f, T3 t3) {
@@ -144,7 +146,7 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     }
 
     public static <T1, T2, R> Fnc2<T2, T1, R> invert(Fnc2<? super T1, ? super T2, ? extends R> f) {
-        return Fnc2.narrow(f).inverted();
+        return Fnc2.<T1, T2, R>narrow(f).inverted();
     }
 
     default public Fnc1<T2, R> applyLt(T1 t1) {
@@ -164,7 +166,7 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     }
 
     default public Csc2<T1, T2> toConsumer() {
-        return (arg_0, arg_1) -> ((Fnc2) this).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Fnc2) this).apply(t1, t2);
     }
 
     default public Spc<R> toSupplier(T1 t1, T2 t2) {
@@ -436,7 +438,7 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     }
 
     default public Fn2<T1, T2, R> unchecked() {
-        return (arg_0, arg_1) -> ((Function2) super.unchecked()).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Function2) super.unchecked()).apply(t1, t2);
     }
 
     default public <I1> Fnc3<I1, T1, T2, R> ignoring1Lt() {
@@ -500,21 +502,21 @@ public interface Fnc2<T1, T2, R> extends CheckedFunction2<T1, T2, R> {
     }
 
     default public Fnc2<T2, T1, R> reversed() {
-        return (arg_0, arg_1) -> ((CheckedFunction2) super.reversed()).apply(arg_0, arg_1);
+        return (t1, t2) -> ((CheckedFunction2) super.reversed()).apply(t1, t2);
     }
 
     default public Fnc2<T1, T2, R> memoized() {
-        return (arg_0, arg_1) -> ((CheckedFunction2) super.memoized()).apply(arg_0, arg_1);
+        return (t1, t2) -> ((CheckedFunction2) super.memoized()).apply(t1, t2);
     }
 
     default public <V> Fnc2<T1, T2, V> andThen(CheckedFunction1<? super R, ? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (arg_0, arg_1) -> ((CheckedFunction2) super.andThen(after)).apply(arg_0, arg_1);
+        return (t1, t2) -> ((CheckedFunction2) super.andThen(after)).apply(t1, t2);
     }
 
     default public Fn2<T1, T2, R> recover(Function<? super Throwable, ? extends BiFunction<? super T1, ? super T2, ? extends R>> recover) {
         Objects.requireNonNull(recover, "recover is null");
-        return (arg_0, arg_1) -> ((Function2) super.recover(recover)).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Function2) super.recover(recover)).apply(t1, t2);
     }
 
 }

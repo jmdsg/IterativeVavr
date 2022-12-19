@@ -37,7 +37,9 @@ import java.util.function.Function;
 public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4, R> {
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> narrow(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
-        return f;
+        @SuppressWarnings("unchecked")
+        final Fnc4<T1, T2, T3, T4, R> fnc = (Fnc4<T1, T2, T3, T4, R>) f;
+        return fnc;
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> empty() {
@@ -53,23 +55,23 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> of1(Fnc1<? super T1, ? extends R> f) {
-        return Fnc4.narrow(f.ignoring3Rt());
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f.ignoring3Rt());
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> of2(Fnc1<? super T2, ? extends R> f) {
-        return Fnc4.narrow(f.ignoring2Rt().ignoring1Lt());
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f.ignoring2Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> of3(Fnc1<? super T3, ? extends R> f) {
-        return Fnc4.narrow(f.ignoring1Rt().ignoring2Lt());
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f.ignoring1Rt().ignoring2Lt());
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> of4(Fnc1<? super T4, ? extends R> f) {
-        return Fnc4.narrow(f.ignoring3Lt());
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f.ignoring3Lt());
     }
 
     public static <T1, T2, T3, T4, R> Fnc1<Tuple4<T1, T2, T3, T4>, R> tuple(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
-        return Fnc4.of(f).tupled();
+        return Fnc4.<T1, T2, T3, T4, R>of(f).tupled();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> detuple(Fnc1<? super Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>, ? extends R> f) {
@@ -82,31 +84,31 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore(Fnc0<? extends R> f) {
-        return Fnc0.narrow(f).ignoring4();
+        return Fnc0.<R>narrow(f).ignoring4();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore3Rt(Fnc1<? super T1, ? extends R> f) {
-        return Fnc1.narrow(f).ignoring3Rt();
+        return Fnc1.<T1, R>narrow(f).ignoring3Rt();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore3Lt(Fnc1<? super T4, ? extends R> f) {
-        return Fnc1.narrow(f).ignoring3Lt();
+        return Fnc1.<T4, R>narrow(f).ignoring3Lt();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore2Rt(Fnc2<? super T1, ? super T2, ? extends R> f) {
-        return Fnc2.narrow(f).ignoring2Rt();
+        return Fnc2.<T1, T2, R>narrow(f).ignoring2Rt();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore2Lt(Fnc2<? super T3, ? super T4, ? extends R> f) {
-        return Fnc2.narrow(f).ignoring2Lt();
+        return Fnc2.<T3, T4, R>narrow(f).ignoring2Lt();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore1Rt(Fnc3<? super T1, ? super T2, ? super T3, ? extends R> f) {
-        return Fnc3.narrow(f).ignoring1Rt();
+        return Fnc3.<T1, T2, T3, R>narrow(f).ignoring1Rt();
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T1, T2, T3, T4, R> ignore1Lt(Fnc3<? super T2, ? super T3, ? super T4, ? extends R> f) {
-        return Fnc3.narrow(f).ignoring1Lt();
+        return Fnc3.<T2, T3, T4, R>narrow(f).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4, T5, R> Fnc4<T1, T2, T3, T4, R> passRt(Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f, T5 t5) {
@@ -152,7 +154,7 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     public static <T1, T2, T3, T4, R> Fnc4<T4, T3, T2, T1, R> invert(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
-        return Fnc4.narrow(f).inverted();
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f).inverted();
     }
 
     default public Fnc3<T2, T3, T4, R> applyLt(T1 t1) {
@@ -188,7 +190,7 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     default public Csc4<T1, T2, T3, T4> toConsumer() {
-        return (arg_0, arg_1, arg_2, arg_3) -> ((Fnc4) this).apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> ((Fnc4) this).apply(t1, t2, t3, t4);
     }
 
     default public Spc<R> toSupplier(T1 t1, T2 t2, T3 t3, T4 t4) {
@@ -459,8 +461,8 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
         return t1 -> t2 -> t3 -> t4 -> this.apply(t1, t2, t3, t4);
     }
 
-    default public Fn4<T1, T2, T3, T4, R> unchecked() {
-        return (arg_0, arg_1, arg_2, arg_3) -> ((Function4) super.unchecked()).apply(arg_0, arg_1, arg_2, arg_3);
+    default public Fn4<T1, T2, T3, T4, R> unt8
+        return (t1, t2, t3, t4) -> ((Function4) super.unchecked()).apply(t1, t2, t3, t4);
     }
 
     default public <I1> Fnc5<I1, T1, T2, T3, T4, R> ignoring1Lt() {
@@ -496,11 +498,11 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     default public Fnc3<T2, T3, T4, R> apply(T1 t1) {
-        return (arg_0, arg_1, arg_2) -> ((CheckedFunction3) super.apply(t1)).apply(arg_0, arg_1, arg_2);
+        return (t1, t2, t3) -> ((CheckedFunction3) super.apply(t1)).apply(t1, t2, t3);
     }
 
     default public Fnc2<T3, T4, R> apply(T1 t1, T2 t2) {
-        return (arg_0, arg_1) -> ((CheckedFunction2) super.apply(t1, t2)).apply(arg_0, arg_1);
+        return (t1, t2) -> ((CheckedFunction2) super.apply(t1, t2)).apply(t1, t2);
     }
 
     default public Fnc1<T4, R> apply(T1 t1, T2 t2, T3 t3) {
@@ -516,21 +518,21 @@ public interface Fnc4<T1, T2, T3, T4, R> extends CheckedFunction4<T1, T2, T3, T4
     }
 
     default public Fnc4<T4, T3, T2, T1, R> reversed() {
-        return (arg_0, arg_1, arg_2, arg_3) -> ((CheckedFunction4) super.reversed()).apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.reversed()).apply(t1, t2, t3, t4);
     }
 
     default public Fnc4<T1, T2, T3, T4, R> memoized() {
-        return (arg_0, arg_1, arg_2, arg_3) -> ((CheckedFunction4) super.memoized()).apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.memoized()).apply(t1, t2, t3, t4);
     }
 
     default public <V> Fnc4<T1, T2, T3, T4, V> andThen(CheckedFunction1<? super R, ? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (arg_0, arg_1, arg_2, arg_3) -> ((CheckedFunction4) super.andThen(after)).apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> ((CheckedFunction4) super.andThen(after)).apply(t1, t2, t3, t4);
     }
 
     default public Fn4<T1, T2, T3, T4, R> recover(Function<? super Throwable, ? extends Function4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R>> recover) {
         Objects.requireNonNull(recover, "recover is null");
-        return (arg_0, arg_1, arg_2, arg_3) -> ((Function4) super.recover(recover)).apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> ((Function4) super.recover(recover)).apply(t1, t2, t3, t4);
     }
 
 }

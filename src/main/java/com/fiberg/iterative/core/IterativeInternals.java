@@ -11,7 +11,7 @@ public interface IterativeInternals {
 
     public static <R> R force(Object t) {
         @SuppressWarnings("unchecked")
-        final R r = t;
+        final R r = (R) t;
         return r;
     }
 
@@ -19,22 +19,18 @@ public interface IterativeInternals {
         return r;
     }
 
-    public static <R> Try<R> identityTry(Try<? extends R> r) {
-        @SuppressWarnings("unchecked")
-        final Try<R> t = (Try<R>) r;
-        return t;
+    public static <R> Try<R> identityTry(Try<? extends R> t) {
+        return Try.narrow(t);
     }
 
-    public static <R> Option<R> identityOption(Option<? extends R> r) {
-        @SuppressWarnings("unchecked")
-        final Option<R> o = (Option<R>) r;
-        return o;
+    public static <R> Option<R> identityOption(Option<? extends R> o) {
+        return Option.narrow(o);
     }
 
-    public static <R> Iterable<R> identityIterable(Iterable<? extends R> r) {
+    public static <R> Iterable<R> identityIterable(Iterable<? extends R> i) {
         @SuppressWarnings("unchecked")
-        final Iterable<R> i = (Iterable<R>) r;
-        return i;
+        final Iterable<R> iter = (Iterable<R>) i;
+        return iter;
     }
 
     public static Boolean toPredicate(Boolean r) {

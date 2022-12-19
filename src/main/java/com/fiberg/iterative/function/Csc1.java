@@ -33,7 +33,9 @@ import java.util.Objects;
 public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     public static <T1> Csc1<T1> narrow(Csc1<? super T1> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Csc1<T1> csc = (Csc1<T1>) c;
+        return csc;
     }
 
     public static <T1> Csc1<T1> empty() {
@@ -45,7 +47,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
     }
 
     public static <T1> Csc1<Tuple1<T1>> tuple(Csc1<? super T1> c) {
-        return Csc1.of(c).tupled();
+        return Csc1.<T1>of(c).tupled();
     }
 
     public static <T1> Csc1<T1> detuple(Csc1<? super Tuple1<? extends T1>> c) {
@@ -54,7 +56,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
 
     public static <T1> Csc1<T1> check(Cs1<? super T1> c) {
         Objects.requireNonNull(c, "c is null");
-        return Cs1.narrow(c).checked();
+        return Cs1.<T1>narrow(c).checked();
     }
 
     default public <V> Fnc1<T1, V> andThenApply(Fnc0<? extends V> after) {
@@ -234,7 +236,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
     default public Csc1<T1> beforeTestOnSuccess(Prc0 p, Csc1<? super T1> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return t1 -> (p.test() != false ? this : Csc1.narrow(onFailure)).accept(t1);
+        return t1 -> (p.test() != false ? this : Csc1.<T1>narrow(onFailure)).accept(t1);
     }
 
     default public Csc1<T1> beforeTestOnSuccess(Prc0 p) {
@@ -323,7 +325,7 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
     default public Csc1<T1> beforeSuccessPassingThroughTest(Prc1<? super T1> p, Csc1<? super T1> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return t1 -> (p.test(t1) ? this : Csc1.narrow(onFailure)).accept(t1);
+        return t1 -> (p.test(t1) ? this : Csc1.<T1>narrow(onFailure)).accept(t1);
     }
 
     default public Csc1<T1> beforeSuccessPassingThroughTest(Prc1<? super T1> p) {
@@ -345,7 +347,6 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
             if (t1 != null) {
                 this.accept(t1);
             }
-
         };
     }
 
@@ -365,7 +366,6 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
             catch (Throwable t) {
                 SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
@@ -432,11 +432,10 @@ public interface Csc1<T1> extends CheckedConsumer<T1> {
                 this.accept(t1);
             }
             catch (Throwable throwable) {
-                Cs1 cons = (Cs1) recover.apply(throwable);
+                Cs1<? super T1> cons = recover.apply(throwable);
                 Objects.requireNonNull(cons, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 cons.accept(t1);
             }
-
         };
     }
 

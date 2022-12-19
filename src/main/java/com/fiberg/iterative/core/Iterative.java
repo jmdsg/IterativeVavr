@@ -198,31 +198,31 @@ public interface Iterative extends IterativeWrapper {
     }
 
     public static <T1, T2> Iterative2Inline<T1, T2> fromTuple(Tuple2<? extends T1, ? extends T2> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2>narrow(tuple)).apply(Fn2.tuple((arg_0, arg_1) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1))).apply();
+        return Wither.withArgs(Tuple.<T1, T2>narrow(tuple)).apply(Fn2.tuple((t1, t2) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2))).apply();
     }
 
     public static <T1, T2, T3> Iterative3Inline<T1, T2, T3> fromTuple(Tuple3<? extends T1, ? extends T2, ? extends T3> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2, T3>narrow(tuple)).apply(Fn3.tuple((arg_0, arg_1, arg_2) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2))).apply();
+        return Wither.withArgs(Tuple.<T1, T2, T3>narrow(tuple)).apply(Fn3.tuple((t1, t2, t3) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2, t3))).apply();
     }
 
     public static <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> fromTuple(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2, T3, T4>narrow(tuple)).apply(Fn4.tuple((arg_0, arg_1, arg_2, arg_3) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3))).apply();
+        return Wither.withArgs(Tuple.<T1, T2, T3, T4>narrow(tuple)).apply(Fn4.tuple((t1, t2, t3, t4) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2, t3, t4))).apply();
     }
 
     public static <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> fromTuple(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5>narrow(tuple)).apply(Fn5.tuple((arg_0, arg_1, arg_2, arg_3, arg_4) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4))).apply();
+        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5>narrow(tuple)).apply(Fn5.tuple((t1, t2, t3, t4, t5) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2, t3, t4, t5))).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> fromTuple(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5, T6>narrow(tuple)).apply(Fn6.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5))).apply();
+        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5, T6>narrow(tuple)).apply(Fn6.tuple((t1, t2, t3, t4, t5, t6) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2, t3, t4, t5, t6))).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> fromTuple(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5, T6, T7>narrow(tuple)).apply(Fn7.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6))).apply();
+        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5, T6, T7>narrow(tuple)).apply(Fn7.tuple((t1, t2, t3, t4, t5, t6, t7) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2, t3, t4, t5, t6, t7))).apply();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> fromTuple(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> tuple) {
-        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(tuple)).apply(Fn8.tuple((arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> new IterativeBuilder.BuilderRegularImpl().inline().from(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7))).apply();
+        return Wither.withArgs(Tuple.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(tuple)).apply(Fn8.tuple((t1, t2, t3, t4, t5, t6, t7, t8) -> new IterativeBuilder.BuilderRegularImpl().inline().from(t1, t2, t3, t4, t5, t6, t7, t8))).apply();
     }
 
     public static <T1> Iterative1<T1> ofTuple1(Iterable<? extends Tuple1<? extends T1>> iterable) {

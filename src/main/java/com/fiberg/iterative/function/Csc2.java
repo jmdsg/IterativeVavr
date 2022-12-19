@@ -32,7 +32,9 @@ import java.util.Objects;
 public interface Csc2<T1, T2> {
 
     public static <T1, T2> Csc2<T1, T2> narrow(Csc2<? super T1, ? super T2> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Csc2<T1, T2> csc = (Csc2<T1, T2>) c;
+        return csc;
     }
 
     public static <T1, T2> Csc2<T1, T2> empty() {
@@ -44,15 +46,15 @@ public interface Csc2<T1, T2> {
     }
 
     public static <T1, T2> Csc2<T1, T2> of1(Csc1<? super T1> f) {
-        return Csc2.narrow(f.ignoring1Rt());
+        return Csc2.<T1, T2>narrow(f.ignoring1Rt());
     }
 
     public static <T1, T2> Csc2<T1, T2> of2(Csc1<? super T2> f) {
-        return Csc2.narrow(f.ignoring1Lt());
+        return Csc2.<T1, T2>narrow(f.ignoring1Lt());
     }
 
     public static <T1, T2> Csc1<Tuple2<T1, T2>> tuple(Csc2<? super T1, ? super T2> c) {
-        return Csc2.of(c).tupled();
+        return Csc2.<T1, T2>of(c).tupled();
     }
 
     public static <T1, T2> Csc2<T1, T2> detuple(Csc1<? super Tuple2<? extends T1, ? extends T2>> c) {
@@ -61,15 +63,15 @@ public interface Csc2<T1, T2> {
 
     public static <T1, T2> Csc2<T1, T2> check(Cs2<? super T1, ? super T2> c) {
         Objects.requireNonNull(c, "c is null");
-        return Cs2.narrow(c).checked();
+        return Cs2.<T1, T2>narrow(c).checked();
     }
 
     public static <T1, T2> Csc2<T1, T2> ignoreRt(Csc1<? super T1> c) {
-        return Csc1.narrow(c).ignoring1Rt();
+        return Csc1.<T1>narrow(c).ignoring1Rt();
     }
 
     public static <T1, T2> Csc2<T1, T2> ignoreLt(Csc1<? super T2> c) {
-        return Csc1.narrow(c).ignoring1Lt();
+        return Csc1.<T2>narrow(c).ignoring1Lt();
     }
 
     public static <T1, T2, T3> Csc2<T1, T2> passRt(Csc3<? super T1, ? super T2, ? super T3> c, T3 t3) {
@@ -121,7 +123,7 @@ public interface Csc2<T1, T2> {
     }
 
     public static <T1, T2> Csc2<T2, T1> invert(Csc2<? super T1, ? super T2> c) {
-        return Csc2.narrow(c).inverted();
+        return Csc2.<T1, T2>narrow(c).inverted();
     }
 
     public void accept(T1 var1, T2 var2) throws Throwable;
@@ -247,7 +249,7 @@ public interface Csc2<T1, T2> {
     default public Csc2<T1, T2> beforeTestOnSuccess(Prc0 p, Csc2<? super T1, ? super T2> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2) -> (p.test() != false ? this : Csc2.narrow(onFailure)).accept(t1, t2);
+        return (t1, t2) -> (p.test() != false ? this : Csc2.<T1, T2>narrow(onFailure)).accept(t1, t2);
     }
 
     default public Csc2<T1, T2> beforeTestOnSuccess(Prc0 p) {
@@ -340,7 +342,7 @@ public interface Csc2<T1, T2> {
     default public Csc2<T1, T2> beforeSuccessPassingThroughTest(Prc2<? super T1, ? super T2> p, Csc2<? super T1, ? super T2> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2) -> (p.test(t1, t2) ? this : Csc2.narrow(onFailure)).accept(t1, t2);
+        return (t1, t2) -> (p.test(t1, t2) ? this : Csc2.<T1, T2>narrow(onFailure)).accept(t1, t2);
     }
 
     default public Csc2<T1, T2> beforeSuccessPassingThroughTest(Prc2<? super T1, ? super T2> p) {
@@ -373,7 +375,6 @@ public interface Csc2<T1, T2> {
             catch (Throwable t) {
                 SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
@@ -432,11 +433,10 @@ public interface Csc2<T1, T2> {
                 this.accept(t1, t2);
             }
             catch (Throwable throwable) {
-                Cs2 cons = (Cs2) recover.apply(throwable);
+                Cs2<? super T1, ? super T2> cons = recover.apply(throwable);
                 Objects.requireNonNull(cons, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 cons.accept(t1, t2);
             }
-
         };
     }
 

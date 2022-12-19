@@ -42,7 +42,9 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> narrow(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return p;
+        @SuppressWarnings("unchecked")
+        final Prc5<T1, T2, T3, T4, T5> prc = (Prc5<T1, T2, T3, T4, T5>) p;
+        return prc;
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> empty() {
@@ -58,27 +60,27 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> of1(Prc1<? super T1> f) {
-        return Prc5.narrow(f.ignoring4Rt());
+        return Prc5.<T1, T2, T3, T4, T5>narrow(f.ignoring4Rt());
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> of2(Prc1<? super T2> f) {
-        return Prc5.narrow(f.ignoring3Rt().ignoring1Lt());
+        return Prc5.<T1, T2, T3, T4, T5>narrow(f.ignoring3Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> of3(Prc1<? super T3> f) {
-        return Prc5.narrow(f.ignoring2Rt().ignoring2Lt());
+        return Prc5.<T1, T2, T3, T4, T5>narrow(f.ignoring2Rt().ignoring2Lt());
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> of4(Prc1<? super T4> f) {
-        return Prc5.narrow(f.ignoring1Rt().ignoring3Lt());
+        return Prc5.<T1, T2, T3, T4, T5>narrow(f.ignoring1Rt().ignoring3Lt());
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> of5(Prc1<? super T5> f) {
-        return Prc5.narrow(f.ignoring4Lt());
+        return Prc5.<T1, T2, T3, T4, T5>narrow(f.ignoring4Lt());
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> fromFunction(Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, Boolean> f) {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4) -> f.apply(arg_0, arg_1, arg_2, arg_3, arg_4);
+        return (t1, t2, t3, t4, t5) -> f.apply(t1, t2, t3, t4, t5);
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> fromSupplier(Spc<? extends Boolean> s) {
@@ -86,7 +88,7 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> negate(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return Prc5.narrow(p.negated());
+        return Prc5.<T1, T2, T3, T4, T5>narrow(p.negated());
     }
 
     @SafeVarargs
@@ -114,7 +116,7 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     public static <T1, T2, T3, T4, T5> Prc1<Tuple5<T1, T2, T3, T4, T5>> tuple(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return Prc5.of(p).tupled();
+        return Prc5.<T1, T2, T3, T4, T5>of(p).tupled();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> detuple(Prc1<? super Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5>> p) {
@@ -131,35 +133,35 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore4Rt(Prc1<? super T1> p) {
-        return Prc1.narrow(p).ignoring4Rt();
+        return Prc1.<T1>narrow(p).ignoring4Rt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore4Lt(Prc1<? super T5> p) {
-        return Prc1.narrow(p).ignoring4Lt();
+        return Prc1.<T5>narrow(p).ignoring4Lt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore3Rt(Prc2<? super T1, ? super T2> p) {
-        return Prc2.narrow(p).ignoring3Rt();
+        return Prc2.<T1, T2>narrow(p).ignoring3Rt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore3Lt(Prc2<? super T4, ? super T5> p) {
-        return Prc2.narrow(p).ignoring3Lt();
+        return Prc2.<T4, T5>narrow(p).ignoring3Lt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore2Rt(Prc3<? super T1, ? super T2, ? super T3> p) {
-        return Prc3.narrow(p).ignoring2Rt();
+        return Prc3.<T1, T2, T3>narrow(p).ignoring2Rt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore2Lt(Prc3<? super T3, ? super T4, ? super T5> p) {
-        return Prc3.narrow(p).ignoring2Lt();
+        return Prc3.<T3, T4, T5>narrow(p).ignoring2Lt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore1Rt(Prc4<? super T1, ? super T2, ? super T3, ? super T4> p) {
-        return Prc4.narrow(p).ignoring1Rt();
+        return Prc4.<T1, T2, T3, T4>narrow(p).ignoring1Rt();
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T1, T2, T3, T4, T5> ignore1Lt(Prc4<? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return Prc4.narrow(p).ignoring1Lt();
+        return Prc4.<T2, T3, T4, T5>narrow(p).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Prc5<T1, T2, T3, T4, T5> passRt(Prc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> p, T6 t6) {
@@ -187,7 +189,7 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     public static <T1, T2, T3, T4, T5> Prc5<T5, T4, T3, T2, T1> invert(Prc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return Prc5.narrow(p).inverted();
+        return Prc5.<T1, T2, T3, T4, T5>narrow(p).inverted();
     }
 
     public boolean test(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5) throws Throwable;
@@ -225,11 +227,11 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     default public Fnc5<T1, T2, T3, T4, T5, Boolean> toFunction() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4) -> this.test(arg_0, arg_1, arg_2, arg_3, arg_4);
+        return (t1, t2, t3, t4, t5) -> this.test(t1, t2, t3, t4, t5);
     }
 
     default public Csc5<T1, T2, T3, T4, T5> toConsumer() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4) -> this.test(arg_0, arg_1, arg_2, arg_3, arg_4);
+        return (t1, t2, t3, t4, t5) -> this.test(t1, t2, t3, t4, t5);
     }
 
     default public Prc0 toPredicate(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
@@ -759,7 +761,7 @@ public interface Prc5<T1, T2, T3, T4, T5> extends CheckedFunction5<T1, T2, T3, T
     }
 
     default public Prc5<T1, T2, T3, T4, T5> memoized() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4) -> ((CheckedFunction5) super.memoized()).apply(arg_0, arg_1, arg_2, arg_3, arg_4);
+        return (t1, t2, t3, t4, t5) -> ((CheckedFunction5) super.memoized()).apply(t1, t2, t3, t4, t5);
     }
 
     default public Pr5<T1, T2, T3, T4, T5> recover(Fn1<? super Throwable, ? extends Pr5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5>> recover) {

@@ -39,7 +39,9 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> narrow(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return p;
+        @SuppressWarnings("unchecked")
+        final Pr8<T1, T2, T3, T4, T5, T6, T7, T8> pr = (Pr8<T1, T2, T3, T4, T5, T6, T7, T8>) p;
+        return pr;
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> empty() {
@@ -55,39 +57,39 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of1(Pr1<? super T1> f) {
-        return Pr8.narrow(f.ignoring7Rt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring7Rt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of2(Pr1<? super T2> f) {
-        return Pr8.narrow(f.ignoring6Rt().ignoring1Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring6Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of3(Pr1<? super T3> f) {
-        return Pr8.narrow(f.ignoring5Rt().ignoring2Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring5Rt().ignoring2Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of4(Pr1<? super T4> f) {
-        return Pr8.narrow(f.ignoring4Rt().ignoring3Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring4Rt().ignoring3Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of5(Pr1<? super T5> f) {
-        return Pr8.narrow(f.ignoring3Rt().ignoring4Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring3Rt().ignoring4Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of6(Pr1<? super T6> f) {
-        return Pr8.narrow(f.ignoring2Rt().ignoring5Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring2Rt().ignoring5Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of7(Pr1<? super T7> f) {
-        return Pr8.narrow(f.ignoring1Rt().ignoring6Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring1Rt().ignoring6Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> of8(Pr1<? super T8> f) {
-        return Pr8.narrow(f.ignoring7Lt());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(f.ignoring7Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> fromFunction(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, Boolean> f) {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> f.apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (t1, t2, t3, t4, t5, t6, t7, t8) -> f.apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> fromSupplier(Sp<? extends Boolean> s) {
@@ -95,7 +97,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> negate(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr8.narrow(p.negated());
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(p.negated());
     }
 
     @SafeVarargs
@@ -123,7 +125,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr1<Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> tuple(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr8.of(p).tupled();
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>of(p).tupled();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> detuple(Pr1<? super Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8>> p) {
@@ -132,7 +134,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> uncheck(Prc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
         Objects.requireNonNull(p, "p is null");
-        return Prc8.narrow(p).unchecked();
+        return Prc8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(p).unchecked();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore(Pr0 p) {
@@ -140,63 +142,63 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore7Rt(Pr1<? super T1> p) {
-        return Pr1.narrow(p).ignoring7Rt();
+        return Pr1.<T1>narrow(p).ignoring7Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore7Lt(Pr1<? super T8> p) {
-        return Pr1.narrow(p).ignoring7Lt();
+        return Pr1.<T8>narrow(p).ignoring7Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore6Rt(Pr2<? super T1, ? super T2> p) {
-        return Pr2.narrow(p).ignoring6Rt();
+        return Pr2.<T1, T2>narrow(p).ignoring6Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore6Lt(Pr2<? super T7, ? super T8> p) {
-        return Pr2.narrow(p).ignoring6Lt();
+        return Pr2.<T7, T8>narrow(p).ignoring6Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore5Rt(Pr3<? super T1, ? super T2, ? super T3> p) {
-        return Pr3.narrow(p).ignoring5Rt();
+        return Pr3.<T1, T2, T3>narrow(p).ignoring5Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore5Lt(Pr3<? super T6, ? super T7, ? super T8> p) {
-        return Pr3.narrow(p).ignoring5Lt();
+        return Pr3.<T6, T7, T8>narrow(p).ignoring5Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore4Rt(Pr4<? super T1, ? super T2, ? super T3, ? super T4> p) {
-        return Pr4.narrow(p).ignoring4Rt();
+        return Pr4.<T1, T2, T3, T4>narrow(p).ignoring4Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore4Lt(Pr4<? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr4.narrow(p).ignoring4Lt();
+        return Pr4.<T5, T6, T7, T8>narrow(p).ignoring4Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore3Rt(Pr5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
-        return Pr5.narrow(p).ignoring3Rt();
+        return Pr5.<T1, T2, T3, T4, T5>narrow(p).ignoring3Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore3Lt(Pr5<? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr5.narrow(p).ignoring3Lt();
+        return Pr5.<T4, T5, T6, T7, T8>narrow(p).ignoring3Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore2Rt(Pr6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> p) {
-        return Pr6.narrow(p).ignoring2Rt();
+        return Pr6.<T1, T2, T3, T4, T5, T6>narrow(p).ignoring2Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore2Lt(Pr6<? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr6.narrow(p).ignoring2Lt();
+        return Pr6.<T3, T4, T5, T6, T7, T8>narrow(p).ignoring2Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore1Rt(Pr7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> p) {
-        return Pr7.narrow(p).ignoring1Rt();
+        return Pr7.<T1, T2, T3, T4, T5, T6, T7>narrow(p).ignoring1Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T1, T2, T3, T4, T5, T6, T7, T8> ignore1Lt(Pr7<? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr7.narrow(p).ignoring1Lt();
+        return Pr7.<T2, T3, T4, T5, T6, T7, T8>narrow(p).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Pr8<T8, T7, T6, T5, T4, T3, T2, T1> invert(Pr8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> p) {
-        return Pr8.narrow(p).inverted();
+        return Pr8.<T1, T2, T3, T4, T5, T6, T7, T8>narrow(p).inverted();
     }
 
     public boolean test(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7, T8 var8);
@@ -262,11 +264,11 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     default public Fn8<T1, T2, T3, T4, T5, T6, T7, T8, Boolean> toFunction() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> this.test(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (t1, t2, t3, t4, t5, t6, t7, t8) -> this.test(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Cs8<T1, T2, T3, T4, T5, T6, T7, T8> toConsumer() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> this.test(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (t1, t2, t3, t4, t5, t6, t7, t8) -> this.test(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     default public Pr0 toPredicate(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
@@ -772,7 +774,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     default public Prc8<T1, T2, T3, T4, T5, T6, T7, T8> checked() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> this.test(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return this::test;
     }
 
     default public Pr8<T1, T2, T3, T4, T5, T6, T7, T8> negated() {
@@ -796,7 +798,7 @@ public interface Pr8<T1, T2, T3, T4, T5, T6, T7, T8> extends Function8<T1, T2, T
     }
 
     default public Pr8<T1, T2, T3, T4, T5, T6, T7, T8> memoized() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7) -> ((Function8) super.memoized()).apply(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6, arg_7);
+        return (t1, t2, t3, t4, t5, t6, t7, t8) -> ((Function8) super.memoized()).apply(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
 }

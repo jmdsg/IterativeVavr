@@ -36,7 +36,9 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
     }
 
     public static <R> Spc<R> narrow(Spc<? extends R> s) {
-        return s;
+        @SuppressWarnings("unchecked")
+        final Spc<R> spc = (Spc<R>) s;
+        return spc;
     }
 
     public static <R> Spc<R> empty() {
@@ -53,44 +55,44 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     public static <R> Spc<R> checked(Sp<? extends R> s) {
         Objects.requireNonNull(s, "s is null");
-        return Sp.narrow(s).checked();
+        return Sp.<R>narrow(s).checked();
     }
 
     public static <T1, R> Spc<R> pass(Fnc1<? super T1, ? extends R> f, T1 t1) {
-        return Fnc1.narrow(f).toSupplier(t1);
+        return Fnc1.<T1, R>narrow(f).toSupplier(t1);
     }
 
     public static <T1, T2, R> Spc<R> pass(Fnc2<? super T1, ? super T2, ? extends R> f, T1 t1, T2 t2) {
-        return Fnc2.narrow(f).toSupplier(t1, t2);
+        return Fnc2.<T1, T2, R>narrow(f).toSupplier(t1, t2);
     }
 
     public static <T1, T2, T3, R> Spc<R> pass(Fnc3<? super T1, ? super T2, ? super T3, ? extends R> f, T1 t1, T2 t2, T3 t3) {
-        return Fnc3.narrow(f).toSupplier(t1, t2, t3);
+        return Fnc3.<T1, T2, T3, R>narrow(f).toSupplier(t1, t2, t3);
     }
 
     public static <T1, T2, T3, T4, R> Spc<R> pass(Fnc4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4) {
-        return Fnc4.narrow(f).toSupplier(t1, t2, t3, t4);
+        return Fnc4.<T1, T2, T3, T4, R>narrow(f).toSupplier(t1, t2, t3, t4);
     }
 
     public static <T1, T2, T3, T4, T5, R> Spc<R> pass(Fnc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return Fnc5.narrow(f).toSupplier(t1, t2, t3, t4, t5);
+        return Fnc5.<T1, T2, T3, T4, T5, R>narrow(f).toSupplier(t1, t2, t3, t4, t5);
     }
 
     public static <T1, T2, T3, T4, T5, T6, R> Spc<R> pass(Fnc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return Fnc6.narrow(f).toSupplier(t1, t2, t3, t4, t5, t6);
+        return Fnc6.<T1, T2, T3, T4, T5, T6, R>narrow(f).toSupplier(t1, t2, t3, t4, t5, t6);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, R> Spc<R> pass(Fnc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return Fnc7.narrow(f).toSupplier(t1, t2, t3, t4, t5, t6, t7);
+        return Fnc7.<T1, T2, T3, T4, T5, T6, T7, R>narrow(f).toSupplier(t1, t2, t3, t4, t5, t6, t7);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Spc<R> pass(Fnc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return Fnc8.narrow(f).toSupplier(t1, t2, t3, t4, t5, t6, t7, t8);
+        return Fnc8.<T1, T2, T3, T4, T5, T6, T7, T8, R>narrow(f).toSupplier(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     public static <R> Sp<Option<R>> lift(Spc<? extends R> s) {
         Objects.requireNonNull(s, "s is null");
-        return Spc.liftTry(s).afterApply(Value::toOption);
+        return Spc.<R>liftTry(s).afterApply(Value::toOption);
     }
 
     public static <R> Sp<Try<R>> liftTry(Spc<? extends R> s) {
@@ -128,7 +130,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     @Override
     default public <V> Spc<V> afterApply(Fnc1<? super R, ? extends V> f) {
-        return this.afterApplyTo(f).toSupplier();
+        return this.<V>afterApplyTo(f).toSupplier();
     }
 
     default public <V> Fnc0<V> afterApplyTo(Fnc1<? super R, ? extends V> f) {
@@ -138,7 +140,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     @Override
     default public <V> Spc<V> afterApply(Fnc0<? extends V> f) {
-        return this.afterApplyTo(f).toSupplier();
+        return this.<V>afterApplyTo(f).toSupplier();
     }
 
     default public <V> Fnc0<V> afterApplyTo(Fnc0<? extends V> f) {
@@ -291,17 +293,17 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
 
     @Override
     default public Spc<R> curried() {
-        return ((Fnc0) Fnc0.super.curried())::apply;
+        return Fnc0.super.curried()::apply;
     }
 
     @Override
     default public Spc<R> reversed() {
-        return ((Fnc0) Fnc0.super.reversed())::apply;
+        return Fnc0.super.reversed()::apply;
     }
 
     @Override
     default public Spc<R> memoized() {
-        return ((Fnc0) Fnc0.super.memoized())::apply;
+        return Fnc0.super.memoized()::apply;
     }
 
     default public Spc<R> recover(Fn1<? super Throwable, ? extends Spc<? extends R>> recover) {
@@ -311,7 +313,7 @@ public interface Spc<R> extends CheckedFunction0<R>, Fnc0<R> {
                 return this.get();
             }
             catch (Throwable throwable) {
-                Spc supp = (Spc) recover.apply(throwable);
+                Spc<? extends R> supp = recover.apply(throwable);
                 Objects.requireNonNull(supp, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 return supp.get();
             }

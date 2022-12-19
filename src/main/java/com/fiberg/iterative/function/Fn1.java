@@ -30,7 +30,9 @@ import java.util.function.Function;
 public interface Fn1<T1, R> extends Function1<T1, R> {
 
     public static <T1, R> Fn1<T1, R> narrow(Fn1<? super T1, ? extends R> f) {
-        return f;
+        @SuppressWarnings("unchecked")
+        final Fn1<T1, R> fn = (Fn1<T1, R>) f;
+        return fn;
     }
 
     public static <T1, R> Fn1<T1, R> empty() {
@@ -50,7 +52,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     }
 
     public static <T1, R> Fn1<Tuple1<T1>, R> tuple(Fn1<? super T1, ? extends R> f) {
-        return Fn1.of(f).tupled();
+        return Fn1.<T1, R>of(f).tupled();
     }
 
     public static <T1, R> Fn1<T1, R> detuple(Fn1<? super Tuple1<? extends T1>, ? extends R> f) {
@@ -59,15 +61,15 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
 
     public static <T1, R> Fn1<T1, R> uncheck(Fnc1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc1.narrow(f).unchecked();
+        return Fnc1.<T1, R>narrow(f).unchecked();
     }
 
     public static <T1, R> Fn1<T1, R> ignore(Fn0<? extends R> f) {
-        return Fn0.narrow(f).ignoring1();
+        return Fn0.<R>narrow(f).ignoring1();
     }
 
     public static <T1, R> Fn1<T1, R> passThroughNull(Fn1<? super T1, ? extends R> f) {
-        return Fn1.narrow(f).passingThroughNull();
+        return Fn1.<T1, R>narrow(f).passingThroughNull();
     }
 
     public static <T1, T2, R> Fn1<T1, R> passRt(Fn2<? super T1, ? super T2, ? extends R> f, T2 t2) {
@@ -149,7 +151,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     }
 
     default public Cs1<T1> toConsumer() {
-        return ((Fn1) this)::apply;
+        return this::apply;
     }
 
     default public Sp<R> toSupplier(T1 t1) {
@@ -425,7 +427,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     }
 
     default public Fnc1<T1, R> checked() {
-        return ((Fn1) this)::apply;
+        return this::apply;
     }
 
     default public <I1> Fn2<I1, T1, R> ignoring1Lt() {

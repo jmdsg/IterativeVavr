@@ -39,7 +39,9 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> narrow(Pr4<? super T1, ? super T2, ? super T3, ? super T4> p) {
-        return p;
+        @SuppressWarnings("unchecked")
+        final Pr4<T1, T2, T3, T4> pr = (Pr4<T1, T2, T3, T4>) p;
+        return pr;
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> empty() {
@@ -55,23 +57,23 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> of1(Pr1<? super T1> f) {
-        return Pr4.narrow(f.ignoring3Rt());
+        return Pr4.<T1, T2, T3, T4>narrow(f.ignoring3Rt());
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> of2(Pr1<? super T2> f) {
-        return Pr4.narrow(f.ignoring2Rt().ignoring1Lt());
+        return Pr4.<T1, T2, T3, T4>narrow(f.ignoring2Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> of3(Pr1<? super T3> f) {
-        return Pr4.narrow(f.ignoring1Rt().ignoring2Lt());
+        return Pr4.<T1, T2, T3, T4>narrow(f.ignoring1Rt().ignoring2Lt());
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> of4(Pr1<? super T4> f) {
-        return Pr4.narrow(f.ignoring3Lt());
+        return Pr4.<T1, T2, T3, T4>narrow(f.ignoring3Lt());
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> fromFunction(Fn4<? super T1, ? super T2, ? super T3, ? super T4, Boolean> f) {
-        return (arg_0, arg_1, arg_2, arg_3) -> f.apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> f.apply(t1, t2, t3, t4);
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> fromSupplier(Sp<? extends Boolean> s) {
@@ -79,7 +81,7 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> negate(Pr4<? super T1, ? super T2, ? super T3, ? super T4> p) {
-        return Pr4.narrow(p.negated());
+        return Pr4.<T1, T2, T3, T4>narrow(p.negated());
     }
 
     @SafeVarargs
@@ -107,7 +109,7 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     public static <T1, T2, T3, T4> Pr1<Tuple4<T1, T2, T3, T4>> tuple(Pr4<? super T1, ? super T2, ? super T3, ? super T4> p) {
-        return Pr4.of(p).tupled();
+        return Pr4.<T1, T2, T3, T4>of(p).tupled();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> detuple(Pr1<? super Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4>> p) {
@@ -116,7 +118,7 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> uncheck(Prc4<? super T1, ? super T2, ? super T3, ? super T4> p) {
         Objects.requireNonNull(p, "p is null");
-        return Prc4.narrow(p).unchecked();
+        return Prc4.<T1, T2, T3, T4>narrow(p).unchecked();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore(Pr0 p) {
@@ -124,27 +126,27 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore3Rt(Pr1<? super T1> p) {
-        return Pr1.narrow(p).ignoring3Rt();
+        return Pr1.<T1>narrow(p).ignoring3Rt();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore3Lt(Pr1<? super T4> p) {
-        return Pr1.narrow(p).ignoring3Lt();
+        return Pr1.<T4>narrow(p).ignoring3Lt();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore2Rt(Pr2<? super T1, ? super T2> p) {
-        return Pr2.narrow(p).ignoring2Rt();
+        return Pr2.<T1, T2>narrow(p).ignoring2Rt();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore2Lt(Pr2<? super T3, ? super T4> p) {
-        return Pr2.narrow(p).ignoring2Lt();
+        return Pr2.<T3, T4>narrow(p).ignoring2Lt();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore1Rt(Pr3<? super T1, ? super T2, ? super T3> p) {
-        return Pr3.narrow(p).ignoring1Rt();
+        return Pr3.<T1, T2, T3>narrow(p).ignoring1Rt();
     }
 
     public static <T1, T2, T3, T4> Pr4<T1, T2, T3, T4> ignore1Lt(Pr3<? super T2, ? super T3, ? super T4> p) {
-        return Pr3.narrow(p).ignoring1Lt();
+        return Pr3.<T2, T3, T4>narrow(p).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4, T5> Pr4<T1, T2, T3, T4> passRt(Pr5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p, T5 t5) {
@@ -184,7 +186,7 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     public static <T1, T2, T3, T4> Pr4<T4, T3, T2, T1> invert(Pr4<? super T1, ? super T2, ? super T3, ? super T4> p) {
-        return Pr4.narrow(p).inverted();
+        return Pr4.<T1, T2, T3, T4>narrow(p).inverted();
     }
 
     public boolean test(T1 var1, T2 var2, T3 var3, T4 var4);
@@ -214,11 +216,11 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     default public Fn4<T1, T2, T3, T4, Boolean> toFunction() {
-        return (arg_0, arg_1, arg_2, arg_3) -> this.test(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> this.test(t1, t2, t3, t4);
     }
 
     default public Cs4<T1, T2, T3, T4> toConsumer() {
-        return (arg_0, arg_1, arg_2, arg_3) -> this.test(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> this.test(t1, t2, t3, t4);
     }
 
     default public Pr0 toPredicate(T1 t1, T2 t2, T3 t3, T4 t4) {
@@ -720,7 +722,7 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     default public Prc4<T1, T2, T3, T4> checked() {
-        return (arg_0, arg_1, arg_2, arg_3) -> this.test(arg_0, arg_1, arg_2, arg_3);
+        return this::test;
     }
 
     default public Fn1<T1, Fn1<T2, Fn1<T3, Pr1<T4>>>> currying() {
@@ -780,7 +782,7 @@ public interface Pr4<T1, T2, T3, T4> extends Function4<T1, T2, T3, T4, Boolean> 
     }
 
     default public Pr4<T1, T2, T3, T4> memoized() {
-        return (arg_0, arg_1, arg_2, arg_3) -> ((Function4) super.memoized()).apply(arg_0, arg_1, arg_2, arg_3);
+        return (t1, t2, t3, t4) -> ((Function4) super.memoized()).apply(t1, t2, t3, t4);
     }
 
 }

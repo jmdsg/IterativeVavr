@@ -183,11 +183,9 @@ interface IterativeHandler {
     }
 
     public static <T1> Iterable<Stream<T1>> clean(Iterable<? extends Stream<? extends T1>> elem) {
-        @SuppressWarnings("unchecked")
-        final Iterable<Stream<T1>> iterable = (Iterable<Stream<T1>>) elem;
-        return SimpleIterative.of(iterable)
+        return SimpleIterative.<Stream<? extends T1>>of(elem)
                 .filter(Pr1.negate(Traversable::isEmpty))
-                .map(stream -> stream.map(IterativeInternals::identity))
+                .map(stream -> stream.<T1>map(IterativeInternals::identity))
                 .toIterable();
     }
 

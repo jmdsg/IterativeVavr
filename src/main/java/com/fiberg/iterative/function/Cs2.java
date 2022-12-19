@@ -31,7 +31,9 @@ import java.util.function.BiConsumer;
 public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     public static <T1, T2> Cs2<T1, T2> narrow(Cs2<? super T1, ? super T2> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Cs2<T1, T2> cs = (Cs2<T1, T2>) c;
+        return cs;
     }
 
     public static <T1, T2> Cs2<T1, T2> empty() {
@@ -43,15 +45,15 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     }
 
     public static <T1, T2> Cs2<T1, T2> of1(Cs1<? super T1> c) {
-        return Cs2.narrow(c.ignoring1Rt());
+        return Cs2.<T1, T2>narrow(c.ignoring1Rt());
     }
 
     public static <T1, T2> Cs2<T1, T2> of2(Cs1<? super T2> c) {
-        return Cs2.narrow(c.ignoring1Lt());
+        return Cs2.<T1, T2>narrow(c.ignoring1Lt());
     }
 
     public static <T1, T2> Cs1<Tuple2<T1, T2>> tuple(Cs2<? super T1, ? super T2> c) {
-        return Cs2.of(c).tupled();
+        return Cs2.<T1, T2>of(c).tupled();
     }
 
     public static <T1, T2> Cs2<T1, T2> detuple(Cs1<? super Tuple2<? extends T1, ? extends T2>> c) {
@@ -60,15 +62,15 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
 
     public static <T1, T2> Cs2<T1, T2> uncheck(Csc2<? super T1, ? super T2> c) {
         Objects.requireNonNull(c, "c is null");
-        return Csc2.narrow(c).unchecked();
+        return Csc2.<T1, T2>narrow(c).unchecked();
     }
 
     public static <T1, T2> Cs2<T1, T2> ignoreRt(Cs1<? super T1> c) {
-        return Cs1.narrow(c).ignoring1Rt();
+        return Cs1.<T1>narrow(c).ignoring1Rt();
     }
 
     public static <T1, T2> Cs2<T1, T2> ignoreLt(Cs1<? super T2> c) {
-        return Cs1.narrow(c).ignoring1Lt();
+        return Cs1.<T2>narrow(c).ignoring1Lt();
     }
 
     public static <T1, T2, T3> Cs2<T1, T2> passRt(Cs3<? super T1, ? super T2, ? super T3> c, T3 t3) {
@@ -124,7 +126,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     }
 
     public static <T1, T2> Cs2<T2, T1> invert(Cs2<? super T1, ? super T2> c) {
-        return Cs2.narrow(c).inverted();
+        return Cs2.<T1, T2>narrow(c).inverted();
     }
 
     default public Cs1<T2> acceptLt(T1 t1) {
@@ -248,7 +250,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     default public Cs2<T1, T2> beforeTestOnSuccess(Pr0 p, Cs2<? super T1, ? super T2> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2) -> (p.test() ? this : Cs2.narrow(onFailure)).accept(t1, t2);
+        return (t1, t2) -> (p.test() ? this : Cs2.<T1, T2>narrow(onFailure)).accept(t1, t2);
     }
 
     default public Cs2<T1, T2> beforeTestOnSuccess(Pr0 p) {
@@ -341,7 +343,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     default public Cs2<T1, T2> beforeSuccessPassingThroughTest(Pr2<? super T1, ? super T2> p, Cs2<? super T1, ? super T2> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2) -> (p.test(t1, t2) ? this : Cs2.narrow(onFailure)).accept(t1, t2);
+        return (t1, t2) -> (p.test(t1, t2) ? this : Cs2.<T1, T2>narrow(onFailure)).accept(t1, t2);
     }
 
     default public Cs2<T1, T2> beforeSuccessPassingThroughTest(Pr2<? super T1, ? super T2> p) {
@@ -367,7 +369,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     }
 
     default public Csc2<T1, T2> checked() {
-        return (arg_0, arg_1) -> this.accept(arg_0, arg_1);
+        return this::accept;
     }
 
     default public <I1> Cs3<I1, T1, T2> ignoring1Lt() {
@@ -421,7 +423,7 @@ public interface Cs2<T1, T2> extends BiConsumer<T1, T2> {
     @Override
     default public Cs2<T1, T2> andThen(BiConsumer<? super T1, ? super T2> after) {
         Objects.requireNonNull(after, "after is null");
-        return (arg_0, arg_1) -> BiConsumer.super.andThen(after).accept(arg_0, arg_1);
+        return (t1, t2) -> BiConsumer.super.andThen(after).accept(t1, t2);
     }
 
 }

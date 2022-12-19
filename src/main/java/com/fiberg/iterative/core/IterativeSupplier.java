@@ -38,9 +38,7 @@ interface IterativeSupplier {
             private final Iterative8<T1, A1, A2, A3, A4, A5, A6, A7> iterative;
 
             Iterative1Supplier7Impl(Iterative8<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5, ? extends A6, ? extends A7> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative8<T1, A1, A2, A3, A4, A5, A6, A7> iter = (Iterative8<T1, A1, A2, A3, A4, A5, A6, A7>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override
@@ -201,9 +199,7 @@ interface IterativeSupplier {
             private final Iterative7<T1, A1, A2, A3, A4, A5, A6> iterative;
 
             Iterative1Supplier6Impl(Iterative7<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5, ? extends A6> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative7<T1, A1, A2, A3, A4, A5, A6> iter = (Iterative7<T1, A1, A2, A3, A4, A5, A6>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override
@@ -394,9 +390,7 @@ interface IterativeSupplier {
             private final Iterative6<T1, A1, A2, A3, A4, A5> iterative;
 
             Iterative1Supplier5Impl(Iterative6<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4, ? extends A5> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative6<T1, A1, A2, A3, A4, A5> iter = (Iterative6<T1, A1, A2, A3, A4, A5>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override
@@ -617,9 +611,7 @@ interface IterativeSupplier {
             private final Iterative5<T1, A1, A2, A3, A4> iterative;
 
             Iterative1Supplier4Impl(Iterative5<? extends T1, ? extends A1, ? extends A2, ? extends A3, ? extends A4> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative5<T1, A1, A2, A3, A4> iter = (Iterative5<T1, A1, A2, A3, A4>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override
@@ -870,9 +862,7 @@ interface IterativeSupplier {
             private final Iterative4<T1, A1, A2, A3> iterative;
 
             Iterative1Supplier3Impl(Iterative4<? extends T1, ? extends A1, ? extends A2, ? extends A3> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative4<T1, A1, A2, A3> iter = (Iterative4<T1, A1, A2, A3>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override
@@ -1153,9 +1143,7 @@ interface IterativeSupplier {
             private final Iterative3<T1, A1, A2> iterative;
 
             Iterative1Supplier2Impl(Iterative3<? extends T1, ? extends A1, ? extends A2> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative3<T1, A1, A2> iter = (Iterative3<T1, A1, A2>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override
@@ -1460,9 +1448,7 @@ interface IterativeSupplier {
             private final Iterative2<T1, A1> iterative;
 
             Iterative1Supplier1Impl(Iterative2<? extends T1, ? extends A1> iterative) {
-                @SuppressWarnings("unchecked")
-                final Iterative2<T1, A1> iter = (Iterative2<T1, A1>) iterative;
-                this.iterative = iter;
+                this.iterative = Iterative.narrow(iterative);
             }
 
             @Override

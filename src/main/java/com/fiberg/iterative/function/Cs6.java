@@ -30,7 +30,9 @@ import java.util.Objects;
 public interface Cs6<T1, T2, T3, T4, T5, T6> {
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> narrow(Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Cs6<T1, T2, T3, T4, T5, T6> cs = (Cs6<T1, T2, T3, T4, T5, T6>) c;
+        return cs;
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> empty() {
@@ -42,31 +44,31 @@ public interface Cs6<T1, T2, T3, T4, T5, T6> {
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> of1(Cs1<? super T1> f) {
-        return Cs6.narrow(f.ignoring5Rt());
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(f.ignoring5Rt());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> of2(Cs1<? super T2> f) {
-        return Cs6.narrow(f.ignoring4Rt().ignoring1Lt());
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(f.ignoring4Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> of3(Cs1<? super T3> f) {
-        return Cs6.narrow(f.ignoring3Rt().ignoring2Lt());
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(f.ignoring3Rt().ignoring2Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> of4(Cs1<? super T4> f) {
-        return Cs6.narrow(f.ignoring2Rt().ignoring3Lt());
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(f.ignoring2Rt().ignoring3Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> of5(Cs1<? super T5> f) {
-        return Cs6.narrow(f.ignoring1Rt().ignoring4Lt());
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(f.ignoring1Rt().ignoring4Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> of6(Cs1<? super T6> f) {
-        return Cs6.narrow(f.ignoring5Lt());
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(f.ignoring5Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs1<Tuple6<T1, T2, T3, T4, T5, T6>> tuple(Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
-        return Cs6.of(c).tupled();
+        return Cs6.<T1, T2, T3, T4, T5, T6>of(c).tupled();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> detuple(Cs1<? super Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6>> c) {
@@ -75,47 +77,47 @@ public interface Cs6<T1, T2, T3, T4, T5, T6> {
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> uncheck(Csc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
         Objects.requireNonNull(c, "c is null");
-        return Csc6.narrow(c).unchecked();
+        return Csc6.<T1, T2, T3, T4, T5, T6>narrow(c).unchecked();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore5Rt(Cs1<? super T1> c) {
-        return Cs1.narrow(c).ignoring5Rt();
+        return Cs1.<T1>narrow(c).ignoring5Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore5Lt(Cs1<? super T6> c) {
-        return Cs1.narrow(c).ignoring5Lt();
+        return Cs1.<T6>narrow(c).ignoring5Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore4Rt(Cs2<? super T1, ? super T2> c) {
-        return Cs2.narrow(c).ignoring4Rt();
+        return Cs2.<T1, T2>narrow(c).ignoring4Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore4Lt(Cs2<? super T5, ? super T6> c) {
-        return Cs2.narrow(c).ignoring4Lt();
+        return Cs2.<T5, T6>narrow(c).ignoring4Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore3Rt(Cs3<? super T1, ? super T2, ? super T3> c) {
-        return Cs3.narrow(c).ignoring3Rt();
+        return Cs3.<T1, T2, T3>narrow(c).ignoring3Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore3Lt(Cs3<? super T4, ? super T5, ? super T6> c) {
-        return Cs3.narrow(c).ignoring3Lt();
+        return Cs3.<T4, T5, T6>narrow(c).ignoring3Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore2Rt(Cs4<? super T1, ? super T2, ? super T3, ? super T4> c) {
-        return Cs4.narrow(c).ignoring2Rt();
+        return Cs4.<T1, T2, T3, T4>narrow(c).ignoring2Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore2Lt(Cs4<? super T3, ? super T4, ? super T5, ? super T6> c) {
-        return Cs4.narrow(c).ignoring2Lt();
+        return Cs4.<T3, T4, T5, T6>narrow(c).ignoring2Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore1Rt(Cs5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> c) {
-        return Cs5.narrow(c).ignoring1Rt();
+        return Cs5.<T1, T2, T3, T4, T5>narrow(c).ignoring1Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T1, T2, T3, T4, T5, T6> ignore1Lt(Cs5<? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
-        return Cs5.narrow(c).ignoring1Lt();
+        return Cs5.<T2, T3, T4, T5, T6>narrow(c).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Cs6<T1, T2, T3, T4, T5, T6> passRt(Cs7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> c, T7 t7) {
@@ -139,7 +141,7 @@ public interface Cs6<T1, T2, T3, T4, T5, T6> {
     }
 
     public static <T1, T2, T3, T4, T5, T6> Cs6<T6, T5, T4, T3, T2, T1> invert(Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
-        return Cs6.narrow(c).inverted();
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(c).inverted();
     }
 
     public void accept(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6);
@@ -297,7 +299,7 @@ public interface Cs6<T1, T2, T3, T4, T5, T6> {
     default public Cs6<T1, T2, T3, T4, T5, T6> beforeTestOnSuccess(Pr0 p, Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6) -> (p.test() ? this : Cs6.narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6);
+        return (t1, t2, t3, t4, t5, t6) -> (p.test() ? this : Cs6.<T1, T2, T3, T4, T5, T6>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6);
     }
 
     default public Cs6<T1, T2, T3, T4, T5, T6> beforeTestOnSuccess(Pr0 p) {
@@ -390,7 +392,7 @@ public interface Cs6<T1, T2, T3, T4, T5, T6> {
     default public Cs6<T1, T2, T3, T4, T5, T6> beforeSuccessPassingThroughTest(Pr6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> p, Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6) -> (p.test(t1, t2, t3, t4, t5, t6) ? this : Cs6.narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6);
+        return (t1, t2, t3, t4, t5, t6) -> (p.test(t1, t2, t3, t4, t5, t6) ? this : Cs6.<T1, T2, T3, T4, T5, T6>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6);
     }
 
     default public Cs6<T1, T2, T3, T4, T5, T6> beforeSuccessPassingThroughTest(Pr6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> p) {
@@ -416,7 +418,7 @@ public interface Cs6<T1, T2, T3, T4, T5, T6> {
     }
 
     default public Csc6<T1, T2, T3, T4, T5, T6> checked() {
-        return (arg_0, arg_1, arg_2, arg_3, arg_4, arg_5) -> this.accept(arg_0, arg_1, arg_2, arg_3, arg_4, arg_5);
+        return this::accept;
     }
 
     default public <I1> Cs7<I1, T1, T2, T3, T4, T5, T6> ignoring1Lt() {

@@ -32,7 +32,9 @@ import java.util.Objects;
 public interface Csc7<T1, T2, T3, T4, T5, T6, T7> {
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> narrow(Csc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Csc7<T1, T2, T3, T4, T5, T6, T7> csc = (Csc7<T1, T2, T3, T4, T5, T6, T7>) c;
+        return csc;
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> empty() {
@@ -44,35 +46,35 @@ public interface Csc7<T1, T2, T3, T4, T5, T6, T7> {
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of1(Csc1<? super T1> c) {
-        return Csc7.narrow(c.ignoring6Rt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring6Rt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of2(Csc1<? super T2> c) {
-        return Csc7.narrow(c.ignoring5Rt().ignoring1Lt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring5Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of3(Csc1<? super T3> c) {
-        return Csc7.narrow(c.ignoring4Rt().ignoring2Lt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring4Rt().ignoring2Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of4(Csc1<? super T4> c) {
-        return Csc7.narrow(c.ignoring3Rt().ignoring3Lt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring3Rt().ignoring3Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of5(Csc1<? super T5> c) {
-        return Csc7.narrow(c.ignoring2Rt().ignoring4Lt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring2Rt().ignoring4Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of6(Csc1<? super T6> c) {
-        return Csc7.narrow(c.ignoring1Rt().ignoring5Lt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring1Rt().ignoring5Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> of7(Csc1<? super T7> c) {
-        return Csc7.narrow(c.ignoring6Lt());
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c.ignoring6Lt());
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc1<Tuple7<T1, T2, T3, T4, T5, T6, T7>> tuple(Csc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> c) {
-        return Csc7.of(c).tupled();
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>of(c).tupled();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> detuple(Csc1<? super Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7>> c) {
@@ -85,51 +87,51 @@ public interface Csc7<T1, T2, T3, T4, T5, T6, T7> {
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore6Rt(Csc1<? super T1> c) {
-        return Csc1.narrow(c).ignoring6Rt();
+        return Csc1.<T1>narrow(c).ignoring6Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore6Lt(Csc1<? super T7> c) {
-        return Csc1.narrow(c).ignoring6Lt();
+        return Csc1.<T7>narrow(c).ignoring6Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore5Rt(Csc2<? super T1, ? super T2> c) {
-        return Csc2.narrow(c).ignoring5Rt();
+        return Csc2.<T1, T2>narrow(c).ignoring5Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore5Lt(Csc2<? super T6, ? super T7> c) {
-        return Csc2.narrow(c).ignoring5Lt();
+        return Csc2.<T6, T7>narrow(c).ignoring5Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore4Rt(Csc3<? super T1, ? super T2, ? super T3> c) {
-        return Csc3.narrow(c).ignoring4Rt();
+        return Csc3.<T1, T2, T3>narrow(c).ignoring4Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore4Lt(Csc3<? super T5, ? super T6, ? super T7> c) {
-        return Csc3.narrow(c).ignoring4Lt();
+        return Csc3.<T5, T6, T7>narrow(c).ignoring4Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore3Rt(Csc4<? super T1, ? super T2, ? super T3, ? super T4> c) {
-        return Csc4.narrow(c).ignoring3Rt();
+        return Csc4.<T1, T2, T3, T4>narrow(c).ignoring3Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore3Lt(Csc4<? super T4, ? super T5, ? super T6, ? super T7> c) {
-        return Csc4.narrow(c).ignoring3Lt();
+        return Csc4.<T4, T5, T6, T7>narrow(c).ignoring3Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore2Rt(Csc5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> c) {
-        return Csc5.narrow(c).ignoring2Rt();
+        return Csc5.<T1, T2, T3, T4, T5>narrow(c).ignoring2Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore2Lt(Csc5<? super T3, ? super T4, ? super T5, ? super T6, ? super T7> c) {
-        return Csc5.narrow(c).ignoring2Lt();
+        return Csc5.<T3, T4, T5, T6, T7>narrow(c).ignoring2Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore1Rt(Csc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
-        return Csc6.narrow(c).ignoring1Rt();
+        return Csc6.<T1, T2, T3, T4, T5, T6>narrow(c).ignoring1Rt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T1, T2, T3, T4, T5, T6, T7> ignore1Lt(Csc6<? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> c) {
-        return Csc6.narrow(c).ignoring1Lt();
+        return Csc6.<T2, T3, T4, T5, T6, T7>narrow(c).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8> Csc7<T1, T2, T3, T4, T5, T6, T7> passRt(Csc8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8> c, T8 t8) {
@@ -141,7 +143,7 @@ public interface Csc7<T1, T2, T3, T4, T5, T6, T7> {
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7> Csc7<T7, T6, T5, T4, T3, T2, T1> invert(Csc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> c) {
-        return Csc7.narrow(c).inverted();
+        return Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(c).inverted();
     }
 
     public void accept(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7) throws Throwable;
@@ -307,7 +309,7 @@ public interface Csc7<T1, T2, T3, T4, T5, T6, T7> {
     default public Csc7<T1, T2, T3, T4, T5, T6, T7> beforeTestOnSuccess(Prc0 p, Csc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6, t7) -> (p.test() != false ? this : Csc7.narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6, t7);
+        return (t1, t2, t3, t4, t5, t6, t7) -> (p.test() != false ? this : Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6, t7);
     }
 
     default public Csc7<T1, T2, T3, T4, T5, T6, T7> beforeTestOnSuccess(Prc0 p) {
@@ -400,7 +402,7 @@ public interface Csc7<T1, T2, T3, T4, T5, T6, T7> {
     default public Csc7<T1, T2, T3, T4, T5, T6, T7> beforeSuccessPassingThroughTest(Prc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> p, Csc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3, t4, t5, t6, t7) -> (p.test(t1, t2, t3, t4, t5, t6, t7) ? this : Csc7.narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6, t7);
+        return (t1, t2, t3, t4, t5, t6, t7) -> (p.test(t1, t2, t3, t4, t5, t6, t7) ? this : Csc7.<T1, T2, T3, T4, T5, T6, T7>narrow(onFailure)).accept(t1, t2, t3, t4, t5, t6, t7);
     }
 
     default public Csc7<T1, T2, T3, T4, T5, T6, T7> beforeSuccessPassingThroughTest(Prc7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7> p) {

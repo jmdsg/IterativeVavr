@@ -40,7 +40,9 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     public static <T1> Prc1<T1> narrow(Prc1<? super T1> p) {
-        return p;
+        @SuppressWarnings("unchecked")
+        final Prc1<T1> prc = (Prc1<T1>) p;
+        return prc;
     }
 
     public static <T1> Prc1<T1> empty() {
@@ -68,7 +70,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     public static <T1> Prc1<T1> negate(Prc1<? super T1> p) {
-        return Prc1.narrow(p.negated());
+        return Prc1.<T1>narrow(p.negated());
     }
 
     @SafeVarargs
@@ -96,7 +98,7 @@ public interface Prc1<T1> extends CheckedPredicate<T1>, CheckedFunction1<T1, Boo
     }
 
     public static <T1> Prc1<Tuple1<T1>> tuple(Prc1<? super T1> p) {
-        return Prc1.of(p).tupled();
+        return Prc1.<T1>of(p).tupled();
     }
 
     public static <T1> Prc1<T1> detuple(Prc1<? super Tuple1<? extends T1>> p) {

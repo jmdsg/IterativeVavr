@@ -39,7 +39,9 @@ public interface Pr1<T1> extends Predicate<T1>, Function1<T1, Boolean> {
     }
 
     public static <T1> Pr1<T1> narrow(Pr1<? super T1> p) {
-        return p;
+        @SuppressWarnings("unchecked")
+        final Pr1<T1> pr = (Pr1<T1>) p;
+        return pr;
     }
 
     public static <T1> Pr1<T1> empty() {
@@ -67,7 +69,7 @@ public interface Pr1<T1> extends Predicate<T1>, Function1<T1, Boolean> {
     }
 
     public static <T1> Pr1<T1> negate(Pr1<? super T1> p) {
-        return Pr1.narrow(p.negated());
+        return Pr1.<T1>narrow(p.negated());
     }
 
     @SafeVarargs
@@ -95,7 +97,7 @@ public interface Pr1<T1> extends Predicate<T1>, Function1<T1, Boolean> {
     }
 
     public static <T1> Pr1<Tuple1<T1>> tuple(Pr1<? super T1> p) {
-        return Pr1.of(p).tupled();
+        return Pr1.<T1>of(p).tupled();
     }
 
     public static <T1> Pr1<T1> detuple(Pr1<? super Tuple1<? extends T1>> p) {
@@ -104,7 +106,7 @@ public interface Pr1<T1> extends Predicate<T1>, Function1<T1, Boolean> {
 
     public static <T1> Pr1<T1> uncheck(Prc1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
-        return Prc1.narrow(p).unchecked();
+        return Prc1.<T1>narrow(p).unchecked();
     }
 
     public static <T1> Pr1<T1> ignore(Pr0 p) {

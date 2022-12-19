@@ -39,7 +39,9 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr2<T1, T2> narrow(Pr2<? super T1, ? super T2> p) {
-        return p;
+        @SuppressWarnings("unchecked")
+        final Pr2<T1, T2> pr = (Pr2<T1, T2>) p;
+        return pr;
     }
 
     public static <T1, T2> Pr2<T1, T2> empty() {
@@ -55,15 +57,15 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr2<T1, T2> of1(Pr1<? super T1> f) {
-        return Pr2.narrow(f.ignoring1Rt());
+        return Pr2.<T1, T2>narrow(f.ignoring1Rt());
     }
 
     public static <T1, T2> Pr2<T1, T2> of2(Pr1<? super T2> f) {
-        return Pr2.narrow(f.ignoring1Lt());
+        return Pr2.<T1, T2>narrow(f.ignoring1Lt());
     }
 
     public static <T1, T2> Pr2<T1, T2> fromFunction(Fn2<? super T1, ? super T2, Boolean> f) {
-        return (arg_0, arg_1) -> f.apply(arg_0, arg_1);
+        return (t1, t2) -> f.apply(t1, t2);
     }
 
     public static <T1, T2> Pr2<T1, T2> fromSupplier(Sp<? extends Boolean> s) {
@@ -71,7 +73,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr2<T1, T2> negate(Pr2<? super T1, ? super T2> p) {
-        return Pr2.narrow(p.negated());
+        return Pr2.<T1, T2>narrow(p.negated());
     }
 
     @SafeVarargs
@@ -99,7 +101,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr1<Tuple2<T1, T2>> tuple(Pr2<? super T1, ? super T2> p) {
-        return Pr2.of(p).tupled();
+        return Pr2.<T1, T2>of(p).tupled();
     }
 
     public static <T1, T2> Pr2<T1, T2> detuple(Pr1<? super Tuple2<? extends T1, ? extends T2>> p) {
@@ -108,7 +110,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
 
     public static <T1, T2> Pr2<T1, T2> uncheck(Prc2<? super T1, ? super T2> p) {
         Objects.requireNonNull(p, "p is null");
-        return Prc2.narrow(p).unchecked();
+        return Prc2.<T1, T2>narrow(p).unchecked();
     }
 
     public static <T1, T2> Pr2<T1, T2> ignore(Pr0 p) {
@@ -116,11 +118,11 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr2<T1, T2> ignoreRt(Pr1<? super T1> p) {
-        return Pr1.narrow(p).ignoring1Rt();
+        return Pr1.<T1>narrow(p).ignoring1Rt();
     }
 
     public static <T1, T2> Pr2<T1, T2> ignoreLt(Pr1<? super T2> p) {
-        return Pr1.narrow(p).ignoring1Lt();
+        return Pr1.<T2>narrow(p).ignoring1Lt();
     }
 
     public static <T1, T2, T3> Pr2<T1, T2> passRt(Pr3<? super T1, ? super T2, ? super T3> p, T3 t3) {
@@ -176,7 +178,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     public static <T1, T2> Pr2<T2, T1> invert(Pr2<? super T1, ? super T2> p) {
-        return Pr2.narrow(p).inverted();
+        return Pr2.<T1, T2>narrow(p).inverted();
     }
 
     public boolean test(T1 var1, T2 var2);
@@ -190,11 +192,11 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     default public Fn2<T1, T2, Boolean> toFunction() {
-        return (arg_0, arg_1) -> this.test(arg_0, arg_1);
+        return (t1, t2) -> this.test(t1, t2);
     }
 
     default public Cs2<T1, T2> toConsumer() {
-        return (arg_0, arg_1) -> this.test(arg_0, arg_1);
+        return (t1, t2) -> this.test(t1, t2);
     }
 
     default public Pr0 toPredicate(T1 t1, T2 t2) {
@@ -700,7 +702,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     default public Prc2<T1, T2> checked() {
-        return (arg_0, arg_1) -> this.test(arg_0, arg_1);
+        return this::test;
     }
 
     default public Pr2<T1, T2> negated() {
@@ -772,7 +774,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     default public Pr2<T1, T2> memoized() {
-        return (arg_0, arg_1) -> ((Function2) super.memoized()).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Function2) super.memoized()).apply(t1, t2);
     }
 
 }

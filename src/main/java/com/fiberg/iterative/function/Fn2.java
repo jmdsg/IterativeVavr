@@ -33,7 +33,9 @@ import java.util.function.Function;
 public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
 
     public static <T1, T2, R> Fn2<T1, T2, R> narrow(Fn2<? super T1, ? super T2, ? extends R> f) {
-        return f;
+        @SuppressWarnings("unchecked")
+        final Fn2<T1, T2, R> fn = (Fn2<T1, T2, R>) f;
+        return fn;
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> empty() {
@@ -49,15 +51,15 @@ public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> of1(Fn1<? super T1, ? extends R> f) {
-        return Fn2.narrow(f.ignoring1Rt());
+        return Fn2.<T1, T2, R>narrow(f.ignoring1Rt());
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> of2(Fn1<? super T2, ? extends R> f) {
-        return Fn2.narrow(f.ignoring1Lt());
+        return Fn2.<T1, T2, R>narrow(f.ignoring1Lt());
     }
 
     public static <T1, T2, R> Fn1<Tuple2<T1, T2>, R> tuple(Fn2<? super T1, ? super T2, ? extends R> f) {
-        return Fn2.of(f).tupled();
+        return Fn2.<T1, T2, R>of(f).tupled();
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> detuple(Fn1<? super Tuple2<? extends T1, ? extends T2>, ? extends R> f) {
@@ -66,19 +68,19 @@ public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
 
     public static <T1, T2, R> Fn2<T1, T2, R> uncheck(Fnc2<? super T1, ? super T2, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc2.narrow(f).unchecked();
+        return Fnc2.<T1, T2, R>narrow(f).unchecked();
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> ignore(Fn0<? extends R> f) {
-        return Fn0.narrow(f).ignoring2();
+        return Fn0.<R>narrow(f).ignoring2();
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> ignoreRt(Fn1<? super T1, ? extends R> f) {
-        return Fn1.narrow(f).ignoring1Rt();
+        return Fn1.<T1, R>narrow(f).ignoring1Rt();
     }
 
     public static <T1, T2, R> Fn2<T1, T2, R> ignoreLt(Fn1<? super T2, ? extends R> f) {
-        return Fn1.narrow(f).ignoring1Lt();
+        return Fn1.<T2, R>narrow(f).ignoring1Lt();
     }
 
     public static <T1, T2, T3, R> Fn2<T1, T2, R> passRt(Fn3<? super T1, ? super T2, ? super T3, ? extends R> f, T3 t3) {
@@ -144,7 +146,7 @@ public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
     }
 
     public static <T1, T2, R> Fn2<T2, T1, R> invert(Fn2<? super T1, ? super T2, ? extends R> f) {
-        return Fn2.narrow(f).inverted();
+        return Fn2.<T1, T2, R>narrow(f).inverted();
     }
 
     default public Fn1<T2, R> applyLt(T1 t1) {
@@ -164,7 +166,7 @@ public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
     }
 
     default public Cs2<T1, T2> toConsumer() {
-        return (arg_0, arg_1) -> ((Fn2) this).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Fn2) this).apply(t1, t2);
     }
 
     default public Sp<R> toSupplier(T1 t1, T2 t2) {
@@ -436,7 +438,7 @@ public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
     }
 
     default public Fnc2<T1, T2, R> checked() {
-        return (arg_0, arg_1) -> ((Fn2) this).apply(arg_0, arg_1);
+        return this::apply;
     }
 
     default public <I1> Fn3<I1, T1, T2, R> ignoring1Lt() {
@@ -500,15 +502,15 @@ public interface Fn2<T1, T2, R> extends Function2<T1, T2, R> {
     }
 
     default public Fn2<T2, T1, R> reversed() {
-        return (arg_0, arg_1) -> ((Function2) super.reversed()).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Function2) super.reversed()).apply(t1, t2);
     }
 
     default public Fn2<T1, T2, R> memoized() {
-        return (arg_0, arg_1) -> ((Function2) super.memoized()).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Function2) super.memoized()).apply(t1, t2);
     }
 
     default public <V> Fn2<T1, T2, V> andThen(Function<? super R, ? extends V> after) {
-        return (arg_0, arg_1) -> ((Function2) super.andThen(after)).apply(arg_0, arg_1);
+        return (t1, t2) -> ((Function2) super.andThen(after)).apply(t1, t2);
     }
 
 }

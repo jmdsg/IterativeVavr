@@ -30,7 +30,9 @@ import java.util.Objects;
 public interface Cs3<T1, T2, T3> {
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> narrow(Cs3<? super T1, ? super T2, ? super T3> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Cs3<T1, T2, T3> cs = (Cs3<T1, T2, T3>) c;
+        return cs;
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> empty() {
@@ -42,19 +44,19 @@ public interface Cs3<T1, T2, T3> {
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> of1(Cs1<? super T1> f) {
-        return Cs3.narrow(f.ignoring2Rt());
+        return Cs3.<T1, T2, T3>narrow(f.ignoring2Rt());
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> of2(Cs1<? super T2> f) {
-        return Cs3.narrow(f.ignoring1Rt().ignoring1Lt());
+        return Cs3.<T1, T2, T3>narrow(f.ignoring1Rt().ignoring1Lt());
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> of3(Cs1<? super T3> f) {
-        return Cs3.narrow(f.ignoring2Lt());
+        return Cs3.<T1, T2, T3>narrow(f.ignoring2Lt());
     }
 
     public static <T1, T2, T3> Cs1<Tuple3<T1, T2, T3>> tuple(Cs3<? super T1, ? super T2, ? super T3> c) {
-        return Cs3.of(c).tupled();
+        return Cs3.<T1, T2, T3>of(c).tupled();
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> detuple(Cs1<? super Tuple3<? extends T1, ? extends T2, ? extends T3>> c) {
@@ -63,23 +65,23 @@ public interface Cs3<T1, T2, T3> {
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> uncheck(Csc3<? super T1, ? super T2, ? super T3> c) {
         Objects.requireNonNull(c, "c is null");
-        return Csc3.narrow(c).unchecked();
+        return Csc3.<T1, T2, T3>narrow(c).unchecked();
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> ignore2Rt(Cs1<? super T1> c) {
-        return Cs1.narrow(c).ignoring2Rt();
+        return Cs1.<T1>narrow(c).ignoring2Rt();
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> ignore2Lt(Cs1<? super T3> c) {
-        return Cs1.narrow(c).ignoring2Lt();
+        return Cs1.<T3>narrow(c).ignoring2Lt();
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> ignore1Rt(Cs2<? super T1, ? super T2> c) {
-        return Cs2.narrow(c).ignoring1Rt();
+        return Cs2.<T1, T2>narrow(c).ignoring1Rt();
     }
 
     public static <T1, T2, T3> Cs3<T1, T2, T3> ignore1Lt(Cs2<? super T2, ? super T3> c) {
-        return Cs2.narrow(c).ignoring1Lt();
+        return Cs2.<T2, T3>narrow(c).ignoring1Lt();
     }
 
     public static <T1, T2, T3, T4> Cs3<T1, T2, T3> passRt(Cs4<? super T1, ? super T2, ? super T3, ? super T4> c, T4 t4) {
@@ -127,7 +129,7 @@ public interface Cs3<T1, T2, T3> {
     }
 
     public static <T1, T2, T3> Cs3<T3, T2, T1> invert(Cs3<? super T1, ? super T2, ? super T3> c) {
-        return Cs3.narrow(c).inverted();
+        return Cs3.<T1, T2, T3>narrow(c).inverted();
     }
 
     public void accept(T1 var1, T2 var2, T3 var3);
@@ -261,7 +263,7 @@ public interface Cs3<T1, T2, T3> {
     default public Cs3<T1, T2, T3> beforeTestOnSuccess(Pr0 p, Cs3<? super T1, ? super T2, ? super T3> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3) -> (p.test() ? this : Cs3.narrow(onFailure)).accept(t1, t2, t3);
+        return (t1, t2, t3) -> (p.test() ? this : Cs3.<T1, T2, T3>narrow(onFailure)).accept(t1, t2, t3);
     }
 
     default public Cs3<T1, T2, T3> beforeTestOnSuccess(Pr0 p) {
@@ -354,7 +356,7 @@ public interface Cs3<T1, T2, T3> {
     default public Cs3<T1, T2, T3> beforeSuccessPassingThroughTest(Pr3<? super T1, ? super T2, ? super T3> p, Cs3<? super T1, ? super T2, ? super T3> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return (t1, t2, t3) -> (p.test(t1, t2, t3) ? this : Cs3.narrow(onFailure)).accept(t1, t2, t3);
+        return (t1, t2, t3) -> (p.test(t1, t2, t3) ? this : Cs3.<T1, T2, T3>narrow(onFailure)).accept(t1, t2, t3);
     }
 
     default public Cs3<T1, T2, T3> beforeSuccessPassingThroughTest(Pr3<? super T1, ? super T2, ? super T3> p) {
@@ -380,7 +382,7 @@ public interface Cs3<T1, T2, T3> {
     }
 
     default public Csc3<T1, T2, T3> checked() {
-        return (arg_0, arg_1, arg_2) -> this.accept(arg_0, arg_1, arg_2);
+        return this::accept;
     }
 
     default public <I1> Cs4<I1, T1, T2, T3> ignoring1Lt() {

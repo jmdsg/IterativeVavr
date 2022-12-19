@@ -31,7 +31,9 @@ import java.util.function.Consumer;
 public interface Cs1<T1> extends Consumer<T1> {
 
     public static <T1> Cs1<T1> narrow(Cs1<? super T1> c) {
-        return c;
+        @SuppressWarnings("unchecked")
+        final Cs1<T1> cs = (Cs1<T1>) c;
+        return cs;
     }
 
     public static <T1> Cs1<T1> empty() {
@@ -43,7 +45,7 @@ public interface Cs1<T1> extends Consumer<T1> {
     }
 
     public static <T1> Cs1<Tuple1<T1>> tuple(Cs1<? super T1> c) {
-        return Cs1.of(c).tupled();
+        return Cs1.<T1>of(c).tupled();
     }
 
     public static <T1> Cs1<T1> detuple(Cs1<? super Tuple1<? extends T1>> c) {
@@ -52,7 +54,7 @@ public interface Cs1<T1> extends Consumer<T1> {
 
     public static <T1> Cs1<T1> uncheck(Csc1<? super T1> c) {
         Objects.requireNonNull(c, "c is null");
-        return Csc1.narrow(c).unchecked();
+        return Csc1.<T1>narrow(c).unchecked();
     }
 
     default public <V> Fn1<T1, V> andThenApply(Fn0<? extends V> after) {
@@ -236,7 +238,7 @@ public interface Cs1<T1> extends Consumer<T1> {
     default public Cs1<T1> beforeTestOnSuccess(Pr0 p, Cs1<? super T1> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return t1 -> (p.test() ? this : Cs1.narrow(onFailure)).accept(t1);
+        return t1 -> (p.test() ? this : Cs1.<T1>narrow(onFailure)).accept(t1);
     }
 
     default public Cs1<T1> beforeTestOnSuccess(Pr0 p) {
@@ -325,7 +327,7 @@ public interface Cs1<T1> extends Consumer<T1> {
     default public Cs1<T1> beforeSuccessPassingThroughTest(Pr1<? super T1> p, Cs1<? super T1> onFailure) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onFailure, "onFailure is null");
-        return t1 -> (p.test(t1) ? this : Cs1.narrow(onFailure)).accept(t1);
+        return t1 -> (p.test(t1) ? this : Cs1.<T1>narrow(onFailure)).accept(t1);
     }
 
     default public Cs1<T1> beforeSuccessPassingThroughTest(Pr1<? super T1> p) {

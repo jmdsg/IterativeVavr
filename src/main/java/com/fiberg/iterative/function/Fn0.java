@@ -31,7 +31,9 @@ import java.util.function.Function;
 public interface Fn0<R> extends Function0<R> {
 
     public static <R> Fn0<R> narrow(Fn0<? extends R> f) {
-        return f;
+        @SuppressWarnings("unchecked")
+        final Fn0<R> fn = (Fn0<R>) f;
+        return fn;
     }
 
     public static <R> Fn0<R> empty() {
@@ -47,7 +49,7 @@ public interface Fn0<R> extends Function0<R> {
     }
 
     public static <R> Fn1<Tuple0, R> tuple(Fn0<? extends R> f) {
-        return Fn0.of(f).tupled();
+        return Fn0.<R>of(f).tupled();
     }
 
     public static <R> Fn0<R> detuple(Fn1<? super Tuple0, ? extends R> f) {
@@ -60,35 +62,35 @@ public interface Fn0<R> extends Function0<R> {
     }
 
     public static <T1, R> Fn0<R> pass(Fn1<? super T1, ? extends R> f, T1 t1) {
-        return Fn1.narrow(f).toFunction(t1);
+        return Fn1.narrow(f).<T1, R>narrow(f).toFunction(t1);
     }
 
     public static <T1, T2, R> Fn0<R> pass(Fn2<? super T1, ? super T2, ? extends R> f, T1 t1, T2 t2) {
-        return Fn2.narrow(f).toFunction(t1, t2);
+        return Fn2.narrow(f).<T1, T2, R>narrow(f).toFunction(t1, t2);
     }
 
     public static <T1, T2, T3, R> Fn0<R> pass(Fn3<? super T1, ? super T2, ? super T3, ? extends R> f, T1 t1, T2 t2, T3 t3) {
-        return Fn3.narrow(f).toFunction(t1, t2, t3);
+        return Fn3.narrow(f).<T1, T2, T3, R>narrow(f).toFunction(t1, t2, t3);
     }
 
     public static <T1, T2, T3, T4, R> Fn0<R> pass(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4) {
-        return Fn4.narrow(f).toFunction(t1, t2, t3, t4);
+        return Fn4.<T1, T2, T3, T4, R>narrow(f).toFunction(t1, t2, t3, t4);
     }
 
     public static <T1, T2, T3, T4, T5, R> Fn0<R> pass(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
-        return Fn5.narrow(f).toFunction(t1, t2, t3, t4, t5);
+        return Fn5.<T1, T2, T3, T4, T5, R>narrow(f).toFunction(t1, t2, t3, t4, t5);
     }
 
     public static <T1, T2, T3, T4, T5, T6, R> Fn0<R> pass(Fn6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) {
-        return Fn6.narrow(f).toFunction(t1, t2, t3, t4, t5, t6);
+        return Fn6.<T1, T2, T3, T4, T5, T6, R>narrow(f).toFunction(t1, t2, t3, t4, t5, t6);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, R> Fn0<R> pass(Fn7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7) {
-        return Fn7.narrow(f).toFunction(t1, t2, t3, t4, t5, t6, t7);
+        return Fn7.<T1, T2, T3, T4, T5, T6, T7, R>narrow(f).toFunction(t1, t2, t3, t4, t5, t6, t7);
     }
 
     public static <T1, T2, T3, T4, T5, T6, T7, T8, R> Fn0<R> pass(Fn8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8) {
-        return Fn8.narrow(f).toFunction(t1, t2, t3, t4, t5, t6, t7, t8);
+        return Fn8.<T1, T2, T3, T4, T5, T6, T7, T8, R>narrow(f).toFunction(t1, t2, t3, t4, t5, t6, t7, t8);
     }
 
     public static <T1, R> R passAndApply(Fn1<? super T1, ? extends R> f, T1 t1) {
@@ -134,11 +136,11 @@ public interface Fn0<R> extends Function0<R> {
     }
 
     default public Sp<R> toSupplier() {
-        return ((Fn0) this)::apply;
+        return this::apply;
     }
 
     default public Rn toRunnable() {
-        return ((Fn0) this)::apply;
+        return this::apply;
     }
 
     default public Fn0<R> afterRun(Rn r) {
@@ -264,7 +266,7 @@ public interface Fn0<R> extends Function0<R> {
     }
 
     default public Fnc0<R> checked() {
-        return ((Fn0) this)::apply;
+        return this::apply;
     }
 
     default public <I1> Fn1<I1, R> ignoring1() {

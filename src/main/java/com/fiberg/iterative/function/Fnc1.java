@@ -30,7 +30,9 @@ import java.util.function.Function;
 public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
 
     public static <T1, R> Fnc1<T1, R> narrow(Fnc1<? super T1, ? extends R> f) {
-        return f;
+        @SuppressWarnings("unchecked")
+        final Fnc1<T1, R> fnc = (Fnc1<T1, R>) f;
+        return fnc;
     }
 
     public static <T1, R> Fnc1<T1, R> empty() {
@@ -50,7 +52,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     public static <T1, R> Fnc1<Tuple1<T1>, R> tuple(Fnc1<? super T1, ? extends R> f) {
-        return Fnc1.of(f).tupled();
+        return Fnc1.<T1, R>of(f).tupled();
     }
 
     public static <T1, R> Fnc1<T1, R> detuple(Fnc1<? super Tuple1<? extends T1>, ? extends R> f) {
@@ -63,11 +65,11 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     public static <T1, R> Fnc1<T1, R> ignore(Fnc0<? extends R> f) {
-        return Fnc0.narrow(f).ignoring1();
+        return Fnc0.<R>narrow(f).ignoring1();
     }
 
     public static <T1, R> Fnc1<T1, R> passThroughNull(Fnc1<? super T1, ? extends R> f) {
-        return Fnc1.narrow(f).passingThroughNull();
+        return Fnc1.<T1, R>narrow(f).passingThroughNull();
     }
 
     public static <T1, T2, R> Fnc1<T1, R> passRt(Fnc2<? super T1, ? super T2, ? extends R> f, T2 t2) {

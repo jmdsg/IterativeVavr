@@ -81,7 +81,7 @@ public interface Rnc extends CheckedRunnable {
         };
     }
 
-    default public Prc0 toPrcedicate(Boolean b) {
+    default public Prc0 toPredicate(Boolean b) {
         return () -> {
             this.run();
             return b;
