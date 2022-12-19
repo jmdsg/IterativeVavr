@@ -1,7 +1,5 @@
 package com.fiberg.iterative.function;
 
-import com.fiberg.iterative.function.Fn1;
-
 public class Recursive<I> {
 
     private I i;

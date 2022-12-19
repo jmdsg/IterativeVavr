@@ -1,39 +1,10 @@
 package com.fiberg.iterative.function;
 
 import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.function.Csc1;
-import com.fiberg.iterative.function.Csc8;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Fn8;
-import com.fiberg.iterative.function.Fnc0;
-import com.fiberg.iterative.function.Fnc1;
-import com.fiberg.iterative.function.Fnc2;
-import com.fiberg.iterative.function.Fnc3;
-import com.fiberg.iterative.function.Fnc4;
-import com.fiberg.iterative.function.Fnc5;
-import com.fiberg.iterative.function.Fnc6;
-import com.fiberg.iterative.function.Fnc7;
-import com.fiberg.iterative.function.Prc0;
-import com.fiberg.iterative.function.Prc1;
-import com.fiberg.iterative.function.Prc8;
-import com.fiberg.iterative.function.Rnc;
-import com.fiberg.iterative.function.Spc;
-import io.vavr.CheckedFunction1;
-import io.vavr.CheckedFunction2;
-import io.vavr.CheckedFunction3;
-import io.vavr.CheckedFunction4;
-import io.vavr.CheckedFunction5;
-import io.vavr.CheckedFunction6;
-import io.vavr.CheckedFunction7;
-import io.vavr.CheckedFunction8;
-import io.vavr.Function1;
-import io.vavr.Function8;
-import io.vavr.Tuple;
-import io.vavr.Tuple8;
-import io.vavr.Value;
+import io.vavr.*;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
-import java.io.Serializable;
+
 import java.util.Objects;
 import java.util.function.Function;
 

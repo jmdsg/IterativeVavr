@@ -1,50 +1,8 @@
 package com.fiberg.iterative.function;
 
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Fn2;
-import com.fiberg.iterative.function.Fn3;
-import com.fiberg.iterative.function.Fn4;
-import com.fiberg.iterative.function.Fn5;
-import com.fiberg.iterative.function.Fn6;
-import com.fiberg.iterative.function.Fn7;
-import com.fiberg.iterative.function.Fn8;
-import com.fiberg.iterative.function.Fnc1;
-import com.fiberg.iterative.function.Fnc2;
-import com.fiberg.iterative.function.Fnc3;
-import com.fiberg.iterative.function.Fnc4;
-import com.fiberg.iterative.function.Fnc5;
-import com.fiberg.iterative.function.Fnc6;
-import com.fiberg.iterative.function.Fnc7;
-import com.fiberg.iterative.function.Fnc8;
-import com.fiberg.iterative.function.Pr1;
-import com.fiberg.iterative.function.Pr2;
-import com.fiberg.iterative.function.Pr3;
-import com.fiberg.iterative.function.Pr4;
-import com.fiberg.iterative.function.Pr5;
-import com.fiberg.iterative.function.Pr6;
-import com.fiberg.iterative.function.Pr7;
-import com.fiberg.iterative.function.Pr8;
-import com.fiberg.iterative.function.Prc1;
-import com.fiberg.iterative.function.Prc2;
-import com.fiberg.iterative.function.Prc3;
-import com.fiberg.iterative.function.Prc4;
-import com.fiberg.iterative.function.Prc5;
-import com.fiberg.iterative.function.Prc6;
-import com.fiberg.iterative.function.Prc7;
-import com.fiberg.iterative.function.Prc8;
-import com.fiberg.iterative.function.Sp;
-import com.fiberg.iterative.function.Spc;
-import io.vavr.Tuple;
-import io.vavr.Tuple1;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.Tuple4;
-import io.vavr.Tuple5;
-import io.vavr.Tuple6;
-import io.vavr.Tuple7;
-import io.vavr.Tuple8;
+import io.vavr.*;
 import io.vavr.collection.List;
-import java.io.Serializable;
+
 import java.util.Objects;
 
 public interface Switcher<TUPLE extends Tuple, R> {
