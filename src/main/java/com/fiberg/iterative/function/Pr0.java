@@ -557,7 +557,7 @@ public interface Pr0 extends Function0<Boolean> {
     }
 
     default public Pr0 memoized() {
-        return ((Function0) super.memoized())::apply;
+        return Function0.super.memoized()::apply;
     }
 
 }

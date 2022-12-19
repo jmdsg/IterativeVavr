@@ -42,25 +42,25 @@ public interface Iterative3Inline<T1, T2, T3> extends Iterative3<T1, T2, T3> {
     public Iterative3Inline<T1, T2, T3> forceCleanEmptyAll();
 
     @Override
-    public <T4> Iterative4Inline<T1, T2, T3, T4> pushBackBy(Iterable<? extends Stream<? extends T4>> var1);
+    public <T4> Iterative4Inline<T1, T2, T3, T4> pushBackBy(Iterable<? extends Stream<? extends T4>> i1);
 
     @Override
-    public <T0> Iterative4Inline<T0, T1, T2, T3> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative4Inline<T0, T1, T2, T3> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative4Inline<T0, T1, T2, T3> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative4Inline<T0, T1, T2, T3> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative4Inline<T0, T1, T2, T3> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative4Inline<T0, T1, T2, T3> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <R1, R2, R3> Iterative3Inline<R1, R2, R3> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2, Fn1<? super T3, ? extends R3> var3);
+    public <R1, R2, R3> Iterative3Inline<R1, R2, R3> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3);
 
     @Override
-    public <R1, R2, R3> Iterative3Inline<R1, R2, R3> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2, Fn1<? super T3, ? extends Iterable<? extends R3>> var3);
+    public <R1, R2, R3> Iterative3Inline<R1, R2, R3> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> i2, Fn1<? super T3, ? extends Iterable<? extends R3>> f3);
 
     @Override
-    public Iterative3Inline<T1, T2, T3> filter(Pr1<? super T1> var1, Pr1<? super T2> var2, Pr1<? super T3> var3);
+    public Iterative3Inline<T1, T2, T3> filter(Pr1<? super T1> p1, Pr1<? super T2> p2, Pr1<? super T3> p3);
 
     @Override
     default public Iterative3Inline<T1, T2, T3> onSuccess(Rn r) {

@@ -43,25 +43,25 @@ public interface Iterative4Cross<T1, T2, T3, T4> extends Iterative4<T1, T2, T3, 
     public Iterative4Cross<T1, T2, T3, T4> forceCleanEmptyAll();
 
     @Override
-    public <T5> Iterative5Cross<T1, T2, T3, T4, T5> pushBackBy(Iterable<? extends Stream<? extends T5>> var1);
+    public <T5> Iterative5Cross<T1, T2, T3, T4, T5> pushBackBy(Iterable<? extends Stream<? extends T5>> i1);
 
     @Override
-    public <T0> Iterative5Cross<T0, T1, T2, T3, T4> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative5Cross<T0, T1, T2, T3, T4> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative5Cross<T0, T1, T2, T3, T4> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative5Cross<T0, T1, T2, T3, T4> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative5Cross<T0, T1, T2, T3, T4> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative5Cross<T0, T1, T2, T3, T4> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <R1, R2, R3, R4> Iterative4Cross<R1, R2, R3, R4> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2, Fn1<? super T3, ? extends R3> var3, Fn1<? super T4, ? extends R4> var4);
+    public <R1, R2, R3, R4> Iterative4Cross<R1, R2, R3, R4> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4);
 
     @Override
-    public <R1, R2, R3, R4> Iterative4Cross<R1, R2, R3, R4> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2, Fn1<? super T3, ? extends Iterable<? extends R3>> var3, Fn1<? super T4, ? extends Iterable<? extends R4>> var4);
+    public <R1, R2, R3, R4> Iterative4Cross<R1, R2, R3, R4> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> i2, Fn1<? super T3, ? extends Iterable<? extends R3>> f3, Fn1<? super T4, ? extends Iterable<? extends R4>> i4);
 
     @Override
-    public Iterative4Cross<T1, T2, T3, T4> filter(Pr1<? super T1> var1, Pr1<? super T2> var2, Pr1<? super T3> var3, Pr1<? super T4> var4);
+    public Iterative4Cross<T1, T2, T3, T4> filter(Pr1<? super T1> p1, Pr1<? super T2> p2, Pr1<? super T3> p3, Pr1<? super T4> p4);
 
     @Override
     default public Iterative4Cross<T1, T2, T3, T4> onSuccess(Rn r) {

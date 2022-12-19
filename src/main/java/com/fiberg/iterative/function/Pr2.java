@@ -181,7 +181,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
         return Pr2.<T1, T2>narrow(p).inverted();
     }
 
-    public boolean test(T1 var1, T2 var2);
+    public boolean test(T1 t1, T2 t2);
 
     default public Pr1<T2> testLt(T1 t1) {
         return t2 -> this.test(t1, t2);
@@ -774,7 +774,7 @@ public interface Pr2<T1, T2> extends Function2<T1, T2, Boolean> {
     }
 
     default public Pr2<T1, T2> memoized() {
-        return (t1, t2) -> ((Function2) super.memoized()).apply(t1, t2);
+        return Function2.super.memoized()::apply;
     }
 
 }

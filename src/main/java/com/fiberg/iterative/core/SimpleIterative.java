@@ -14,11 +14,11 @@ interface SimpleIterative<T1> extends Iterable<T1> {
         return new SimpleIterativeImpl<T1>(iter);
     }
 
-    public <R> SimpleIterative<R> map(Fn1<? super T1, ? extends R> var1);
+    public <R> SimpleIterative<R> map(Fn1<? super T1, ? extends R> f1);
 
-    public SimpleIterative<T1> filter(Pr1<? super T1> var1);
+    public SimpleIterative<T1> filter(Pr1<? super T1> p1);
 
-    public <R> SimpleIterative<R> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R>> var1);
+    public <R> SimpleIterative<R> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R>> f1);
 
     public Iterable<T1> toIterable();
 

@@ -14,25 +14,25 @@ public interface Iterative8Getter<G1, G2, G3, G4, G5, G6, G7, G8> extends Iterat
 
     public Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, Tuple8<G1, G2, G3, G4, G5, G6, G7, G8>> onSuccess();
 
-    public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> var1);
+    public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f1);
 
-    public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(R var1);
+    public <R> Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> onSuccess(R r);
 
-    public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> var1);
+    public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f1);
 
-    public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(R var1);
+    public <R> Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> onFailure(R r);
 
     public static interface Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> {
 
-        public R onSuccess(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative8SuccessImpl<G1, G2, G3, G4, G5, G6, G7, G8, R> extends Iterative8FinalGetter<G1, G2, G3, G4, G5, G6, G7, G8, R> implements Iterative8Success<G1, G2, G3, G4, G5, G6, G7, G8, R> {
 
@@ -62,11 +62,11 @@ public interface Iterative8Getter<G1, G2, G3, G4, G5, G6, G7, G8> extends Iterat
 
     public static interface Iterative8Fail<G1, G2, G3, G4, G5, G6, G7, G8, R> {
 
-        public R onFailure(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative8<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7, ? extends G8>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

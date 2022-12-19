@@ -126,7 +126,7 @@ public interface Csc2<T1, T2> {
         return Csc2.<T1, T2>narrow(c).inverted();
     }
 
-    public void accept(T1 var1, T2 var2) throws Throwable;
+    public void accept(T1 t1, T2 t2) throws Throwable;
 
     default public Csc1<T2> acceptLt(T1 t1) {
         return t2 -> this.accept(t1, t2);

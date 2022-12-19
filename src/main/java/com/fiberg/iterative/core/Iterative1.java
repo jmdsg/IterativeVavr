@@ -88,32 +88,32 @@ public interface Iterative1<T1> extends IterativeConstructor {
     public Stream<Tuple1<T1>> toStream();
 
     @Override
-    public Iterative1<T1> onSuccess(Rn var1);
+    public Iterative1<T1> onSuccess(Rn r);
 
     @Override
-    public Iterative1<T1> onFailure(Rn var1);
+    public Iterative1<T1> onFailure(Rn r);
 
     public Iterative1<T1> nonNullable();
 
     public Iterative1<T1> nullable();
 
-    public <T2> Iterative2Cross<T1, T2> pushBackBy(Iterable<? extends Stream<? extends T2>> var1);
+    public <T2> Iterative2Cross<T1, T2> pushBackBy(Iterable<? extends Stream<? extends T2>> i1);
 
-    public <T2> Iterative2Cross<T1, T2> pushBackCrossBy(Iterable<? extends Stream<? extends T2>> var1);
+    public <T2> Iterative2Cross<T1, T2> pushBackCrossBy(Iterable<? extends Stream<? extends T2>> i1);
 
-    public <T2> Iterative2Inline<T1, T2> pushBackInlineBy(Iterable<? extends Stream<? extends T2>> var1);
+    public <T2> Iterative2Inline<T1, T2> pushBackInlineBy(Iterable<? extends Stream<? extends T2>> i1);
 
-    public <T0> Iterative2Cross<T0, T1> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative2Cross<T0, T1> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <T0> Iterative2Cross<T0, T1> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative2Cross<T0, T1> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <T0> Iterative2Inline<T0, T1> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative2Inline<T0, T1> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <R1> Iterative1<R1> map(Fn1<? super T1, ? extends R1> var1);
+    public <R1> Iterative1<R1> map(Fn1<? super T1, ? extends R1> f1);
 
-    public <R1> Iterative1<R1> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1);
+    public <R1> Iterative1<R1> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1);
 
-    public Iterative1<T1> filter(Pr1<? super T1> var1);
+    public Iterative1<T1> filter(Pr1<? super T1> p1);
 
     default public <R1> Iterative1<R1> flatMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1) {
         return this.inlineMap(f1).forceFlatAll();

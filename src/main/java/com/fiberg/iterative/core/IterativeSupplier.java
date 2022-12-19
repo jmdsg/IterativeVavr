@@ -17,17 +17,17 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier7<T1, A1, A2, A3, A4, A5, A6, A7> extends IterativeSupplier {
 
-        public Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingRt(Cs2<? super T1, ? super A7> var1);
+        public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingRt(Cs2<? super T1, ? super A7> c1);
 
-        public Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingInlineLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingInlineLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingInlineRt(Cs2<? super T1, ? super A7> var1);
+        public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingInlineRt(Cs2<? super T1, ? super A7> c1);
 
-        public Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingCrossLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier6<T1, A2, A3, A4, A5, A6, A7> usingCrossLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingCrossRt(Cs2<? super T1, ? super A7> var1);
+        public Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> usingCrossRt(Cs2<? super T1, ? super A7> c1);
 
         public Iterative1<T1> toIterative();
 
@@ -146,17 +146,17 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier6<T1, A1, A2, A3, A4, A5, A6> extends IterativeSupplier {
 
-        public Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingRt(Cs2<? super T1, ? super A6> var1);
+        public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingRt(Cs2<? super T1, ? super A6> c1);
 
-        public Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingInlineLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingInlineLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingInlineRt(Cs2<? super T1, ? super A6> var1);
+        public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingInlineRt(Cs2<? super T1, ? super A6> c1);
 
-        public Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingCrossLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier5<T1, A2, A3, A4, A5, A6> usingCrossLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingCrossRt(Cs2<? super T1, ? super A6> var1);
+        public Iterative1Supplier5<T1, A1, A2, A3, A4, A5> usingCrossRt(Cs2<? super T1, ? super A6> c1);
 
         public Iterative1<T1> toIterative();
 
@@ -305,17 +305,17 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier5<T1, A1, A2, A3, A4, A5> extends IterativeSupplier {
 
-        public Iterative1Supplier4<T1, A2, A3, A4, A5> usingLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier4<T1, A2, A3, A4, A5> usingLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier4<T1, A1, A2, A3, A4> usingRt(Cs2<? super T1, ? super A5> var1);
+        public Iterative1Supplier4<T1, A1, A2, A3, A4> usingRt(Cs2<? super T1, ? super A5> c1);
 
-        public Iterative1Supplier4<T1, A2, A3, A4, A5> usingInlineLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier4<T1, A2, A3, A4, A5> usingInlineLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier4<T1, A1, A2, A3, A4> usingInlineRt(Cs2<? super T1, ? super A5> var1);
+        public Iterative1Supplier4<T1, A1, A2, A3, A4> usingInlineRt(Cs2<? super T1, ? super A5> c1);
 
-        public Iterative1Supplier4<T1, A2, A3, A4, A5> usingCrossLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier4<T1, A2, A3, A4, A5> usingCrossLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier4<T1, A1, A2, A3, A4> usingCrossRt(Cs2<? super T1, ? super A5> var1);
+        public Iterative1Supplier4<T1, A1, A2, A3, A4> usingCrossRt(Cs2<? super T1, ? super A5> c1);
 
         public Iterative1<T1> toIterative();
 
@@ -494,17 +494,17 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier4<T1, A1, A2, A3, A4> extends IterativeSupplier {
 
-        public Iterative1Supplier3<T1, A2, A3, A4> usingLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier3<T1, A2, A3, A4> usingLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier3<T1, A1, A2, A3> usingRt(Cs2<? super T1, ? super A4> var1);
+        public Iterative1Supplier3<T1, A1, A2, A3> usingRt(Cs2<? super T1, ? super A4> c1);
 
-        public Iterative1Supplier3<T1, A2, A3, A4> usingInlineLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier3<T1, A2, A3, A4> usingInlineLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier3<T1, A1, A2, A3> usingInlineRt(Cs2<? super T1, ? super A4> var1);
+        public Iterative1Supplier3<T1, A1, A2, A3> usingInlineRt(Cs2<? super T1, ? super A4> c1);
 
-        public Iterative1Supplier3<T1, A2, A3, A4> usingCrossLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier3<T1, A2, A3, A4> usingCrossLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier3<T1, A1, A2, A3> usingCrossRt(Cs2<? super T1, ? super A4> var1);
+        public Iterative1Supplier3<T1, A1, A2, A3> usingCrossRt(Cs2<? super T1, ? super A4> c1);
 
         public Iterative1<T1> toIterative();
 
@@ -713,17 +713,17 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier3<T1, A1, A2, A3> extends IterativeSupplier {
 
-        public Iterative1Supplier2<T1, A2, A3> usingLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier2<T1, A2, A3> usingLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier2<T1, A1, A2> usingRt(Cs2<? super T1, ? super A3> var1);
+        public Iterative1Supplier2<T1, A1, A2> usingRt(Cs2<? super T1, ? super A3> c1);
 
-        public Iterative1Supplier2<T1, A2, A3> usingInlineLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier2<T1, A2, A3> usingInlineLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier2<T1, A1, A2> usingInlineRt(Cs2<? super T1, ? super A3> var1);
+        public Iterative1Supplier2<T1, A1, A2> usingInlineRt(Cs2<? super T1, ? super A3> c1);
 
-        public Iterative1Supplier2<T1, A2, A3> usingCrossLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier2<T1, A2, A3> usingCrossLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier2<T1, A1, A2> usingCrossRt(Cs2<? super T1, ? super A3> var1);
+        public Iterative1Supplier2<T1, A1, A2> usingCrossRt(Cs2<? super T1, ? super A3> c1);
 
         public Iterative1<T1> toIterative();
 
@@ -962,17 +962,17 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier2<T1, A1, A2> extends IterativeSupplier {
 
-        public Iterative1Supplier1<T1, A2> usingLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier1<T1, A2> usingLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier1<T1, A1> usingRt(Cs2<? super T1, ? super A2> var1);
+        public Iterative1Supplier1<T1, A1> usingRt(Cs2<? super T1, ? super A2> c1);
 
-        public Iterative1Supplier1<T1, A2> usingInlineLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier1<T1, A2> usingInlineLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier1<T1, A1> usingInlineRt(Cs2<? super T1, ? super A2> var1);
+        public Iterative1Supplier1<T1, A1> usingInlineRt(Cs2<? super T1, ? super A2> c1);
 
-        public Iterative1Supplier1<T1, A2> usingCrossLt(Cs2<? super T1, ? super A1> var1);
+        public Iterative1Supplier1<T1, A2> usingCrossLt(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1Supplier1<T1, A1> usingCrossRt(Cs2<? super T1, ? super A2> var1);
+        public Iterative1Supplier1<T1, A1> usingCrossRt(Cs2<? super T1, ? super A2> c1);
 
         public Iterative1<T1> toIterative();
 
@@ -1241,11 +1241,11 @@ interface IterativeSupplier {
 
     public static interface Iterative1Supplier1<T1, A1> extends IterativeSupplier {
 
-        public Iterative1<T1> using(Cs2<? super T1, ? super A1> var1);
+        public Iterative1<T1> using(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1<T1> usingInline(Cs2<? super T1, ? super A1> var1);
+        public Iterative1<T1> usingInline(Cs2<? super T1, ? super A1> c1);
 
-        public Iterative1<T1> usingCross(Cs2<? super T1, ? super A1> var1);
+        public Iterative1<T1> usingCross(Cs2<? super T1, ? super A1> c1);
 
         public Iterative1<T1> toIterative();
 

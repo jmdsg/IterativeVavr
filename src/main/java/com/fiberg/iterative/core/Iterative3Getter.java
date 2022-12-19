@@ -14,25 +14,25 @@ public interface Iterative3Getter<G1, G2, G3> extends IterativeGetter {
 
     public Iterative3Fail<G1, G2, G3, Tuple3<G1, G2, G3>> onSuccess();
 
-    public <R> Iterative3Fail<G1, G2, G3, R> onSuccess(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> var1);
+    public <R> Iterative3Fail<G1, G2, G3, R> onSuccess(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> f1);
 
-    public <R> Iterative3Fail<G1, G2, G3, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative3Fail<G1, G2, G3, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative3Fail<G1, G2, G3, R> onSuccess(R var1);
+    public <R> Iterative3Fail<G1, G2, G3, R> onSuccess(R r);
 
-    public <R> Iterative3Success<G1, G2, G3, R> onFailure(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> var1);
+    public <R> Iterative3Success<G1, G2, G3, R> onFailure(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> f1);
 
-    public <R> Iterative3Success<G1, G2, G3, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative3Success<G1, G2, G3, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative3Success<G1, G2, G3, R> onFailure(R var1);
+    public <R> Iterative3Success<G1, G2, G3, R> onFailure(R r);
 
     public static interface Iterative3Success<G1, G2, G3, R> {
 
-        public R onSuccess(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative3SuccessImpl<G1, G2, G3, R> extends Iterative3FinalGetter<G1, G2, G3, R> implements Iterative3Success<G1, G2, G3, R> {
 
@@ -62,11 +62,11 @@ public interface Iterative3Getter<G1, G2, G3> extends IterativeGetter {
 
     public static interface Iterative3Fail<G1, G2, G3, R> {
 
-        public R onFailure(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative3<? extends G1, ? extends G2, ? extends G3>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

@@ -197,7 +197,7 @@ public interface Pr6<T1, T2, T3, T4, T5, T6> extends Function6<T1, T2, T3, T4, T
         return Pr6.<T1, T2, T3, T4, T5, T6>narrow(p).inverted();
     }
 
-    public boolean test(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6);
+    public boolean test(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
 
     default public Pr5<T2, T3, T4, T5, T6> testLt(T1 t1) {
         return (t2, t3, t4, t5, t6) -> this.test(t1, t2, t3, t4, t5, t6);
@@ -790,7 +790,7 @@ public interface Pr6<T1, T2, T3, T4, T5, T6> extends Function6<T1, T2, T3, T4, T
     }
 
     default public Pr6<T1, T2, T3, T4, T5, T6> memoized() {
-        return (t1, t2, t3, t4, t5, t6) -> ((Function6) super.memoized()).apply(t1, t2, t3, t4, t5, t6);
+        return Function6.super.memoized()::apply;
     }
 
 }

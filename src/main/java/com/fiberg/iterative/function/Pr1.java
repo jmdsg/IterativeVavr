@@ -762,7 +762,7 @@ public interface Pr1<T1> extends Predicate<T1>, Function1<T1, Boolean> {
     }
 
     default public Pr1<T1> memoized() {
-        return ((Function1) super.memoized())::apply;
+        return Function1.super.memoized()::apply;
     }
 
 }

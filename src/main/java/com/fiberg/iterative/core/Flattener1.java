@@ -12,8 +12,8 @@ import io.vavr.Tuple8;
 
 public interface Flattener1 {
 
-    public static <T1> Tuple1<T1> flat1(T1 arg1) {
-        return Tuple.of(arg1);
+    public static <T1> Tuple1<T1> flat1(T1 t1) {
+        return Tuple.of(t1);
     }
 
     public static <T1> Tuple1<T1> flat1(Tuple1<? extends T1> tuple1) {

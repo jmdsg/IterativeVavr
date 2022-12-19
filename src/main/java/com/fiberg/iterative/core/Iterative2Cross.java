@@ -39,25 +39,25 @@ public interface Iterative2Cross<T1, T2> extends Iterative2<T1, T2> {
     public Iterative2Cross<T1, T2> forceCleanEmptyAll();
 
     @Override
-    public <T3> Iterative3Cross<T1, T2, T3> pushBackBy(Iterable<? extends Stream<? extends T3>> var1);
+    public <T3> Iterative3Cross<T1, T2, T3> pushBackBy(Iterable<? extends Stream<? extends T3>> i1);
 
     @Override
-    public <T0> Iterative3Cross<T0, T1, T2> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative3Cross<T0, T1, T2> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative3Cross<T0, T1, T2> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative3Cross<T0, T1, T2> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative3Cross<T0, T1, T2> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative3Cross<T0, T1, T2> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <R1, R2> Iterative2Cross<R1, R2> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2);
+    public <R1, R2> Iterative2Cross<R1, R2> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2);
 
     @Override
-    public <R1, R2> Iterative2Cross<R1, R2> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2);
+    public <R1, R2> Iterative2Cross<R1, R2> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> i2);
 
     @Override
-    public Iterative2Cross<T1, T2> filter(Pr1<? super T1> var1, Pr1<? super T2> var2);
+    public Iterative2Cross<T1, T2> filter(Pr1<? super T1> p1, Pr1<? super T2> p2);
 
     @Override
     default public Iterative2Cross<T1, T2> onSuccess(Rn r) {

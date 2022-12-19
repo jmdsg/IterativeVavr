@@ -117,7 +117,7 @@ public interface Fnc0<R> extends CheckedFunction0<R> {
     default public Fnc0<R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
         return () -> {
-            Object value = this.apply();
+            R value = this.apply();
             r.run();
             return value;
         };
@@ -159,7 +159,7 @@ public interface Fnc0<R> extends CheckedFunction0<R> {
     default public Fnc0<R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return () -> {
-            Object value = this.apply();
+            R value = this.apply();
             c.accept(value);
             return value;
         };
@@ -237,7 +237,7 @@ public interface Fnc0<R> extends CheckedFunction0<R> {
     }
 
     default public Fn0<R> unchecked() {
-        return ((Function0) super.unchecked())::apply;
+        return Function0.super.unchecked()::apply;
     }
 
     default public <I1> Fnc1<I1, R> ignoring1() {
@@ -293,7 +293,7 @@ public interface Fnc0<R> extends CheckedFunction0<R> {
     }
 
     default public Fn0<R> recover(Function<? super Throwable, ? extends Supplier<? extends R>> recover) {
-        return ((Function0) super.recover(recover))::apply;
+        return Function0.super.recover(recover)::apply;
     }
 
 }

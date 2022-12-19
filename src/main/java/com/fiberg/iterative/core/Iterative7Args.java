@@ -20,41 +20,41 @@ public interface Iterative7Args<T1, T2, T3, T4, T5, T6, T7> {
 
     public static interface Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, A1> extends Iterative7Args<T1, T2, T3, T4, T5, T6, T7> {
 
-        public <R1, R2, R3, R4, R5, R6, R7> Iterative7<R1, R2, R3, R4, R5, R6, R7> mapping(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2, Fn2<? super T3, ? super A1, ? extends R3> var3, Fn2<? super T4, ? super A1, ? extends R4> var4, Fn2<? super T5, ? super A1, ? extends R5> var5, Fn2<? super T6, ? super A1, ? extends R6> var6, Fn2<? super T7, ? super A1, ? extends R7> var7);
+        public <R1, R2, R3, R4, R5, R6, R7> Iterative7<R1, R2, R3, R4, R5, R6, R7> mapping(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2, Fn2<? super T3, ? super A1, ? extends R3> f3, Fn2<? super T4, ? super A1, ? extends R4> f4, Fn2<? super T5, ? super A1, ? extends R5> f5, Fn2<? super T6, ? super A1, ? extends R6> f6, Fn2<? super T7, ? super A1, ? extends R7> f7);
 
-        public <R1, R2, R3, R4, R5, R6, R7> Iterative7<R1, R2, R3, R4, R5, R6, R7> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> var1, Fn2<? super A1, ? super T2, ? extends R2> var2, Fn2<? super A1, ? super T3, ? extends R3> var3, Fn2<? super A1, ? super T4, ? extends R4> var4, Fn2<? super A1, ? super T5, ? extends R5> var5, Fn2<? super A1, ? super T6, ? extends R6> var6, Fn2<? super A1, ? super T7, ? extends R7> var7);
+        public <R1, R2, R3, R4, R5, R6, R7> Iterative7<R1, R2, R3, R4, R5, R6, R7> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> f1, Fn2<? super A1, ? super T2, ? extends R2> f2, Fn2<? super A1, ? super T3, ? extends R3> f3, Fn2<? super A1, ? super T4, ? extends R4> f4, Fn2<? super A1, ? super T5, ? extends R5> f5, Fn2<? super A1, ? super T6, ? extends R6> f6, Fn2<? super A1, ? super T7, ? extends R7> f7);
 
-        public <R7> Iterative7<T1, T2, T3, T4, T5, T6, R7> mappingRt1(Fn2<? super T7, ? super A1, ? extends R7> var1);
+        public <R7> Iterative7<T1, T2, T3, T4, T5, T6, R7> mappingRt1(Fn2<? super T7, ? super A1, ? extends R7> f1);
 
-        public <R1> Iterative7<R1, T2, T3, T4, T5, T6, T7> mappingLt1(Fn2<? super T1, ? super A1, ? extends R1> var1);
+        public <R1> Iterative7<R1, T2, T3, T4, T5, T6, T7> mappingLt1(Fn2<? super T1, ? super A1, ? extends R1> f1);
 
-        public <R6, R7> Iterative7<T1, T2, T3, T4, T5, R6, R7> mappingRt2(Fn2<? super T6, ? super A1, ? extends R6> var1, Fn2<? super T7, ? super A1, ? extends R7> var2);
+        public <R6, R7> Iterative7<T1, T2, T3, T4, T5, R6, R7> mappingRt2(Fn2<? super T6, ? super A1, ? extends R6> f1, Fn2<? super T7, ? super A1, ? extends R7> f2);
 
-        public <R1, R2> Iterative7<R1, R2, T3, T4, T5, T6, T7> mappingLt2(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2);
+        public <R1, R2> Iterative7<R1, R2, T3, T4, T5, T6, T7> mappingLt2(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2);
 
-        public <R5, R6, R7> Iterative7<T1, T2, T3, T4, R5, R6, R7> mappingRt3(Fn2<? super T5, ? super A1, ? extends R5> var1, Fn2<? super T6, ? super A1, ? extends R6> var2, Fn2<? super T7, ? super A1, ? extends R7> var3);
+        public <R5, R6, R7> Iterative7<T1, T2, T3, T4, R5, R6, R7> mappingRt3(Fn2<? super T5, ? super A1, ? extends R5> f1, Fn2<? super T6, ? super A1, ? extends R6> f2, Fn2<? super T7, ? super A1, ? extends R7> f3);
 
-        public <R1, R2, R3> Iterative7<R1, R2, R3, T4, T5, T6, T7> mappingLt3(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2, Fn2<? super T3, ? super A1, ? extends R3> var3);
+        public <R1, R2, R3> Iterative7<R1, R2, R3, T4, T5, T6, T7> mappingLt3(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2, Fn2<? super T3, ? super A1, ? extends R3> f3);
 
-        public <R4, R5, R6, R7> Iterative7<T1, T2, T3, R4, R5, R6, R7> mappingRt4(Fn2<? super T4, ? super A1, ? extends R4> var1, Fn2<? super T5, ? super A1, ? extends R5> var2, Fn2<? super T6, ? super A1, ? extends R6> var3, Fn2<? super T7, ? super A1, ? extends R7> var4);
+        public <R4, R5, R6, R7> Iterative7<T1, T2, T3, R4, R5, R6, R7> mappingRt4(Fn2<? super T4, ? super A1, ? extends R4> f1, Fn2<? super T5, ? super A1, ? extends R5> f2, Fn2<? super T6, ? super A1, ? extends R6> f3, Fn2<? super T7, ? super A1, ? extends R7> f4);
 
-        public <R1, R2, R3, R4> Iterative7<R1, R2, R3, R4, T5, T6, T7> mappingLt4(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2, Fn2<? super T3, ? super A1, ? extends R3> var3, Fn2<? super T4, ? super A1, ? extends R4> var4);
+        public <R1, R2, R3, R4> Iterative7<R1, R2, R3, R4, T5, T6, T7> mappingLt4(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2, Fn2<? super T3, ? super A1, ? extends R3> f3, Fn2<? super T4, ? super A1, ? extends R4> f4);
 
-        public <R3, R4, R5, R6, R7> Iterative7<T1, T2, R3, R4, R5, R6, R7> mappingRt5(Fn2<? super T3, ? super A1, ? extends R3> var1, Fn2<? super T4, ? super A1, ? extends R4> var2, Fn2<? super T5, ? super A1, ? extends R5> var3, Fn2<? super T6, ? super A1, ? extends R6> var4, Fn2<? super T7, ? super A1, ? extends R7> var5);
+        public <R3, R4, R5, R6, R7> Iterative7<T1, T2, R3, R4, R5, R6, R7> mappingRt5(Fn2<? super T3, ? super A1, ? extends R3> f1, Fn2<? super T4, ? super A1, ? extends R4> f2, Fn2<? super T5, ? super A1, ? extends R5> f3, Fn2<? super T6, ? super A1, ? extends R6> f4, Fn2<? super T7, ? super A1, ? extends R7> f5);
 
-        public <R1, R2, R3, R4, R5> Iterative7<R1, R2, R3, R4, R5, T6, T7> mappingLt5(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2, Fn2<? super T3, ? super A1, ? extends R3> var3, Fn2<? super T4, ? super A1, ? extends R4> var4, Fn2<? super T5, ? super A1, ? extends R5> var5);
+        public <R1, R2, R3, R4, R5> Iterative7<R1, R2, R3, R4, R5, T6, T7> mappingLt5(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2, Fn2<? super T3, ? super A1, ? extends R3> f3, Fn2<? super T4, ? super A1, ? extends R4> f4, Fn2<? super T5, ? super A1, ? extends R5> f5);
 
-        public <R2, R3, R4, R5, R6, R7> Iterative7<T1, R2, R3, R4, R5, R6, R7> mappingRt6(Fn2<? super T2, ? super A1, ? extends R2> var1, Fn2<? super T3, ? super A1, ? extends R3> var2, Fn2<? super T4, ? super A1, ? extends R4> var3, Fn2<? super T5, ? super A1, ? extends R5> var4, Fn2<? super T6, ? super A1, ? extends R6> var5, Fn2<? super T7, ? super A1, ? extends R7> var6);
+        public <R2, R3, R4, R5, R6, R7> Iterative7<T1, R2, R3, R4, R5, R6, R7> mappingRt6(Fn2<? super T2, ? super A1, ? extends R2> f1, Fn2<? super T3, ? super A1, ? extends R3> f2, Fn2<? super T4, ? super A1, ? extends R4> f3, Fn2<? super T5, ? super A1, ? extends R5> f4, Fn2<? super T6, ? super A1, ? extends R6> f5, Fn2<? super T7, ? super A1, ? extends R7> f6);
 
-        public <R1, R2, R3, R4, R5, R6> Iterative7<R1, R2, R3, R4, R5, R6, T7> mappingLt6(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2, Fn2<? super T3, ? super A1, ? extends R3> var3, Fn2<? super T4, ? super A1, ? extends R4> var4, Fn2<? super T5, ? super A1, ? extends R5> var5, Fn2<? super T6, ? super A1, ? extends R6> var6);
+        public <R1, R2, R3, R4, R5, R6> Iterative7<R1, R2, R3, R4, R5, R6, T7> mappingLt6(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2, Fn2<? super T3, ? super A1, ? extends R3> f3, Fn2<? super T4, ? super A1, ? extends R4> f4, Fn2<? super T5, ? super A1, ? extends R5> f5, Fn2<? super T6, ? super A1, ? extends R6> f6);
 
-        public <R1> Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, R1> map(Fn1<? super A1, ? extends R1> var1);
+        public <R1> Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, R1> map(Fn1<? super A1, ? extends R1> f1);
 
-        public <R1> Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, R1> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, R1> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R1> Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, R1> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, R1> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, A1> filter(Pr1<? super A1> var1);
+        public Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, A1> filter(Pr1<? super A1> p1);
 
         public static class Iterative7Args1Impl<T1, T2, T3, T4, T5, T6, T7, A1> implements Iterative7Args1<T1, T2, T3, T4, T5, T6, T7, A1> {
 

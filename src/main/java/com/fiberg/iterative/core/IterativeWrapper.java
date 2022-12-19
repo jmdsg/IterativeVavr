@@ -6,9 +6,9 @@ import io.vavr.control.Try;
 
 interface IterativeWrapper {
 
-    public <W> Option<W> wrap(W var1);
+    public <W> Option<W> wrap(W w);
 
-    public <W> Try<W> wrapTry(W var1);
+    public <W> Try<W> wrapTry(W w);
 
     public boolean isNullable();
 

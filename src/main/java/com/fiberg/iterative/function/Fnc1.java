@@ -157,7 +157,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     default public Fnc1<T1, R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
         return t1 -> {
-            Object value = this.apply(t1);
+            R value = this.apply(t1);
             r.run();
             return value;
         };
@@ -196,7 +196,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     default public Fnc1<T1, R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return t1 -> {
-            Object value = this.apply(t1);
+            R value = this.apply(t1);
             c.accept(value);
             return value;
         };
@@ -280,7 +280,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     default public Fnc1<T1, R> afterPassingThroughTest(Prc1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
         return t1 -> {
-            Object result = this.apply(t1);
+            R result = this.apply(t1);
             p.test(t1);
             return result;
         };
@@ -297,7 +297,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     default public Fnc1<T1, R> afterPassingThroughAccept(Csc1<? super T1> c) {
         Objects.requireNonNull(c, "c is null");
         return t1 -> {
-            Object result = this.apply(t1);
+            R result = this.apply(t1);
             c.accept(t1);
             return result;
         };
@@ -384,7 +384,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Fn1<T1, R> unchecked() {
-        return ((Function1) super.unchecked())::apply;
+        return Function1.super.unchecked()::apply;
     }
 
     default public <I1> Fnc2<I1, T1, R> ignoring1Lt() {
@@ -468,7 +468,7 @@ public interface Fnc1<T1, R> extends CheckedFunction1<T1, R> {
     }
 
     default public Fn1<T1, R> recover(Function<? super Throwable, ? extends Function<? super T1, ? extends R>> recover) {
-        return ((Function1) super.recover(recover))::apply;
+        return Function1.super.recover(recover)::apply;
     }
 
 }

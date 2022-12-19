@@ -79,7 +79,7 @@ public interface Csc6<T1, T2, T3, T4, T5, T6> {
 
     public static <T1, T2, T3, T4, T5, T6> Csc6<T1, T2, T3, T4, T5, T6> check(Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
         Objects.requireNonNull(c, "c is null");
-        return Cs6.narrow(c).checked();
+        return Cs6.<T1, T2, T3, T4, T5, T6>narrow(c).checked();
     }
 
     public static <T1, T2, T3, T4, T5, T6> Csc6<T1, T2, T3, T4, T5, T6> ignore5Rt(Csc1<? super T1> c) {
@@ -142,7 +142,7 @@ public interface Csc6<T1, T2, T3, T4, T5, T6> {
         return Csc6.<T1, T2, T3, T4, T5, T6>narrow(c).inverted();
     }
 
-    public void accept(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6) throws Throwable;
+    public void accept(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) throws Throwable;
 
     default public Csc5<T2, T3, T4, T5, T6> acceptLt(T1 t1) {
         return (t2, t3, t4, t5, t6) -> this.accept(t1, t2, t3, t4, t5, t6);
@@ -423,7 +423,6 @@ public interface Csc6<T1, T2, T3, T4, T5, T6> {
             catch (Throwable t) {
                 SneakyThrow.sneakyThrow(t);
             }
-
         };
     }
 
@@ -450,11 +449,10 @@ public interface Csc6<T1, T2, T3, T4, T5, T6> {
                 this.accept(t1, t2, t3, t4, t5, t6);
             }
             catch (Throwable throwable) {
-                Cs6 cons = (Cs6) recover.apply(throwable);
+                Cs6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> cons = recover.apply(throwable);
                 Objects.requireNonNull(cons, () -> "recover return null for " + throwable.getClass() + ": " + throwable.getMessage());
                 cons.accept(t1, t2, t3, t4, t5, t6);
             }
-
         };
     }
 

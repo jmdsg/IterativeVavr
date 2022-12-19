@@ -171,23 +171,23 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
 
     public Iterative6<T1, T2, T3, T4, T5, T6> forceCleanEmptyAll();
 
-    public <T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> pushBackBy(Iterable<? extends Stream<? extends T7>> var1);
+    public <T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> pushBackBy(Iterable<? extends Stream<? extends T7>> i1);
 
-    public <T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> pushBackCrossBy(Iterable<? extends Stream<? extends T7>> var1);
+    public <T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> pushBackCrossBy(Iterable<? extends Stream<? extends T7>> i1);
 
-    public <T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> pushBackInlineBy(Iterable<? extends Stream<? extends T7>> var1);
+    public <T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> pushBackInlineBy(Iterable<? extends Stream<? extends T7>> i1);
 
-    public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative7<T0, T1, T2, T3, T4, T5, T6> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public Iterative5<T1, T2, T3, T4, T5> popBack(Cs1<? super T6> var1);
+    public Iterative5<T1, T2, T3, T4, T5> popBack(Cs1<? super T6> c1);
 
-    public Iterative5<T1, T2, T3, T4, T5> popBackChain(Cs1<? super T6> var1);
+    public Iterative5<T1, T2, T3, T4, T5> popBackChain(Cs1<? super T6> c1);
 
-    public Iterative5<T2, T3, T4, T5, T6> popFront(Cs1<? super T1> var1);
+    public Iterative5<T2, T3, T4, T5, T6> popFront(Cs1<? super T1> c1);
 
     default public Iterative5<T1, T2, T3, T4, T5> popBack() {
         return this.popBack(Cs1.empty());
@@ -197,11 +197,11 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         return this.popFront(Cs1.empty());
     }
 
-    public Iterative4<T1, T2, T3, T4> popBack2(Cs2<? super T5, ? super T6> var1);
+    public Iterative4<T1, T2, T3, T4> popBack2(Cs2<? super T5, ? super T6> c1);
 
-    public Iterative4<T1, T2, T3, T4> popBackChain2(Cs2<? super T5, ? super T6> var1);
+    public Iterative4<T1, T2, T3, T4> popBackChain2(Cs2<? super T5, ? super T6> c1);
 
-    public Iterative4<T3, T4, T5, T6> popFront2(Cs2<? super T1, ? super T2> var1);
+    public Iterative4<T3, T4, T5, T6> popFront2(Cs2<? super T1, ? super T2> c1);
 
     default public Iterative4<T1, T2, T3, T4> popBack2(Cs1<? super T5> c5, Cs1<? super T6> c6) {
         return this.popBack(c6).popBack(c5);
@@ -219,11 +219,11 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         return this.popFront2(Cs1.empty(), Cs1.empty());
     }
 
-    public Iterative3<T1, T2, T3> popBack3(Cs3<? super T4, ? super T5, ? super T6> var1);
+    public Iterative3<T1, T2, T3> popBack3(Cs3<? super T4, ? super T5, ? super T6> c1);
 
-    public Iterative3<T1, T2, T3> popBackChain3(Cs3<? super T4, ? super T5, ? super T6> var1);
+    public Iterative3<T1, T2, T3> popBackChain3(Cs3<? super T4, ? super T5, ? super T6> c1);
 
-    public Iterative3<T4, T5, T6> popFront3(Cs3<? super T1, ? super T2, ? super T3> var1);
+    public Iterative3<T4, T5, T6> popFront3(Cs3<? super T1, ? super T2, ? super T3> c1);
 
     default public Iterative3<T1, T2, T3> popBack3(Cs1<? super T4> c4, Cs1<? super T5> c5, Cs1<? super T6> c6) {
         return this.popBack(c6).popBack(c5).popBack(c4);
@@ -241,11 +241,11 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         return this.popFront3(Cs1.empty(), Cs1.empty(), Cs1.empty());
     }
 
-    public Iterative2<T1, T2> popBack4(Cs4<? super T3, ? super T4, ? super T5, ? super T6> var1);
+    public Iterative2<T1, T2> popBack4(Cs4<? super T3, ? super T4, ? super T5, ? super T6> c1);
 
-    public Iterative2<T1, T2> popBackChain4(Cs4<? super T3, ? super T4, ? super T5, ? super T6> var1);
+    public Iterative2<T1, T2> popBackChain4(Cs4<? super T3, ? super T4, ? super T5, ? super T6> c1);
 
-    public Iterative2<T5, T6> popFront4(Cs4<? super T1, ? super T2, ? super T3, ? super T4> var1);
+    public Iterative2<T5, T6> popFront4(Cs4<? super T1, ? super T2, ? super T3, ? super T4> c1);
 
     default public Iterative2<T1, T2> popBack4(Cs1<? super T3> c3, Cs1<? super T4> c4, Cs1<? super T5> c5, Cs1<? super T6> c6) {
         return this.popBack(c6).popBack(c5).popBack(c4).popBack(c3);
@@ -263,11 +263,11 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         return this.popFront4(Cs1.empty(), Cs1.empty(), Cs1.empty(), Cs1.empty());
     }
 
-    public Iterative1<T1> popBack5(Cs5<? super T2, ? super T3, ? super T4, ? super T5, ? super T6> var1);
+    public Iterative1<T1> popBack5(Cs5<? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c1);
 
-    public Iterative1<T1> popBackChain5(Cs5<? super T2, ? super T3, ? super T4, ? super T5, ? super T6> var1);
+    public Iterative1<T1> popBackChain5(Cs5<? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c1);
 
-    public Iterative1<T6> popFront5(Cs5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> var1);
+    public Iterative1<T6> popFront5(Cs5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> c1);
 
     default public Iterative1<T1> popBack5(Cs1<? super T2> c2, Cs1<? super T3> c3, Cs1<? super T4> c4, Cs1<? super T5> c5, Cs1<? super T6> c6) {
         return this.popBack(c6).popBack(c5).popBack(c4).popBack(c3).popBack(c2);
@@ -285,11 +285,11 @@ public interface Iterative6<T1, T2, T3, T4, T5, T6> extends IterativeConstructor
         return this.popFront5(Cs1.empty(), Cs1.empty(), Cs1.empty(), Cs1.empty(), Cs1.empty());
     }
 
-    public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2, Fn1<? super T3, ? extends R3> var3, Fn1<? super T4, ? extends R4> var4, Fn1<? super T5, ? extends R5> var5, Fn1<? super T6, ? extends R6> var6);
+    public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6);
 
-    public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2, Fn1<? super T3, ? extends Iterable<? extends R3>> var3, Fn1<? super T4, ? extends Iterable<? extends R4>> var4, Fn1<? super T5, ? extends Iterable<? extends R5>> var5, Fn1<? super T6, ? extends Iterable<? extends R6>> var6);
+    public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> f2, Fn1<? super T3, ? extends Iterable<? extends R3>> f3, Fn1<? super T4, ? extends Iterable<? extends R4>> f4, Fn1<? super T5, ? extends Iterable<? extends R5>> f5, Fn1<? super T6, ? extends Iterable<? extends R6>> f6);
 
-    public Iterative6<T1, T2, T3, T4, T5, T6> filter(Pr1<? super T1> var1, Pr1<? super T2> var2, Pr1<? super T3> var3, Pr1<? super T4> var4, Pr1<? super T5> var5, Pr1<? super T6> var6);
+    public Iterative6<T1, T2, T3, T4, T5, T6> filter(Pr1<? super T1> p1, Pr1<? super T2> p2, Pr1<? super T3> p3, Pr1<? super T4> p4, Pr1<? super T5> p5, Pr1<? super T6> p6);
 
     default public <R1, R2, R3, R4, R5, R6> Iterative6<R1, R2, R3, R4, R5, R6> flatMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> f2, Fn1<? super T3, ? extends Iterable<? extends R3>> f3, Fn1<? super T4, ? extends Iterable<? extends R4>> f4, Fn1<? super T5, ? extends Iterable<? extends R5>> f5, Fn1<? super T6, ? extends Iterable<? extends R6>> f6) {
         return this.inlineMap(f1, f2, f3, f4, f5, f6).forceFlatAll();

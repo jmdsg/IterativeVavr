@@ -196,7 +196,7 @@ public interface Prc6<T1, T2, T3, T4, T5, T6> extends CheckedFunction6<T1, T2, T
         return Prc6.<T1, T2, T3, T4, T5, T6>narrow(p).inverted();
     }
 
-    public boolean test(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6) throws Throwable;
+    public boolean test(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6) throws Throwable;
 
     default public Prc5<T2, T3, T4, T5, T6> testLt(T1 t1) {
         return (t2, t3, t4, t5, t6) -> this.test(t1, t2, t3, t4, t5, t6);

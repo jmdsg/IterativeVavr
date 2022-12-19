@@ -15,25 +15,25 @@ public interface Iterative4Getter<G1, G2, G3, G4> extends IterativeGetter {
 
     public Iterative4Fail<G1, G2, G3, G4, Tuple4<G1, G2, G3, G4>> onSuccess();
 
-    public <R> Iterative4Fail<G1, G2, G3, G4, R> onSuccess(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> var1);
+    public <R> Iterative4Fail<G1, G2, G3, G4, R> onSuccess(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> f1);
 
-    public <R> Iterative4Fail<G1, G2, G3, G4, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative4Fail<G1, G2, G3, G4, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative4Fail<G1, G2, G3, G4, R> onSuccess(R var1);
+    public <R> Iterative4Fail<G1, G2, G3, G4, R> onSuccess(R r);
 
-    public <R> Iterative4Success<G1, G2, G3, G4, R> onFailure(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> var1);
+    public <R> Iterative4Success<G1, G2, G3, G4, R> onFailure(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> f1);
 
-    public <R> Iterative4Success<G1, G2, G3, G4, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative4Success<G1, G2, G3, G4, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative4Success<G1, G2, G3, G4, R> onFailure(R var1);
+    public <R> Iterative4Success<G1, G2, G3, G4, R> onFailure(R r);
 
     public static interface Iterative4Success<G1, G2, G3, G4, R> {
 
-        public R onSuccess(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative4SuccessImpl<G1, G2, G3, G4, R> extends Iterative4FinalGetter<G1, G2, G3, G4, R> implements Iterative4Success<G1, G2, G3, G4, R> {
 
@@ -63,11 +63,11 @@ public interface Iterative4Getter<G1, G2, G3, G4> extends IterativeGetter {
 
     public static interface Iterative4Fail<G1, G2, G3, G4, R> {
 
-        public R onFailure(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative4<? extends G1, ? extends G2, ? extends G3, ? extends G4>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

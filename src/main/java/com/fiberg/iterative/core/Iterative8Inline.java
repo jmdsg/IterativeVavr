@@ -52,13 +52,13 @@ public interface Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> extends Iterat
     public Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> forceCleanEmptyAll();
 
     @Override
-    public <R1, R2, R3, R4, R5, R6, R7, R8> Iterative8Inline<R1, R2, R3, R4, R5, R6, R7, R8> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2, Fn1<? super T3, ? extends R3> var3, Fn1<? super T4, ? extends R4> var4, Fn1<? super T5, ? extends R5> var5, Fn1<? super T6, ? extends R6> var6, Fn1<? super T7, ? extends R7> var7, Fn1<? super T8, ? extends R8> var8);
+    public <R1, R2, R3, R4, R5, R6, R7, R8> Iterative8Inline<R1, R2, R3, R4, R5, R6, R7, R8> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6, Fn1<? super T7, ? extends R7> f7, Fn1<? super T8, ? extends R8> f8);
 
     @Override
-    public <R1, R2, R3, R4, R5, R6, R7, R8> Iterative8Inline<R1, R2, R3, R4, R5, R6, R7, R8> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2, Fn1<? super T3, ? extends Iterable<? extends R3>> var3, Fn1<? super T4, ? extends Iterable<? extends R4>> var4, Fn1<? super T5, ? extends Iterable<? extends R5>> var5, Fn1<? super T6, ? extends Iterable<? extends R6>> var6, Fn1<? super T7, ? extends Iterable<? extends R7>> var7, Fn1<? super T8, ? extends Iterable<? extends R8>> var8);
+    public <R1, R2, R3, R4, R5, R6, R7, R8> Iterative8Inline<R1, R2, R3, R4, R5, R6, R7, R8> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> i2, Fn1<? super T3, ? extends Iterable<? extends R3>> f3, Fn1<? super T4, ? extends Iterable<? extends R4>> i4, Fn1<? super T5, ? extends Iterable<? extends R5>> f5, Fn1<? super T6, ? extends Iterable<? extends R6>> i6, Fn1<? super T7, ? extends Iterable<? extends R7>> f7, Fn1<? super T8, ? extends Iterable<? extends R8>> i8);
 
     @Override
-    public Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> filter(Pr1<? super T1> var1, Pr1<? super T2> var2, Pr1<? super T3> var3, Pr1<? super T4> var4, Pr1<? super T5> var5, Pr1<? super T6> var6, Pr1<? super T7> var7, Pr1<? super T8> var8);
+    public Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> filter(Pr1<? super T1> p1, Pr1<? super T2> p2, Pr1<? super T3> p3, Pr1<? super T4> p4, Pr1<? super T5> p5, Pr1<? super T6> p6, Pr1<? super T7> p7, Pr1<? super T8> p8);
 
     @Override
     default public Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> onSuccess(Rn r) {

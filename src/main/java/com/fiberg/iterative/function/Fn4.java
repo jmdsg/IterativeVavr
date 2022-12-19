@@ -147,12 +147,12 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
 
     public static <T1, T2, T3, T4, R> Fn4<T1, T2, T3, T4, Option<R>> lift(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn4.liftTry(f).afterApply(Value::toOption);
+        return Fn4.<T1, T2, T3, T4, R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <T1, T2, T3, T4, R> Fn4<T1, T2, T3, T4, Try<R>> liftTry(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn4.narrow(f).beforeWrap(Try::of);
+        return Fn4.<T1, T2, T3, T4, R>narrow(f).beforeWrap(Try::of);
     }
 
     public static <T1, T2, T3, T4, R> Fn4<T4, T3, T2, T1, R> invert(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f) {
@@ -192,7 +192,7 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
     }
 
     default public Cs4<T1, T2, T3, T4> toConsumer() {
-        return (t1, t2, t3, t4) -> ((Fn4) this).apply(t1, t2, t3, t4);
+        return this::apply;
     }
 
     default public Sp<R> toSupplier(T1 t1, T2 t2, T3 t3, T4 t4) {
@@ -202,7 +202,7 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
     default public Fn4<T1, T2, T3, T4, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2, t3, t4) -> {
-            Object value = this.apply(t1, t2, t3, t4);
+            R value = this.apply(t1, t2, t3, t4);
             r.run();
             return value;
         };
@@ -241,7 +241,7 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
     default public Fn4<T1, T2, T3, T4, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4) -> {
-            Object value = this.apply(t1, t2, t3, t4);
+            R value = this.apply(t1, t2, t3, t4);
             c.accept(value);
             return value;
         };
@@ -368,7 +368,7 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
     default public Fn4<T1, T2, T3, T4, R> afterPassingThroughTest(Pr4<? super T1, ? super T2, ? super T3, ? super T4> p) {
         Objects.requireNonNull(p, "p is null");
         return (t1, t2, t3, t4) -> {
-            Object result = this.apply(t1, t2, t3, t4);
+            R result = this.apply(t1, t2, t3, t4);
             p.test(t1, t2, t3, t4);
             return result;
         };
@@ -385,7 +385,7 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
     default public Fn4<T1, T2, T3, T4, R> afterPassingThroughAccept(Cs4<? super T1, ? super T2, ? super T3, ? super T4> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4) -> {
-            Object result = this.apply(t1, t2, t3, t4);
+            R result = this.apply(t1, t2, t3, t4);
             c.accept(t1, t2, t3, t4);
             return result;
         };
@@ -500,36 +500,36 @@ public interface Fn4<T1, T2, T3, T4, R> extends Function4<T1, T2, T3, T4, R> {
     }
 
     default public Fn3<T2, T3, T4, R> apply(T1 t1) {
-        return (t1, t2, t3) -> ((Function3) super.apply(t1)).apply(t1, t2, t3);
+        return Function4.super.apply(t1)::apply;
     }
 
     default public Fn2<T3, T4, R> apply(T1 t1, T2 t2) {
-        return (t1, t2) -> ((Function2) super.apply(t1, t2)).apply(t1, t2);
+        return Function4.super.apply(t1, t2)::apply;
     }
 
     default public Fn1<T4, R> apply(T1 t1, T2 t2, T3 t3) {
-        return ((Function1) super.apply(t1, t2, t3))::apply;
+        return Function4.super.apply(t1, t2, t3)::apply;
     }
 
     default public Fn1<Tuple4<T1, T2, T3, T4>, R> tupled() {
-        return ((Function1) super.tupled())::apply;
+        return Function4.super.tupled()::apply;
     }
 
     default public Fn1<T1, Function1<T2, Function1<T3, Function1<T4, R>>>> curried() {
-        return ((Function1) super.curried())::apply;
+        return Function4.super.curried()::apply;
     }
 
     default public Fn4<T4, T3, T2, T1, R> reversed() {
-        return (t1, t2, t3, t4) -> ((Function4) super.reversed()).apply(t1, t2, t3, t4);
+        return Function4.super.reversed()::apply;
     }
 
     default public Fn4<T1, T2, T3, T4, R> memoized() {
-        return (t1, t2, t3, t4) -> ((Function4) super.memoized()).apply(t1, t2, t3, t4);
+        return Function4.super.memoized()::apply;
     }
 
     default public <V> Fn4<T1, T2, T3, T4, V> andThen(Function<? super R, ? extends V> after) {
         Objects.requireNonNull(after, "after is null");
-        return (t1, t2, t3, t4) -> ((Function4) super.andThen(after)).apply(t1, t2, t3, t4);
+        return Function4.super.andThen(after)::apply;
     }
 
 }

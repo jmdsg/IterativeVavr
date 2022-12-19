@@ -12,25 +12,25 @@ public interface Iterative1Getter<G1> extends IterativeGetter {
 
     public Iterative1Fail<G1, G1> onSuccess();
 
-    public <R> Iterative1Fail<G1, R> onSuccess(Fn1<? super Iterative1<? extends G1>, ? extends R> var1);
+    public <R> Iterative1Fail<G1, R> onSuccess(Fn1<? super Iterative1<? extends G1>, ? extends R> f1);
 
-    public <R> Iterative1Fail<G1, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative1Fail<G1, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative1Fail<G1, R> onSuccess(R var1);
+    public <R> Iterative1Fail<G1, R> onSuccess(R r);
 
-    public <R> Iterative1Success<G1, R> onFailure(Fn1<? super Iterative1<? extends G1>, ? extends R> var1);
+    public <R> Iterative1Success<G1, R> onFailure(Fn1<? super Iterative1<? extends G1>, ? extends R> f1);
 
-    public <R> Iterative1Success<G1, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative1Success<G1, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative1Success<G1, R> onFailure(R var1);
+    public <R> Iterative1Success<G1, R> onFailure(R r);
 
     public static interface Iterative1Success<G1, R> {
 
-        public R onSuccess(Fn1<? super Iterative1<? extends G1>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative1<? extends G1>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative1SuccessImpl<G1, R> extends Iterative1FinalGetter<G1, R> implements Iterative1Success<G1, R> {
 
@@ -60,11 +60,11 @@ public interface Iterative1Getter<G1> extends IterativeGetter {
 
     public static interface Iterative1Fail<G1, R> {
 
-        public R onFailure(Fn1<? super Iterative1<? extends G1>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative1<? extends G1>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

@@ -44,25 +44,25 @@ public interface Iterative6Cross<T1, T2, T3, T4, T5, T6> extends Iterative6<T1, 
     public Iterative6Cross<T1, T2, T3, T4, T5, T6> forceCleanEmptyAll();
 
     @Override
-    public <T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> pushBackBy(Iterable<? extends Stream<? extends T7>> var1);
+    public <T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> pushBackBy(Iterable<? extends Stream<? extends T7>> i1);
 
     @Override
-    public <T0> Iterative7Cross<T0, T1, T2, T3, T4, T5, T6> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative7Cross<T0, T1, T2, T3, T4, T5, T6> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative7Cross<T0, T1, T2, T3, T4, T5, T6> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative7Cross<T0, T1, T2, T3, T4, T5, T6> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <T0> Iterative7Cross<T0, T1, T2, T3, T4, T5, T6> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative7Cross<T0, T1, T2, T3, T4, T5, T6> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
     @Override
-    public <R1, R2, R3, R4, R5, R6> Iterative6Cross<R1, R2, R3, R4, R5, R6> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2, Fn1<? super T3, ? extends R3> var3, Fn1<? super T4, ? extends R4> var4, Fn1<? super T5, ? extends R5> var5, Fn1<? super T6, ? extends R6> var6);
+    public <R1, R2, R3, R4, R5, R6> Iterative6Cross<R1, R2, R3, R4, R5, R6> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2, Fn1<? super T3, ? extends R3> f3, Fn1<? super T4, ? extends R4> f4, Fn1<? super T5, ? extends R5> f5, Fn1<? super T6, ? extends R6> f6);
 
     @Override
-    public <R1, R2, R3, R4, R5, R6> Iterative6Cross<R1, R2, R3, R4, R5, R6> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2, Fn1<? super T3, ? extends Iterable<? extends R3>> var3, Fn1<? super T4, ? extends Iterable<? extends R4>> var4, Fn1<? super T5, ? extends Iterable<? extends R5>> var5, Fn1<? super T6, ? extends Iterable<? extends R6>> var6);
+    public <R1, R2, R3, R4, R5, R6> Iterative6Cross<R1, R2, R3, R4, R5, R6> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> i2, Fn1<? super T3, ? extends Iterable<? extends R3>> f3, Fn1<? super T4, ? extends Iterable<? extends R4>> i4, Fn1<? super T5, ? extends Iterable<? extends R5>> f5, Fn1<? super T6, ? extends Iterable<? extends R6>> i6);
 
     @Override
-    public Iterative6Cross<T1, T2, T3, T4, T5, T6> filter(Pr1<? super T1> var1, Pr1<? super T2> var2, Pr1<? super T3> var3, Pr1<? super T4> var4, Pr1<? super T5> var5, Pr1<? super T6> var6);
+    public Iterative6Cross<T1, T2, T3, T4, T5, T6> filter(Pr1<? super T1> p1, Pr1<? super T2> p2, Pr1<? super T3> p3, Pr1<? super T4> p4, Pr1<? super T5> p5, Pr1<? super T6> p6);
 
     @Override
     default public Iterative6Cross<T1, T2, T3, T4, T5, T6> onSuccess(Rn r) {

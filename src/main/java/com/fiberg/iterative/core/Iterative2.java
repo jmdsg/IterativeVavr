@@ -110,23 +110,23 @@ public interface Iterative2<T1, T2> extends IterativeConstructor {
 
     public Iterative2<T1, T2> forceCleanEmptyAll();
 
-    public <T3> Iterative3<T1, T2, T3> pushBackBy(Iterable<? extends Stream<? extends T3>> var1);
+    public <T3> Iterative3<T1, T2, T3> pushBackBy(Iterable<? extends Stream<? extends T3>> i1);
 
-    public <T3> Iterative3Cross<T1, T2, T3> pushBackCrossBy(Iterable<? extends Stream<? extends T3>> var1);
+    public <T3> Iterative3Cross<T1, T2, T3> pushBackCrossBy(Iterable<? extends Stream<? extends T3>> i1);
 
-    public <T3> Iterative3Inline<T1, T2, T3> pushBackInlineBy(Iterable<? extends Stream<? extends T3>> var1);
+    public <T3> Iterative3Inline<T1, T2, T3> pushBackInlineBy(Iterable<? extends Stream<? extends T3>> i1);
 
-    public <T0> Iterative3<T0, T1, T2> pushFrontBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative3<T0, T1, T2> pushFrontBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <T0> Iterative3<T0, T1, T2> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative3<T0, T1, T2> pushFrontCrossBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public <T0> Iterative3<T0, T1, T2> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> var1);
+    public <T0> Iterative3<T0, T1, T2> pushFrontInlineBy(Iterable<? extends Stream<? extends T0>> i1);
 
-    public Iterative1<T1> popBack(Cs1<? super T2> var1);
+    public Iterative1<T1> popBack(Cs1<? super T2> c1);
 
-    public Iterative1<T1> popBackChain(Cs1<? super T2> var1);
+    public Iterative1<T1> popBackChain(Cs1<? super T2> c1);
 
-    public Iterative1<T2> popFront(Cs1<? super T1> var1);
+    public Iterative1<T2> popFront(Cs1<? super T1> c1);
 
     default public Iterative1<T1> popBack() {
         return this.popBack(Cs1.empty());
@@ -136,11 +136,11 @@ public interface Iterative2<T1, T2> extends IterativeConstructor {
         return this.popFront(Cs1.empty());
     }
 
-    public <R1, R2> Iterative2<R1, R2> map(Fn1<? super T1, ? extends R1> var1, Fn1<? super T2, ? extends R2> var2);
+    public <R1, R2> Iterative2<R1, R2> map(Fn1<? super T1, ? extends R1> f1, Fn1<? super T2, ? extends R2> f2);
 
-    public <R1, R2> Iterative2<R1, R2> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> var1, Fn1<? super T2, ? extends Iterable<? extends R2>> var2);
+    public <R1, R2> Iterative2<R1, R2> inlineMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> i2);
 
-    public Iterative2<T1, T2> filter(Pr1<? super T1> var1, Pr1<? super T2> var2);
+    public Iterative2<T1, T2> filter(Pr1<? super T1> p1, Pr1<? super T2> p2);
 
     default public <R1, R2> Iterative2<R1, R2> flatMap(Fn1<? super T1, ? extends Iterable<? extends R1>> f1, Fn1<? super T2, ? extends Iterable<? extends R2>> f2) {
         return this.inlineMap(f1, f2).forceFlatAll();

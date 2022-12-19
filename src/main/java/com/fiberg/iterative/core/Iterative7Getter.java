@@ -14,25 +14,25 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
 
     public Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, Tuple7<G1, G2, G3, G4, G5, G6, G7>> onSuccess();
 
-    public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> var1);
+    public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> f1);
 
-    public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(R var1);
+    public <R> Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> onSuccess(R r);
 
-    public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> var1);
+    public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> f1);
 
-    public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(R var1);
+    public <R> Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> onFailure(R r);
 
     public static interface Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> {
 
-        public R onSuccess(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative7SuccessImpl<G1, G2, G3, G4, G5, G6, G7, R> extends Iterative7FinalGetter<G1, G2, G3, G4, G5, G6, G7, R> implements Iterative7Success<G1, G2, G3, G4, G5, G6, G7, R> {
 
@@ -62,11 +62,11 @@ public interface Iterative7Getter<G1, G2, G3, G4, G5, G6, G7> extends IterativeG
 
     public static interface Iterative7Fail<G1, G2, G3, G4, G5, G6, G7, R> {
 
-        public R onFailure(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative7<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5, ? extends G6, ? extends G7>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

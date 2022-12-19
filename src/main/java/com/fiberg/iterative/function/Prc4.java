@@ -188,7 +188,7 @@ public interface Prc4<T1, T2, T3, T4> extends CheckedFunction4<T1, T2, T3, T4, B
         return Prc4.<T1, T2, T3, T4>narrow(p).inverted();
     }
 
-    public boolean test(T1 var1, T2 var2, T3 var3, T4 var4) throws Throwable;
+    public boolean test(T1 t1, T2 t2, T3 t3, T4 t4) throws Throwable;
 
     default public Prc3<T2, T3, T4> testLt(T1 t1) {
         return (t2, t3, t4) -> this.test(t1, t2, t3, t4);

@@ -192,10 +192,10 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         @Override
-        public abstract SwitcherCheckedTupleComparator<TUPLE, R> map(Fnc1<? super TUPLE, ? extends R> var1);
+        public abstract SwitcherCheckedTupleComparator<TUPLE, R> map(Fnc1<? super TUPLE, ? extends R> f1);
 
         @Override
-        public abstract SwitcherCheckedTupleTransformer<TUPLE, R> onPredicate(Prc1<? super TUPLE> var1);
+        public abstract SwitcherCheckedTupleTransformer<TUPLE, R> onPredicate(Prc1<? super TUPLE> p1);
 
         static <T, S> Fnc1<T, S> emptyTransformer() {
             return ignore -> {
@@ -375,7 +375,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Prc8.tuple(p));
         }
 
-        public SwitcherCheckedTransformer8<T1, T2, T3, T4, T5, T6, T7, T8, R> onPredicate(Prc1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> var1);
+        public SwitcherCheckedTransformer8<T1, T2, T3, T4, T5, T6, T7, T8, R> onPredicate(Prc1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> p1);
 
         default public SwitcherCheckedTransformer8<T1, T2, T3, T4, T5, T6, T7, T8, R> onPredicate1(Prc1<? super T1> p) {
             return this.onPredicate(p.ignoring7Rt());
@@ -513,7 +513,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc8.tuple(f.ignoring7Lt()));
         }
 
-        public SwitcherCheckedComparator8<T1, T2, T3, T4, T5, T6, T7, T8, R> map(Fnc1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, ? extends R> var1);
+        public SwitcherCheckedComparator8<T1, T2, T3, T4, T5, T6, T7, T8, R> map(Fnc1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, ? extends R> f1);
     }
 
     public static class SwitcherChecked7<T1, T2, T3, T4, T5, T6, T7, R> extends SwitcherCheckedAbstract<Tuple7<T1, T2, T3, T4, T5, T6, T7>, R> implements SwitcherCheckedTransformer7<T1, T2, T3, T4, T5, T6, T7, R>, SwitcherCheckedComparator7<T1, T2, T3, T4, T5, T6, T7, R> {
@@ -644,7 +644,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(p.ignoring6Lt());
         }
 
-        public SwitcherCheckedTransformer7<T1, T2, T3, T4, T5, T6, T7, R> onPredicate(Prc1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>> var1);
+        public SwitcherCheckedTransformer7<T1, T2, T3, T4, T5, T6, T7, R> onPredicate(Prc1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>> p1);
 
         default public Fnc7<T1, T2, T3, T4, T5, T6, T7, R> onDefaultThrow() {
             return this.onDefaults(SwitcherCheckedAbstract.emptyTransformer());
@@ -742,7 +742,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc7.tuple(f.ignoring6Lt()));
         }
 
-        public SwitcherCheckedComparator7<T1, T2, T3, T4, T5, T6, T7, R> map(Fnc1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>, ? extends R> var1);
+        public SwitcherCheckedComparator7<T1, T2, T3, T4, T5, T6, T7, R> map(Fnc1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>, ? extends R> f1);
     }
 
     public static class SwitcherChecked6<T1, T2, T3, T4, T5, T6, R> extends SwitcherCheckedAbstract<Tuple6<T1, T2, T3, T4, T5, T6>, R> implements SwitcherCheckedTransformer6<T1, T2, T3, T4, T5, T6, R>, SwitcherCheckedComparator6<T1, T2, T3, T4, T5, T6, R> {
@@ -837,7 +837,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Prc6.tuple(p));
         }
 
-        public SwitcherCheckedTransformer6<T1, T2, T3, T4, T5, T6, R> onPredicate(Prc1<? super Tuple6<T1, T2, T3, T4, T5, T6>> var1);
+        public SwitcherCheckedTransformer6<T1, T2, T3, T4, T5, T6, R> onPredicate(Prc1<? super Tuple6<T1, T2, T3, T4, T5, T6>> p1);
 
         default public SwitcherCheckedTransformer6<T1, T2, T3, T4, T5, T6, R> onPredicate1(Prc1<? super T1> p) {
             return this.onPredicate(p.ignoring5Rt());
@@ -951,7 +951,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc6.tuple(f.ignoring5Lt()));
         }
 
-        public SwitcherCheckedComparator6<T1, T2, T3, T4, T5, T6, R> map(Fnc1<? super Tuple6<T1, T2, T3, T4, T5, T6>, ? extends R> var1);
+        public SwitcherCheckedComparator6<T1, T2, T3, T4, T5, T6, R> map(Fnc1<? super Tuple6<T1, T2, T3, T4, T5, T6>, ? extends R> f1);
     }
 
     public static class SwitcherChecked5<T1, T2, T3, T4, T5, R> extends SwitcherCheckedAbstract<Tuple5<T1, T2, T3, T4, T5>, R> implements SwitcherCheckedTransformer5<T1, T2, T3, T4, T5, R>, SwitcherCheckedComparator5<T1, T2, T3, T4, T5, R> {
@@ -1058,7 +1058,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(p.ignoring4Lt());
         }
 
-        public SwitcherCheckedTransformer5<T1, T2, T3, T4, T5, R> onPredicate(Prc1<? super Tuple5<T1, T2, T3, T4, T5>> var1);
+        public SwitcherCheckedTransformer5<T1, T2, T3, T4, T5, R> onPredicate(Prc1<? super Tuple5<T1, T2, T3, T4, T5>> p1);
 
         default public Fnc5<T1, T2, T3, T4, T5, R> onDefaultThrow() {
             return this.onDefaults(SwitcherCheckedAbstract.emptyTransformer());
@@ -1140,7 +1140,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc5.tuple(f.ignoring4Lt()));
         }
 
-        public SwitcherCheckedComparator5<T1, T2, T3, T4, T5, R> map(Fnc1<? super Tuple5<T1, T2, T3, T4, T5>, ? extends R> var1);
+        public SwitcherCheckedComparator5<T1, T2, T3, T4, T5, R> map(Fnc1<? super Tuple5<T1, T2, T3, T4, T5>, ? extends R> f1);
     }
 
     public static class SwitcherChecked4<T1, T2, T3, T4, R> extends SwitcherCheckedAbstract<Tuple4<T1, T2, T3, T4>, R> implements SwitcherCheckedTransformer4<T1, T2, T3, T4, R>, SwitcherCheckedComparator4<T1, T2, T3, T4, R> {
@@ -1219,7 +1219,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Prc4.tuple(p));
         }
 
-        public SwitcherCheckedTransformer4<T1, T2, T3, T4, R> onPredicate(Prc1<? super Tuple4<T1, T2, T3, T4>> var1);
+        public SwitcherCheckedTransformer4<T1, T2, T3, T4, R> onPredicate(Prc1<? super Tuple4<T1, T2, T3, T4>> p1);
 
         default public SwitcherCheckedTransformer4<T1, T2, T3, T4, R> onPredicate1(Prc1<? super T1> p) {
             return this.onPredicate(p.ignoring3Rt());
@@ -1309,7 +1309,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc4.tuple(f.ignoring3Lt()));
         }
 
-        public SwitcherCheckedComparator4<T1, T2, T3, T4, R> map(Fnc1<? super Tuple4<T1, T2, T3, T4>, ? extends R> var1);
+        public SwitcherCheckedComparator4<T1, T2, T3, T4, R> map(Fnc1<? super Tuple4<T1, T2, T3, T4>, ? extends R> f1);
     }
 
     public static class SwitcherChecked3<T1, T2, T3, R> extends SwitcherCheckedAbstract<Tuple3<T1, T2, T3>, R> implements SwitcherCheckedTransformer3<T1, T2, T3, R>, SwitcherCheckedComparator3<T1, T2, T3, R> {
@@ -1380,7 +1380,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Prc3.tuple(p));
         }
 
-        public SwitcherCheckedTransformer3<T1, T2, T3, R> onPredicate(Prc1<? super Tuple3<T1, T2, T3>> var1);
+        public SwitcherCheckedTransformer3<T1, T2, T3, R> onPredicate(Prc1<? super Tuple3<T1, T2, T3>> p1);
 
         default public SwitcherCheckedTransformer3<T1, T2, T3, R> onPredicate1(Prc1<? super T1> p) {
             return this.onPredicate(p.ignoring2Rt());
@@ -1458,7 +1458,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc3.tuple(f.ignoring2Lt()));
         }
 
-        public SwitcherCheckedComparator3<T1, T2, T3, R> map(Fnc1<? super Tuple3<T1, T2, T3>, ? extends R> var1);
+        public SwitcherCheckedComparator3<T1, T2, T3, R> map(Fnc1<? super Tuple3<T1, T2, T3>, ? extends R> f1);
     }
 
     public static class SwitcherChecked2<T1, T2, R> extends SwitcherCheckedAbstract<Tuple2<T1, T2>, R> implements SwitcherCheckedTransformer2<T1, T2, R>, SwitcherCheckedComparator2<T1, T2, R> {
@@ -1521,7 +1521,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Prc2.tuple(p));
         }
 
-        public SwitcherCheckedTransformer2<T1, T2, R> onPredicate(Prc1<? super Tuple2<T1, T2>> var1);
+        public SwitcherCheckedTransformer2<T1, T2, R> onPredicate(Prc1<? super Tuple2<T1, T2>> p1);
 
         default public SwitcherCheckedTransformer2<T1, T2, R> onPredicate1(Prc1<? super T1> p) {
             return this.onPredicate(p.ignoring1Rt());
@@ -1587,7 +1587,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fnc2.tuple(f.ignoring1Lt()));
         }
 
-        public SwitcherCheckedComparator2<T1, T2, R> map(Fnc1<? super Tuple2<T1, T2>, ? extends R> var1);
+        public SwitcherCheckedComparator2<T1, T2, R> map(Fnc1<? super Tuple2<T1, T2>, ? extends R> f1);
     }
 
     public static class SwitcherChecked1<T1, R> extends SwitcherCheckedBaseAbstract<Tuple1<T1>, R> implements SwitcherCheckedTransformer1<T1, R>, SwitcherCheckedComparator1<T1, R> {
@@ -1630,7 +1630,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(SwitcherCheckedAbstract.comparatorSupplierChecked(s));
         }
 
-        public SwitcherCheckedTransformer1<T1, R> onPredicate(Prc1<? super T1> var1);
+        public SwitcherCheckedTransformer1<T1, R> onPredicate(Prc1<? super T1> p1);
 
         default public Fnc1<T1, R> onDefaultThrow() {
             return this.onDefaults(SwitcherCheckedAbstract.emptyTransformer());
@@ -1664,22 +1664,22 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(s.ignoring1());
         }
 
-        public SwitcherCheckedComparator1<T1, R> map(Fnc1<? super T1, ? extends R> var1);
+        public SwitcherCheckedComparator1<T1, R> map(Fnc1<? super T1, ? extends R> f1);
     }
 
     public static interface SwitcherCheckedTupleComparator<TUPLE extends Tuple, R> extends SwitcherCheckedComparator<TUPLE, R> {
 
-        public SwitcherCheckedTupleTransformer<TUPLE, R> onPredicate(Prc1<? super TUPLE> var1);
+        public SwitcherCheckedTupleTransformer<TUPLE, R> onPredicate(Prc1<? super TUPLE> p1);
     }
 
     public static interface SwitcherCheckedComparator<TUPLE extends Tuple, R> {
 
-        public Fnc1<TUPLE, R> onDefaultTupled(Fnc1<? super TUPLE, ? extends R> var1);
+        public Fnc1<TUPLE, R> onDefaultTupled(Fnc1<? super TUPLE, ? extends R> f1);
     }
 
     public static interface SwitcherCheckedTupleTransformer<TUPLE extends Tuple, R> extends SwitcherCheckedTransformer<TUPLE, R> {
 
-        public SwitcherCheckedTupleComparator<TUPLE, R> map(Fnc1<? super TUPLE, ? extends R> var1);
+        public SwitcherCheckedTupleComparator<TUPLE, R> map(Fnc1<? super TUPLE, ? extends R> f1);
     }
 
     public static interface SwitcherCheckedTransformer<TUPLE extends Tuple, R> {
@@ -1701,10 +1701,10 @@ public interface Switcher<TUPLE extends Tuple, R> {
         }
 
         @Override
-        public abstract SwitcherTupleComparator<TUPLE, R> map(Fn1<? super TUPLE, ? extends R> var1);
+        public abstract SwitcherTupleComparator<TUPLE, R> map(Fn1<? super TUPLE, ? extends R> f1);
 
         @Override
-        public abstract SwitcherTupleTransformer<TUPLE, R> onPredicate(Pr1<? super TUPLE> var1);
+        public abstract SwitcherTupleTransformer<TUPLE, R> onPredicate(Pr1<? super TUPLE> p1);
 
         static <T, S> Fn1<T, S> emptyTransformer() {
             return ignore -> {
@@ -1880,7 +1880,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Pr8.tuple(p));
         }
 
-        public SwitcherTransformer8<T1, T2, T3, T4, T5, T6, T7, T8, R> onPredicate(Pr1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> var1);
+        public SwitcherTransformer8<T1, T2, T3, T4, T5, T6, T7, T8, R> onPredicate(Pr1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>> p1);
 
         default public SwitcherTransformer8<T1, T2, T3, T4, T5, T6, T7, T8, R> onPredicate1(Pr1<? super T1> p) {
             return this.onPredicate(p.ignoring7Rt());
@@ -2018,7 +2018,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn8.tuple(f.ignoring7Lt()));
         }
 
-        public SwitcherComparator8<T1, T2, T3, T4, T5, T6, T7, T8, R> map(Fn1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, ? extends R> var1);
+        public SwitcherComparator8<T1, T2, T3, T4, T5, T6, T7, T8, R> map(Fn1<? super Tuple8<T1, T2, T3, T4, T5, T6, T7, T8>, ? extends R> f1);
     }
 
     public static class Switcher7<T1, T2, T3, T4, T5, T6, T7, R> extends SwitcherAbstract<Tuple7<T1, T2, T3, T4, T5, T6, T7>, R> implements SwitcherTransformer7<T1, T2, T3, T4, T5, T6, T7, R>, SwitcherComparator7<T1, T2, T3, T4, T5, T6, T7, R> {
@@ -2149,7 +2149,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(p.ignoring6Lt());
         }
 
-        public SwitcherTransformer7<T1, T2, T3, T4, T5, T6, T7, R> onPredicate(Pr1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>> var1);
+        public SwitcherTransformer7<T1, T2, T3, T4, T5, T6, T7, R> onPredicate(Pr1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>> p1);
 
         default public Fn7<T1, T2, T3, T4, T5, T6, T7, R> onDefaultThrow() {
             return this.onDefaults(SwitcherAbstract.emptyTransformer());
@@ -2247,7 +2247,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn7.tuple(f.ignoring6Lt()));
         }
 
-        public SwitcherComparator7<T1, T2, T3, T4, T5, T6, T7, R> map(Fn1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>, ? extends R> var1);
+        public SwitcherComparator7<T1, T2, T3, T4, T5, T6, T7, R> map(Fn1<? super Tuple7<T1, T2, T3, T4, T5, T6, T7>, ? extends R> f1);
     }
 
     public static class Switcher6<T1, T2, T3, T4, T5, T6, R> extends SwitcherAbstract<Tuple6<T1, T2, T3, T4, T5, T6>, R> implements SwitcherTransformer6<T1, T2, T3, T4, T5, T6, R>, SwitcherComparator6<T1, T2, T3, T4, T5, T6, R> {
@@ -2342,7 +2342,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Pr6.tuple(p));
         }
 
-        public SwitcherTransformer6<T1, T2, T3, T4, T5, T6, R> onPredicate(Pr1<? super Tuple6<T1, T2, T3, T4, T5, T6>> var1);
+        public SwitcherTransformer6<T1, T2, T3, T4, T5, T6, R> onPredicate(Pr1<? super Tuple6<T1, T2, T3, T4, T5, T6>> p1);
 
         default public SwitcherTransformer6<T1, T2, T3, T4, T5, T6, R> onPredicate1(Pr1<? super T1> p) {
             return this.onPredicate(p.ignoring5Rt());
@@ -2456,7 +2456,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn6.tuple(f.ignoring5Lt()));
         }
 
-        public SwitcherComparator6<T1, T2, T3, T4, T5, T6, R> map(Fn1<? super Tuple6<T1, T2, T3, T4, T5, T6>, ? extends R> var1);
+        public SwitcherComparator6<T1, T2, T3, T4, T5, T6, R> map(Fn1<? super Tuple6<T1, T2, T3, T4, T5, T6>, ? extends R> f1);
     }
 
     public static class Switcher5<T1, T2, T3, T4, T5, R> extends SwitcherAbstract<Tuple5<T1, T2, T3, T4, T5>, R> implements SwitcherTransformer5<T1, T2, T3, T4, T5, R>, SwitcherComparator5<T1, T2, T3, T4, T5, R> {
@@ -2563,7 +2563,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(p.ignoring4Lt());
         }
 
-        public SwitcherTransformer5<T1, T2, T3, T4, T5, R> onPredicate(Pr1<? super Tuple5<T1, T2, T3, T4, T5>> var1);
+        public SwitcherTransformer5<T1, T2, T3, T4, T5, R> onPredicate(Pr1<? super Tuple5<T1, T2, T3, T4, T5>> p1);
 
         default public Fn5<T1, T2, T3, T4, T5, R> onDefaultThrow() {
             return this.onDefaults(SwitcherAbstract.emptyTransformer());
@@ -2645,7 +2645,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn5.tuple(f.ignoring4Lt()));
         }
 
-        public SwitcherComparator5<T1, T2, T3, T4, T5, R> map(Fn1<? super Tuple5<T1, T2, T3, T4, T5>, ? extends R> var1);
+        public SwitcherComparator5<T1, T2, T3, T4, T5, R> map(Fn1<? super Tuple5<T1, T2, T3, T4, T5>, ? extends R> f1);
     }
 
     public static class Switcher4<T1, T2, T3, T4, R> extends SwitcherAbstract<Tuple4<T1, T2, T3, T4>, R> implements SwitcherTransformer4<T1, T2, T3, T4, R>, SwitcherComparator4<T1, T2, T3, T4, R> {
@@ -2724,7 +2724,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Pr4.tuple(p));
         }
 
-        public SwitcherTransformer4<T1, T2, T3, T4, R> onPredicate(Pr1<? super Tuple4<T1, T2, T3, T4>> var1);
+        public SwitcherTransformer4<T1, T2, T3, T4, R> onPredicate(Pr1<? super Tuple4<T1, T2, T3, T4>> p1);
 
         default public SwitcherTransformer4<T1, T2, T3, T4, R> onPredicate1(Pr1<? super T1> p) {
             return this.onPredicate(p.ignoring3Rt());
@@ -2814,7 +2814,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn4.tuple(f.ignoring3Lt()));
         }
 
-        public SwitcherComparator4<T1, T2, T3, T4, R> map(Fn1<? super Tuple4<T1, T2, T3, T4>, ? extends R> var1);
+        public SwitcherComparator4<T1, T2, T3, T4, R> map(Fn1<? super Tuple4<T1, T2, T3, T4>, ? extends R> f1);
     }
 
     public static class Switcher3<T1, T2, T3, R> extends SwitcherAbstract<Tuple3<T1, T2, T3>, R> implements SwitcherTransformer3<T1, T2, T3, R>, SwitcherComparator3<T1, T2, T3, R> {
@@ -2885,7 +2885,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Pr3.tuple(p));
         }
 
-        public SwitcherTransformer3<T1, T2, T3, R> onPredicate(Pr1<? super Tuple3<T1, T2, T3>> var1);
+        public SwitcherTransformer3<T1, T2, T3, R> onPredicate(Pr1<? super Tuple3<T1, T2, T3>> p1);
 
         default public SwitcherTransformer3<T1, T2, T3, R> onPredicate1(Pr1<? super T1> p) {
             return this.onPredicate(p.ignoring2Rt());
@@ -2963,7 +2963,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn3.tuple(f.ignoring2Lt()));
         }
 
-        public SwitcherComparator3<T1, T2, T3, R> map(Fn1<? super Tuple3<T1, T2, T3>, ? extends R> var1);
+        public SwitcherComparator3<T1, T2, T3, R> map(Fn1<? super Tuple3<T1, T2, T3>, ? extends R> f1);
     }
 
     public static class Switcher2<T1, T2, R> extends SwitcherAbstract<Tuple2<T1, T2>, R> implements SwitcherTransformer2<T1, T2, R>, SwitcherComparator2<T1, T2, R> {
@@ -3026,7 +3026,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(Pr2.tuple(p));
         }
 
-        public SwitcherTransformer2<T1, T2, R> onPredicate(Pr1<? super Tuple2<T1, T2>> var1);
+        public SwitcherTransformer2<T1, T2, R> onPredicate(Pr1<? super Tuple2<T1, T2>> p1);
 
         default public SwitcherTransformer2<T1, T2, R> onPredicate1(Pr1<? super T1> p) {
             return this.onPredicate(p.ignoring1Rt());
@@ -3092,7 +3092,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(Fn2.tuple(f.ignoring1Lt()));
         }
 
-        public SwitcherComparator2<T1, T2, R> map(Fn1<? super Tuple2<T1, T2>, ? extends R> var1);
+        public SwitcherComparator2<T1, T2, R> map(Fn1<? super Tuple2<T1, T2>, ? extends R> f1);
     }
 
     public static class Switcher1<T1, R> extends SwitcherBaseAbstract<Tuple1<T1>, R> implements SwitcherTransformer1<T1, R>, SwitcherComparator1<T1, R> {
@@ -3135,7 +3135,7 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.onPredicate(SwitcherAbstract.comparatorSupplierChecked(s));
         }
 
-        public SwitcherTransformer1<T1, R> onPredicate(Pr1<? super T1> var1);
+        public SwitcherTransformer1<T1, R> onPredicate(Pr1<? super T1> p1);
 
         default public Fn1<T1, R> onDefaultThrow() {
             return this.onDefaults(SwitcherAbstract.emptyTransformer());
@@ -3169,22 +3169,22 @@ public interface Switcher<TUPLE extends Tuple, R> {
             return this.map(s.toFunction().ignoring1());
         }
 
-        public SwitcherComparator1<T1, R> map(Fn1<? super T1, ? extends R> var1);
+        public SwitcherComparator1<T1, R> map(Fn1<? super T1, ? extends R> f1);
     }
 
     public static interface SwitcherTupleComparator<TUPLE extends Tuple, R> extends SwitcherComparator<TUPLE, R> {
 
-        public SwitcherTupleTransformer<TUPLE, R> onPredicate(Pr1<? super TUPLE> var1);
+        public SwitcherTupleTransformer<TUPLE, R> onPredicate(Pr1<? super TUPLE> p1);
     }
 
     public static interface SwitcherComparator<TUPLE extends Tuple, R> {
 
-        public Fn1<TUPLE, R> onDefaultTupled(Fn1<? super TUPLE, ? extends R> var1);
+        public Fn1<TUPLE, R> onDefaultTupled(Fn1<? super TUPLE, ? extends R> f1);
     }
 
     public static interface SwitcherTupleTransformer<TUPLE extends Tuple, R> extends SwitcherTransformer<TUPLE, R> {
 
-        public SwitcherTupleComparator<TUPLE, R> map(Fn1<? super TUPLE, ? extends R> var1);
+        public SwitcherTupleComparator<TUPLE, R> map(Fn1<? super TUPLE, ? extends R> f1);
     }
 
     public static interface SwitcherTransformer<TUPLE extends Tuple, R> {

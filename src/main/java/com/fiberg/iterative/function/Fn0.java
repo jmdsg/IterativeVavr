@@ -58,19 +58,19 @@ public interface Fn0<R> extends Function0<R> {
 
     public static <R> Fn0<R> uncheck(Fnc0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fnc0.narrow(f).unchecked();
+        return Fnc0.<R>narrow(f).unchecked();
     }
 
     public static <T1, R> Fn0<R> pass(Fn1<? super T1, ? extends R> f, T1 t1) {
-        return Fn1.narrow(f).<T1, R>narrow(f).toFunction(t1);
+        return Fn1.<T1, R>narrow(f).toFunction(t1);
     }
 
     public static <T1, T2, R> Fn0<R> pass(Fn2<? super T1, ? super T2, ? extends R> f, T1 t1, T2 t2) {
-        return Fn2.narrow(f).<T1, T2, R>narrow(f).toFunction(t1, t2);
+        return Fn2.<T1, T2, R>narrow(f).toFunction(t1, t2);
     }
 
     public static <T1, T2, T3, R> Fn0<R> pass(Fn3<? super T1, ? super T2, ? super T3, ? extends R> f, T1 t1, T2 t2, T3 t3) {
-        return Fn3.narrow(f).<T1, T2, T3, R>narrow(f).toFunction(t1, t2, t3);
+        return Fn3.<T1, T2, T3, R>narrow(f).toFunction(t1, t2, t3);
     }
 
     public static <T1, T2, T3, T4, R> Fn0<R> pass(Fn4<? super T1, ? super T2, ? super T3, ? super T4, ? extends R> f, T1 t1, T2 t2, T3 t3, T4 t4) {
@@ -127,7 +127,7 @@ public interface Fn0<R> extends Function0<R> {
 
     public static <R> Fn0<Option<R>> lift(Fn0<? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn0.liftTry(f).afterApply(Value::toOption);
+        return Fn0.<R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <R> Fn0<Try<R>> liftTry(Fn0<? extends R> f) {
@@ -146,7 +146,7 @@ public interface Fn0<R> extends Function0<R> {
     default public Fn0<R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return () -> {
-            Object value = this.apply();
+            R value = this.apply();
             r.run();
             return value;
         };
@@ -172,7 +172,7 @@ public interface Fn0<R> extends Function0<R> {
 
     default public <V> Fn0<V> afterGet(Sp<? extends V> s) {
         Objects.requireNonNull(s, "s is null");
-        return this.afterGetTo(s).toFunction();
+        return this.<V>afterGetTo(s).toFunction();
     }
 
     default public <V> Sp<V> afterGetTo(Sp<? extends V> s) {
@@ -188,7 +188,7 @@ public interface Fn0<R> extends Function0<R> {
     default public Fn0<R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return () -> {
-            Object value = this.apply();
+            R value = this.apply();
             c.accept(value);
             return value;
         };
@@ -302,23 +302,23 @@ public interface Fn0<R> extends Function0<R> {
     }
 
     default public Fn1<Tuple0, R> tupled() {
-        return ((Function1) super.tupled())::apply;
+        return Function0.super.tupled()::apply;
     }
 
     default public Fn0<R> curried() {
-        return ((Function0) super.curried())::apply;
+        return Function0.super.curried()::apply;
     }
 
     default public Fn0<R> reversed() {
-        return ((Function0) super.reversed())::apply;
+        return Function0.super.reversed()::apply;
     }
 
     default public Fn0<R> memoized() {
-        return ((Function0) super.memoized())::apply;
+        return Function0.super.memoized()::apply;
     }
 
     default public <V> Fn0<V> andThen(Function<? super R, ? extends V> f) {
-        return ((Function0) super.andThen(f))::apply;
+        return Function0.super.andThen(f)::apply;
     }
 
 }

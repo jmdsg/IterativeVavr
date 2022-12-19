@@ -26,65 +26,65 @@ public interface Iterative3Args<T1, T2, T3> {
 
     public static interface Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> extends Iterative3Args<T1, T2, T3> {
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn6<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R1> var1, Fn6<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R2> var2, Fn6<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn6<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R1> f1, Fn6<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R2> f2, Fn6<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R3> f3);
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T1, ? extends R1> var1, Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T2, ? extends R2> var2, Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T1, ? extends R1> f1, Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T2, ? extends R2> f2, Fn6<? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? super T3, ? extends R3> f3);
 
-        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn6<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R3> var1);
+        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn6<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R3> f1);
 
-        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn6<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R1> var1);
+        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn6<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R1> f1);
 
-        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn6<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R2> var1, Fn6<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R3> var2);
+        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn6<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R2> f1, Fn6<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R3> f2);
 
-        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn6<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R1> var1, Fn6<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R2> var2);
+        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn6<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R1> f1, Fn6<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? super A5, ? extends R2> f2);
 
-        public <R1, R2, R3, R4, R5> Iterative3Args5<T1, T2, T3, R1, R2, R3, R4, R5> map(Fn1<? super A1, ? extends R1> var1, Fn1<? super A2, ? extends R2> var2, Fn1<? super A3, ? extends R3> var3, Fn1<? super A4, ? extends R4> var4, Fn1<? super A5, ? extends R5> var5);
+        public <R1, R2, R3, R4, R5> Iterative3Args5<T1, T2, T3, R1, R2, R3, R4, R5> map(Fn1<? super A1, ? extends R1> f1, Fn1<? super A2, ? extends R2> f2, Fn1<? super A3, ? extends R3> f3, Fn1<? super A4, ? extends R4> f4, Fn1<? super A5, ? extends R5> f5);
 
-        public <R1> Iterative3Args5<T1, T2, T3, R1, A2, A3, A4, A5> map1(Fn1<? super A1, ? extends R1> var1);
+        public <R1> Iterative3Args5<T1, T2, T3, R1, A2, A3, A4, A5> map1(Fn1<? super A1, ? extends R1> f1);
 
-        public <R2> Iterative3Args5<T1, T2, T3, A1, R2, A3, A4, A5> map2(Fn1<? super A2, ? extends R2> var1);
+        public <R2> Iterative3Args5<T1, T2, T3, A1, R2, A3, A4, A5> map2(Fn1<? super A2, ? extends R2> f1);
 
-        public <R3> Iterative3Args5<T1, T2, T3, A1, A2, R3, A4, A5> map3(Fn1<? super A3, ? extends R3> var1);
+        public <R3> Iterative3Args5<T1, T2, T3, A1, A2, R3, A4, A5> map3(Fn1<? super A3, ? extends R3> f1);
 
-        public <R4> Iterative3Args5<T1, T2, T3, A1, A2, A3, R4, A5> map4(Fn1<? super A4, ? extends R4> var1);
+        public <R4> Iterative3Args5<T1, T2, T3, A1, A2, A3, R4, A5> map4(Fn1<? super A4, ? extends R4> f1);
 
-        public <R5> Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, R5> map5(Fn1<? super A5, ? extends R5> var1);
+        public <R5> Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, R5> map5(Fn1<? super A5, ? extends R5> f1);
 
-        public <R1, R2, R3, R4, R5> Iterative3Args5<T1, T2, T3, R1, R2, R3, R4, R5> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2, Fn1<? super A3, ? extends Iterable<? extends R3>> var3, Fn1<? super A4, ? extends Iterable<? extends R4>> var4, Fn1<? super A5, ? extends Iterable<? extends R5>> var5);
+        public <R1, R2, R3, R4, R5> Iterative3Args5<T1, T2, T3, R1, R2, R3, R4, R5> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2, Fn1<? super A3, ? extends Iterable<? extends R3>> f3, Fn1<? super A4, ? extends Iterable<? extends R4>> i4, Fn1<? super A5, ? extends Iterable<? extends R5>> f5);
 
-        public <R1> Iterative3Args5<T1, T2, T3, R1, A2, A3, A4, A5> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args5<T1, T2, T3, R1, A2, A3, A4, A5> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args5<T1, T2, T3, A1, R2, A3, A4, A5> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args5<T1, T2, T3, A1, R2, A3, A4, A5> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R3> Iterative3Args5<T1, T2, T3, A1, A2, R3, A4, A5> flatMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> var1);
+        public <R3> Iterative3Args5<T1, T2, T3, A1, A2, R3, A4, A5> flatMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> f1);
 
-        public <R4> Iterative3Args5<T1, T2, T3, A1, A2, A3, R4, A5> flatMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> var1);
+        public <R4> Iterative3Args5<T1, T2, T3, A1, A2, A3, R4, A5> flatMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> f1);
 
-        public <R5> Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, R5> flatMap5(Fn1<? super A5, ? extends Iterable<? extends R5>> var1);
+        public <R5> Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, R5> flatMap5(Fn1<? super A5, ? extends Iterable<? extends R5>> f1);
 
-        public <R1, R2, R3, R4, R5> Iterative3Args5<T1, T2, T3, R1, R2, R3, R4, R5> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2, Fn1<? super A3, ? extends Iterable<? extends R3>> var3, Fn1<? super A4, ? extends Iterable<? extends R4>> var4, Fn1<? super A5, ? extends Iterable<? extends R5>> var5);
+        public <R1, R2, R3, R4, R5> Iterative3Args5<T1, T2, T3, R1, R2, R3, R4, R5> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2, Fn1<? super A3, ? extends Iterable<? extends R3>> f3, Fn1<? super A4, ? extends Iterable<? extends R4>> i4, Fn1<? super A5, ? extends Iterable<? extends R5>> f5);
 
-        public <R1> Iterative3Args5<T1, T2, T3, R1, A2, A3, A4, A5> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args5<T1, T2, T3, R1, A2, A3, A4, A5> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args5<T1, T2, T3, A1, R2, A3, A4, A5> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args5<T1, T2, T3, A1, R2, A3, A4, A5> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R3> Iterative3Args5<T1, T2, T3, A1, A2, R3, A4, A5> inlineMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> var1);
+        public <R3> Iterative3Args5<T1, T2, T3, A1, A2, R3, A4, A5> inlineMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> f1);
 
-        public <R4> Iterative3Args5<T1, T2, T3, A1, A2, A3, R4, A5> inlineMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> var1);
+        public <R4> Iterative3Args5<T1, T2, T3, A1, A2, A3, R4, A5> inlineMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> f1);
 
-        public <R5> Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, R5> inlineMap5(Fn1<? super A5, ? extends Iterable<? extends R5>> var1);
+        public <R5> Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, R5> inlineMap5(Fn1<? super A5, ? extends Iterable<? extends R5>> f1);
 
-        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter(Pr1<? super A1> var1, Pr1<? super A2> var2, Pr1<? super A3> var3, Pr1<? super A4> var4, Pr1<? super A5> var5);
+        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter(Pr1<? super A1> p1, Pr1<? super A2> p2, Pr1<? super A3> p3, Pr1<? super A4> p4, Pr1<? super A5> p5);
 
-        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter1(Pr1<? super A1> var1);
+        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter1(Pr1<? super A1> p1);
 
-        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter2(Pr1<? super A2> var1);
+        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter2(Pr1<? super A2> p1);
 
-        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter3(Pr1<? super A3> var1);
+        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter3(Pr1<? super A3> p1);
 
-        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter4(Pr1<? super A4> var1);
+        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter4(Pr1<? super A4> p1);
 
-        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter5(Pr1<? super A5> var1);
+        public Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> filter5(Pr1<? super A5> p1);
 
         public static class Iterative3Args5Impl<T1, T2, T3, A1, A2, A3, A4, A5> implements Iterative3Args5<T1, T2, T3, A1, A2, A3, A4, A5> {
 
@@ -268,57 +268,57 @@ public interface Iterative3Args<T1, T2, T3> {
 
     public static interface Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> extends Iterative3Args<T1, T2, T3> {
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn5<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R1> var1, Fn5<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R2> var2, Fn5<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn5<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R1> f1, Fn5<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R2> f2, Fn5<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R3> f3);
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T1, ? extends R1> var1, Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T2, ? extends R2> var2, Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T1, ? extends R1> f1, Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T2, ? extends R2> f2, Fn5<? super A1, ? super A2, ? super A3, ? super A4, ? super T3, ? extends R3> f3);
 
-        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn5<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R3> var1);
+        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn5<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R3> f1);
 
-        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn5<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R1> var1);
+        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn5<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R1> f1);
 
-        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn5<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R2> var1, Fn5<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R3> var2);
+        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn5<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R2> f1, Fn5<? super T3, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R3> f2);
 
-        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn5<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R1> var1, Fn5<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R2> var2);
+        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn5<? super T1, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R1> f1, Fn5<? super T2, ? super A1, ? super A2, ? super A3, ? super A4, ? extends R2> f2);
 
-        public <R1, R2, R3, R4> Iterative3Args4<T1, T2, T3, R1, R2, R3, R4> map(Fn1<? super A1, ? extends R1> var1, Fn1<? super A2, ? extends R2> var2, Fn1<? super A3, ? extends R3> var3, Fn1<? super A4, ? extends R4> var4);
+        public <R1, R2, R3, R4> Iterative3Args4<T1, T2, T3, R1, R2, R3, R4> map(Fn1<? super A1, ? extends R1> f1, Fn1<? super A2, ? extends R2> f2, Fn1<? super A3, ? extends R3> f3, Fn1<? super A4, ? extends R4> f4);
 
-        public <R1> Iterative3Args4<T1, T2, T3, R1, A2, A3, A4> map1(Fn1<? super A1, ? extends R1> var1);
+        public <R1> Iterative3Args4<T1, T2, T3, R1, A2, A3, A4> map1(Fn1<? super A1, ? extends R1> f1);
 
-        public <R2> Iterative3Args4<T1, T2, T3, A1, R2, A3, A4> map2(Fn1<? super A2, ? extends R2> var1);
+        public <R2> Iterative3Args4<T1, T2, T3, A1, R2, A3, A4> map2(Fn1<? super A2, ? extends R2> f1);
 
-        public <R3> Iterative3Args4<T1, T2, T3, A1, A2, R3, A4> map3(Fn1<? super A3, ? extends R3> var1);
+        public <R3> Iterative3Args4<T1, T2, T3, A1, A2, R3, A4> map3(Fn1<? super A3, ? extends R3> f1);
 
-        public <R4> Iterative3Args4<T1, T2, T3, A1, A2, A3, R4> map4(Fn1<? super A4, ? extends R4> var1);
+        public <R4> Iterative3Args4<T1, T2, T3, A1, A2, A3, R4> map4(Fn1<? super A4, ? extends R4> f1);
 
-        public <R1, R2, R3, R4> Iterative3Args4<T1, T2, T3, R1, R2, R3, R4> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2, Fn1<? super A3, ? extends Iterable<? extends R3>> var3, Fn1<? super A4, ? extends Iterable<? extends R4>> var4);
+        public <R1, R2, R3, R4> Iterative3Args4<T1, T2, T3, R1, R2, R3, R4> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2, Fn1<? super A3, ? extends Iterable<? extends R3>> f3, Fn1<? super A4, ? extends Iterable<? extends R4>> i4);
 
-        public <R1> Iterative3Args4<T1, T2, T3, R1, A2, A3, A4> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args4<T1, T2, T3, R1, A2, A3, A4> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args4<T1, T2, T3, A1, R2, A3, A4> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args4<T1, T2, T3, A1, R2, A3, A4> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R3> Iterative3Args4<T1, T2, T3, A1, A2, R3, A4> flatMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> var1);
+        public <R3> Iterative3Args4<T1, T2, T3, A1, A2, R3, A4> flatMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> f1);
 
-        public <R4> Iterative3Args4<T1, T2, T3, A1, A2, A3, R4> flatMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> var1);
+        public <R4> Iterative3Args4<T1, T2, T3, A1, A2, A3, R4> flatMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> f1);
 
-        public <R1, R2, R3, R4> Iterative3Args4<T1, T2, T3, R1, R2, R3, R4> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2, Fn1<? super A3, ? extends Iterable<? extends R3>> var3, Fn1<? super A4, ? extends Iterable<? extends R4>> var4);
+        public <R1, R2, R3, R4> Iterative3Args4<T1, T2, T3, R1, R2, R3, R4> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2, Fn1<? super A3, ? extends Iterable<? extends R3>> f3, Fn1<? super A4, ? extends Iterable<? extends R4>> i4);
 
-        public <R1> Iterative3Args4<T1, T2, T3, R1, A2, A3, A4> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args4<T1, T2, T3, R1, A2, A3, A4> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args4<T1, T2, T3, A1, R2, A3, A4> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args4<T1, T2, T3, A1, R2, A3, A4> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R3> Iterative3Args4<T1, T2, T3, A1, A2, R3, A4> inlineMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> var1);
+        public <R3> Iterative3Args4<T1, T2, T3, A1, A2, R3, A4> inlineMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> f1);
 
-        public <R4> Iterative3Args4<T1, T2, T3, A1, A2, A3, R4> inlineMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> var1);
+        public <R4> Iterative3Args4<T1, T2, T3, A1, A2, A3, R4> inlineMap4(Fn1<? super A4, ? extends Iterable<? extends R4>> f1);
 
-        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter(Pr1<? super A1> var1, Pr1<? super A2> var2, Pr1<? super A3> var3, Pr1<? super A4> var4);
+        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter(Pr1<? super A1> p1, Pr1<? super A2> p2, Pr1<? super A3> p3, Pr1<? super A4> p4);
 
-        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter1(Pr1<? super A1> var1);
+        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter1(Pr1<? super A1> p1);
 
-        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter2(Pr1<? super A2> var1);
+        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter2(Pr1<? super A2> p1);
 
-        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter3(Pr1<? super A3> var1);
+        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter3(Pr1<? super A3> p1);
 
-        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter4(Pr1<? super A4> var1);
+        public Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> filter4(Pr1<? super A4> p1);
 
         public static class Iterative3Args4Impl<T1, T2, T3, A1, A2, A3, A4> implements Iterative3Args4<T1, T2, T3, A1, A2, A3, A4> {
 
@@ -482,49 +482,49 @@ public interface Iterative3Args<T1, T2, T3> {
 
     public static interface Iterative3Args3<T1, T2, T3, A1, A2, A3> extends Iterative3Args<T1, T2, T3> {
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn4<? super T1, ? super A1, ? super A2, ? super A3, ? extends R1> var1, Fn4<? super T2, ? super A1, ? super A2, ? super A3, ? extends R2> var2, Fn4<? super T3, ? super A1, ? super A2, ? super A3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn4<? super T1, ? super A1, ? super A2, ? super A3, ? extends R1> f1, Fn4<? super T2, ? super A1, ? super A2, ? super A3, ? extends R2> f2, Fn4<? super T3, ? super A1, ? super A2, ? super A3, ? extends R3> f3);
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn4<? super A1, ? super A2, ? super A3, ? super T1, ? extends R1> var1, Fn4<? super A1, ? super A2, ? super A3, ? super T2, ? extends R2> var2, Fn4<? super A1, ? super A2, ? super A3, ? super T3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn4<? super A1, ? super A2, ? super A3, ? super T1, ? extends R1> f1, Fn4<? super A1, ? super A2, ? super A3, ? super T2, ? extends R2> f2, Fn4<? super A1, ? super A2, ? super A3, ? super T3, ? extends R3> f3);
 
-        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn4<? super T3, ? super A1, ? super A2, ? super A3, ? extends R3> var1);
+        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn4<? super T3, ? super A1, ? super A2, ? super A3, ? extends R3> f1);
 
-        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn4<? super T1, ? super A1, ? super A2, ? super A3, ? extends R1> var1);
+        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn4<? super T1, ? super A1, ? super A2, ? super A3, ? extends R1> f1);
 
-        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn4<? super T2, ? super A1, ? super A2, ? super A3, ? extends R2> var1, Fn4<? super T3, ? super A1, ? super A2, ? super A3, ? extends R3> var2);
+        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn4<? super T2, ? super A1, ? super A2, ? super A3, ? extends R2> f1, Fn4<? super T3, ? super A1, ? super A2, ? super A3, ? extends R3> f2);
 
-        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn4<? super T1, ? super A1, ? super A2, ? super A3, ? extends R1> var1, Fn4<? super T2, ? super A1, ? super A2, ? super A3, ? extends R2> var2);
+        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn4<? super T1, ? super A1, ? super A2, ? super A3, ? extends R1> f1, Fn4<? super T2, ? super A1, ? super A2, ? super A3, ? extends R2> f2);
 
-        public <R1, R2, R3> Iterative3Args3<T1, T2, T3, R1, R2, R3> map(Fn1<? super A1, ? extends R1> var1, Fn1<? super A2, ? extends R2> var2, Fn1<? super A3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3Args3<T1, T2, T3, R1, R2, R3> map(Fn1<? super A1, ? extends R1> f1, Fn1<? super A2, ? extends R2> f2, Fn1<? super A3, ? extends R3> f3);
 
-        public <R1> Iterative3Args3<T1, T2, T3, R1, A2, A3> map1(Fn1<? super A1, ? extends R1> var1);
+        public <R1> Iterative3Args3<T1, T2, T3, R1, A2, A3> map1(Fn1<? super A1, ? extends R1> f1);
 
-        public <R2> Iterative3Args3<T1, T2, T3, A1, R2, A3> map2(Fn1<? super A2, ? extends R2> var1);
+        public <R2> Iterative3Args3<T1, T2, T3, A1, R2, A3> map2(Fn1<? super A2, ? extends R2> f1);
 
-        public <R3> Iterative3Args3<T1, T2, T3, A1, A2, R3> map3(Fn1<? super A3, ? extends R3> var1);
+        public <R3> Iterative3Args3<T1, T2, T3, A1, A2, R3> map3(Fn1<? super A3, ? extends R3> f1);
 
-        public <R1, R2, R3> Iterative3Args3<T1, T2, T3, R1, R2, R3> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2, Fn1<? super A3, ? extends Iterable<? extends R3>> var3);
+        public <R1, R2, R3> Iterative3Args3<T1, T2, T3, R1, R2, R3> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2, Fn1<? super A3, ? extends Iterable<? extends R3>> f3);
 
-        public <R1> Iterative3Args3<T1, T2, T3, R1, A2, A3> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args3<T1, T2, T3, R1, A2, A3> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args3<T1, T2, T3, A1, R2, A3> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args3<T1, T2, T3, A1, R2, A3> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R3> Iterative3Args3<T1, T2, T3, A1, A2, R3> flatMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> var1);
+        public <R3> Iterative3Args3<T1, T2, T3, A1, A2, R3> flatMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> f1);
 
-        public <R1, R2, R3> Iterative3Args3<T1, T2, T3, R1, R2, R3> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2, Fn1<? super A3, ? extends Iterable<? extends R3>> var3);
+        public <R1, R2, R3> Iterative3Args3<T1, T2, T3, R1, R2, R3> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2, Fn1<? super A3, ? extends Iterable<? extends R3>> f3);
 
-        public <R1> Iterative3Args3<T1, T2, T3, R1, A2, A3> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args3<T1, T2, T3, R1, A2, A3> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args3<T1, T2, T3, A1, R2, A3> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args3<T1, T2, T3, A1, R2, A3> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R3> Iterative3Args3<T1, T2, T3, A1, A2, R3> inlineMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> var1);
+        public <R3> Iterative3Args3<T1, T2, T3, A1, A2, R3> inlineMap3(Fn1<? super A3, ? extends Iterable<? extends R3>> f1);
 
-        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter(Pr1<? super A1> var1, Pr1<? super A2> var2, Pr1<? super A3> var3);
+        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter(Pr1<? super A1> p1, Pr1<? super A2> p2, Pr1<? super A3> p3);
 
-        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter1(Pr1<? super A1> var1);
+        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter1(Pr1<? super A1> p1);
 
-        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter2(Pr1<? super A2> var1);
+        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter2(Pr1<? super A2> p1);
 
-        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter3(Pr1<? super A3> var1);
+        public Iterative3Args3<T1, T2, T3, A1, A2, A3> filter3(Pr1<? super A3> p1);
 
         public static class Iterative3Args3Impl<T1, T2, T3, A1, A2, A3> implements Iterative3Args3<T1, T2, T3, A1, A2, A3> {
 
@@ -668,41 +668,41 @@ public interface Iterative3Args<T1, T2, T3> {
 
     public static interface Iterative3Args2<T1, T2, T3, A1, A2> extends Iterative3Args<T1, T2, T3> {
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn3<? super T1, ? super A1, ? super A2, ? extends R1> var1, Fn3<? super T2, ? super A1, ? super A2, ? extends R2> var2, Fn3<? super T3, ? super A1, ? super A2, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn3<? super T1, ? super A1, ? super A2, ? extends R1> f1, Fn3<? super T2, ? super A1, ? super A2, ? extends R2> f2, Fn3<? super T3, ? super A1, ? super A2, ? extends R3> f3);
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn3<? super A1, ? super A2, ? super T1, ? extends R1> var1, Fn3<? super A1, ? super A2, ? super T2, ? extends R2> var2, Fn3<? super A1, ? super A2, ? super T3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn3<? super A1, ? super A2, ? super T1, ? extends R1> f1, Fn3<? super A1, ? super A2, ? super T2, ? extends R2> f2, Fn3<? super A1, ? super A2, ? super T3, ? extends R3> f3);
 
-        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn3<? super T3, ? super A1, ? super A2, ? extends R3> var1);
+        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn3<? super T3, ? super A1, ? super A2, ? extends R3> f1);
 
-        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn3<? super T1, ? super A1, ? super A2, ? extends R1> var1);
+        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn3<? super T1, ? super A1, ? super A2, ? extends R1> f1);
 
-        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn3<? super T2, ? super A1, ? super A2, ? extends R2> var1, Fn3<? super T3, ? super A1, ? super A2, ? extends R3> var2);
+        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn3<? super T2, ? super A1, ? super A2, ? extends R2> f1, Fn3<? super T3, ? super A1, ? super A2, ? extends R3> f2);
 
-        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn3<? super T1, ? super A1, ? super A2, ? extends R1> var1, Fn3<? super T2, ? super A1, ? super A2, ? extends R2> var2);
+        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn3<? super T1, ? super A1, ? super A2, ? extends R1> f1, Fn3<? super T2, ? super A1, ? super A2, ? extends R2> f2);
 
-        public <R1, R2> Iterative3Args2<T1, T2, T3, R1, R2> map(Fn1<? super A1, ? extends R1> var1, Fn1<? super A2, ? extends R2> var2);
+        public <R1, R2> Iterative3Args2<T1, T2, T3, R1, R2> map(Fn1<? super A1, ? extends R1> f1, Fn1<? super A2, ? extends R2> f2);
 
-        public <R1> Iterative3Args2<T1, T2, T3, R1, A2> map1(Fn1<? super A1, ? extends R1> var1);
+        public <R1> Iterative3Args2<T1, T2, T3, R1, A2> map1(Fn1<? super A1, ? extends R1> f1);
 
-        public <R2> Iterative3Args2<T1, T2, T3, A1, R2> map2(Fn1<? super A2, ? extends R2> var1);
+        public <R2> Iterative3Args2<T1, T2, T3, A1, R2> map2(Fn1<? super A2, ? extends R2> f1);
 
-        public <R1, R2> Iterative3Args2<T1, T2, T3, R1, R2> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2);
+        public <R1, R2> Iterative3Args2<T1, T2, T3, R1, R2> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2);
 
-        public <R1> Iterative3Args2<T1, T2, T3, R1, A2> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args2<T1, T2, T3, R1, A2> flatMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args2<T1, T2, T3, A1, R2> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args2<T1, T2, T3, A1, R2> flatMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public <R1, R2> Iterative3Args2<T1, T2, T3, R1, R2> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1, Fn1<? super A2, ? extends Iterable<? extends R2>> var2);
+        public <R1, R2> Iterative3Args2<T1, T2, T3, R1, R2> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1, Fn1<? super A2, ? extends Iterable<? extends R2>> i2);
 
-        public <R1> Iterative3Args2<T1, T2, T3, R1, A2> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args2<T1, T2, T3, R1, A2> inlineMap1(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R2> Iterative3Args2<T1, T2, T3, A1, R2> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> var1);
+        public <R2> Iterative3Args2<T1, T2, T3, A1, R2> inlineMap2(Fn1<? super A2, ? extends Iterable<? extends R2>> f1);
 
-        public Iterative3Args2<T1, T2, T3, A1, A2> filter(Pr1<? super A1> var1, Pr1<? super A2> var2);
+        public Iterative3Args2<T1, T2, T3, A1, A2> filter(Pr1<? super A1> p1, Pr1<? super A2> p2);
 
-        public Iterative3Args2<T1, T2, T3, A1, A2> filter1(Pr1<? super A1> var1);
+        public Iterative3Args2<T1, T2, T3, A1, A2> filter1(Pr1<? super A1> p1);
 
-        public Iterative3Args2<T1, T2, T3, A1, A2> filter2(Pr1<? super A2> var1);
+        public Iterative3Args2<T1, T2, T3, A1, A2> filter2(Pr1<? super A2> p1);
 
         public static class Iterative3Args2Impl<T1, T2, T3, A1, A2> implements Iterative3Args2<T1, T2, T3, A1, A2> {
 
@@ -826,25 +826,25 @@ public interface Iterative3Args<T1, T2, T3> {
 
     public static interface Iterative3Args1<T1, T2, T3, A1> extends Iterative3Args<T1, T2, T3> {
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2, Fn2<? super T3, ? super A1, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> mapping(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2, Fn2<? super T3, ? super A1, ? extends R3> f3);
 
-        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> var1, Fn2<? super A1, ? super T2, ? extends R2> var2, Fn2<? super A1, ? super T3, ? extends R3> var3);
+        public <R1, R2, R3> Iterative3<R1, R2, R3> inverseMapping(Fn2<? super A1, ? super T1, ? extends R1> f1, Fn2<? super A1, ? super T2, ? extends R2> f2, Fn2<? super A1, ? super T3, ? extends R3> f3);
 
-        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn2<? super T3, ? super A1, ? extends R3> var1);
+        public <R3> Iterative3<T1, T2, R3> mappingRt1(Fn2<? super T3, ? super A1, ? extends R3> f1);
 
-        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn2<? super T1, ? super A1, ? extends R1> var1);
+        public <R1> Iterative3<R1, T2, T3> mappingLt1(Fn2<? super T1, ? super A1, ? extends R1> f1);
 
-        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn2<? super T2, ? super A1, ? extends R2> var1, Fn2<? super T3, ? super A1, ? extends R3> var2);
+        public <R2, R3> Iterative3<T1, R2, R3> mappingRt2(Fn2<? super T2, ? super A1, ? extends R2> f1, Fn2<? super T3, ? super A1, ? extends R3> f2);
 
-        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn2<? super T1, ? super A1, ? extends R1> var1, Fn2<? super T2, ? super A1, ? extends R2> var2);
+        public <R1, R2> Iterative3<R1, R2, T3> mappingLt2(Fn2<? super T1, ? super A1, ? extends R1> f1, Fn2<? super T2, ? super A1, ? extends R2> f2);
 
-        public <R1> Iterative3Args1<T1, T2, T3, R1> map(Fn1<? super A1, ? extends R1> var1);
+        public <R1> Iterative3Args1<T1, T2, T3, R1> map(Fn1<? super A1, ? extends R1> f1);
 
-        public <R1> Iterative3Args1<T1, T2, T3, R1> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args1<T1, T2, T3, R1> flatMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public <R1> Iterative3Args1<T1, T2, T3, R1> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> var1);
+        public <R1> Iterative3Args1<T1, T2, T3, R1> inlineMap(Fn1<? super A1, ? extends Iterable<? extends R1>> f1);
 
-        public Iterative3Args1<T1, T2, T3, A1> filter(Pr1<? super A1> var1);
+        public Iterative3Args1<T1, T2, T3, A1> filter(Pr1<? super A1> p1);
 
         public static class Iterative3Args1Impl<T1, T2, T3, A1> implements Iterative3Args1<T1, T2, T3, A1> {
 

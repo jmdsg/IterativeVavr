@@ -136,7 +136,7 @@ public interface Cs4<T1, T2, T3, T4> {
         return Cs4.<T1, T2, T3, T4>narrow(c).inverted();
     }
 
-    public void accept(T1 var1, T2 var2, T3 var3, T4 var4);
+    public void accept(T1 t1, T2 t2, T3 t3, T4 t4);
 
     default public Cs3<T2, T3, T4> acceptLt(T1 t1) {
         return (t2, t3, t4) -> this.accept(t1, t2, t3, t4);

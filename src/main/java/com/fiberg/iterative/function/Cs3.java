@@ -132,7 +132,7 @@ public interface Cs3<T1, T2, T3> {
         return Cs3.<T1, T2, T3>narrow(c).inverted();
     }
 
-    public void accept(T1 var1, T2 var2, T3 var3);
+    public void accept(T1 t1, T2 t2, T3 t3);
 
     default public Cs2<T2, T3> acceptLt(T1 t1) {
         return (t2, t3) -> this.accept(t1, t2, t3);

@@ -14,25 +14,25 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
 
     public Iterative2Fail<G1, G2, Tuple2<G1, G2>> onSuccess();
 
-    public <R> Iterative2Fail<G1, G2, R> onSuccess(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> var1);
+    public <R> Iterative2Fail<G1, G2, R> onSuccess(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> f1);
 
-    public <R> Iterative2Fail<G1, G2, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative2Fail<G1, G2, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative2Fail<G1, G2, R> onSuccess(R var1);
+    public <R> Iterative2Fail<G1, G2, R> onSuccess(R r);
 
-    public <R> Iterative2Success<G1, G2, R> onFailure(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> var1);
+    public <R> Iterative2Success<G1, G2, R> onFailure(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> f1);
 
-    public <R> Iterative2Success<G1, G2, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative2Success<G1, G2, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative2Success<G1, G2, R> onFailure(R var1);
+    public <R> Iterative2Success<G1, G2, R> onFailure(R r);
 
     public static interface Iterative2Success<G1, G2, R> {
 
-        public R onSuccess(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative2SuccessImpl<G1, G2, R> extends Iterative2FinalGetter<G1, G2, R> implements Iterative2Success<G1, G2, R> {
 
@@ -62,11 +62,11 @@ public interface Iterative2Getter<G1, G2> extends IterativeGetter {
 
     public static interface Iterative2Fail<G1, G2, R> {
 
-        public R onFailure(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative2<? extends G1, ? extends G2>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

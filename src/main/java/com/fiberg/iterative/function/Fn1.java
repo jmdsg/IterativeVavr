@@ -134,12 +134,12 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
 
     public static <T1, R> Fn1<T1, Option<R>> lift(Fn1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn1.liftTry(f).afterApply(Value::toOption);
+        return Fn1.<T1, R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <T1, R> Fn1<T1, Try<R>> liftTry(Fn1<? super T1, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn1.narrow(f).beforeWrap(Try::of);
+        return Fn1.<T1, R>narrow(f).beforeWrap(Try::of);
     }
 
     default public Fn0<R> toFunction(T1 t1) {
@@ -161,7 +161,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     default public Fn1<T1, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return t1 -> {
-            Object value = this.apply(t1);
+            R value = this.apply(t1);
             r.run();
             return value;
         };
@@ -200,7 +200,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     default public Fn1<T1, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return t1 -> {
-            Object value = this.apply(t1);
+            R value = this.apply(t1);
             c.accept(value);
             return value;
         };
@@ -323,7 +323,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     default public Fn1<T1, R> afterPassingThroughTest(Pr1<? super T1> p) {
         Objects.requireNonNull(p, "p is null");
         return t1 -> {
-            Object result = this.apply(t1);
+            R result = this.apply(t1);
             p.test(t1);
             return result;
         };
@@ -340,7 +340,7 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     default public Fn1<T1, R> afterPassingThroughAccept(Cs1<? super T1> c) {
         Objects.requireNonNull(c, "c is null");
         return t1 -> {
-            Object result = this.apply(t1);
+            R result = this.apply(t1);
             c.accept(t1);
             return result;
         };
@@ -487,27 +487,27 @@ public interface Fn1<T1, R> extends Function1<T1, R> {
     }
 
     default public Fn1<Tuple1<T1>, R> tupled() {
-        return ((Function1) super.tupled())::apply;
+        return Function1.super.tupled()::apply;
     }
 
     default public Fn1<T1, R> curried() {
-        return ((Function1) super.curried())::apply;
+        return Function1.super.curried()::apply;
     }
 
     default public Fn1<T1, R> reversed() {
-        return ((Function1) super.reversed())::apply;
+        return Function1.super.reversed()::apply;
     }
 
     default public Fn1<T1, R> memoized() {
-        return ((Function1) super.memoized())::apply;
+        return Function1.super.memoized()::apply;
     }
 
     default public <V> Fn1<T1, V> andThen(Function<? super R, ? extends V> after) {
-        return ((Function1) super.andThen(after))::apply;
+        return Function1.super.andThen(after)::apply;
     }
 
     default public <V> Fn1<V, R> compose(Function<? super V, ? extends T1> before) {
-        return ((Function1) super.compose(before))::apply;
+        return Function1.super.compose(before)::apply;
     }
 
 }

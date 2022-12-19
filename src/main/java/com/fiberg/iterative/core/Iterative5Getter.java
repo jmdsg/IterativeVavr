@@ -15,25 +15,25 @@ public interface Iterative5Getter<G1, G2, G3, G4, G5> extends IterativeGetter {
 
     public Iterative5Fail<G1, G2, G3, G4, G5, Tuple5<G1, G2, G3, G4, G5>> onSuccess();
 
-    public <R> Iterative5Fail<G1, G2, G3, G4, G5, R> onSuccess(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> var1);
+    public <R> Iterative5Fail<G1, G2, G3, G4, G5, R> onSuccess(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> f1);
 
-    public <R> Iterative5Fail<G1, G2, G3, G4, G5, R> onSuccess(Sp<? extends R> var1);
+    public <R> Iterative5Fail<G1, G2, G3, G4, G5, R> onSuccess(Sp<? extends R> s1);
 
-    public <R> Iterative5Fail<G1, G2, G3, G4, G5, R> onSuccess(R var1);
+    public <R> Iterative5Fail<G1, G2, G3, G4, G5, R> onSuccess(R r);
 
-    public <R> Iterative5Success<G1, G2, G3, G4, G5, R> onFailure(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> var1);
+    public <R> Iterative5Success<G1, G2, G3, G4, G5, R> onFailure(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> f1);
 
-    public <R> Iterative5Success<G1, G2, G3, G4, G5, R> onFailure(Sp<? extends R> var1);
+    public <R> Iterative5Success<G1, G2, G3, G4, G5, R> onFailure(Sp<? extends R> s1);
 
-    public <R> Iterative5Success<G1, G2, G3, G4, G5, R> onFailure(R var1);
+    public <R> Iterative5Success<G1, G2, G3, G4, G5, R> onFailure(R r);
 
     public static interface Iterative5Success<G1, G2, G3, G4, G5, R> {
 
-        public R onSuccess(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> var1);
+        public R onSuccess(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> f1);
 
-        public R onSuccess(Sp<? extends R> var1);
+        public R onSuccess(Sp<? extends R> s1);
 
-        public R onSuccess(R var1);
+        public R onSuccess(R r);
 
         public static class Iterative5SuccessImpl<G1, G2, G3, G4, G5, R> extends Iterative5FinalGetter<G1, G2, G3, G4, G5, R> implements Iterative5Success<G1, G2, G3, G4, G5, R> {
 
@@ -63,11 +63,11 @@ public interface Iterative5Getter<G1, G2, G3, G4, G5> extends IterativeGetter {
 
     public static interface Iterative5Fail<G1, G2, G3, G4, G5, R> {
 
-        public R onFailure(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> var1);
+        public R onFailure(Fn1<? super Iterative5<? extends G1, ? extends G2, ? extends G3, ? extends G4, ? extends G5>, ? extends R> f1);
 
-        public R onFailure(Sp<? extends R> var1);
+        public R onFailure(Sp<? extends R> s1);
 
-        public R onFailure(R var1);
+        public R onFailure(R r);
 
         public R onFailureNull();
 

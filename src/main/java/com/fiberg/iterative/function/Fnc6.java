@@ -226,7 +226,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
     default public Fnc6<T1, T2, T3, T4, T5, T6, R> afterRun(Rnc r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2, t3, t4, t5, t6) -> {
-            Object value = this.apply(t1, t2, t3, t4, t5, t6);
+            R value = this.apply(t1, t2, t3, t4, t5, t6);
             r.run();
             return value;
         };
@@ -265,7 +265,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
     default public Fnc6<T1, T2, T3, T4, T5, T6, R> afterAccept(Csc1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5, t6) -> {
-            Object value = this.apply(t1, t2, t3, t4, t5, t6);
+            R value = this.apply(t1, t2, t3, t4, t5, t6);
             c.accept(value);
             return value;
         };
@@ -392,7 +392,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
     default public Fnc6<T1, T2, T3, T4, T5, T6, R> afterPassingThroughTest(Prc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> p) {
         Objects.requireNonNull(p, "p is null");
         return (t1, t2, t3, t4, t5, t6) -> {
-            Object result = this.apply(t1, t2, t3, t4, t5, t6);
+            R result = this.apply(t1, t2, t3, t4, t5, t6);
             p.test(t1, t2, t3, t4, t5, t6);
             return result;
         };
@@ -409,7 +409,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
     default public Fnc6<T1, T2, T3, T4, T5, T6, R> afterPassingThroughAccept(Csc6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5, t6) -> {
-            Object result = this.apply(t1, t2, t3, t4, t5, t6);
+            R result = this.apply(t1, t2, t3, t4, t5, t6);
             c.accept(t1, t2, t3, t4, t5, t6);
             return result;
         };
@@ -488,7 +488,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
     }
 
     default public Fn6<T1, T2, T3, T4, T5, T6, R> unchecked() {
-        return (t1, t2, t3, t4, t5, t6) -> ((Function6) super.unchecked()).apply(t1, t2, t3, t4, t5, t6);
+        return Function6.super.unchecked()::apply;
     }
 
     default public <I1> Fnc7<I1, T1, T2, T3, T4, T5, T6, R> ignoring1Lt() {
@@ -532,7 +532,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
     }
 
     default public Fn1<T1, Function1<T2, Function1<T3, Function1<T4, Function1<T5, CheckedFunction1<T6, R>>>>>> curried() {
-        return ((Function1) super.curried())::apply;
+        return Function1.super.curried()::apply;
     }
 
     default public Fnc6<T6, T5, T4, T3, T2, T1, R> reversed() {
@@ -550,7 +550,7 @@ public interface Fnc6<T1, T2, T3, T4, T5, T6, R> extends CheckedFunction6<T1, T2
 
     default public Fn6<T1, T2, T3, T4, T5, T6, R> recover(Function<? super Throwable, ? extends Function6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? extends R>> recover) {
         Objects.requireNonNull(recover, "recover is null");
-        return (t1, t2, t3, t4, t5, t6) -> ((Function6) super.recover(recover)).apply(t1, t2, t3, t4, t5, t6);
+        return Function6.super.recover(recover)::apply;
     }
 
 }

@@ -152,12 +152,12 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
 
     public static <T1, T2, T3, T4, T5, R> Fn5<T1, T2, T3, T4, T5, Option<R>> lift(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn5.liftTry(f).afterApply(Value::toOption);
+        return Fn5.<T1, T2, T3, T4, T5, R>liftTry(f).afterApply(Value::toOption);
     }
 
     public static <T1, T2, T3, T4, T5, R> Fn5<T1, T2, T3, T4, T5, Try<R>> liftTry(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
         Objects.requireNonNull(f, "f is null");
-        return Fn5.narrow(f).beforeWrap(Try::of);
+        return Fn5.<T1, T2, T3, T4, T5, R>narrow(f).beforeWrap(Try::of);
     }
 
     public static <T1, T2, T3, T4, T5, R> Fn5<T5, T4, T3, T2, T1, R> invert(Fn5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? extends R> f) {
@@ -205,7 +205,7 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
     }
 
     default public Cs5<T1, T2, T3, T4, T5> toConsumer() {
-        return (t1, t2, t3, t4, t5) -> ((Fn5) this).apply(t1, t2, t3, t4, t5);
+        return this::apply;
     }
 
     default public Sp<R> toSupplier(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5) {
@@ -215,7 +215,7 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
     default public Fn5<T1, T2, T3, T4, T5, R> afterRun(Rn r) {
         Objects.requireNonNull(r, "r is null");
         return (t1, t2, t3, t4, t5) -> {
-            Object value = this.apply(t1, t2, t3, t4, t5);
+            R value = this.apply(t1, t2, t3, t4, t5);
             r.run();
             return value;
         };
@@ -254,7 +254,7 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
     default public Fn5<T1, T2, T3, T4, T5, R> afterAccept(Cs1<? super R> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5) -> {
-            Object value = this.apply(t1, t2, t3, t4, t5);
+            R value = this.apply(t1, t2, t3, t4, t5);
             c.accept(value);
             return value;
         };
@@ -381,7 +381,7 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
     default public Fn5<T1, T2, T3, T4, T5, R> afterPassingThroughTest(Pr5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> p) {
         Objects.requireNonNull(p, "p is null");
         return (t1, t2, t3, t4, t5) -> {
-            Object result = this.apply(t1, t2, t3, t4, t5);
+            R result = this.apply(t1, t2, t3, t4, t5);
             p.test(t1, t2, t3, t4, t5);
             return result;
         };
@@ -398,7 +398,7 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
     default public Fn5<T1, T2, T3, T4, T5, R> afterPassingThroughAccept(Cs5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5> c) {
         Objects.requireNonNull(c, "c is null");
         return (t1, t2, t3, t4, t5) -> {
-            Object result = this.apply(t1, t2, t3, t4, t5);
+            R result = this.apply(t1, t2, t3, t4, t5);
             c.accept(t1, t2, t3, t4, t5);
             return result;
         };
@@ -505,39 +505,39 @@ public interface Fn5<T1, T2, T3, T4, T5, R> extends Function5<T1, T2, T3, T4, T5
     }
 
     default public Fn1<Tuple5<T1, T2, T3, T4, T5>, R> tupled() {
-        return ((Function1) super.tupled())::apply;
+        return Function5.super.tupled()::apply;
     }
 
     default public Fn4<T2, T3, T4, T5, R> apply(T1 t1) {
-        return (t1, t2, t3, t4) -> ((Function4) super.apply(t1)).apply(t1, t2, t3, t4);
+        return Function5.super.apply(t1)::apply;
     }
 
     default public Fn3<T3, T4, T5, R> apply(T1 t1, T2 t2) {
-        return (t1, t2, t3) -> ((Function3) super.apply(t1, t2)).apply(t1, t2, t3);
+        return Function5.super.apply(t1, t2)::apply;
     }
 
     default public Fn2<T4, T5, R> apply(T1 t1, T2 t2, T3 t3) {
-        return (t1, t2) -> ((Function2) super.apply(t1, t2, t3)).apply(t1, t2);
+        return Function5.super.apply(t1, t2, t3)::apply;
     }
 
     default public Fn1<T5, R> apply(T1 t1, T2 t2, T3 t3, T4 t4) {
-        return ((Function1) super.apply(t1, t2, t3, t4))::apply;
+        return Function5.super.apply(t1, t2, t3, t4)::apply;
     }
 
     default public Fn1<T1, Function1<T2, Function1<T3, Function1<T4, Function1<T5, R>>>>> curried() {
-        return ((Function1) super.curried())::apply;
+        return Function5.super.curried()::apply;
     }
 
     default public Fn5<T5, T4, T3, T2, T1, R> reversed() {
-        return (t1, t2, t3, t4, t5) -> ((Function5) super.reversed()).apply(t1, t2, t3, t4, t5);
+        return Function5.super.reversed()::apply;
     }
 
     default public Fn5<T1, T2, T3, T4, T5, R> memoized() {
-        return (t1, t2, t3, t4, t5) -> ((Function5) super.memoized()).apply(t1, t2, t3, t4, t5);
+        return Function5.super.memoized()::apply;
     }
 
     default public <V> Fn5<T1, T2, T3, T4, T5, V> andThen(Function<? super R, ? extends V> after) {
-        return (t1, t2, t3, t4, t5) -> ((Function5) super.andThen(after)).apply(t1, t2, t3, t4, t5);
+        return Function5.super.andThen(after)::apply;
     }
 
 }

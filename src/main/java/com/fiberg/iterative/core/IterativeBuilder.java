@@ -1073,75 +1073,75 @@ interface IterativeBuilder {
 
     public static interface IterativeBuilderRegularInline extends IterativeBuilderRegular {
 
-        public <T1, T2> Iterative2Inline<T1, T2> from(T1 var1, T2 var2);
+        public <T1, T2> Iterative2Inline<T1, T2> from(T1 t1, T2 t2);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> from(T1 var1, T2 var2, T3 var3);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> from(T1 t1, T2 t2, T3 t3);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> from(T1 var1, T2 var2, T3 var3, T4 var4);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> from(T1 t1, T2 t2, T3 t3, T4 t4);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7, T8 var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8);
 
-        public <T1, T2> Iterative2Inline<T1, T2> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2);
+        public <T1, T2> Iterative2Inline<T1, T2> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2);
 
-        public <T1, T2> Iterative2Inline<T1, T2> of(Iterative1<? extends T1> var1, Iterable<? extends T2> var2);
+        public <T1, T2> Iterative2Inline<T1, T2> of(Iterative1<? extends T1> i1, Iterable<? extends T2> i2);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> var1, Iterable<? extends T3> var2);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> i1, Iterable<? extends T3> i2);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> var1, Iterable<? extends T4> var2);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> i1, Iterable<? extends T4> i2);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1, Iterable<? extends T5> var2);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> i1, Iterable<? extends T5> i2);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1, Iterable<? extends T6> var2);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> i1, Iterable<? extends T6> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6, Iterable<? extends T7> var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6, Iterable<? extends T7> i7);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1, Iterable<? extends T7> var2);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> i1, Iterable<? extends T7> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6, Iterable<? extends T7> var7, Iterable<? extends T8> var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6, Iterable<? extends T7> i7, Iterable<? extends T8> i8);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1, Iterable<? extends T8> var2);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> i1, Iterable<? extends T8> i2);
 
-        public <T1, T2> Iterative2Inline<T1, T2> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2);
+        public <T1, T2> Iterative2Inline<T1, T2> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3);
 
-        public <T1, T2> Iterative2Inline<T1, T2> by(Iterative1<? extends T1> var1, Iterable<? extends Stream<? extends T2>> var2);
+        public <T1, T2> Iterative2Inline<T1, T2> by(Iterative1<? extends T1> i1, Iterable<? extends Stream<? extends T2>> i2);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> var1, Iterable<? extends Stream<? extends T3>> var2);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> i1, Iterable<? extends Stream<? extends T3>> i2);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> var1, Iterable<? extends Stream<? extends T4>> var2);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> i1, Iterable<? extends Stream<? extends T4>> i2);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1, Iterable<? extends Stream<? extends T5>> var2);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> i1, Iterable<? extends Stream<? extends T5>> i2);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1, Iterable<? extends Stream<? extends T6>> var2);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> i1, Iterable<? extends Stream<? extends T6>> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6, Iterable<? extends Stream<? extends T7>> var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6, Iterable<? extends Stream<? extends T7>> i7);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1, Iterable<? extends Stream<? extends T7>> var2);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> i1, Iterable<? extends Stream<? extends T7>> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6, Iterable<? extends Stream<? extends T7>> var7, Iterable<? extends Stream<? extends T8>> var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6, Iterable<? extends Stream<? extends T7>> i7, Iterable<? extends Stream<? extends T8>> i8);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1, Iterable<? extends Stream<? extends T8>> var2);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> i1, Iterable<? extends Stream<? extends T8>> i2);
 
         public <T1, T2> Iterative2Inline<T1, T2> empty2();
 
@@ -1160,75 +1160,75 @@ interface IterativeBuilder {
 
     public static interface IterativeBuilderRegularCross extends IterativeBuilderRegular {
 
-        public <T1, T2> Iterative2Cross<T1, T2> from(T1 var1, T2 var2);
+        public <T1, T2> Iterative2Cross<T1, T2> from(T1 t1, T2 t2);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> from(T1 var1, T2 var2, T3 var3);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> from(T1 t1, T2 t2, T3 t3);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> from(T1 var1, T2 var2, T3 var3, T4 var4);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> from(T1 t1, T2 t2, T3 t3, T4 t4);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7, T8 var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8);
 
-        public <T1, T2> Iterative2Cross<T1, T2> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2);
+        public <T1, T2> Iterative2Cross<T1, T2> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2);
 
-        public <T1, T2> Iterative2Cross<T1, T2> of(Iterative1<? extends T1> var1, Iterable<? extends T2> var2);
+        public <T1, T2> Iterative2Cross<T1, T2> of(Iterative1<? extends T1> i1, Iterable<? extends T2> i2);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> var1, Iterable<? extends T3> var2);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> i1, Iterable<? extends T3> i2);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> var1, Iterable<? extends T4> var2);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> i1, Iterable<? extends T4> i2);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1, Iterable<? extends T5> var2);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> i1, Iterable<? extends T5> i2);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1, Iterable<? extends T6> var2);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> i1, Iterable<? extends T6> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6, Iterable<? extends T7> var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6, Iterable<? extends T7> i7);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1, Iterable<? extends T7> var2);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> i1, Iterable<? extends T7> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6, Iterable<? extends T7> var7, Iterable<? extends T8> var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6, Iterable<? extends T7> i7, Iterable<? extends T8> i8);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1, Iterable<? extends T8> var2);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> i1, Iterable<? extends T8> i2);
 
-        public <T1, T2> Iterative2Cross<T1, T2> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2);
+        public <T1, T2> Iterative2Cross<T1, T2> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3);
 
-        public <T1, T2> Iterative2Cross<T1, T2> by(Iterative1<? extends T1> var1, Iterable<? extends Stream<? extends T2>> var2);
+        public <T1, T2> Iterative2Cross<T1, T2> by(Iterative1<? extends T1> i1, Iterable<? extends Stream<? extends T2>> i2);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> var1, Iterable<? extends Stream<? extends T3>> var2);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> i1, Iterable<? extends Stream<? extends T3>> i2);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> var1, Iterable<? extends Stream<? extends T4>> var2);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> i1, Iterable<? extends Stream<? extends T4>> i2);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1, Iterable<? extends Stream<? extends T5>> var2);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> i1, Iterable<? extends Stream<? extends T5>> i2);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1, Iterable<? extends Stream<? extends T6>> var2);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> i1, Iterable<? extends Stream<? extends T6>> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6, Iterable<? extends Stream<? extends T7>> var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6, Iterable<? extends Stream<? extends T7>> i7);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1, Iterable<? extends Stream<? extends T7>> var2);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> i1, Iterable<? extends Stream<? extends T7>> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6, Iterable<? extends Stream<? extends T7>> var7, Iterable<? extends Stream<? extends T8>> var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6, Iterable<? extends Stream<? extends T7>> i7, Iterable<? extends Stream<? extends T8>> i8);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1, Iterable<? extends Stream<? extends T8>> var2);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> i1, Iterable<? extends Stream<? extends T8>> i2);
 
         public <T1, T2> Iterative2Cross<T1, T2> empty2();
 
@@ -1247,83 +1247,83 @@ interface IterativeBuilder {
 
     public static interface IterativeBuilderRegular extends IterativeBuilder {
 
-        public <T1> Iterative1<T1> from(T1 var1);
+        public <T1> Iterative1<T1> from(T1 t1);
 
-        public <T1, T2> Iterative2<T1, T2> from(T1 var1, T2 var2);
+        public <T1, T2> Iterative2<T1, T2> from(T1 t1, T2 t2);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> from(T1 var1, T2 var2, T3 var3);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> from(T1 t1, T2 t2, T3 t3);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> from(T1 var1, T2 var2, T3 var3, T4 var4);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> from(T1 t1, T2 t2, T3 t3, T4 t4);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 var1, T2 var2, T3 var3, T4 var4, T5 var5, T6 var6, T7 var7, T8 var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> from(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8);
 
         public Iterative0 of();
 
-        public <T1> Iterative1<T1> of(Iterable<? extends T1> var1);
+        public <T1> Iterative1<T1> of(Iterable<? extends T1> i1);
 
-        public <T1, T2> Iterative2<T1, T2> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2);
+        public <T1, T2> Iterative2<T1, T2> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2);
 
-        public <T1, T2> Iterative2<T1, T2> of(Iterative1<? extends T1> var1, Iterable<? extends T2> var2);
+        public <T1, T2> Iterative2<T1, T2> of(Iterative1<? extends T1> i1, Iterable<? extends T2> i2);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> var1, Iterable<? extends T3> var2);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> of(Iterative2<? extends T1, ? extends T2> i1, Iterable<? extends T3> i2);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> var1, Iterable<? extends T4> var2);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> of(Iterative3<? extends T1, ? extends T2, ? extends T3> i1, Iterable<? extends T4> i2);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1, Iterable<? extends T5> var2);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> of(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> i1, Iterable<? extends T5> i2);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1, Iterable<? extends T6> var2);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> of(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> i1, Iterable<? extends T6> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6, Iterable<? extends T7> var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6, Iterable<? extends T7> i7);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1, Iterable<? extends T7> var2);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> of(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> i1, Iterable<? extends T7> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> var1, Iterable<? extends T2> var2, Iterable<? extends T3> var3, Iterable<? extends T4> var4, Iterable<? extends T5> var5, Iterable<? extends T6> var6, Iterable<? extends T7> var7, Iterable<? extends T8> var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterable<? extends T1> i1, Iterable<? extends T2> i2, Iterable<? extends T3> i3, Iterable<? extends T4> i4, Iterable<? extends T5> i5, Iterable<? extends T6> i6, Iterable<? extends T7> i7, Iterable<? extends T8> i8);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1, Iterable<? extends T8> var2);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> of(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> i1, Iterable<? extends T8> i2);
 
-        public <T1> Iterative1<T1> by(Iterable<? extends Stream<? extends T1>> var1);
+        public <T1> Iterative1<T1> by(Iterable<? extends Stream<? extends T1>> i1);
 
-        public <T1, T2> Iterative2<T1, T2> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2);
+        public <T1, T2> Iterative2<T1, T2> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2);
 
-        public <T1, T2> Iterative2<T1, T2> by(Iterative1<? extends T1> var1, Iterable<? extends Stream<? extends T2>> var2);
+        public <T1, T2> Iterative2<T1, T2> by(Iterative1<? extends T1> i1, Iterable<? extends Stream<? extends T2>> i2);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> var1, Iterable<? extends Stream<? extends T3>> var2);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> by(Iterative2<? extends T1, ? extends T2> i1, Iterable<? extends Stream<? extends T3>> i2);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> var1, Iterable<? extends Stream<? extends T4>> var2);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> by(Iterative3<? extends T1, ? extends T2, ? extends T3> i1, Iterable<? extends Stream<? extends T4>> i2);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1, Iterable<? extends Stream<? extends T5>> var2);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> by(Iterative4<? extends T1, ? extends T2, ? extends T3, ? extends T4> i1, Iterable<? extends Stream<? extends T5>> i2);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1, Iterable<? extends Stream<? extends T6>> var2);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> by(Iterative5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> i1, Iterable<? extends Stream<? extends T6>> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6, Iterable<? extends Stream<? extends T7>> var7);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6, Iterable<? extends Stream<? extends T7>> i7);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1, Iterable<? extends Stream<? extends T7>> var2);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> by(Iterative6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> i1, Iterable<? extends Stream<? extends T7>> i2);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> var1, Iterable<? extends Stream<? extends T2>> var2, Iterable<? extends Stream<? extends T3>> var3, Iterable<? extends Stream<? extends T4>> var4, Iterable<? extends Stream<? extends T5>> var5, Iterable<? extends Stream<? extends T6>> var6, Iterable<? extends Stream<? extends T7>> var7, Iterable<? extends Stream<? extends T8>> var8);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterable<? extends Stream<? extends T1>> i1, Iterable<? extends Stream<? extends T2>> i2, Iterable<? extends Stream<? extends T3>> i3, Iterable<? extends Stream<? extends T4>> i4, Iterable<? extends Stream<? extends T5>> i5, Iterable<? extends Stream<? extends T6>> i6, Iterable<? extends Stream<? extends T7>> i7, Iterable<? extends Stream<? extends T8>> i8);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1, Iterable<? extends Stream<? extends T8>> var2);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> by(Iterative7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> i1, Iterable<? extends Stream<? extends T8>> i2);
 
         public Iterative0 empty0();
 
@@ -1346,99 +1346,99 @@ interface IterativeBuilder {
 
     public static interface IterativeBuilderTupleInline extends IterativeBuilderTuple {
 
-        public <T1, T2> Iterative2Inline<T1, T2> from(Tuple2<? extends T1, ? extends T2> var1);
+        public <T1, T2> Iterative2Inline<T1, T2> from(Tuple2<? extends T1, ? extends T2> t1);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> from(Tuple3<? extends T1, ? extends T2, ? extends T3> var1);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> from(Tuple3<? extends T1, ? extends T2, ? extends T3> t1);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> from(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> from(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> t1);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> from(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> from(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> t1);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> from(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> from(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> t1);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> from(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> from(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> t1);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> from(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> var1);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> from(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> t1);
 
-        public <T1, T2> Iterative2Inline<T1, T2> of(Tuple2<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>> var1);
+        public <T1, T2> Iterative2Inline<T1, T2> of(Tuple2<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>> i1);
 
-        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> of(Tuple3<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>> var1);
+        public <T1, T2, T3> Iterative3Inline<T1, T2, T3> of(Tuple3<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>> i1);
 
-        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> of(Tuple4<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>> var1);
+        public <T1, T2, T3, T4> Iterative4Inline<T1, T2, T3, T4> of(Tuple4<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>> i1);
 
-        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> of(Tuple5<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>> var1);
+        public <T1, T2, T3, T4, T5> Iterative5Inline<T1, T2, T3, T4, T5> of(Tuple5<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>> i1);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> of(Tuple6<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>> var1);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Inline<T1, T2, T3, T4, T5, T6> of(Tuple6<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>> i1);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> of(Tuple7<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>> var1);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Inline<T1, T2, T3, T4, T5, T6, T7> of(Tuple7<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>> i1);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> of(Tuple8<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>, ? extends Iterable<? extends T8>> var1);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Inline<T1, T2, T3, T4, T5, T6, T7, T8> of(Tuple8<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>, ? extends Iterable<? extends T8>> i1);
     }
 
     public static interface IterativeBuilderTupleCross extends IterativeBuilderTuple {
 
-        public <T1, T2> Iterative2Cross<T1, T2> from(Tuple2<? extends T1, ? extends T2> var1);
+        public <T1, T2> Iterative2Cross<T1, T2> from(Tuple2<? extends T1, ? extends T2> t1);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> from(Tuple3<? extends T1, ? extends T2, ? extends T3> var1);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> from(Tuple3<? extends T1, ? extends T2, ? extends T3> t1);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> from(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> from(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> t1);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> from(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> from(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> t1);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> from(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> from(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> t1);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> from(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> from(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> t1);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> from(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> var1);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> from(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> t1);
 
-        public <T1, T2> Iterative2Cross<T1, T2> of(Tuple2<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>> var1);
+        public <T1, T2> Iterative2Cross<T1, T2> of(Tuple2<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>> i1);
 
-        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Tuple3<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>> var1);
+        public <T1, T2, T3> Iterative3Cross<T1, T2, T3> of(Tuple3<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>> i1);
 
-        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Tuple4<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>> var1);
+        public <T1, T2, T3, T4> Iterative4Cross<T1, T2, T3, T4> of(Tuple4<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>> i1);
 
-        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Tuple5<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>> var1);
+        public <T1, T2, T3, T4, T5> Iterative5Cross<T1, T2, T3, T4, T5> of(Tuple5<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>> i1);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Tuple6<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>> var1);
+        public <T1, T2, T3, T4, T5, T6> Iterative6Cross<T1, T2, T3, T4, T5, T6> of(Tuple6<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>> i1);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Tuple7<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>> var1);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7Cross<T1, T2, T3, T4, T5, T6, T7> of(Tuple7<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>> i1);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Tuple8<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>, ? extends Iterable<? extends T8>> var1);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8Cross<T1, T2, T3, T4, T5, T6, T7, T8> of(Tuple8<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>, ? extends Iterable<? extends T8>> i1);
     }
 
     public static interface IterativeBuilderTuple extends IterativeBuilder {
 
-        public <T1> Iterative1<T1> from(Tuple1<? extends T1> var1);
+        public <T1> Iterative1<T1> from(Tuple1<? extends T1> t1);
 
-        public <T1, T2> Iterative2<T1, T2> from(Tuple2<? extends T1, ? extends T2> var1);
+        public <T1, T2> Iterative2<T1, T2> from(Tuple2<? extends T1, ? extends T2> t1);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> from(Tuple3<? extends T1, ? extends T2, ? extends T3> var1);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> from(Tuple3<? extends T1, ? extends T2, ? extends T3> t1);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> from(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> var1);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> from(Tuple4<? extends T1, ? extends T2, ? extends T3, ? extends T4> t1);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> from(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> var1);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> from(Tuple5<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> t1);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> from(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> var1);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> from(Tuple6<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> t1);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> from(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> var1);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> from(Tuple7<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> t1);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> from(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> var1);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> from(Tuple8<? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> t1);
 
-        public <T1> Iterative1<T1> of(Tuple1<? extends Iterable<? extends T1>> var1);
+        public <T1> Iterative1<T1> of(Tuple1<? extends Iterable<? extends T1>> t1);
 
-        public <T1, T2> Iterative2<T1, T2> of(Tuple2<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>> var1);
+        public <T1, T2> Iterative2<T1, T2> of(Tuple2<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>> i1);
 
-        public <T1, T2, T3> Iterative3<T1, T2, T3> of(Tuple3<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>> var1);
+        public <T1, T2, T3> Iterative3<T1, T2, T3> of(Tuple3<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>> i1);
 
-        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> of(Tuple4<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>> var1);
+        public <T1, T2, T3, T4> Iterative4<T1, T2, T3, T4> of(Tuple4<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>> i1);
 
-        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> of(Tuple5<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>> var1);
+        public <T1, T2, T3, T4, T5> Iterative5<T1, T2, T3, T4, T5> of(Tuple5<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>> i1);
 
-        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> of(Tuple6<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>> var1);
+        public <T1, T2, T3, T4, T5, T6> Iterative6<T1, T2, T3, T4, T5, T6> of(Tuple6<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>> i1);
 
-        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> of(Tuple7<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>> var1);
+        public <T1, T2, T3, T4, T5, T6, T7> Iterative7<T1, T2, T3, T4, T5, T6, T7> of(Tuple7<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>> i1);
 
-        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> of(Tuple8<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>, ? extends Iterable<? extends T8>> var1);
+        public <T1, T2, T3, T4, T5, T6, T7, T8> Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> of(Tuple8<? extends Iterable<? extends T1>, ? extends Iterable<? extends T2>, ? extends Iterable<? extends T3>, ? extends Iterable<? extends T4>, ? extends Iterable<? extends T5>, ? extends Iterable<? extends T6>, ? extends Iterable<? extends T7>, ? extends Iterable<? extends T8>> i1);
     }
 
     public static interface IterativeBuilderAccess extends IterativeBuilder {
