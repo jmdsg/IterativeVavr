@@ -1,14 +1,9 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Pr1;
-import com.fiberg.iterative.function.Pr2;
-import com.fiberg.iterative.function.Pr3;
-import com.fiberg.iterative.function.Pr4;
-import com.fiberg.iterative.function.Sp;
-import java.util.Objects;
+import com.fiberg.iterative.function.*;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.Objects;
 
 public interface IterativeUtils {
 

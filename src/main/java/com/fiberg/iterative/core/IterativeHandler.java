@@ -1,25 +1,12 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.core.SimpleIterative;
-import com.fiberg.iterative.function.Fn1;
 import com.fiberg.iterative.function.Fn2;
 import com.fiberg.iterative.function.Pr1;
-import io.vavr.Tuple;
-import io.vavr.Tuple0;
-import io.vavr.Tuple1;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.Tuple4;
-import io.vavr.Tuple5;
-import io.vavr.Tuple6;
-import io.vavr.Tuple7;
-import io.vavr.Tuple8;
+import io.vavr.*;
 import io.vavr.collection.Stream;
 import io.vavr.collection.Traversable;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
-import java.io.Serializable;
 
 interface IterativeHandler {
 

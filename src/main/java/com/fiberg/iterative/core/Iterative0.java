@@ -1,25 +1,5 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative;
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.Iterative2Cross;
-import com.fiberg.iterative.core.Iterative2Inline;
-import com.fiberg.iterative.core.Iterative3Cross;
-import com.fiberg.iterative.core.Iterative3Inline;
-import com.fiberg.iterative.core.Iterative4Cross;
-import com.fiberg.iterative.core.Iterative4Inline;
-import com.fiberg.iterative.core.Iterative5Cross;
-import com.fiberg.iterative.core.Iterative5Inline;
-import com.fiberg.iterative.core.Iterative6Cross;
-import com.fiberg.iterative.core.Iterative6Inline;
-import com.fiberg.iterative.core.Iterative7Cross;
-import com.fiberg.iterative.core.Iterative7Inline;
-import com.fiberg.iterative.core.Iterative8Cross;
-import com.fiberg.iterative.core.Iterative8Inline;
-import com.fiberg.iterative.core.IterativeConstructor;
-import com.fiberg.iterative.core.IterativeHandler;
-import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.core.IterativeWrapper;
 import com.fiberg.iterative.function.Cs1;
 import com.fiberg.iterative.function.Fn0;
 import com.fiberg.iterative.function.Fnc0;
@@ -31,6 +11,7 @@ import io.vavr.collection.Stream;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
 import io.vavr.control.Validation;
+
 import java.util.Objects;
 
 public interface Iterative0 extends IterativeConstructor {

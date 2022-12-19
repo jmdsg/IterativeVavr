@@ -1,11 +1,9 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.IterativeGetter;
 import com.fiberg.iterative.function.Fn0;
 import com.fiberg.iterative.function.Fn1;
 import com.fiberg.iterative.function.Sp;
-import java.io.Serializable;
+
 import java.util.Objects;
 
 public interface Iterative1Getter<G1> extends IterativeGetter {

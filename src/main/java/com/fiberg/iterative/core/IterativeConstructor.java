@@ -1,30 +1,5 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative;
-import com.fiberg.iterative.core.Iterative0;
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.Iterative2;
-import com.fiberg.iterative.core.Iterative2Cross;
-import com.fiberg.iterative.core.Iterative2Inline;
-import com.fiberg.iterative.core.Iterative3;
-import com.fiberg.iterative.core.Iterative3Cross;
-import com.fiberg.iterative.core.Iterative3Inline;
-import com.fiberg.iterative.core.Iterative4;
-import com.fiberg.iterative.core.Iterative4Cross;
-import com.fiberg.iterative.core.Iterative4Inline;
-import com.fiberg.iterative.core.Iterative5;
-import com.fiberg.iterative.core.Iterative5Cross;
-import com.fiberg.iterative.core.Iterative5Inline;
-import com.fiberg.iterative.core.Iterative6;
-import com.fiberg.iterative.core.Iterative6Cross;
-import com.fiberg.iterative.core.Iterative6Inline;
-import com.fiberg.iterative.core.Iterative7;
-import com.fiberg.iterative.core.Iterative7Cross;
-import com.fiberg.iterative.core.Iterative7Inline;
-import com.fiberg.iterative.core.Iterative8;
-import com.fiberg.iterative.core.Iterative8Cross;
-import com.fiberg.iterative.core.Iterative8Inline;
-import com.fiberg.iterative.core.IterativeBuilder;
 import io.vavr.collection.Stream;
 import io.vavr.control.Option;
 

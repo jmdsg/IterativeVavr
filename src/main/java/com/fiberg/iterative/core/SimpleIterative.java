@@ -5,6 +5,7 @@ import com.fiberg.iterative.function.Pr1;
 import io.vavr.collection.Stream;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
+
 import java.util.Iterator;
 import java.util.Objects;
 

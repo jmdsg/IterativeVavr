@@ -1,46 +1,7 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative;
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.Iterative2;
-import com.fiberg.iterative.core.Iterative3;
-import com.fiberg.iterative.core.Iterative4;
-import com.fiberg.iterative.core.Iterative5;
-import com.fiberg.iterative.core.Iterative6;
-import com.fiberg.iterative.core.Iterative7;
-import com.fiberg.iterative.core.Iterative8Cross;
-import com.fiberg.iterative.core.Iterative8Getter;
-import com.fiberg.iterative.core.Iterative8Inline;
-import com.fiberg.iterative.core.IterativeConstructor;
-import com.fiberg.iterative.core.IterativeGetter;
-import com.fiberg.iterative.core.IterativeHandler;
-import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.core.IterativeSupplier;
-import com.fiberg.iterative.core.SimpleIterative;
-import com.fiberg.iterative.function.Cs1;
-import com.fiberg.iterative.function.Cs2;
-import com.fiberg.iterative.function.Cs3;
-import com.fiberg.iterative.function.Cs4;
-import com.fiberg.iterative.function.Cs5;
-import com.fiberg.iterative.function.Cs6;
-import com.fiberg.iterative.function.Cs7;
-import com.fiberg.iterative.function.Cs8;
-import com.fiberg.iterative.function.Fn0;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Fn2;
-import com.fiberg.iterative.function.Fn3;
-import com.fiberg.iterative.function.Fn4;
-import com.fiberg.iterative.function.Fn5;
-import com.fiberg.iterative.function.Fn6;
-import com.fiberg.iterative.function.Fn7;
-import com.fiberg.iterative.function.Fn8;
-import com.fiberg.iterative.function.Fnc8;
-import com.fiberg.iterative.function.Pr1;
-import com.fiberg.iterative.function.Pr8;
-import com.fiberg.iterative.function.Rn;
-import com.fiberg.iterative.function.Sp;
+import com.fiberg.iterative.function.*;
 import io.vavr.Tuple;
-import io.vavr.Tuple6;
 import io.vavr.Tuple8;
 import io.vavr.collection.Iterator;
 import io.vavr.collection.Seq;
@@ -48,10 +9,8 @@ import io.vavr.collection.Stream;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
 import io.vavr.control.Validation;
-import java.io.Serializable;
+
 import java.util.Objects;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 public interface Iterative8<T1, T2, T3, T4, T5, T6, T7, T8> extends IterativeConstructor {
 

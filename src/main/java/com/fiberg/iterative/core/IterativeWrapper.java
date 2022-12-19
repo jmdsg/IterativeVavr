@@ -1,6 +1,5 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
 

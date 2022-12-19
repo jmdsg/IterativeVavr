@@ -1,22 +1,12 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.Iterative2;
-import com.fiberg.iterative.core.Iterative3;
-import com.fiberg.iterative.core.Iterative4;
-import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Fn2;
-import com.fiberg.iterative.function.Fn3;
-import com.fiberg.iterative.function.Fn4;
-import com.fiberg.iterative.function.Fn5;
-import com.fiberg.iterative.function.Pr1;
+import com.fiberg.iterative.function.*;
 import io.vavr.Tuple1;
 import io.vavr.Tuple2;
 import io.vavr.Tuple3;
 import io.vavr.Tuple4;
 import io.vavr.collection.Stream;
-import java.io.Serializable;
+
 import java.util.Objects;
 
 public interface Iterative4Args<T1, T2, T3, T4> {

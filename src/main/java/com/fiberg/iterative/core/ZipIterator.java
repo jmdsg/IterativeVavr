@@ -2,6 +2,7 @@ package com.fiberg.iterative.core;
 
 import com.fiberg.iterative.function.Fn2;
 import io.vavr.collection.Iterator;
+
 import java.util.NoSuchElementException;
 
 class ZipIterator<T1, T2, R> implements Iterator<R> {

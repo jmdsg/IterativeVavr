@@ -1,14 +1,6 @@
 package com.fiberg.iterative.core;
 
-import io.vavr.Tuple;
-import io.vavr.Tuple1;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.Tuple4;
-import io.vavr.Tuple5;
-import io.vavr.Tuple6;
-import io.vavr.Tuple7;
-import io.vavr.Tuple8;
+import io.vavr.*;
 
 public interface Flattener5 {
 

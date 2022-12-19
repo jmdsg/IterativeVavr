@@ -1,14 +1,5 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.Iterative2;
-import com.fiberg.iterative.core.Iterative3;
-import com.fiberg.iterative.core.Iterative4;
-import com.fiberg.iterative.core.Iterative5;
-import com.fiberg.iterative.core.Iterative6;
-import com.fiberg.iterative.core.Iterative7;
-import com.fiberg.iterative.core.Iterative8;
-import com.fiberg.iterative.core.IterativeHandler;
 import com.fiberg.iterative.function.Cs2;
 import io.vavr.collection.Stream;
 import io.vavr.control.Option;

@@ -1,14 +1,11 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative5;
-import com.fiberg.iterative.core.IterativeGetter;
 import com.fiberg.iterative.function.Fn0;
 import com.fiberg.iterative.function.Fn1;
 import com.fiberg.iterative.function.Sp;
 import io.vavr.Tuple;
-import io.vavr.Tuple3;
 import io.vavr.Tuple5;
-import java.io.Serializable;
+
 import java.util.Objects;
 
 public interface Iterative5Getter<G1, G2, G3, G4, G5> extends IterativeGetter {

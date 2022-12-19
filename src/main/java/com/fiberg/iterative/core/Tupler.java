@@ -1,18 +1,7 @@
 package com.fiberg.iterative.core;
 
 import com.fiberg.iterative.function.*;
-import io.vavr.Tuple;
-import io.vavr.Tuple0;
-import io.vavr.Tuple1;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.Tuple4;
-import io.vavr.Tuple5;
-import io.vavr.Tuple6;
-import io.vavr.Tuple7;
-import io.vavr.Tuple8;
-import java.io.Serializable;
-import java.util.function.Function;
+import io.vavr.*;
 
 public interface Tupler {
 

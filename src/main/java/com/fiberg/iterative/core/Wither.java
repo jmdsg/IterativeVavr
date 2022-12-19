@@ -1,22 +1,7 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Args1;
-import com.fiberg.iterative.core.Args2;
-import com.fiberg.iterative.core.Args3;
-import com.fiberg.iterative.core.Args4;
-import com.fiberg.iterative.core.Args5;
-import com.fiberg.iterative.core.Args6;
-import com.fiberg.iterative.core.Args7;
-import com.fiberg.iterative.core.Args8;
 import com.fiberg.iterative.function.Sp;
-import io.vavr.Tuple1;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.Tuple4;
-import io.vavr.Tuple5;
-import io.vavr.Tuple6;
-import io.vavr.Tuple7;
-import io.vavr.Tuple8;
+import io.vavr.*;
 
 public interface Wither {
 

@@ -1,63 +1,15 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative;
-import com.fiberg.iterative.core.Iterative0;
-import com.fiberg.iterative.core.Iterative1Args;
-import com.fiberg.iterative.core.Iterative1Getter;
-import com.fiberg.iterative.core.Iterative2;
-import com.fiberg.iterative.core.Iterative2Cross;
-import com.fiberg.iterative.core.Iterative2Inline;
-import com.fiberg.iterative.core.Iterative3;
-import com.fiberg.iterative.core.Iterative3Cross;
-import com.fiberg.iterative.core.Iterative3Inline;
-import com.fiberg.iterative.core.Iterative4;
-import com.fiberg.iterative.core.Iterative4Cross;
-import com.fiberg.iterative.core.Iterative4Inline;
-import com.fiberg.iterative.core.Iterative5;
-import com.fiberg.iterative.core.Iterative5Cross;
-import com.fiberg.iterative.core.Iterative5Inline;
-import com.fiberg.iterative.core.Iterative6;
-import com.fiberg.iterative.core.Iterative6Cross;
-import com.fiberg.iterative.core.Iterative6Inline;
-import com.fiberg.iterative.core.Iterative7;
-import com.fiberg.iterative.core.Iterative7Cross;
-import com.fiberg.iterative.core.Iterative7Inline;
-import com.fiberg.iterative.core.Iterative8;
-import com.fiberg.iterative.core.Iterative8Cross;
-import com.fiberg.iterative.core.Iterative8Inline;
-import com.fiberg.iterative.core.IterativeConstructor;
-import com.fiberg.iterative.core.IterativeGetter;
-import com.fiberg.iterative.core.IterativeHandler;
-import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.core.IterativeSupplier;
-import com.fiberg.iterative.core.IterativeWrapper;
-import com.fiberg.iterative.core.SimpleIterative;
-import com.fiberg.iterative.function.Cs1;
-import com.fiberg.iterative.function.Fn0;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Fnc1;
-import com.fiberg.iterative.function.Pr1;
-import com.fiberg.iterative.function.Rn;
-import com.fiberg.iterative.function.Sp;
-import io.vavr.Tuple;
-import io.vavr.Tuple1;
-import io.vavr.Tuple2;
-import io.vavr.Tuple3;
-import io.vavr.Tuple4;
-import io.vavr.Tuple5;
-import io.vavr.Tuple6;
-import io.vavr.Tuple7;
-import io.vavr.Tuple8;
+import com.fiberg.iterative.function.*;
+import io.vavr.*;
 import io.vavr.collection.Iterator;
 import io.vavr.collection.Seq;
 import io.vavr.collection.Stream;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
 import io.vavr.control.Validation;
-import java.io.Serializable;
+
 import java.util.Objects;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 public interface Iterative1<T1> extends IterativeConstructor {
 

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fiberg</groupId>
     <artifactId>iterative-vavr</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0.10.0</version>
     <packaging>jar</packaging>
     <name>Iterative</name>
     <description>Iterative for Vavr</description>
@@ -18,8 +18,6 @@
 
         <commons.version>3.11</commons.version>
         <commons-collection.version>4.4</commons-collection.version>
-
-        <tycho.compiler.version>1.7.0</tycho.compiler.version>
 
         <plugin.install.version>2.5.2</plugin.install.version>
         <plugin.jar.version>3.0.2</plugin.jar.version>
@@ -43,13 +41,53 @@
 
     <profiles>
 
+        <!-- Snapshot profile -->
+        <profile>
+
+            <!-- Id and activation -->
+            <id>snapshot</id>
+            <activation>
+                <property>
+                    <name>version</name>
+                    <value>snapshot</value>
+                </property>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <!-- Properties -->
+            <properties>
+                <profiled.version.suffix>SNAPSHOT</profiled.version.suffix>
+            </properties>
+
+        </profile>
+
+        <!-- Release profile -->
+        <profile>
+
+            <!-- Id and activation -->
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>version</name>
+                    <value>release</value>
+                </property>
+            </activation>
+
+            <!-- Properties -->
+            <properties>
+                <profiled.version.suffix>RELEASE</profiled.version.suffix>
+            </properties>
+
+        </profile>
+
         <profile>
 
             <id>javac</id>
             <activation>
+                <activeByDefault>true</activeByDefault>
                 <property>
-                    <name>compile</name>
-                    <value>!jdt</value>
+                    <name>compiler</name>
+                    <value>default</value>
                 </property>
             </activation>
 
@@ -71,42 +109,6 @@
                                 <arg>-verbose</arg>
                             </compilerArgs>
                         </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-
-        </profile>
-
-        <profile>
-
-            <id>jdt</id>
-            <activation>
-                <property>
-                    <name>compile</name>
-                    <value>jdt</value>
-                </property>
-            </activation>
-
-            <build>
-                <plugins>
-                    <!-- Compiler plugin JDT -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>${plugin.compiler.version}</version><!-- $NO-MVN-MAN-VER$ -->
-                        <configuration>
-                            <source>${java.version}</source>
-                            <target>${java.target.version}</target>
-                            <compilerId>jdt</compilerId>
-                            <compilerArgument>-err:nullAnnot,null</compilerArgument>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.eclipse.tycho</groupId>
-                                <artifactId>tycho-compiler-jdt</artifactId>
-                                <version>${tycho.compiler.version}</version>
-                            </dependency>
-                        </dependencies>
                     </plugin>
                 </plugins>
             </build>
@@ -197,7 +199,8 @@
 
     <build>
 
-        <finalName>iterative.${project.version}</finalName>
+        <!-- Final name -->
+        <finalName>${project.artifactId}-${project.version}-${profiled.version.suffix}</finalName>
 
         <plugins>
 

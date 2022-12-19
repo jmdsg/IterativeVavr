@@ -1,26 +1,10 @@
 package com.fiberg.iterative.function;
 
 import com.fiberg.iterative.core.IterativeInternals;
-import com.fiberg.iterative.function.Cs1;
-import com.fiberg.iterative.function.Fn0;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Pr1;
-import com.fiberg.iterative.function.Pr2;
-import com.fiberg.iterative.function.Pr3;
-import com.fiberg.iterative.function.Pr4;
-import com.fiberg.iterative.function.Pr5;
-import com.fiberg.iterative.function.Pr6;
-import com.fiberg.iterative.function.Pr7;
-import com.fiberg.iterative.function.Pr8;
-import com.fiberg.iterative.function.Prc0;
-import com.fiberg.iterative.function.Predicates;
-import com.fiberg.iterative.function.Rn;
-import com.fiberg.iterative.function.Sp;
-import com.fiberg.iterative.function.Spc;
 import io.vavr.Function0;
 import io.vavr.Tuple;
 import io.vavr.Tuple0;
-import java.io.Serializable;
+
 import java.util.Objects;
 
 @FunctionalInterface

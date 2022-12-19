@@ -1,25 +1,9 @@
 package com.fiberg.iterative.core;
 
-import com.fiberg.iterative.core.Iterative1;
-import com.fiberg.iterative.core.Iterative2;
-import com.fiberg.iterative.core.Iterative3Cross;
-import com.fiberg.iterative.core.Iterative4Cross;
-import com.fiberg.iterative.core.Iterative5Cross;
-import com.fiberg.iterative.core.Iterative6Cross;
-import com.fiberg.iterative.core.Iterative7Cross;
-import com.fiberg.iterative.core.Iterative8Cross;
-import com.fiberg.iterative.core.IterativeHandler;
-import com.fiberg.iterative.core.IterativeWrapper;
-import com.fiberg.iterative.function.Cs1;
-import com.fiberg.iterative.function.Cs2;
-import com.fiberg.iterative.function.Fn1;
-import com.fiberg.iterative.function.Fn2;
-import com.fiberg.iterative.function.Pr1;
-import com.fiberg.iterative.function.Rn;
+import com.fiberg.iterative.function.*;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
 import io.vavr.collection.Stream;
-import java.io.Serializable;
 
 public interface Iterative2Cross<T1, T2> extends Iterative2<T1, T2> {
 
