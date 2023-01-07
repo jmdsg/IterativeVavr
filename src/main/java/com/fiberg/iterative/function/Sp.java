@@ -233,7 +233,7 @@ public interface Sp<R> extends Supplier<R>, Function0<R>, Fn0<R> {
     default public Sp<R> beforeTestOnFailure(Pr0 p, Sp<? extends R> onSuccess) {
         Objects.requireNonNull(p, "p is null");
         Objects.requireNonNull(onSuccess, "onSuccess is null");
-        return this.beforeTestOnSuccess(p.negated(), (Sp) onSuccess);
+        return this.beforeTestOnSuccess(p.negated(), onSuccess);
     }
 
     @Override

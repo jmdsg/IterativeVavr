@@ -5,35 +5,33 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fiberg</groupId>
     <artifactId>iterative-vavr</artifactId>
-    <version>0.10.0</version>
+    <version>0.11.0</version>
     <packaging>jar</packaging>
     <name>Iterative</name>
     <description>Iterative for Vavr</description>
 
     <properties>
 
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.2</junit.version>
 
         <vavr.version>0.10.4</vavr.version>
 
-        <commons.version>3.11</commons.version>
+        <commons.version>3.12.0</commons.version>
         <commons-collection.version>4.4</commons-collection.version>
 
         <plugin.install.version>2.5.2</plugin.install.version>
         <plugin.jar.version>3.0.2</plugin.jar.version>
         <plugin.source.version>3.0.1</plugin.source.version>
-        <plugin.eclipse.version>2.9</plugin.eclipse.version>
-        <plugin.dependency.version>2.5.1</plugin.dependency.version>
         <plugin.javadoc.version>3.1.1</plugin.javadoc.version>
         <plugin.compiler.version>3.7.0</plugin.compiler.version>
 
-        <javadoc.java.version>11</javadoc.java.version>
+        <javadoc.java.version>17</javadoc.java.version>
 
-        <java.version>11</java.version>
-        <java.target.version>11</java.target.version>
+        <java.version>17</java.version>
+        <java.target.version>17</java.target.version>
 
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -204,17 +202,6 @@
 
         <plugins>
 
-            <!-- Download source code in Eclipse -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>${plugin.eclipse.version}</version>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>false</downloadJavadocs>
-                </configuration>
-            </plugin>
-
             <!-- Make this jar executable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -232,27 +219,6 @@
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin>
-
-            <!-- Copy project dependency -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>${plugin.dependency.version}</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <!-- exclude junit, we need runtime dependency only -->
-                            <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <!-- Generate sources -->
